@@ -1,0 +1,14 @@
+# directories
+__pycache__/
+__deprecated__/
+plotting/
+processing/
+
+# files
+test*.py
+*.pyc
+.DS_Store
+.env
+*_task.py
+run_checking.pys
+swarm/.env
