@@ -12,3 +12,4 @@ test*.py
 *_task.py
 run_checking.pys
 swarm/.env
+sync.sh

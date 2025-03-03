@@ -29,7 +29,7 @@ def parse_args() -> argparse.Namespace:
                         choices=["full", "test"], help="Tool list to use for the simulation, only use the tools that have been evaluated or full tool list")
     parser.add_argument("--shuffle_func", action="store_true",
                        help="Whether to shuffle assistant functions")
-    parser.add_argument("--default_constraint_option", type=str, default="required",
+    parser.add_argument("--default_constraint_option", type=str, default="full",
                         choices=["full", "required"], help="Default dependency to use for the other unevaluated actions")
     parser.add_argument("--constraint_descr_format", type=str, default="structured",
                         choices=["old", "structured"], help="Constraint dependency description format")
@@ -83,6 +83,8 @@ def load_existing_results(output_file):
                 results = json.load(f)
                 print(f"Loaded {len(results)} results from {output_file}")  # Add debug print
                 return results
+        else:
+            print(f"File {output_file} does not exist!")
     except Exception as e:
         print(f"Error loading results from {output_file}: {str(e)}")
     return []

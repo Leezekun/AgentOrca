@@ -1,5 +1,5 @@
 # Project directory
-PROJ_DIR = "xxx/AgentOrca/"
+PROJ_DIR = "/xxx/AgentOrca/"
 
 # OpenAI model names
 OPENAI_MODELS = [
