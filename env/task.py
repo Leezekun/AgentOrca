@@ -354,7 +354,7 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
         return ipfc_with_values
     # detecting if action is successfully called and if the assistant called the necessary functions, tool calls are valid
     nodes, connections, inv_nodes = None, None, None
-    ifcg = copy.deepcopy(task["inv_func_call_graph"]) # inv_func_call_graph with user_known values plugged in
+    ifcg = copy.deepcopy(task["directed_action_graph"]) # directed_action_graph with user_known values plugged in
     nodes_task = ifcg["nodes"]
     connections_task, inv_nodes_task = get_ifcg_connections_invnodes(ifcg)
     constr_links = domain_assistant_keys[domain_str].constraint_links

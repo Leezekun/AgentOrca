@@ -632,9 +632,9 @@ def dfsgather_invfunccalldirgraph(dep_orig:tuple,
 """functions that are not used for task_generation, but are highly relevant and are used elsewhere"""
 
 # gets the connections (position to multiple positions) and inverse nodes (function name to position)
-def get_ifcg_connections_invnodes(inv_func_call_graph:dict)->tuple[list[list],dict]:
-    ifcg_n = inv_func_call_graph["nodes"]
-    ifcg_c = inv_func_call_graph["connections"]
+def get_ifcg_connections_invnodes(directed_action_graph:dict)->tuple[list[list],dict]:
+    ifcg_n = directed_action_graph["nodes"]
+    ifcg_c = directed_action_graph["connections"]
     # put the connections into a 2D list
     connections = [[] for _ in range(len(ifcg_n))]
     for conn_from, conn_to in ifcg_c: connections[conn_from].append(conn_to)
@@ -661,7 +661,7 @@ def dfsgather_ifcdg_func(domain_system, domain_assistant:dict, action:str, defau
     # process the graph
     dep_orig = action_default_dep_orig[action]
     user_goal_node = (action, {key: key for key in action_parameters[action]})
-    inv_func_call_graph = dfsgather_invfunccalldirgraph(dep_orig, cl, cp, action_default_dep_orig, action_parameters, user_goal_node)
-    nodes = inv_func_call_graph["nodes"]
-    connections, inv_nodes = get_ifcg_connections_invnodes(inv_func_call_graph)
+    directed_action_graph = dfsgather_invfunccalldirgraph(dep_orig, cl, cp, action_default_dep_orig, action_parameters, user_goal_node)
+    nodes = directed_action_graph["nodes"]
+    connections, inv_nodes = get_ifcg_connections_invnodes(directed_action_graph)
     return nodes, connections, inv_nodes
