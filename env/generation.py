@@ -24,11 +24,10 @@ Depending on the constraint, some actions may not need to be called to verify th
 
 import os
 import sys
-sys.path.append(os.getcwd()+"\\env")
 
-from variables import domain_keys, domain_assistant_keys
-from dependencies import Domain_Dependencies_Verify
-from helpers import recur_data_consistency, write_data_file
+from env.variables import domain_keys, domain_assistant_keys
+from env.dependencies import Domain_Dependencies_Verify
+from env.helpers import recur_data_consistency, write_data_file
 
 import inspect
 import copy
@@ -48,12 +47,12 @@ from pydantic import BaseModel, Field, model_validator
 
 """generates permutations of the constraints to create dependencies for each task"""
 
-from helpers import InvalidConstraintOption,\
+from env.helpers import InvalidConstraintOption,\
     inv_dep, modify_prompt, get_action_parameters,\
     dict_to_tuple, tuple_to_dict, hashable_dep, orig_dep
 
-from helpers import\
-    dfsprune_dep_pro,\
+from env.helpers import\
+    dfsprune_dep_pros,\
     get_new_param_mapping, dfsgather_constr_singles_dep,\
     dfsins_constr_deps, gather_action_default_dependencies,\
     dfsins_cl_cd_aid,\
@@ -272,9 +271,9 @@ def dependency_permutations(user_goal:str, aid:dict, ard:dict, acd:dict,
                 action_dep_tasks[False] = limit_num_tasks(action_dep_tasks[False])
             else: continue
         # record the results
-        action_dep_orig =   dfsprune_dep_pro(("and", [action_req_dep, action_cus_dep]))             if action_req_dep else action_cus_dep
-        action_dep =        dfsprune_dep_pro(("and", [action_req_dep_actu, action_cus_dep_actu]))   if action_req_dep_actu else action_cus_dep
-        action_dep_perm =   dfsprune_dep_pro(("and", [action_req_dep_perm, action_cus_dep_perm]))
+        action_dep_orig =   dfsprune_dep_pros(("and", [action_req_dep, action_cus_dep]))             if action_req_dep else action_cus_dep
+        action_dep =        dfsprune_dep_pros(("and", [action_req_dep_actu, action_cus_dep_actu]))   if action_req_dep_actu else action_cus_dep
+        action_dep_perm =   dfsprune_dep_pros(("and", [action_req_dep_perm, action_cus_dep_perm]))
         action_dependencies.append((action_dep_orig, action_dep, action_dep_perm, action_dep_tasks))
     # returning a list of tuples with the dependency and the contraint permutations
     return action_dependencies
@@ -405,6 +404,7 @@ class Task(BaseModel):
         except json.decoder.JSONDecodeError as e:
             raise ValueError(f"Invalid JSON data for user_known_str: {e.msg}\nDocument: {e.doc}\nPosition: {e.pos}\nData: {values['user_known_str']}") from e
         return values
+    
 def task_obj_str(task_obj:Task)->str:
     res = json.dumps(json.loads(task_obj.initial_database_str), indent=2)
     res += '\n' + json.dumps(json.loads(task_obj.dependency_parameters_str), indent=2)
@@ -972,14 +972,13 @@ def generate_action_task(domain_str:str, user_goal:str, default_dependency_optio
     # return the intermediate tasks, tasks, and run_usage
     return list_task_obj, list_task_info, list_inter_info, generated_dependencies, manfix_counter, run_usage
 
-
 """main function to generate the task data, consisting of database system actions, using the least amount of AI as possible"""
 
 def task_generation(args):
     write_output_bool = args.write_output_disable
     print_pipeline = args.print_pipeline_disable
     # initializing variables and model
-    client = OpenAI(api_key=args.openai_api_key)
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     all_run_usage = []
     # reading in the database file with rule-based dependencies, gathering all and evaluated method names
     domain_system = domain_keys[args.domain_str]()
@@ -1002,8 +1001,8 @@ def task_generation(args):
     intermediate_tasks_filename = f"{args.domain_str}_intermediate_tasks.json"
     # for each method, construct the outcomes, decision tree, then the task with user known parameters, initial database, and user goal
     tasks, intermediate_tasks = {}, {}
-    temperature = 0.4
-    max_completion_tokens = 2000
+    temperature = args.temperature
+    max_completion_tokens = args.max_tokens
     all_generated_dependencies = set()
     skipped_methods = set()
     manfix_counters = {}

@@ -9,7 +9,9 @@ import argparse
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run task generation")
-    parser.add_argument("--openai_api_key", type=str) # required every run
+    parser.add_argument("--temperature", type=float, default=0.4)
+    parser.add_argument("--top_p", type=float, default=1.0)
+    parser.add_argument("--max_tokens", type=int, default=2000)
     parser.add_argument("--gpt_model", type=str, default="gpt-4o-mini")
     parser.add_argument("--domain_str", type=str, default="bank")
     parser.add_argument("--default_constraint_option", type=str, default="full", choices=["required", "full"])

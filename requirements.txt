@@ -11,6 +11,8 @@ google-auth==2.35.0
 googleapis-common-protos==1.65.0
 huggingface-hub==0.26.1
 Jinja2==3.1.4
+idna==3.10
+jiter==0.6.1
 mistralai==1.1.0
 numpy==1.26.4
 openai==1.57.0

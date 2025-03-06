@@ -18,8 +18,8 @@ from env.helpers import (
     get_new_param_mapping, 
     dfsgather_constr_singles_dep, 
     dfsins_cl_cd_aid,
-    get_ifcg_connections_invnodes, 
-    dfsgather_ifcdg_func,
+    get_dag_connections_invnodes, 
+    dfsgather_dag_func,
     gather_action_default_dependencies,
     InvalidConstraintOption
 )
@@ -355,7 +355,7 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
     nodes, connections, inv_nodes = None, None, None
     ifcg = copy.deepcopy(task["directed_action_graph"]) # directed_action_graph with user_known values plugged in
     nodes_task = ifcg["nodes"]
-    connections_task, inv_nodes_task = get_ifcg_connections_invnodes(ifcg)
+    connections_task, inv_nodes_task = get_dag_connections_invnodes(ifcg)
     constr_links = domain_assistant_keys[domain_str].constraint_links
     constr_deps = domain_assistant_keys[domain_str].constraint_dependencies
     constr_pros = domain_assistant_keys[domain_str].constraint_processes
@@ -372,7 +372,7 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
         # make a new connection graph if the function is not in the current graph
         nodes, connections, inv_nodes = nodes_task, connections_task, inv_nodes_task
         if func_name not in inv_nodes and func_name in action_parameters:
-            nodes, connections, inv_nodes = dfsgather_ifcdg_func(domain_system, domain_assistant_keys[domain_str], func_name, default_constraint_option)
+            nodes, connections, inv_nodes = dfsgather_dag_func(domain_system, domain_assistant_keys[domain_str], func_name, default_constraint_option)
         elif func_name not in action_parameters: continue
         # detecting when the target action has been successfully called
         if (not evaluation_result["action_successfully_called"]
@@ -470,34 +470,3 @@ def create_assistant(domain_str:str, shuffle_func:bool, mode:str, included_funct
     tools = [{"function":action, "type":"function"} for action in actions_shuffled]
     assistant = {"name":name, "instructions":instructions, "tools":tools}
     return assistant
-
-# calculates the statistics of the entire run
-def task_domain_statistics(all_statistics_results:list[dict], ex_task_eval_res:dict, ex_task_stat_res:dict,
-    allowed_statistic_types:list[str]=["total_", "distr_"])->dict:
-    # determine the evaluation attributes that are booleans and the statistic attributes that are averaged
-    boolean_attributes = set()
-    for key in ex_task_eval_res:
-        if isinstance(ex_task_eval_res[key], bool): boolean_attributes.add(key)
-    averaged_attributes = set()
-    for key in ex_task_stat_res:
-        if key.find("avg_") == 0: averaged_attributes.add(key[len("avg_"):])
-    # gather the attributes needed
-    ds = domain_statistics = {key:0 if key.find("total_")==0 else {}
-        for key in ex_task_stat_res
-        if any(key.find(word)==0 for word in allowed_statistic_types)}
-    for task_stat_res in all_statistics_results:
-        for key in task_stat_res:
-            if key.find("total_")==0: ds[key] += task_stat_res[key]
-            elif key.find("distr_")==0: ds[key] = Counter(ds[key]) + Counter(task_stat_res[key])
-    # calculating proportion and averages
-    def get_underlying_attribute(attribute:str, statistic_types:list[str])->str:
-        for stat_type in statistic_types:
-            if stat_type in attribute: return attribute[len(stat_type):]
-        return None
-    ds_keys_copy = list(ds.keys())
-    for key in ds_keys_copy:
-        und_attr = get_underlying_attribute(key, allowed_statistic_types)
-        if not und_attr: continue
-        elif und_attr in boolean_attributes: ds[f"prop_{und_attr}"] = round(ds[f"total_{und_attr}"] / ds[f"total_interactions"], 5)
-        elif und_attr in averaged_attributes: ds[f"avg_{und_attr}"] = round(ds[f"total_{und_attr}"] / ds[f"total_interactions"], 5)
-    return domain_statistics

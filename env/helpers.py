@@ -167,7 +167,7 @@ def dfscollapse_dep(dep:tuple)->tuple:
         dep_list_new[0] if len(dep_list_new) == 1 else None
 
 # prunes the dependency, nested "and" and "or", consider both True and False cases for simple constraints
-def dfsprune_dep_pro(dep:tuple)->tuple:
+def dfsprune_dep_pros(dep:tuple)->tuple:
     # base cases
     if not dep: return None
     elif dep[0] == "single": return dep
@@ -191,7 +191,7 @@ def dfsprune_dep_pro(dep:tuple)->tuple:
     global asc_order_restr
     for dep_part in dep[1]:
         # prune and hash to check for identical
-        dep_part = dfsprune_dep_pro(dep_part)
+        dep_part = dfsprune_dep_pros(dep_part)
         hashed_dep_part = hashable_dep(dep_part)
         if not dep_part or hashed_dep_part in seen_dep_set: continue
         dep_list.append(dep_part)
@@ -233,7 +233,7 @@ def dfsprune_dep_pro(dep:tuple)->tuple:
     # collapse if there is only one dependency part left
     dep_new = dfscollapse_dep((dep[0], dep_list))
     # return the new dependency, prune again for unseen corner cases
-    if hashable_dep(dep) != hashable_dep(dep_new): dep_new = dfsprune_dep_pro(dep_new)
+    if hashable_dep(dep) != hashable_dep(dep_new): dep_new = dfsprune_dep_pros(dep_new)
     return dep_new
 
 
@@ -298,7 +298,7 @@ def dfsins_constr_deps(dep:tuple, act_deps:dict, constr_deps:dict)->tuple:
         case "and" | "or" | "chain" | "gate" :
             dep_new = (dep[0], [dfsins_constr_deps(dep_part, act_deps, constr_deps) for dep_part in dep[1]])
         case _: raise InvalidConstraintOption(f"invalid dependency option selected: {dep[0]}")
-    return dfsprune_dep_pro(dep_new)
+    return dfsprune_dep_pros(dep_new)
 
 # gathers the default dependencies for each action
 def gather_action_default_dependencies(action_required_dependencies:dict, action_customizable_dependencies:dict,
@@ -313,7 +313,7 @@ def gather_action_default_dependencies(action_required_dependencies:dict, action
             elif action_cust_dep: default_dep_full[action] = action_cust_dep
     if constraint_dependencies:
         default_dep_full = {action: dfsins_constr_deps(default_dep_full[action], default_dep_full, constraint_dependencies) for action in default_dep_full}
-    return {action: dfsprune_dep_pro(default_dep_full[action]) for action in default_dep_full}
+    return {action: dfsprune_dep_pros(default_dep_full[action]) for action in default_dep_full}
 
 # dfs insert the innate dependencies
 def dfsins_innate_deps(dep:tuple, aid:dict)->tuple:
@@ -329,7 +329,7 @@ def dfsins_innate_deps(dep:tuple, aid:dict)->tuple:
         case "and" | "or" | "chain" | "gate":
             dep_new = (dep[0], [dfsins_innate_deps(dep_part, aid) for dep_part in dep[1]])
         case _: raise InvalidConstraintOption(f"invalid dependency option selected: {dep[0]}")
-    return dfsprune_dep_pro(dep_new)
+    return dfsprune_dep_pros(dep_new)
 
 
 """gathers the action dependency with information needed (constraints) in mind"""
@@ -388,7 +388,7 @@ def dfsins_constr_links(dep:tuple, constraint_links:dict, default_deps:dict, act
         case "and" | "or" | "chain" | "gate":
             dep_new = (dep[0], [dfsins_constr_links(dep_part, constraint_links, default_deps, action_parameters, constr_str_seen) for dep_part in dep[1]])
         case _: raise InvalidConstraintOption(f"invalid dependency option selected: {dep[0]}")
-    return dfsprune_dep_pro(dep_new)
+    return dfsprune_dep_pros(dep_new)
 
 # recursively inserts constraint links, constraint dependencies, and action innate dependencies
 # default deps already has constraint dependencies, inversing a chain is only inverting the last element
@@ -419,7 +419,7 @@ def dfsins_cl_cd_aid(dep:tuple, constr_links:dict, act_innate_deps:dict, act_def
         case "and" | "or" | "chain" | "gate":
             dep_new = (dep[0], [dfsins_cl_cd_aid(dep_part, cl, aid, ad, cd, action_parameters, constr_str_seen) for dep_part in dep[1]])
         case _: raise InvalidConstraintOption(f"invalid dependency option selected: {dep[0]}")
-    return dfsprune_dep_pro(dep_new)
+    return dfsprune_dep_pros(dep_new)
 
 
 """retrieves the only the actions required to fullfill a dependency"""

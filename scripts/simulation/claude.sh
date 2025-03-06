@@ -13,7 +13,8 @@ for domain in "${domains[@]}"; do
                 --assistant_model $model \
                 --env_mode prompt \
                 --tool_list $tool_list \
-                --tool_call_mode $method
+                --tool_call_mode $method \
+                --print_conv
     done
 done
 
