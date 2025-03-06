@@ -99,59 +99,32 @@ def orig_dep(dep:tuple)->tuple:
 
 """pruning the dependency or process tree"""
 
-# used for pruning the dependency
-asc_order_restr = ["chain", "and", "gate", "or"]
-
-# check if the dep is directly seen or is encapsulated by another dependency, no exact matched found at this point, orig_dep_rel is not "single"
-# "and" seen dep is True, "or" seen dep is False
-def check_dep_seen_or_encapsulated(dep:tuple, seen_hashed_dep_set:set, orig_dep_rel:str)->bool:
-    # dep directly seen before
-    hashed_dep = hashable_dep(dep)
-    if hashed_dep in seen_hashed_dep_set: return True
-    # if not, then encapsulation detection method is needed
+# order of restriction in ascending order, later restrictions can go into earlier restrictions (except "single")
+asc_order_restr = ["single", "chain", "and", "gate", "or"]
+def seen_more_restrictive_same_dep(hashed_dep:tuple, seen_hashed_deps:set)->bool:
     global asc_order_restr
-    pos_orig_dep_rel:int = asc_order_restr.index(orig_dep_rel)
-    pos_dep_rel:int = asc_order_restr.index(dep[0]) if dep[0] != "single" else pos_orig_dep_rel # chain single == chain chain single
-    dep_set:set = set(hashed_dep[1]) if dep[0] != "single" else {hashed_dep} # set of deps that dep represents
-    encap_dep_found:bool = False
-    for seen_hashed_dep in seen_hashed_dep_set:
-        pos_seen_dep_rel:int = asc_order_restr.index(seen_hashed_dep[0]) if seen_hashed_dep[0] != "single" else pos_orig_dep_rel
-        # check if the relations are equivalent in type and if the seen dep encapsulates the current dep
-        rel_a, rel_b = (pos_seen_dep_rel, pos_dep_rel) if pos_orig_dep_rel < 1.5 else (pos_dep_rel, pos_seen_dep_rel)
-        rel_equiv:bool = ((rel_a <= 1.5) == (rel_b <= 1.5)) # same type of relation
-        rel_encap:bool = rel_a <= rel_b # one relation encapsulates the other
-        if not rel_encap: continue
-        # check if seen dep has a subset of current dep if relations are the same type, otherwise check or intersection
-        seen_dep_set:set = set(seen_hashed_dep[1]) if seen_hashed_dep[0] != "single" else {seen_hashed_dep}
-        depset_subset_inter:bool = not bool(dep_set - seen_dep_set) if rel_equiv else bool(seen_dep_set & dep_set)
-        if not depset_subset_inter: continue
-        # encapsulating dependency found
-        encap_dep_found = True
-        break
-    return encap_dep_found
+    aor_ind = asc_order_restr.index(hashed_dep[0])
+    if hashed_dep[0] == "single": return hashed_dep in seen_hashed_deps
+    for i in range(aor_ind, 0, -1):
+        if (asc_order_restr[i], hashed_dep[1]) in seen_hashed_deps: return True
+    return False
 
-# removes dependencies if certain dependencies from the higher tiers have been seen
-def dfsremove_if_unnecessary(dep:tuple, seen_hashed_dep_set:set, orig_dep_rel:str, inco_dep_rel:str,
-    force_remove:bool=False)->tuple|bool:
-    # None case
-    if not dep: return dep
+# removes dependencies based on if they have been seen before and by restriction
+# stores the original dep relation, comparing it with the most restrictive dep relation
+def dfsremove_if_seen(dep:tuple, dep_set:set, orig_dep_rel:str="chain", inco_dep_rel:str="or")->tuple:
     global asc_order_restr
-    # check if dependency is seen at the highest level
-    pos_orig_dep_rel:int = asc_order_restr.index(orig_dep_rel)
-    pos_inco_dep_rel:int = asc_order_restr.index(inco_dep_rel)
-    if check_dep_seen_or_encapsulated(dep, seen_hashed_dep_set, orig_dep_rel)\
-        and not (pos_orig_dep_rel // 2 == pos_inco_dep_rel // 2 and pos_inco_dep_rel < pos_orig_dep_rel):
-        return pos_orig_dep_rel // 2 == 0
-    # if not seen before
     if dep[0] == "single": return dep
-    pos_dep_rel:int = asc_order_restr.index(dep[0])
-    and_rel:bool = pos_dep_rel // 2 == 0 # True for "and", False for "or"
+    # compare the how restrictive the relations are
+    if asc_order_restr.index(dep[0]) < asc_order_restr.index(inco_dep_rel): inco_dep_rel = dep[0]
+    orig_less_restrictive_bool:bool = asc_order_restr.index(orig_dep_rel) > asc_order_restr.index(inco_dep_rel)
+    if orig_less_restrictive_bool: return dep
+    # remove the seen constraints
     dep_list_new = []
     for dep_part in dep[1]:
-        dep_part = dfsremove_if_unnecessary(dep_part, seen_hashed_dep_set, orig_dep_rel, dep[0])
-        # if dep_part is: bool (return a bool or remove), tuple (add into original list)
-        if isinstance(dep_part, bool) and not force_remove and and_rel != dep_part: return dep_part
-        elif isinstance(dep_part, tuple): dep_list_new.append(dep_part)
+        dep_part = dfsremove_if_seen(dep_part, dep_set, orig_dep_rel, inco_dep_rel)
+        if orig_less_restrictive_bool \
+            or not seen_more_restrictive_same_dep(hashable_dep(dep_part), dep_set):
+            dep_list_new.append(dep_part)
     return (dep[0], dep_list_new)
 
 # collapses dependencies if there is only one dependency left in the "and" or "or"
@@ -166,70 +139,26 @@ def dfscollapse_dep(dep:tuple)->tuple:
     return (dep[0], dep_list_new) if len(dep_list_new) > 1 else\
         dep_list_new[0] if len(dep_list_new) == 1 else None
 
-# prunes the dependency, nested "and" and "or", consider both True and False cases for simple constraints
+# prunes the dependency or process of redundant constraints
 def dfsprune_dep_pro(dep:tuple)->tuple:
     # base cases
     if not dep: return None
     elif dep[0] == "single": return dep
-    # returns a set of dependencies that may be removed from elsewhere in the wider dependency, mainly handling "chain" and "gate"
-    def dep_set_add_chaingate_ele(dep_part:tuple, dep_rel:str)->set:
-        # if the dependency is "single" no additional elements added
-        if dep_part[0] == "single": return set()
-        global asc_order_restr
-        # if the relation is not "chain" or "gate", no further actions required, else, add the "and" and "or" relation, respetively
-        pos_dep_part_rel = asc_order_restr.index(dep_part[0])
-        if not (pos_dep_part_rel % 2 == 0): return set()
-        dep_set = {hashable_dep((asc_order_restr[pos_dep_part_rel+1], dep_part[1]))}
-        # wider relation "chain" or "and" and "gate" or "or" matches "chain" and "gate" respectively
-        pos_dep_rel = asc_order_restr.index(dep_rel)
-        if pos_dep_part_rel // 2 == pos_dep_rel // 2:
-            for dep_part_part in dep_part[1]: dep_set.add(hashable_dep(dep_part_part))
-        return dep_set
-    # prune the parts of the dependency, remove redundant constraints, once for each direction
+    # prune the parts of the dependency, remove redundant constraints
     dep_list = []
-    seen_dep_set = set()
-    global asc_order_restr
+    dep_set = set()
     for dep_part in dep[1]:
-        # prune and hash to check for identical
         dep_part = dfsprune_dep_pro(dep_part)
         hashed_dep_part = hashable_dep(dep_part)
-        if not dep_part or hashed_dep_part in seen_dep_set: continue
+        if not dep_part or hashed_dep_part in dep_set: continue
         dep_list.append(dep_part)
-        # update the set
-        dep_part_set = {hashed_dep_part} | dep_set_add_chaingate_ele(dep_part, dep[0])
-        seen_dep_set |= dep_part_set
-    # remove identical dependencies in reverse
-    rev_dep_list = dep_list[::-1]
-    dep_list = []
-    seen_dep_set = set()
-    list_seen_dep_part_set = []
-    for dep_part in rev_dep_list:
-        # no None and already pruned
-        hashed_dep_part = hashable_dep(dep_part)
-        if hashed_dep_part in seen_dep_set: continue
-        dep_list.append(dep_part)
-        # update the set
-        dep_part_set = {hashed_dep_part} | dep_set_add_chaingate_ele(dep_part, dep[0])
-        seen_dep_set |= dep_part_set
-        list_seen_dep_part_set.append(dep_part_set)
-    dep_list = dep_list[::-1]
-    list_seen_dep_part_set = list_seen_dep_part_set[::-1]
-    # remove each part from the other parts depending on restrictiveness, 0 for forward and 1 for backward
-    for ind_trav_type in range(2):
-        ind_trav = range(len(dep_list)) if ind_trav_type == 0 else range(len(dep_list)-1, -1, -1)
-        for i in ind_trav:
-            # check for redundencies
-            seen_dep_set_oneless = seen_dep_set.copy()
-            seen_dep_set_oneless -= list_seen_dep_part_set[i]
-            dep_part_old = dep_list[i]
-            dep_list[i] = dfsremove_if_unnecessary(dep_list[i], seen_dep_set_oneless, dep[0], dep[0])
-            # if the dependency changed, update the overarching set of seen dependencies
-            if dep_part_old != dep_list[i]:
-                if isinstance(dep_list[i], bool): list_seen_dep_part_set[i] = dep_list[i]
-                else: list_seen_dep_part_set[i] = {hashable_dep(dep_list[i])} | dep_set_add_chaingate_ele(dep_list[i], dep[0])
-                seen_dep_set = set.union(*[list_seen_dep_part_set[i] for i in range(len(dep_list)) if not isinstance(dep_list[i], bool)])
-        dep_list = [ele for ele in dep_list if not isinstance(ele, bool)]
-        list_seen_dep_part_set = [ele for ele in list_seen_dep_part_set if not isinstance(ele, bool)]
+        dep_set.add(hashed_dep_part)
+    # remove each part from the other parts depending on restrictiveness
+    for i in range(len(dep_list)):
+        dep_set_oneless = dep_set.copy()
+        dep_set_oneless.remove(hashable_dep(dep_list[i]))
+        dep_list[i] = dfsremove_if_seen(dep_list[i], dep_set_oneless, dep[0], dep[0])
+    dep_list = [ele for ele in dep_list if ele]
     # collapse if there is only one dependency part left
     dep_new = dfscollapse_dep((dep[0], dep_list))
     # return the new dependency, prune again for unseen corner cases
@@ -302,9 +231,9 @@ def dfsins_constr_deps(dep:tuple, act_deps:dict, constr_deps:dict)->tuple:
 
 # gathers the default dependencies for each action
 def gather_action_default_dependencies(action_required_dependencies:dict, action_customizable_dependencies:dict,
-    constraint_dependencies:dict=None, default_dependency_option:str="required")->dict[str:tuple]:
+    constraint_dependencies:dict=None, default_constraint_option:str="required")->dict[str:tuple]:
     default_dep_full = copy.deepcopy(action_required_dependencies)
-    if default_dependency_option == "full":
+    if default_constraint_option == "full":
         for action in default_dep_full:
             action_cust_dep = copy.deepcopy(action_customizable_dependencies[action])
             if action_cust_dep and isinstance(action_cust_dep, list): action_cust_dep = ("and", action_cust_dep)
@@ -458,152 +387,150 @@ def dfsgather_actions_required(dep_perm:tuple, hashed_cl_funcs:set)->list:
 """gather the functional call graph"""
 
 # gathers all functions called later down the graph
-def dfsgather_setfunccall_dag(dir_act_graph:dict, ind:int, set_func_call:set=set())->set:
-    if not isinstance(dir_act_graph["nodes"][ind], str): return {dir_act_graph["nodes"][ind][0]}
-    dag_conns = set((ind1, ind2) for ind1 in range(len(dir_act_graph["connections"])) for ind2 in dir_act_graph["connections"][ind1])
-    for ind_from, ind_to in dag_conns:
+def dfsgather_setfunccall_ifg(inv_func_graph:dict, ind:int, set_func_call:set=set())->set:
+    if not isinstance(inv_func_graph["nodes"][ind], str): return {inv_func_graph["nodes"][ind][0]}
+    ifg_conns = set((ind1, ind2) for ind1 in range(len(inv_func_graph["connections"])) for ind2 in inv_func_graph["connections"][ind1])
+    for ind_from, ind_to in ifg_conns:
         if ind_from != ind or ind_to in set_func_call: continue
-        set_func_call |= dfsgather_setfunccall_dag(dir_act_graph, ind_to, set_func_call)
+        set_func_call |= dfsgather_setfunccall_ifg(inv_func_graph, ind_to, set_func_call)
     return set_func_call
 
 # updates the graph for a singular function call
-def update_dir_act_graph_single(dir_act_graph:dict, func_str:str, func_params:dict, link_to_prev_root:bool)->dict:
+def update_inv_func_graph_single(inv_func_graph:dict, func_str:str, func_params:dict, link_to_prev_root:bool)->dict:
     hashable_func = (func_str, dict_to_tuple(func_params))
-    if hashable_func in dir_act_graph["inv_nodes"]: return dir_act_graph
-    dir_act_graph["nodes"].append((func_str, func_params if func_params else {}))
-    dir_act_graph["connections"].append(set())
-    node_index = len(dir_act_graph["nodes"]) - 1
-    dir_act_graph["inv_nodes"][hashable_func] = node_index
-    if link_to_prev_root: dir_act_graph["connections"][node_index].add(dir_act_graph["root_ind"])
-    dir_act_graph["root_ind"] = node_index
-    return dir_act_graph
+    if hashable_func in inv_func_graph["inv_nodes"]: return inv_func_graph
+    inv_func_graph["nodes"].append((func_str, func_params if func_params else {}))
+    inv_func_graph["connections"].append(set())
+    node_index = len(inv_func_graph["nodes"]) - 1
+    inv_func_graph["inv_nodes"][hashable_func] = node_index
+    if link_to_prev_root: inv_func_graph["connections"][node_index].add(inv_func_graph["root_ind"])
+    inv_func_graph["root_ind"] = node_index
+    return inv_func_graph
 
-# updating the dir_act_graph with a part, connecting A nodes to B nodes
-def update_dir_act_graph(dir_act_graph:dict, dir_act_graph_part:dict)->dict:
+# updating the inv_func_graph with a part, connecting A nodes to B nodes
+def update_inv_func_graph(inv_func_graph:dict, inv_func_graph_part:dict)->dict:
     # hashes the node
     def hash_node(node:tuple|str): return (node[0], dict_to_tuple(node[1])) if not isinstance(node, str) else node
     # checks if two nodes are identical
-    def dfscheck_same_andornode(dir_act_graph:dict, dir_act_graph_part:dict, dag_node_ind:int, dagp_node_ind:int, seen_inds:list=[set(), set()])->bool:
+    def dfscheck_same_andornode(inv_func_graph:dict, inv_func_graph_part:dict, ifg_node_ind:int, ifgp_node_ind:int, seen_inds:list=[set(), set()])->bool:
         # updating seen indicies to not loop
         seen_inds = copy.deepcopy(seen_inds)
-        seen_inds[0].add(dag_node_ind)
-        seen_inds[1].add(dagp_node_ind)
+        seen_inds[0].add(ifg_node_ind)
+        seen_inds[1].add(ifgp_node_ind)
         # parsing the parameters
-        dag_nodes = dir_act_graph["nodes"]
-        dagp_nodes = dir_act_graph_part["nodes"]
-        dag_node = dag_nodes[dag_node_ind]
-        dagp_node = dagp_nodes[dagp_node_ind]
+        ifg_nodes = inv_func_graph["nodes"]
+        ifgp_nodes = inv_func_graph_part["nodes"]
+        ifg_node = ifg_nodes[ifg_node_ind]
+        ifgp_node = ifgp_nodes[ifgp_node_ind]
         # check for node type
-        if isinstance(dag_node, str) != isinstance(dagp_node, str): return False
+        if isinstance(ifg_node, str) != isinstance(ifgp_node, str): return False
         # check function nodes
-        if not isinstance(dag_node, str): return dag_node[0] == dagp_node[0] and dag_node[1] == dagp_node[1]
+        if not isinstance(ifg_node, str): return ifg_node[0] == ifgp_node[0] and ifg_node[1] == ifgp_node[1]
         # check both are "and" or "or", check their connections
-        if dag_node != dagp_node: return False
-        dag_node_conns = dir_act_graph["connections"][dag_node_ind]
-        dagp_node_conns = dir_act_graph_part["connections"][dagp_node_ind]
-        if len(dag_node_conns) != len(dagp_node_conns): return False
-        conn_pairs = set(itertools.product(dag_node_conns, dagp_node_conns))
-        dag_dagp_mapping = {}
-        for dag_conn, dagp_conn in conn_pairs:
-            if dag_conn in seen_inds[0] or dagp_conn in seen_inds[1]: continue
-            same_andornode = dfscheck_same_andornode(dir_act_graph, dir_act_graph_part, dag_conn, dagp_conn, seen_inds)
-            if dag_conn not in dag_dagp_mapping and same_andornode: dag_dagp_mapping[dag_conn] = dagp_conn
-        return dag_node_conns == set(dag_dagp_mapping.keys()) and dagp_node_conns == set(dag_dagp_mapping.values())
-    # returns the position of the dir_act_graph_part node in the dir_act_graph
-    def dag_pos_of_node(dir_act_graph:dict, dir_act_graph_part:dict, dagp_node_ind:int)->int:
-        dagp_node = dir_act_graph_part["nodes"][dagp_node_ind]
-        if not isinstance(dagp_node, str):
-            hashed_node = hash_node(dagp_node)
-            return dir_act_graph["inv_nodes"][hashed_node] if hashed_node in dir_act_graph["inv_nodes"] else -1
+        if ifg_node != ifgp_node: return False
+        ifg_node_conns = inv_func_graph["connections"][ifg_node_ind]
+        ifgp_node_conns = inv_func_graph_part["connections"][ifgp_node_ind]
+        if len(ifg_node_conns) != len(ifgp_node_conns): return False
+        conn_pairs = set(itertools.product(ifg_node_conns, ifgp_node_conns))
+        ifg_ifgp_mapping = {}
+        for ifg_conn, ifgp_conn in conn_pairs:
+            if ifg_conn in seen_inds[0] or ifgp_conn in seen_inds[1]: continue
+            same_andornode = dfscheck_same_andornode(inv_func_graph, inv_func_graph_part, ifg_conn, ifgp_conn, seen_inds)
+            if ifg_conn not in ifg_ifgp_mapping and same_andornode: ifg_ifgp_mapping[ifg_conn] = ifgp_conn
+        return ifg_node_conns == set(ifg_ifgp_mapping.keys()) and ifgp_node_conns == set(ifg_ifgp_mapping.values())
+    # returns the position of the inv_func_graph_part node in the inv_func_graph
+    def ifg_pos_of_node(inv_func_graph:dict, inv_func_graph_part:dict, ifgp_node_ind:int)->int:
+        ifgp_node = inv_func_graph_part["nodes"][ifgp_node_ind]
+        if not isinstance(ifgp_node, str):
+            hashed_node = hash_node(ifgp_node)
+            return inv_func_graph["inv_nodes"][hashed_node] if hashed_node in inv_func_graph["inv_nodes"] else -1
         else:
-            for i in range(len(dir_act_graph["nodes"])):
-                dag_node = dir_act_graph["nodes"][i]
-                if (isinstance(dag_node, str)
-                    and dfscheck_same_andornode(dir_act_graph, dir_act_graph_part, i, dagp_node_ind)):
+            for i in range(len(inv_func_graph["nodes"])):
+                ifg_node = inv_func_graph["nodes"][i]
+                if (isinstance(ifg_node, str)
+                    and dfscheck_same_andornode(inv_func_graph, inv_func_graph_part, i, ifgp_node_ind)):
                     return i
             return -1
-    # find the mapping of indicies from dir_act_graph_part to dir_act_graph, inserting nodes and inv_nodes
-    dagp_to_dag_mapping = []
-    for dagp_node_ind in range(len(dir_act_graph_part["nodes"])):
-        node = dir_act_graph_part["nodes"][dagp_node_ind]
-        dag_node_ind = dag_pos_of_node(dir_act_graph, dir_act_graph_part, dagp_node_ind)
-        if dag_node_ind >= 0: dagp_to_dag_mapping.append(dag_node_ind)
+    # find the mapping of indicies from inv_func_graph_part to inv_func_graph, inserting nodes and inv_nodes
+    ifgp_to_ifg_mapping = []
+    for ifgp_node_ind in range(len(inv_func_graph_part["nodes"])):
+        node = inv_func_graph_part["nodes"][ifgp_node_ind]
+        ifg_node_ind = ifg_pos_of_node(inv_func_graph, inv_func_graph_part, ifgp_node_ind)
+        if ifg_node_ind >= 0: ifgp_to_ifg_mapping.append(ifg_node_ind)
         else:
-            dir_act_graph["nodes"].append(node)
-            dir_act_graph["connections"].append(set())
-            if not isinstance(node, str): dir_act_graph["inv_nodes"][hash_node(node)] = len(dir_act_graph["nodes"]) - 1
-            dagp_to_dag_mapping.append(len(dir_act_graph["nodes"]) - 1)
+            inv_func_graph["nodes"].append(node)
+            inv_func_graph["connections"].append(set())
+            if not isinstance(node, str): inv_func_graph["inv_nodes"][hash_node(node)] = len(inv_func_graph["nodes"]) - 1
+            ifgp_to_ifg_mapping.append(len(inv_func_graph["nodes"]) - 1)
     # inserting the new connections
-    for ind_from in range(len(dir_act_graph_part["connections"])):
-        dir_act_graph["connections"][dagp_to_dag_mapping[ind_from]] |=\
-            set(dagp_to_dag_mapping[ind_dest] for ind_dest in dir_act_graph_part["connections"][ind_from])   
+    for ind_from in range(len(inv_func_graph_part["connections"])):
+        inv_func_graph["connections"][ifgp_to_ifg_mapping[ind_from]] |=\
+            set(ifgp_to_ifg_mapping[ind_dest] for ind_dest in inv_func_graph_part["connections"][ind_from])   
     # if the entire tree part is not seen before, connect it to the overarching node
     # else, set a new root node with a new overarching node (old overarching node guaranteed to be "and" or "or")
-    dag_to_dagp_mapping = [-1 for _ in range(len(dir_act_graph["nodes"]))] # will contain more or equal to the number of nodes dagp has
-    for i in range(len(dagp_to_dag_mapping)): dag_to_dagp_mapping[dagp_to_dag_mapping[i]] = i
-    if dag_to_dagp_mapping[dir_act_graph["root_ind"]] < 0:
-        dir_act_graph["connections"][dir_act_graph["root_ind"]].add(dagp_to_dag_mapping[dir_act_graph_part["root_ind"]])
+    ifg_to_ifgp_mapping = [-1 for _ in range(len(inv_func_graph["nodes"]))] # will contain more or equal to the number of nodes ifgp has
+    for i in range(len(ifgp_to_ifg_mapping)): ifg_to_ifgp_mapping[ifgp_to_ifg_mapping[i]] = i
+    if ifg_to_ifgp_mapping[inv_func_graph["root_ind"]] < 0:
+        inv_func_graph["connections"][inv_func_graph["root_ind"]].add(ifgp_to_ifg_mapping[inv_func_graph_part["root_ind"]])
     else:
-        prev_root_ind = dir_act_graph["root_ind"]
-        dir_act_graph["root_ind"] = dagp_to_dag_mapping[dir_act_graph_part["root_ind"]]
+        prev_node_back_ind = inv_func_graph["root_ind"]
+        inv_func_graph["root_ind"] = ifgp_to_ifg_mapping[inv_func_graph_part["root_ind"]]
         # new parent is not the same overarching node
-        if dir_act_graph["nodes"][prev_root_ind] != dir_act_graph["nodes"][dir_act_graph["root_ind"]]:
-            dir_act_graph["nodes"].append(dir_act_graph["nodes"][prev_root_ind]) # should be an immutable string
-            dir_act_graph["connections"].append({dir_act_graph["root_ind"]})
-            dir_act_graph["root_ind"] = len(dir_act_graph["nodes"]) - 1
-        # add the connection if it wasn't there before, duplicates will not be added to the set
-        if dir_act_graph["root_ind"] != prev_root_ind: dir_act_graph["connections"][dir_act_graph["root_ind"]].add(prev_root_ind)
+        if inv_func_graph["nodes"][prev_node_back_ind] != inv_func_graph["nodes"][inv_func_graph["root_ind"]]:
+            inv_func_graph["nodes"].append(inv_func_graph["nodes"][prev_node_back_ind]) # should be an immutable string
+            inv_func_graph["connections"].append({inv_func_graph["root_ind"]})
+            inv_func_graph["root_ind"] = len(inv_func_graph["nodes"]) - 1
     # returning the result
-    return dir_act_graph
+    return inv_func_graph
 
 # gathers the inverse function call graph represented by the process, constraint processes, and default dependency
-def dfsgather_dir_act_graph_process(pro:tuple, constr_links:dict, constr_pros:dict, act_def_deps:dict, action_parameters:dict,
+def dfsgather_inv_func_graph_process(pro:tuple, constr_links:dict, constr_pros:dict, act_def_deps:dict, action_parameters:dict,
     constr_str_seen:dict[str:dict[tuple:dict]]={}, prev_func_call:tuple=None):
-    dir_act_graph = {"nodes": [], "connections": [], "inv_nodes":{}, "root_ind": -1}
-    if not pro: return dir_act_graph
+    inv_func_graph = {"nodes": [], "connections": [], "inv_nodes":{}, "root_ind": -1}
+    if not pro: return inv_func_graph
     # singular action
     if pro[0] == "single":
         if act_def_deps[pro[1]]:
             action_dep = dfsplace_param_names(act_def_deps[pro[1]], pro[2])
             # action is guaranteed to be in action dependencies
-            dir_act_graph = dfsgather_dir_act_graph_dependency(action_dep, constr_links, constr_pros,
+            inv_func_graph = dfsgather_inv_func_graph_dependency(action_dep, constr_links, constr_pros,
                 act_def_deps, action_parameters, constr_str_seen)
         # chain the previous graph to this action if need be
-        dir_act_graph = update_dir_act_graph_single(dir_act_graph, pro[1], pro[2], bool(act_def_deps[pro[1]]))
-        return dir_act_graph
+        inv_func_graph = update_inv_func_graph_single(inv_func_graph, pro[1], pro[2], bool(act_def_deps[pro[1]]))
+        return inv_func_graph
     # "and" or "or"
-    dir_act_graph["nodes"].append(pro[0])
-    dir_act_graph["connections"].append(set())
-    dir_act_graph["root_ind"] = len(dir_act_graph["nodes"]) - 1 # guaranteed to be 0
+    inv_func_graph["nodes"].append(pro[0])
+    inv_func_graph["connections"].append(set())
+    inv_func_graph["root_ind"] = len(inv_func_graph["nodes"]) - 1 # guaranteed to be 0
     for pro_part in pro[1]:
-        dir_act_graph_part = dfsgather_dir_act_graph_process(pro_part, constr_links, constr_pros,
+        inv_func_graph_part = dfsgather_inv_func_graph_process(pro_part, constr_links, constr_pros,
             act_def_deps, action_parameters, constr_str_seen, prev_func_call)
-        if dir_act_graph_part["nodes"]: dir_act_graph = update_dir_act_graph(dir_act_graph, dir_act_graph_part)
-    return dir_act_graph
+        if inv_func_graph_part["nodes"]: inv_func_graph = update_inv_func_graph(inv_func_graph, inv_func_graph_part)
+    return inv_func_graph
 
 # helper function that returns the connections between functions, may have loops
 # processing actions in a chain, need actions from both ends
 # "nodes" with functions or "and" or "or", "connections" with index pairs, "inv_nodes" that link function calls with an index
 # connecting nodes backwards and forwards
-def dfsgather_dir_act_graph_dependency(dep_orig:tuple,
+def dfsgather_inv_func_graph_dependency(dep_orig:tuple,
     constr_links:dict, constr_pros:dict, action_default_deps_orig:dict, action_parameters:dict,
     constr_str_seen:dict[str:dict[tuple:dict]]={})->dict:
-    dir_act_graph = {"nodes": [], "connections": [], "inv_nodes":{}, "root_ind": -1}
+    inv_func_graph = {"nodes": [], "connections": [], "inv_nodes":{}, "root_ind": -1}
     # single case, constraints are guaranteed to be in constraint links or constraint processes
-    if not dep_orig: return dir_act_graph
+    if not dep_orig: return inv_func_graph
     elif dep_orig[0] == "single":
         constr_str = re.sub("not ", "", dep_orig[1])
         if constr_str in constr_links:
             action_name, action_params = get_cl_param_mapping((constr_str, dep_orig[2]), constr_links, action_parameters, constr_str_seen)
             action = ("single", action_name, action_params)
-            dir_act_graph = dfsgather_dir_act_graph_process(action, constr_links, constr_pros,
+            inv_func_graph = dfsgather_inv_func_graph_process(action, constr_links, constr_pros,
                 action_default_deps_orig, action_parameters, constr_str_seen)
         else:
             constr_pro = dfsplace_param_names(constr_pros[constr_str], dep_orig[2])
             action = ("single", dep_orig[1], dep_orig[2])
-            dir_act_graph = dfsgather_dir_act_graph_process(constr_pro, constr_links, constr_pros,
+            inv_func_graph = dfsgather_inv_func_graph_process(constr_pro, constr_links, constr_pros,
                 action_default_deps_orig, action_parameters, constr_str_seen, action)
-        return dir_act_graph
+        return inv_func_graph
     # initialize the multiple function call
     inds = None
     node_type = None
@@ -611,54 +538,53 @@ def dfsgather_dir_act_graph_dependency(dep_orig:tuple,
         case "and" | "or": node_type = dep_orig[0]
         case "chain" | "gate": node_type = "and" if dep_orig[0] == "chain" else "or"
         case _: raise InvalidConstraintOption(f"invalid dependency option selected: {dep_orig[0]}")
-    dir_act_graph["nodes"].append(node_type)
-    dir_act_graph["connections"].append(set())
-    dir_act_graph["root_ind"] = len(dir_act_graph["nodes"]) - 1 # should be 0
+    inv_func_graph["nodes"].append(node_type)
+    inv_func_graph["connections"].append(set())
+    inv_func_graph["root_ind"] = len(inv_func_graph["nodes"]) - 1 # should be 0
     inds = range(len(dep_orig[1]))
     # loop through all indicies
     for i in inds:
         dep_perm_part = dep_orig[1][i]
         # process the sub part
-        dir_act_graph_part = dfsgather_dir_act_graph_dependency(dep_perm_part, constr_links, constr_pros,
+        inv_func_graph_part = dfsgather_inv_func_graph_dependency(dep_perm_part, constr_links, constr_pros,
             action_default_deps_orig, action_parameters, constr_str_seen)
         # update the graph accordingly, connecting the functions accordingly, guaranteed to be "and" or "or"
-        if dir_act_graph_part["nodes"]: dir_act_graph = update_dir_act_graph(dir_act_graph, dir_act_graph_part)
+        if inv_func_graph_part["nodes"]: inv_func_graph = update_inv_func_graph(inv_func_graph, inv_func_graph_part)
     # removing a node if there is only one action in the "and" or "or", subtracting one from all indicies
-    root_old_ind = dir_act_graph["root_ind"]
-    if isinstance(dir_act_graph["nodes"][root_old_ind], str) and len(dir_act_graph["connections"][root_old_ind]) == 1:
+    root_ind = inv_func_graph["root_ind"]
+    if isinstance(inv_func_graph["nodes"][root_ind], str) and len(inv_func_graph["connections"][root_ind]) == 1:
         # update the new root
-        dir_act_graph["root_ind"] = list(dir_act_graph["connections"][root_old_ind])[0]
-        if dir_act_graph["root_ind"] > root_old_ind: dir_act_graph["root_ind"] -= 1
+        inv_func_graph["root_ind"] = list(inv_func_graph["connections"][root_ind])[0]
+        if inv_func_graph["root_ind"] > root_ind: inv_func_graph["root_ind"] -= 1
         # edit the node list
-        dir_act_graph["nodes"].pop(root_old_ind)
-        dag_conns = dir_act_graph["connections"]
-        dag_conns.pop(root_old_ind)
-        dir_act_graph["connections"] = [set(ind_dest-1 if ind_dest > root_old_ind else ind_dest for ind_dest in dag_conns[ind_sour]) for ind_sour in range(len(dag_conns))]
-        dir_act_graph["inv_nodes"] = {key: (dir_act_graph["inv_nodes"][key]-1) if dir_act_graph["inv_nodes"][key] > root_old_ind else dir_act_graph["inv_nodes"][key]
-            for key in dir_act_graph["inv_nodes"]
-            if dir_act_graph["inv_nodes"][key] != root_old_ind}
+        inv_func_graph["nodes"].pop(root_ind)
+        ifg_conns = inv_func_graph["connections"]
+        ifg_conns.pop(root_ind)
+        inv_func_graph["connections"] = [set(ind_dest-1 for ind_dest in ifg_conns[ind_sour] if ind_dest > root_ind) for ind_sour in range(len(ifg_conns))]
+        inv_func_graph["inv_nodes"] = {key: (inv_func_graph["inv_nodes"][key]-1) if inv_func_graph["inv_nodes"][key] > root_ind else inv_func_graph["inv_nodes"][key]
+            for key in inv_func_graph["inv_nodes"]
+            if inv_func_graph["inv_nodes"][key] != root_ind}
     # return the graph
-    return dir_act_graph
+    return inv_func_graph
 
 # dfs gathers the inverse function call directed graph, passed in dependency has the constraint links and dependencies inserted
-class InvalidGraphSelfLoop(Exception): pass
-def dfsgather_directedactiongraph(dep_orig:tuple,
+def dfsgather_invfunccalldirgraph(dep_orig:tuple,
     constr_links:dict, constr_pros:dict, action_default_deps_orig:dict, action_parameters:dict,
     action_user_goal:tuple)->dict[str:list]:
     # find the connections that make up the function call graph
-    connections = dfsgather_dir_act_graph_dependency(dep_orig, constr_links, constr_pros, action_default_deps_orig, action_parameters)
+    connections = dfsgather_inv_func_graph_dependency(dep_orig, constr_links, constr_pros, action_default_deps_orig, action_parameters)
     # adding the user_goal into the front
-    dir_act_graph = copy.deepcopy(connections)
-    if not dir_act_graph["nodes"] or action_user_goal[0] != dir_act_graph["nodes"][dir_act_graph["root_ind"]][0]:
-        dir_act_graph["nodes"].append(action_user_goal)
-        if dir_act_graph["root_ind"] >= 0: dir_act_graph["connections"].append({dir_act_graph["root_ind"]})
-        else: dir_act_graph["connections"].append(set())
-    del dir_act_graph["inv_nodes"]
-    del dir_act_graph["root_ind"]
+    inv_func_graph = copy.deepcopy(connections)
+    if not inv_func_graph["nodes"] or action_user_goal[0] != inv_func_graph["nodes"][inv_func_graph["root_ind"]][0]:
+        inv_func_graph["nodes"].append(action_user_goal)
+        if inv_func_graph["root_ind"] >= 0: inv_func_graph["connections"].append({inv_func_graph["root_ind"]})
+        else: inv_func_graph["connections"].append(set())
+    del inv_func_graph["inv_nodes"]
+    del inv_func_graph["root_ind"]
     # renumbering the indicies for better readability, prioritizing the longest distance from the start
-    dir_graph_branches = dir_act_graph["connections"]
-    renumber_mapping = [-1 for _ in range(len(dir_act_graph["nodes"]))]
-    queue_ind = deque([(len(dir_act_graph["nodes"])-1, 0)]) # insert right because stack
+    dir_graph_branches = inv_func_graph["connections"]
+    renumber_mapping = [-1 for _ in range(len(inv_func_graph["nodes"]))]
+    queue_ind = deque([(len(inv_func_graph["nodes"])-1, 0)]) # insert right because stack
     branches = [set()] # each path through the graph has a chain, tracks visited node indicies
     counter_dist = 0
     while queue_ind:
@@ -670,7 +596,7 @@ def dfsgather_directedactiongraph(dep_orig:tuple,
         neighbor_inds = []
         neighbors_andor_startpos = 0
         for neighbor_ind in dir_graph_branches[ind]:
-            if not isinstance(dir_act_graph["nodes"][neighbor_ind], str):
+            if not isinstance(inv_func_graph["nodes"][neighbor_ind], str):
                 neighbor_inds.insert(neighbors_andor_startpos, neighbor_ind)
                 neighbors_andor_startpos += 1
             else: neighbor_inds.append(neighbor_ind)
@@ -689,36 +615,33 @@ def dfsgather_directedactiongraph(dep_orig:tuple,
     mapping_old_to_new = [-1 for _ in range(len(mapping_new_to_old))]
     for i in range(len(mapping_new_to_old)): mapping_old_to_new[mapping_new_to_old[i]] = i
     # mapping from old indicies to new indicies
-    dag_old = dir_act_graph
-    dir_act_graph = {"nodes": [-1 for _ in range(len(dag_old["nodes"]))], "connections": [set() for _ in range(len(dag_old["nodes"]))]}
-    for old_ind in range(len(mapping_old_to_new)): dir_act_graph["nodes"][mapping_old_to_new[old_ind]] = dag_old["nodes"][old_ind]
-    for old_ind1 in range(len(dag_old["connections"])):
-        dir_act_graph["connections"][mapping_old_to_new[old_ind1]] =\
-            sorted(list(mapping_old_to_new[old_ind2] for old_ind2 in dag_old["connections"][old_ind1]))
+    ifg_old = inv_func_graph
+    inv_func_graph = {"nodes": [-1 for _ in range(len(ifg_old["nodes"]))], "connections": [set() for _ in range(len(ifg_old["nodes"]))]}
+    for old_ind in range(len(mapping_old_to_new)): inv_func_graph["nodes"][mapping_old_to_new[old_ind]] = ifg_old["nodes"][old_ind]
+    for old_ind1 in range(len(ifg_old["connections"])):
+        inv_func_graph["connections"][mapping_old_to_new[old_ind1]] =\
+            sorted(list(mapping_old_to_new[old_ind2] for old_ind2 in ifg_old["connections"][old_ind1]))
     # list of connections
-    dir_act_graph["connections"] = [(ind_sour, ind_dest)
-        for ind_sour in range(len(dir_act_graph["connections"]))
-        for ind_dest in dir_act_graph["connections"][ind_sour]]
-    # small sanity check: self loops
-    for ind_sour, ind_dest in dir_act_graph["connections"]:
-        if ind_sour == ind_dest: raise InvalidGraphSelfLoop("node self-loop detected in the inverse function call graph")
+    inv_func_graph["connections"] = [(ind_sour, ind_dest)
+        for ind_sour in range(len(inv_func_graph["connections"]))
+        for ind_dest in inv_func_graph["connections"][ind_sour]]
     # return the graph
-    return dir_act_graph
+    return inv_func_graph
 
 
 """functions that are not used for task_generation, but are highly relevant and are used elsewhere"""
 
 # gets the connections (position to multiple positions) and inverse nodes (function name to position)
-def get_dag_connections_invnodes(dir_act_graph:dict)->tuple[list[list],dict]:
-    dag_n = dir_act_graph["nodes"]
-    dag_c = dir_act_graph["connections"]
+def get_ifcg_connections_invnodes(directed_action_graph:dict)->tuple[list[list],dict]:
+    ifcg_n = directed_action_graph["nodes"]
+    ifcg_c = directed_action_graph["connections"]
     # put the connections into a 2D list
-    connections = [[] for _ in range(len(dag_n))]
-    for conn_from, conn_to in dag_c: connections[conn_from].append(conn_to)
+    connections = [[] for _ in range(len(ifcg_n))]
+    for conn_from, conn_to in ifcg_c: connections[conn_from].append(conn_to)
     # inverse nodes to quickly find certain functions
     inv_nodes = {}
-    for i in range(len(dag_n)):
-        node = dag_n[i]
+    for i in range(len(ifcg_n)):
+        node = ifcg_n[i]
         if isinstance(node, str): continue
         fname = node[0]
         if fname not in inv_nodes: inv_nodes[fname] = i
@@ -726,51 +649,19 @@ def get_dag_connections_invnodes(dir_act_graph:dict)->tuple[list[list],dict]:
     return connections, inv_nodes
 
 # gathers the inverse function call directed graph for a function of a domain, given that the action is a part of the domain
-def dfsgather_dag_func(domain_system, domain_assistant:dict, action:str, default_dependency_option:str)->tuple[list,list,dict]:
+def dfsgather_ifcdg_func(domain_system, domain_assistant:dict, action:str, default_constraint_option:str)->tuple[list,list,dict]:
     if action not in domain_assistant.action_descriptions: return None
     # variable loading
     ard = domain_assistant.action_required_dependencies
     acd = domain_assistant.action_customizable_dependencies
     cl = domain_assistant.constraint_links
     cp = domain_assistant.constraint_processes
-    action_default_dep_orig = gather_action_default_dependencies(ard, acd, default_dependency_option=default_dependency_option)
+    action_default_dep_orig = gather_action_default_dependencies(ard, acd, default_constraint_option=default_constraint_option)
     action_parameters = get_action_parameters(domain_system, domain_assistant)
     # process the graph
     dep_orig = action_default_dep_orig[action]
     user_goal_node = (action, {key: key for key in action_parameters[action]})
-    dir_act_graph = dfsgather_directedactiongraph(dep_orig, cl, cp, action_default_dep_orig, action_parameters, user_goal_node)
-    nodes = dir_act_graph["nodes"]
-    connections, inv_nodes = get_dag_connections_invnodes(dir_act_graph)
+    directed_action_graph = dfsgather_invfunccalldirgraph(dep_orig, cl, cp, action_default_dep_orig, action_parameters, user_goal_node)
+    nodes = directed_action_graph["nodes"]
+    connections, inv_nodes = get_ifcg_connections_invnodes(directed_action_graph)
     return nodes, connections, inv_nodes
-
-
-"""functions that are not originally in task_generation_helpers"""
-
-# base cases for fail: one is a value and one is an instance, parameter within a parameter, either could be None
-# recursive cases for fail: two instance formats differ, two of the same parameter formats differ
-def recur_data_consistency(d1, d2)->bool:
-    if not d1 or not d2 or not isinstance(d1, dict) and not isinstance(d2, dict):
-        return True # neither are instances (always dict)
-    res = True
-    d1_keys = d1.keys()
-    d2_keys = d2.keys()
-    for d1_key in d1_keys:
-        # keys are the different: d1 and d2 are parameters
-        if d1_keys != d2_keys:
-            for d2_key in d2_keys:
-                if ((isinstance(d1[d1_key], dict) and isinstance(d2[d2_key], dict) and d1[d1_key].keys() != d2[d2_key].keys())
-                    or (isinstance(d1[d1_key], dict) or isinstance(d2[d2_key], dict)) and type(d1[d1_key]) != type(d2[d2_key])):
-                    return False # parameter within a parameter case
-                res = res and recur_data_consistency(d1[d1_key], d2[d2_key])
-        # keys are the same: d1 and d2 are instances
-        else:
-            if (isinstance(d1[d1_key], dict) or isinstance(d2[d1_key], dict)) and type(d1[d1_key]) != type(d2[d1_key]):
-                return True # instances could have parameters with different types dict and str
-            res = res and recur_data_consistency(d1[d1_key], d2[d1_key])
-    return res
-
-# writes to a file
-import os
-def write_data_file(data_dir:str, document_name:str, data:str, option:str='w'):
-    with open(os.path.join(data_dir, document_name), option, encoding='utf-8', errors='ignore') as f:
-        f.write(data)
