@@ -274,7 +274,6 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
         func_response = func_calls[i]["content"]
         status_id, gt_response = gt_responses[i]
         func_resp_equal = dfsconvert_tuple_to_list(func_response) == dfsconvert_tuple_to_list(gt_response) if status_id == 0 else True
-        
         if evaluation_result["constraint_not_violated"] and not func_resp_equal:
             evaluation_result["constraint_not_violated"] = False
     evaluation_result["database_match"] = results["final_database"] == gt_final_database
