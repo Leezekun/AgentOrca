@@ -20,7 +20,7 @@ conda activate agent
 pip install -r requirements.txt
 ```
 
-## Usage
+## Preparation
 
 ### Add your API keys
 
@@ -37,7 +37,9 @@ FIREWORKS_API_KEY=your_fireworks_api_key
 
 Change your project directory in `swarm/constants.py`. Set `PROJ_DIR` to your project directory.
 
-## Parameters
+## Usage
+
+### Key Parameters
 
 Key command line arguments:
 
@@ -47,6 +49,16 @@ Key command line arguments:
 - `--env_mode`: Environment mode (prompt mode without code constraint checking or program model with code constraint checking)
 - `--tool_list`: Tool list that the assistant model can use (`full` for all the tools or `test` for only the oracle used tools in each case)
 - `--tool_call_mode`: Tool call mode for the assistant model (fc/react/act-only)
+
+### Run the generation (optional)
+
+We have provided the generated data in the `data` folder. But you can also run the generation using the following command. The generation of each task using GPT-4o is around 0.15 USD.
+
+```bash
+python run_generation.py \
+--domain [domain] \ # domain name
+--assistant_model [assistant_model] \ # assistant model name
+```
 
 ### Run the simulation
 
@@ -89,6 +101,7 @@ AgentOrca/
 ├── env/ # Environment for different domains
 │ ├── dependencies.py # Core program code for constraint checking
 │ ├── helpers.py # Helper functions for environment
+│ ├── generation.py # Task generation functionality
 │ └── domains/ # Domain implementations for environment
 │     ├── bank/ # Bank environment implementation
 │     ├── online_market/ # Online market environment implementation
@@ -105,6 +118,9 @@ AgentOrca/
 │ ├── simulation/ # Scripts for simulation
 │ └── evaluation.sh # Script for evaluation
 └── output/ # Output directory for simulation and evaluation results
+├── run_generation.py # Script for generating tasks
+├── run_simulation.py # Script for running simulations
+├── run_evaluation.py # Script for running evaluations
 ```
 
 ## Key Features
