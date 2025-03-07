@@ -52,7 +52,7 @@ Key command line arguments:
 
 ### Run the generation (optional)
 
-We have provided pre-generated data in the `data` folder. However, you can generate new data using the following command. Note that generating each task using GPT-4o costs approximately $0.15 USD.
+We have provided pre-generated data in the `data` folder. However, you can generate new data using the following command. Note that generating each task using GPT-4o costs approximately $0.015 USD.
 
 ```bash
 python run_generation.py
