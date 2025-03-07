@@ -997,8 +997,10 @@ def task_generation(args):
     # parsing output variables
     tasks_filename = f"{args.domain_str}_tasks.json"
     intermediate_tasks_filename = f"{args.domain_str}_intermediate_tasks.json"
+    # Initialize complete data structures
+    all_tasks = {}
+    all_intermediate_tasks = {}
     # for each method, construct the outcomes, decision tree, then the task with user known parameters, initial database, and user goal
-    tasks, intermediate_tasks = {}, {}
     temperature = args.temperature
     max_completion_tokens = args.max_tokens
     all_generated_dependencies = set()
@@ -1033,8 +1035,8 @@ def task_generation(args):
         else: all_generated_dependencies = all_generated_dependencies | generated_dependences
         all_run_usage.extend(run_usage)
         # gather the data
-        tasks[user_goal] = []
-        intermediate_tasks[user_goal] = []
+        tasks = {}
+        intermediate_tasks = {}
         for i in range(len(list_task_obj)):
             task_obj = list_task_obj[i]
             task = {
@@ -1043,23 +1045,30 @@ def task_generation(args):
                 "user_known": json.loads(task_obj.user_known_str),
             }
             task.update(list_task_info[i])
-            tasks[user_goal].append(task)
-            intermediate_tasks[user_goal].append(list_inter_info[i])
+            tasks[user_goal] = task
+            intermediate_tasks[user_goal] = list_inter_info[i]
         if manfix_counter > 0: manfix_counters[user_goal] = manfix_counter
-        # write partial just in case
-        if write_output_bool:
-            dict_key_str = f",\n\"{user_goal}\": " if not first_bool else f"{{\n\"{user_goal}\": "
-            write_data_file(args.data_dir, tasks_filename,
-                dict_key_str+json.dumps(tasks[user_goal], indent=args.indent_amount), option="a" if not first_bool else 'w')
-            write_data_file(args.data_dir, intermediate_tasks_filename,
-                dict_key_str+json.dumps(intermediate_tasks[user_goal], indent=args.indent_amount), option="a" if not first_bool else 'w')
-            first_bool = False
+        # Add the processed data to our complete structures
+        if list_task_obj:
+            all_tasks[user_goal] = tasks[user_goal]
+            all_intermediate_tasks[user_goal] = intermediate_tasks[user_goal]
+            
+            # Optionally write the complete data after each user_goal for safety
+            if write_output_bool:
+                write_data_file(args.data_dir, tasks_filename, 
+                    json.dumps(all_tasks, indent=args.indent_amount), option='w')
+                write_data_file(args.data_dir, intermediate_tasks_filename,
+                    json.dumps(all_intermediate_tasks, indent=args.indent_amount), option='w')
+        
         # update the progress bar
         pbar.update(int(len(list_task_obj)))
     pbar.close()
+    # Final write of the complete data
     if write_output_bool:
-        write_data_file(args.data_dir, tasks_filename, "\n}", option="a")
-        write_data_file(args.data_dir, intermediate_tasks_filename, "\n}", option="a")
+        write_data_file(args.data_dir, tasks_filename, 
+            json.dumps(all_tasks, indent=args.indent_amount), option='w')
+        write_data_file(args.data_dir, intermediate_tasks_filename,
+            json.dumps(all_intermediate_tasks, indent=args.indent_amount), option='w')
     # print diagnostic information
     if print_pipeline:
         skipped_methods_report_str = f"methods skipped due to error: {skipped_methods}" if skipped_methods else "no methods skipped"
