@@ -55,9 +55,7 @@ Key command line arguments:
 We have provided the generated data in the `data` folder. But you can also run the generation using the following command. The generation of each task using GPT-4o is around 0.15 USD.
 
 ```bash
-python run_generation.py \
---domain [domain] \ # domain name
---assistant_model [assistant_model] \ # assistant model name
+python run_generation.py
 ```
 
 ### Run the simulation
