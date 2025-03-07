@@ -3,7 +3,7 @@ import copy
 import json
 from collections import defaultdict
 from typing import List, Callable, Union, Any, Optional
-
+from colorama import Fore, Style
 # Package/library imports
 from openai import OpenAI
 
@@ -36,6 +36,12 @@ class Swarm:
         debug: bool=False,
     ) -> ChatCompletionMessage:
 
+        # Add color printing for input()
+        if agent.name == "human":
+            huamn_input = input(f"{Fore.CYAN}[Human] {Style.RESET_ALL}")
+            return construct_chatcompletion(role=agent.name, 
+                                            content=huamn_input)
+        
         # use default response if there is one provided and no client is provided
         if agent.default_response and agent.response_repeat:
             return construct_chatcompletion(role=agent.name, 
@@ -62,7 +68,7 @@ class Swarm:
                 raise ValueError(f"Invalid function type: {type(f)}")
 
         messages = [{"role": "system", "content": agent.instructions}] + history
-        debug_print(debug, "Getting chat completion for...:", messages)
+        debug_print(debug, "Getting chat completion for input:", messages)
 
         create_params = {
             "messages": messages,

@@ -4,7 +4,7 @@ models=("gpt-4o" "claude-3-5-sonnet-20241022" "gemini-2.0-flash-001" "gpt-4o-min
         "qwen2.5-72b-instruct" "gemini-2.0-flash-thinking-exp" "llama3.1-70b-instruct" 
         "deepseek-r1" "o1")
 domains=("healthcare" "dmv" "library" "online_market" "bank")
-tool_lists=("full" "test")
+tool_lists=("full" "oracle")
 tool_call_modes=("fc" "react" "act-only")
 
 model="claude-3-5-sonnet-20241022"

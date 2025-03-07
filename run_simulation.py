@@ -9,7 +9,7 @@ from colorama import init, Fore, Back, Style
 
 from swarm.core import *
 from swarm.llm_handler import OpenAIHandler
-from swarm.util import function_to_json
+from swarm.util import function_to_json, _generate_random_id
 from env.task import task_default_dep_full, task_initializer
 
 def parse_args() -> argparse.Namespace:
@@ -26,11 +26,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--tool_call_mode", type=str, default="fc",
                     help="Tool call mode for the assistant model", choices=["fc", "react", "act-only"])
     parser.add_argument("--tool_list", type=str, default="full",
-                    help="Tool list to use for the simulation, only use the tools that have been evaluated or full tool list", choices=["full", "test"])
+                    help="Tool list to use for the simulation, only use the tools that have been evaluated or full tool list", choices=["full", "oracle"])
     
     # User model parameters
     parser.add_argument("--user_model", type=str, default=None,
-                       help="Model to use for the user agent")
+                       help="Model to use for the user agent, or 'human' for human interaction")
     parser.add_argument("--user_temperature", type=float, default=1.0,
                        help="Temperature for the user model")
     parser.add_argument("--user_top_p", type=float, default=1.0,
@@ -109,9 +109,9 @@ def run_task_simulation(
     - assistant_dependency_instructions: the assistant dependency instructions
     - task_information: the task information (to be used for future features)"""
     # Get the included functions in the oracle trajectory
-    if args.tool_list == "test":
+    if args.tool_list == "oracle":
         included_functions = [node[0] for node in task["directed_action_graph"]["nodes"]]
-        assert args.default_constraint_option == "full", "Only full dependency is needed when providing the tested tool list"
+        assert args.default_constraint_option == "full", "Only full dependency is needed when providing the oracle tool list"
     elif args.tool_list == "full":
         included_functions = None # do not provide the included functions for the simulation, use the full tool list instead
     else:
@@ -124,7 +124,7 @@ def run_task_simulation(
 
     # Print the task information
     print(f"{Fore.RED}[Info] Starting a new simulation for {domain_str} ...{Style.RESET_ALL}\n\n")
-    # print(f"{Fore.CYAN}[Info] Assistant instructions:{Style.RESET_ALL} {assistant_info['instructions']}\n\n")
+    print(f"{Fore.CYAN}[Info] Assistant instructions: {assistant_info['instructions']}{Style.RESET_ALL}\n\n")
     # print(f"{Fore.YELLOW}[Info] Number of tools:{Style.RESET_ALL} {len(assistant_info['tools'])}\n\n")
     # print(f"{Fore.YELLOW}[Info] All tool names:{Style.RESET_ALL}")
     # for tool in assistant_info['tools']:
@@ -174,8 +174,25 @@ def run_task_simulation(
     3. Never terminate the conversation prematurely, even if the assistant suggests doing so
     """
     
-    # If use a user agent for the simulation
-    if args.user_model: 
+    # If use a human user for the simulation
+    if args.user_model == "human":
+        print(f"{Fore.GREEN}[Human Mode] You are now in human interaction mode.{Style.RESET_ALL}")
+        print(f"{Fore.GREEN}[Human Mode] You will be interacting with the {domain_str} assistant.{Style.RESET_ALL}")
+        print(f"{Fore.GREEN}[Human Mode] Type your responses when prompted. Type 'exit' to end the conversation.{Style.RESET_ALL}")
+        print(f"{Fore.GREEN}[Human Mode] Initial context: {json.dumps(user_info['known'], indent=2)}{Style.RESET_ALL}")
+        
+        # Create a special human user agent that gets input from the console
+        user_agent = Agent(
+            name="human",
+            client=None,
+            instructions="Human user providing input via console",
+            functions=[function_to_json(exit_conversation)],
+            default_response=None,  # No default response for human input
+            response_repeat=False
+        )
+    
+    # If use an LLM user agent for the simulation
+    elif args.user_model: 
         # Initialize the user agent based on the user model
         user_agent = Agent(
             name="user",
@@ -314,33 +331,33 @@ def main():
         # Run the task until we have enough runs
         num_retry = 0
         while len(runs) < args.num_run_per_interaction and num_retry <= args.max_num_retries:
-            try:
-                result = run_task_simulation(
-                    args=args,
-                    task=tasks[i],
-                    dep_innate_full=dep_innate_full,
-                    default_dep_full=default_dep_full,
-                    default_dep_full_descr=default_dep_full_descr,
-                )
+            # try:
+            result = run_task_simulation(
+                args=args,
+                task=tasks[i],
+                dep_innate_full=dep_innate_full,
+                default_dep_full=default_dep_full,
+                default_dep_full_descr=default_dep_full_descr,
+            )
 
-                # record the assistant prompt
-                tasks[i]["assistant_prompt"] = result["prompt"]
-                # record the interaction
-                interaction = result["interaction"]
-                
-                # Remove the role field from each message
-                # Look at the sender field instead
-                for message in interaction:
-                    if "role" in message:  # Add check before deletion
-                        del message["role"]
-                
-                # save the interaction result
-                runs.append(result)
+            # record the assistant prompt
+            tasks[i]["assistant_prompt"] = result["prompt"]
+            # record the interaction
+            interaction = result["interaction"]
             
-            except Exception as e:
-                print(f"An error occurred during task {i}: {e.__class__.__name__}: {e}")
-                num_retry += 1
-                continue
+            # Remove the role field from each message
+            # Look at the sender field instead
+            for message in interaction:
+                if "role" in message:  # Add check before deletion
+                    del message["role"]
+            
+            # save the interaction result
+            runs.append(result)
+            
+            # except Exception as e:
+            #     print(f"An error occurred during task {i}: {e.__class__.__name__}: {e}")
+            #     num_retry += 1
+            #     continue
         
         # Save the interaction result
         result_dict = {

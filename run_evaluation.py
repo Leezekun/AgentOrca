@@ -25,8 +25,8 @@ def parse_args() -> argparse.Namespace:
     # Evaluation settings
     parser.add_argument("--tool_call_mode", type=str, default="fc",
                        help="Tool call mode for the assistant model", choices=["fc", "act-only", "react"])
-    parser.add_argument("--tool_list", type=str, default="test",
-                        choices=["full", "test"], help="Tool list to use for the simulation, only use the tools that have been evaluated or full tool list")
+    parser.add_argument("--tool_list", type=str, default="oracle",
+                        choices=["full", "oracle"], help="Tool list to use for the simulation, only use the tools that have been evaluated or full tool list")
     parser.add_argument("--shuffle_func", action="store_true",
                        help="Whether to shuffle assistant functions")
     parser.add_argument("--default_constraint_option", type=str, default="full",

@@ -44,15 +44,15 @@ Change your project directory in `swarm/constants.py`. Set `PROJ_DIR` to your pr
 Key command line arguments:
 
 - `--domain`: Test domain (bank/online_market/dmv/healthcare/library)
-- `--user_model`: Model for user agent (defaults to None; only used when simulating adversarial user behavior)
+- `--user_model`: Model for user agent (defaults to None; set to a model name to simulate adversarial user behavior, or "human" for interactive mode)
 - `--assistant_model`: Model for assistant agent (the tested model)
 - `--env_mode`: Environment mode (prompt mode without code constraint checking or program model with code constraint checking)
-- `--tool_list`: Tool list that the assistant model can use (`full` for all the tools or `test` for only the oracle used tools in each case)
+- `--tool_list`: Tool list that the assistant model can use (`full` for all the tools or `oracle` for only the oracle used tools in each case)
 - `--tool_call_mode`: Tool call mode for the assistant model (fc/react/act-only)
 
 ### Run the generation (optional)
 
-We have provided the generated data in the `data` folder. But you can also run the generation using the following command. The generation of each task using GPT-4o is around 0.15 USD.
+We have provided pre-generated data in the `data` folder. However, you can generate new data using the following command. Note that generating each task using GPT-4o costs approximately $0.15 USD.
 
 ```bash
 python run_generation.py
@@ -120,21 +120,3 @@ AgentOrca/
 ├── run_simulation.py # Script for running simulations
 ├── run_evaluation.py # Script for running evaluations
 ```
-
-## Key Features
-
-### Multiple LLM Support
-
-- OpenAI GPT models
-- Anthropic Claude models
-- Google Gemini models
-- Fireworks for Open-source models
-- Open-source models using vLLM
-
-### Domain Testing
-
-- Bank: Banking operations and account management
-- Library: Book borrowing and library management
-- Online marketplace: E-commerce shopping and order management
-- DMV: Vehicle registration and licensing
-- Healthcare: Health insurance and medical appointments
