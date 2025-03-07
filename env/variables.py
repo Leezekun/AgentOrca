@@ -14,20 +14,20 @@ domain_assistant_keys = {
     "library": library_assistant,
 }
 
-from env.domains.bank.bank import Bank, Bank_Dynamic_Dependencies
-from env.domains.dmv.dmv import DMV, DMV_Dynamic_Dependencies
-from env.domains.healthcare.healthcare import Healthcare, Healthcare_Dynamic_Dependencies
-from env.domains.online_market.online_market import OnlineMarket, OnlineMarket_Dynamic_Dependencies
-from env.domains.library.library import Library, Library_Dynamic_Dependencies
+from env.domains.bank.bank import Bank, Bank_w_Dependency_Verifier
+from env.domains.dmv.dmv import DMV, DMV_w_Dependency_Verifier
+from env.domains.healthcare.healthcare import Healthcare, Healthcare_w_Dependency_Verifier
+from env.domains.online_market.online_market import OnlineMarket, OnlineMarket_w_Dependency_Verifier
+from env.domains.library.library import Library, Library_w_Dependency_Verifier
 domain_keys = {
     "bank": Bank,
-    "bank_strict": Bank_Dynamic_Dependencies,
+    "bank_strict": Bank_w_Dependency_Verifier,
     "dmv": DMV,
-    "dmv_strict": DMV_Dynamic_Dependencies,
+    "dmv_strict": DMV_w_Dependency_Verifier,
     "healthcare": Healthcare,
-    "healthcare_strict": Healthcare_Dynamic_Dependencies,
+    "healthcare_strict": Healthcare_w_Dependency_Verifier,
     "library": Library,
-    "library_strict": Library_Dynamic_Dependencies,
+    "library_strict": Library_w_Dependency_Verifier,
     "online_market": OnlineMarket,
-    "online_market_strict": OnlineMarket_Dynamic_Dependencies,
+    "online_market_strict": OnlineMarket_w_Dependency_Verifier,
 }

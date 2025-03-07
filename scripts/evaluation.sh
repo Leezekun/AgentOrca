@@ -7,17 +7,14 @@ domains=("healthcare" "dmv" "library" "online_market" "bank")
 tool_lists=("full" "test")
 tool_call_modes=("fc" "react" "act-only")
 
+model="claude-3-5-sonnet-20241022"
+domain="dmv"
+tool_list="full"
+tool_call_mode="fc"
+
 # Default settings
-for domain in "${domains[@]}"; do
-    for tool_list in "${tool_lists[@]}"; do
-        for tool_call_mode in "${tool_call_modes[@]}"; do
-            for model in "${models[@]}"; do
-            CUDA_VISIBLE_DEVICES=$devices python run_evaluation.py \
-                        --domain $domain \
-                        --assistant_model $model \
-                        --tool_list $tool_list \
-                        --tool_call_mode $tool_call_mode
-            done
-        done
-    done
-done
+CUDA_VISIBLE_DEVICES=$devices python run_evaluation.py \
+            --domain $domain \
+            --assistant_model $model \
+            --tool_list $tool_list \
+            --tool_call_mode $tool_call_mode

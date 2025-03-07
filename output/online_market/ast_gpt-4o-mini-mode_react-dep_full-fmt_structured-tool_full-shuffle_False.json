@@ -163,7 +163,7 @@
         }
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a product identified by its unique product ID, providing a rating and an optional comment, while using your username and password to authenticate your account.",
+      "user_instruction": "You are trying to submit a review for a product identified by its unique product ID, providing a rating and an optional comment, while using your username and password to authenticate your account.",
       "user_prompt": "Hello! I would like to submit a review for a product. The product ID is \"Headphones\". My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". I'll be giving a rating of \"4\" for the product, and my comment is \"Great sound quality and comfortable to wear.\" Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -359,7 +359,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a product identified by its unique product ID, including your username and password for authentication, a numerical rating to reflect your opinion, and an optional comment to provide additional feedback, aiming to update the product's average rating successfully.",
+      "user_instruction": "You are trying to submit a review for a product identified by its unique product ID, including your username and password for authentication, a numerical rating to reflect your opinion, and an optional comment to provide additional feedback, aiming to update the product's average rating successfully.",
       "user_prompt": "Hi! I'd like to submit a review for a product. Here are the details:\n\n- **Product ID:** Smartphone\n- **Username:** alice\n- **Password:** sadfnjskdanfksadjnfl\n- **Rating:** 4\n- **Comment:** Great sound quality and comfort.\n\nCould you please update the product's average rating with this information? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -561,7 +561,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product_id, including your username, a numerical rating, and an optional comment, in order to update the product's average rating and determine if the review submission is successful.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product_id, including your username, a numerical rating, and an optional comment, in order to update the product's average rating and determine if the review submission is successful.",
       "user_prompt": "Hello! I'd like to submit a review for a product. The product_id is \"Mouse\". My username is \"bob\", and I'd like to give it a rating of \"4\". My comment for the review is \"Great mouse for everyday use.\". Please let me know if the submission is successful and how it impacts the product's average rating. Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -757,7 +757,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to submit a review for a specific product identified by its product ID, including a quality rating and an optional comment, using your username and password to authenticate your account.",
+      "user_instruction": "You are attempting to submit a review for a specific product identified by its product ID, including a quality rating and an optional comment, using your username and password to authenticate your account.",
       "user_prompt": "Hi! I would like to submit a review for a product. The product ID is \"Headphones\". My username is \"alice\" and my password is \"abvddfgkd\". I would like to give it a rating of \"4\" and the comment \"Great sound quality!\". Can you help me with that?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -977,7 +977,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by the product_id, including a rating and an optional comment, using your username and password to authenticate your action.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by the product_id, including a rating and an optional comment, using your username and password to authenticate your action.",
       "user_prompt": "Hi! I'd like to submit a review for a product. My username is \"alice\" and my password is \"securepassword123\". The product_id I'm reviewing is \"Headphones\". I want to give it a rating of \"4\" and my comment is \"Great sound quality and comfortable fit.\" Could you help me with this?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -1197,7 +1197,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to submit a review for a product identified by its product ID, providing a rating and an optional comment, while using your username and password to authenticate the action.",
+      "user_instruction": "You are attempting to submit a review for a product identified by its product ID, providing a rating and an optional comment, while using your username and password to authenticate the action.",
       "user_prompt": "Hi! I'd like to submit a review for a product. My username is \"alice\" and my password is \"correct_password\". The product ID is \"Headphones\". I'm giving it a rating of \"6\" and my comment is \"Great sound quality!\". Can you help me with that?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -1450,7 +1450,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its unique product ID, using your username and password for authentication, by providing a rating and an optional comment, to update the product's average rating and determine if the review submission is successful.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its unique product ID, using your username and password for authentication, by providing a rating and an optional comment, to update the product's average rating and determine if the review submission is successful.",
       "user_prompt": "Hi! I'd like to submit a review for a product, please. The product I'm reviewing is identified by the product ID \"Smartphone\". I'd like to submit the review using my username \"alice\" and password \"sadfnjskdanfksadjnfl\" for authentication. I'd like to give it a rating of \"4\" and include the comment \"Great features and easy to use!\". Can you help me confirm if the review submission is successful and if it updates the product's average rating?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -1730,7 +1730,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a product identified by its unique product ID, including a quality rating and an optional comment, using your username and password to authenticate your account.",
+      "user_instruction": "You are trying to submit a review for a product identified by its unique product ID, including a quality rating and an optional comment, using your username and password to authenticate your account.",
       "user_prompt": "Hello! I'd like to submit a review for a product. The product ID is \"Headphones.\" I'll provide a rating of 4. My comment is \"Great value for the price.\" My username is \"alice,\" and my password is \"securepassword123\" for authentication. Could you please process this review? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -1992,7 +1992,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a product identified by its unique product_id, providing a rating and an optional comment, using your username and password to authenticate your account.",
+      "user_instruction": "You are trying to submit a review for a product identified by its unique product_id, providing a rating and an optional comment, using your username and password to authenticate your account.",
       "user_prompt": "Hello! I'd like to submit a review for a product. Here are my details:\n- Product ID: Headphones\n- Username: alice\n- Password: securepassword123\n- Rating: 4\n- Comment: Great sound quality!\n\nCould you help me with that, please?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -2265,7 +2265,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its unique product ID, providing a quality rating and an optional comment, using your username and password to update the product's average rating and determine if the review submission is successful.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its unique product ID, providing a quality rating and an optional comment, using your username and password to update the product's average rating and determine if the review submission is successful.",
       "user_prompt": "I'd like to submit a review for a specific product. Here's the information for my review:\n- Product ID: Smartphone\n- Rating: 5\n- Comment: Great smartphone with excellent features.\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n\nCan you help me submit this review and update the product's average rating? Also, let me know if the review submission is successful. Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -2529,7 +2529,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a specific product, identified by its unique product ID, by providing a numerical rating and an optional comment, using your username and password to authenticate your action.",
+      "user_instruction": "You are trying to submit a review for a specific product, identified by its unique product ID, by providing a numerical rating and an optional comment, using your username and password to authenticate your action.",
       "user_prompt": "Hello! I'd like to submit a review for a product. The product ID is \"Headphones\". I'm giving it a rating of \"4\". My comment for the review is \"Great sound quality and comfort.\". My username is \"alice\", and I'll be authenticating this action with my password, which is \"sadfnjskdanfksadjnfl\". Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -2789,7 +2789,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You aim to submit a review for a specific product identified by its product_id, including a rating and an optional comment, using your username and password for authentication.",
+      "user_instruction": "You aim to submit a review for a specific product identified by its product_id, including a rating and an optional comment, using your username and password for authentication.",
       "user_prompt": "Hello! I'd like to submit a review for a product. The product_id is \"Headphones\", and I'd like to give it a rating of \"4\". My comment for the review is \"Great sound quality and comfortable to wear.\" My username is \"alice\", and my password for authentication is \"sadfnjskdanfksadjnfl\". Can you help me with that?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -3096,7 +3096,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to submit a review for a product identified by its unique product ID, including a rating from 1 to 5 and an optional comment, by using your username and password to authenticate the action.",
+      "user_instruction": "You are attempting to submit a review for a product identified by its unique product ID, including a rating from 1 to 5 and an optional comment, by using your username and password to authenticate the action.",
       "user_prompt": "Hello! I would like to submit a review for a product I've recently purchased. Here's the information you'll need:\n\n- Username: bob\n- Password: securepassword123\n- Product ID: Headphones\n- Rating: 4\n- Comment: Great sound quality and comfortable to wear.\n\nCould you please assist me with this? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -3384,7 +3384,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product_id, including a rating and an optional comment, using your username and password to authenticate the action, with the aim of updating the product's average rating and determining if the review submission is successful.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product_id, including a rating and an optional comment, using your username and password to authenticate the action, with the aim of updating the product's average rating and determining if the review submission is successful.",
       "user_prompt": "Hi! I'd like to submit a review for a product. \n\nHere's the information for submission:\n- Product ID: Headphones\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Rating: 6 \n- Comment: Great sound quality!\n\nI'd like to know if this review submission is successful and if it updates the product's average rating. Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -3678,7 +3678,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You aim to submit a review for a specific product by providing a rating and an optional comment, using your username and password for authentication, and the product's unique identifier to ensure the review is correctly attributed.",
+      "user_instruction": "You aim to submit a review for a specific product by providing a rating and an optional comment, using your username and password for authentication, and the product's unique identifier to ensure the review is correctly attributed.",
       "user_prompt": "Hello! I'd like to submit a review for a product. Here are the details:  \n- Username: alice  \n- Password: securepassword123  \n- Product ID: Headphones  \n- Rating: 5  \n- Comment: Amazing clarity and comfort.  \n\nCould you please help me submit this review? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -3954,7 +3954,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a product identified by its unique product ID, providing a rating and an optional comment, using your username and password to authenticate the action, with the aim of updating the product's average rating.",
+      "user_instruction": "You are trying to submit a review for a product identified by its unique product ID, providing a rating and an optional comment, using your username and password to authenticate the action, with the aim of updating the product's average rating.",
       "user_prompt": "Hi! I'd like to submit a review for a product. The product is identified by its unique product ID \"Headphones\". I want to provide a rating, which is \"4\", and include a comment, \"Great sound quality and comfort.\". My username for authentication is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". Could you help me with submitting this review? I want to update the product's average rating. Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -4234,7 +4234,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a product identified by its unique product_id, including your rating and an optional comment, by using your username and password to authenticate the action.",
+      "user_instruction": "You are trying to submit a review for a product identified by its unique product_id, including your rating and an optional comment, by using your username and password to authenticate the action.",
       "user_prompt": "Hello! I'd like to submit a review for a product. Here's the information:\n\n- Username: alice\n- Password: correct_password\n- Product ID: Headphones\n- Rating: 6\n- Comment: Great sound quality and comfort!\n\nCould you help me with that, please?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -4521,7 +4521,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product_id, including a rating and an optional comment, by using your username and password to update the product's average rating and determine if the review was successfully added.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product_id, including a rating and an optional comment, by using your username and password to update the product's average rating and determine if the review was successfully added.",
       "user_prompt": "Hello! I'd like to submit a review for a specific product. The product ID is \"Smartphone.\" My username is \"alice,\" and my password is \"sadfnjskdanfksadjnfl.\" I would like to give a rating of \"4\" and include a comment: \"Great value for the price!\" Could you please help me with this and let me know if the review was successfully added? Also, I'd like to update the product's average rating. Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -4799,7 +4799,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a product identified by its product ID, including a rating and an optional comment, using your username and password to update the product's average rating and determine if the review submission is successful.",
+      "user_instruction": "You are trying to submit a review for a product identified by its product ID, including a rating and an optional comment, using your username and password to update the product's average rating and determine if the review submission is successful.",
       "user_prompt": "I'd like to submit a review for a product. The product ID is \"Headphones\". My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". I'd like to give it a rating of 4 stars and the comment is \"Great sound quality and comfort.\" Could you please update the product's average rating and let me know if the review submission is successful? Thanks!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -5073,7 +5073,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by the product_id, providing a rating and an optional comment, using your username and password to authenticate your account.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by the product_id, providing a rating and an optional comment, using your username and password to authenticate your account.",
       "user_prompt": "Hello, I'd like to submit a review for a product. Here's the information: my username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The product_id I want to review is \"Headphones\". I would like to give it a rating of \"6\". My comment is: \"Great sound quality but a bit pricey.\". Please help me submit this review. Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -5347,7 +5347,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by the product_id, including a rating and an optional comment, using your username and password to authenticate your action.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by the product_id, including a rating and an optional comment, using your username and password to authenticate your action.",
       "user_prompt": "Hi! I'd like to submit a review for a product. Here are my details: \n\n - Product ID: \"Headphones\"\n - Username: \"alice\"\n - Password: \"sadfnjskdanfksadjnfl\"\n - Rating: \"4\"\n - Comment: \"Great sound quality and comfort.\"\n\nCould you please guide me on how to proceed with submitting my review? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -5656,7 +5656,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a specific product, identified by its product ID, by providing a rating and an optional comment, using your username and password to authenticate the action.",
+      "user_instruction": "You are trying to submit a review for a specific product, identified by its product ID, by providing a rating and an optional comment, using your username and password to authenticate the action.",
       "user_prompt": "Hi there! I'd like to submit a review for a product. The product ID is \"Headphones\". I would like to give it a rating of \"4\" and leave a comment that says \"Great sound quality and comfortable to wear.\" Can you help me with that? My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\" to authenticate the action. Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -5987,7 +5987,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product_id, using your username and password to authenticate, while providing a rating and optionally adding a comment to update the product's average rating.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product_id, using your username and password to authenticate, while providing a rating and optionally adding a comment to update the product's average rating.",
       "user_prompt": "Hello! I'd like to submit a review for a product. The product_id is \"Headphones\". My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". I want to give the product a rating of \"5\" and add a comment saying \"Great value for money\". Could you help me with that?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -6324,7 +6324,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product with the ID you have, by providing a rating between 1 and 5, along with an optional comment, using your username and password for authentication.",
+      "user_instruction": "You are trying to submit a review for a specific product with the ID you have, by providing a rating between 1 and 5, along with an optional comment, using your username and password for authentication.",
       "user_prompt": "Hi, I'd like to submit a review for a product. The product ID is \"Headphones\". I'd like to give it a rating of \"4\" and my comment would be \"Great sound quality and comfort.\". I'll authenticate using my username \"bob\" and my password \"bobspassword123\". Can you assist me with this?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -6655,7 +6655,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product_id, by providing a rating and an optional comment, using your username and password for authentication, to update the product's average rating and determine if the review submission is successful.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product_id, by providing a rating and an optional comment, using your username and password for authentication, to update the product's average rating and determine if the review submission is successful.",
       "user_prompt": "I would like to submit a review for a product. The product_id is \"Headphones\". Here's the information for my review:\n\n- Username: bob\n- Password: bobsecurepass\n- Rating: 4\n- Comment: Great sound quality and comfortable to wear. \n\nPlease let me know if the review submission is successful and if it updates the product's average rating. Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -6980,7 +6980,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product ID, using your username and password to authenticate, while providing a rating and an optional comment to update the product's average rating.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product ID, using your username and password to authenticate, while providing a rating and an optional comment to update the product's average rating.",
       "user_prompt": "Hi there! I'd like to submit a review for a product with the following details:\n\n- Product ID: Headphones\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Rating: 5\n- Comment: Amazing bass and clarity.\n\nCould you help me with that?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -7299,7 +7299,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to submit a review for a product identified by its unique product_id, providing a numerical rating and an optional comment, while ensuring you are authenticated with your username and password.",
+      "user_instruction": "You are attempting to submit a review for a product identified by its unique product_id, providing a numerical rating and an optional comment, while ensuring you are authenticated with your username and password.",
       "user_prompt": "Hello! I'd like to submit a review for a product. Here are the details:\n\n- Product ID: Headphones\n- Rating: 4\n- Comment: Great sound quality!\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n\nCould you please help me with this?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -7606,7 +7606,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to submit a review for a product identified by its unique product ID, using your account username and password, by providing a rating and an optional comment, to update the product's average rating and determine if the review submission is successful.",
+      "user_instruction": "You are attempting to submit a review for a product identified by its unique product ID, using your account username and password, by providing a rating and an optional comment, to update the product's average rating and determine if the review submission is successful.",
       "user_prompt": "Hi! I'd like to submit a review for a product. Here's the information for the review:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Product ID: Headphones\n- Rating: 4\n- Comment: Great sound quality and comfortable to wear.\n\nCould you please help me with this? I'd like to update the product's average rating and see if my review submission is successful.",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -7929,7 +7929,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to submit a review for a product identified by its unique product ID, using your username and password to authenticate, by providing a numerical rating and an optional comment to update the product's average rating.",
+      "user_instruction": "You are attempting to submit a review for a product identified by its unique product ID, using your username and password to authenticate, by providing a numerical rating and an optional comment to update the product's average rating.",
       "user_prompt": "Hello! I'd like to submit a review for a product. Here are the details:\n\n- **Product ID**: Headphones\n- **Username**: bob\n- **Password**: bobspassword123\n- **Rating**: 4\n- **Comment**: Great sound quality and comfort.\n\nCould you help me submit this?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -8240,7 +8240,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a product identified by its unique product_id, providing a rating and an optional comment using your username and password, to update the product's average rating and determine if the review submission was successful.",
+      "user_instruction": "You are trying to submit a review for a product identified by its unique product_id, providing a rating and an optional comment using your username and password, to update the product's average rating and determine if the review submission was successful.",
       "user_prompt": "Hi, I would like to submit a review for a product. Here are the details of my review submission:\n\n- **Product ID**: Headphones\n- **Rating**: 4\n- **Comment**: Great sound quality!\n- **Username**: alice\n- **Password**: sadfnjskdanfksadjnfl\n\nCan you please update the product's average rating and let me know if the review submission was successful?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -8579,7 +8579,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a product identified by the product_id, providing a rating and an optional comment, while using your username and password to authenticate the action.",
+      "user_instruction": "You are trying to submit a review for a product identified by the product_id, providing a rating and an optional comment, while using your username and password to authenticate the action.",
       "user_prompt": "Hello! I would like to submit a review for a product. Here are the details:\n\n- Product ID: Headphones\n- Rating: 4\n- Comment: Great sound quality and comfort.\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n\nPlease help me with authenticating my action and submitting the review. Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -8925,7 +8925,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by the product_id, including a rating and an optional comment, using your username and password to authenticate your account.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by the product_id, including a rating and an optional comment, using your username and password to authenticate your account.",
       "user_prompt": "Hi! I would like to submit a review for a product. Here are the details:\n\n- Product ID: Headphones\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Rating: 6\n- Comment: Great sound quality!\n\nCould you help me with this, please?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -9270,7 +9270,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by the product_id, including a rating and an optional comment, using your username and password to authenticate your account.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by the product_id, including a rating and an optional comment, using your username and password to authenticate your account.",
       "user_prompt": "I would like to submit a review for a product. The product_id is \"Headphones\". My username is \"alice\" and my password is \"securePassword123\". I am giving it a rating of \"5\" and the comment is \"Great headphones for the price.\". How can I proceed with this?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -9616,7 +9616,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product ID, including your username and password for authentication, by providing a numerical rating and an optional comment to update the product's average rating.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product ID, including your username and password for authentication, by providing a numerical rating and an optional comment to update the product's average rating.",
       "user_prompt": "Hello! I'd like to submit a review for a specific product, please. Here are the details:\n\n- **Product ID**: Smartphone\n- **Username**: alice\n- **Password**: sadfnjskdanfksadjnfl\n- **Rating**: 4\n- **Comment**: Great battery life and performance.\n\nPlease let me know if there is anything else you need to process this review. Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -9965,7 +9965,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product_id, providing a rating and an optional comment, while using your username and password to authenticate the action.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product_id, providing a rating and an optional comment, while using your username and password to authenticate the action.",
       "user_prompt": "Hi, I'd like to submit a review for a specific product. The product_id is \"Headphones\" and my username is \"bob\". I'd like to rate it a \"4\" and add a comment saying \"Great sound quality!\". Here's my password for authentication: \"securepassword123\".",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -10214,7 +10214,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product ID, including a rating and an optional comment, using your username and password to authenticate the action.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product ID, including a rating and an optional comment, using your username and password to authenticate the action.",
       "user_prompt": "Hello! I'd like to submit a review for a product. Here are the details:\n\n- Username: bob\n- Password: securepassword123\n- Product ID: Smartphone\n- Rating: 6\n- Comment: Great phone with excellent features!\n\nCould you assist me with this?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -10553,7 +10553,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a product identified by its unique product ID, providing a numerical rating and an optional comment, while using your username and password to authenticate the action.",
+      "user_instruction": "You are trying to submit a review for a product identified by its unique product ID, providing a numerical rating and an optional comment, while using your username and password to authenticate the action.",
       "user_prompt": "Hello! I'd like to submit a review for a product. The product ID is \"Headphones\". My username is \"alice\", and the password is \"sadfnjskdanfksadjnfl\". I'm giving it a rating of \"4\" stars. Additionally, I'd like to add a comment: \"Great value for money!\". Can you help me with that?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -10893,7 +10893,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to submit a review for a product identified by product_id, including your rating and optional comment, using your username and password to authenticate your account.",
+      "user_instruction": "You are attempting to submit a review for a product identified by product_id, including your rating and optional comment, using your username and password to authenticate your account.",
       "user_prompt": "Hello! I'd like to submit a review for a product. The product I'm reviewing has the product_id \"Smartphone\". My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". I’ll rate it \"4\" and my comment is \"Great value for the price!\". Could you help me with that?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -11214,7 +11214,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to submit a review for a product identified by the product_id, including your rating and an optional comment, using your username and password to authenticate the action.",
+      "user_instruction": "You are attempting to submit a review for a product identified by the product_id, including your rating and an optional comment, using your username and password to authenticate the action.",
       "user_prompt": "Hello! I would like to submit a review for a product. Here's the information you need:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Product ID: Headphones\n- Rating: 4\n- Comment: Great sound quality and comfortable to wear.\n\nCould you please help me with that? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -11539,7 +11539,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product ID, by providing a rating and an optional comment, while ensuring you are authenticated with your username and password.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product ID, by providing a rating and an optional comment, while ensuring you are authenticated with your username and password.",
       "user_prompt": "Hello! I'd like to submit a review for a product. Here's the information you'll need: \n\n- **Username**: alice\n- **Product ID**: Headphones\n- **Rating**: 6\n- **Comment**: Great sound quality!\n- **Password**: sadfnjskdanfksadjnfl\n\nCould you please help me with that?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -11871,7 +11871,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product_id, providing a rating and an optional comment, while using your username and password to authenticate the action.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product_id, providing a rating and an optional comment, while using your username and password to authenticate the action.",
       "user_prompt": "Hello! I'd like to submit a review for a product I've purchased. The product_id I'm reviewing is \"Smartphone\". I'll be providing a rating of \"4\" and I'd also like to leave the comment, \"Great smartphone with excellent features.\" Additionally, I'll need to authenticate my action using my username, which is \"alice\", and my password, which is \"sadfnjskdanfksadjnfl\". Could you please assist me with this? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -12196,7 +12196,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to submit a review for the product identified by 'product_id', by providing a 'rating' and an optional 'comment', using your 'username' and 'password' to authenticate the process.",
+      "user_instruction": "You are attempting to submit a review for the product identified by 'product_id', by providing a 'rating' and an optional 'comment', using your 'username' and 'password' to authenticate the process.",
       "user_prompt": "Hi, I'd like to submit a review for a product. The product I'm reviewing is identified by the 'product_id' \"Headphones\". I'd like to give it a 'rating' of \"4\" and add a 'comment': \"Great sound quality!\". I'll be using my 'username' \"alice\" and my 'password' \"sadfnjskdanfksadjnfl\" to authenticate the process. Could you please assist me with this? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -12547,7 +12547,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by the product_id, including a rating between 1 and 5, and an optional comment, using your username and password, to update the product's average rating and determine if the review submission is successful.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by the product_id, including a rating between 1 and 5, and an optional comment, using your username and password, to update the product's average rating and determine if the review submission is successful.",
       "user_prompt": "Hi there! I'd like to submit a review for a product. The product_id is \"Headphones\" and I want to include a rating of \"4\" stars. Could you please include the comment \"Great sound quality and comfort.\"? My username is \"alice\" and my password is \"securePass123\". Could you update the product's average rating and let me know if the review submission is successful? Thanks!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -12923,7 +12923,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product by providing a rating and an optional comment, using your username and password, to update the product's average rating and determine if the review was successfully added.",
+      "user_instruction": "You are trying to submit a review for a specific product by providing a rating and an optional comment, using your username and password, to update the product's average rating and determine if the review was successfully added.",
       "user_prompt": "Hi there! I'd like to submit a review for a product. Could you please help me with that? \n\nThe product ID I want to review is \"Headphones\". My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". I would like to give a rating of \"5\" and my comment is \"Great value for the price!\". Could you let me know if my review is successfully added and if it updates the product's average rating? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -13300,7 +13300,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product with a username and password, providing a rating and an optional comment, to update the product's average rating and determine if the review was successfully added.",
+      "user_instruction": "You are trying to submit a review for a specific product with a username and password, providing a rating and an optional comment, to update the product's average rating and determine if the review was successfully added.",
       "user_prompt": "Hello! I'd like to submit a review for a specific product. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". I'm giving a rating of \"5\" to the \"Smartphone\" product. My comment is \"Great smartphone with amazing features!\". Could you please help me update the product's average rating and let me know if my review was successfully added? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -13670,7 +13670,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to submit a review for a product identified by its product_id, using your username and password for authentication, by providing a rating and an optional comment, aiming to update the product's average rating and receive confirmation of the review's successful addition.",
+      "user_instruction": "You are attempting to submit a review for a product identified by its product_id, using your username and password for authentication, by providing a rating and an optional comment, aiming to update the product's average rating and receive confirmation of the review's successful addition.",
       "user_prompt": "Hello! I'd like to submit a review for a product. The product has the ID \"Headphones\". My username is \"alice\" and I will be using the password \"correctpassword\" for authentication. I would like to give the product a rating of \"4\" and my comment is \"Great sound quality!\". Could you please help me update the product's average rating and confirm the successful addition of my review? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -14054,7 +14054,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product_id, providing a rating and an optional comment, while using your username and password to authenticate your action.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product_id, providing a rating and an optional comment, while using your username and password to authenticate your action.",
       "user_prompt": "Hello! I'd like to submit a review for a product. The product ID is \"Headphones\". I'm providing a rating of \"4\" and my comment is \"Great sound quality and comfortable to wear.\" I need to use my username \"alice\" and my password \"sadfnjskdanfksadjnfl\" to authenticate this action. Could you help me with that?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -14438,7 +14438,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by the product_id, by providing a rating and an optional comment, and you will need to use your username and password to authenticate the action.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by the product_id, by providing a rating and an optional comment, and you will need to use your username and password to authenticate the action.",
       "user_prompt": "Hello! I'd like to submit a review for a product I recently purchased. Here are the details:\n\n- Product ID: Headphones\n- Rating: 6\n- Comment: Great sound quality and comfort.\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n\nCould you assist me in adding this review? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -14828,7 +14828,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product_id, including a rating and an optional comment, using your username and password to authenticate your action.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product_id, including a rating and an optional comment, using your username and password to authenticate your action.",
       "user_prompt": "Hello! I'd like to submit a review for a product identified by its product_id. Here's the information for the review:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Product_ID: Headphones\n- Rating: 5\n- Comment: Love the noise cancellation.\n\nCould you please help me with this?",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -15224,7 +15224,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to submit a review for a specific product identified by its product_id, providing a rating and an optional comment, while ensuring your username and password are correctly used to authenticate the review submission.",
+      "user_instruction": "You are trying to submit a review for a specific product identified by its product_id, providing a rating and an optional comment, while ensuring your username and password are correctly used to authenticate the review submission.",
       "user_prompt": "Hello! I'd like to submit a review for a product. Here are the details:\n\n- **Product ID**: Headphones\n- **Username**: bob\n- **Password**: bobpassword\n- **Rating**: 4\n- **Comment**: Great sound quality and comfortable to wear.\n\nCould you please help me submit this review? Thank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -15608,7 +15608,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to submit a review for a specific product identified by the product_id, including a rating from 1 to 5 and an optional comment, using your username and password to authenticate the action.",
+      "user_instruction": "You are attempting to submit a review for a specific product identified by the product_id, including a rating from 1 to 5 and an optional comment, using your username and password to authenticate the action.",
       "user_prompt": "Hi, I'd like to submit a review for a product, please. Here are the details:  \n- **Username:** alice  \n- **Password:** correcthorsebatterystaple  \n- **Product ID:** Headphones  \n- **Rating:** 4  \n- **Comment:** Great sound quality and comfortable to wear!  \n\nThank you!",
       "user_goal": "add_review",
       "directed_action_graph": {
@@ -15910,7 +15910,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to add a new shipping address to your account using your username and password, and you want to know if the addition is successful.",
+      "user_instruction": "You are trying to add a new shipping address to your account using your username and password, and you want to know if the addition is successful.",
       "user_prompt": "Hello! I would like to add a new shipping address to my account. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The new address I want to add is \"1234 Elm Street, Springfield, IL, 62701\". Could you let me know if the addition is successful? Thank you!",
       "user_goal": "add_shipping_address",
       "directed_action_graph": {
@@ -16175,7 +16175,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to add a new shipping address to your account by providing your username, password, and the full address, and you want to know if the addition is successful.",
+      "user_instruction": "You are trying to add a new shipping address to your account by providing your username, password, and the full address, and you want to know if the addition is successful.",
       "user_prompt": "Hi, I'd like to add a new shipping address to my account. My username is \"alice\", my password is \"sadfnjskdanfksadjnfl\", and the address I want to add is \"123 Main St, Springfield, IL, 62701\". Could you let me know if the addition is successful?",
       "user_goal": "add_shipping_address",
       "directed_action_graph": {
@@ -16438,7 +16438,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to add a specified product, identified by its unique product_id, to your cart with the desired quantity, using your account credentials (username and password) to ensure the process is successful.",
+      "user_instruction": "You are trying to add a specified product, identified by its unique product_id, to your cart with the desired quantity, using your account credentials (username and password) to ensure the process is successful.",
       "user_prompt": "Hi! I'd like to add a product to my cart. The product I'm interested in is identified by the product_id \"Laptop\", and I would like to add a quantity of \"2\". My account credentials are \"username\": \"alice\" and \"password\": \"sadfnjskdanfksadjnfl\". How can I proceed with this?",
       "user_goal": "add_to_cart",
       "directed_action_graph": {
@@ -16698,7 +16698,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to add a specified product, identified by its unique product ID, to your cart with the desired quantity, using your account credentials for authentication.",
+      "user_instruction": "You are trying to add a specified product, identified by its unique product ID, to your cart with the desired quantity, using your account credentials for authentication.",
       "user_prompt": "Hi there! I would like to add a product to my cart. The product ID is \"Laptop\", and I would like to add a quantity of 10 to my cart. Here are my account credentials for authentication: My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\".",
       "user_goal": "add_to_cart",
       "directed_action_graph": {
@@ -16968,7 +16968,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to cancel a specific order from your order history by providing your username, password, and the unique order ID, aiming to receive confirmation on whether the cancellation was successful.",
+      "user_instruction": "You are attempting to cancel a specific order from your order history by providing your username, password, and the unique order ID, aiming to receive confirmation on whether the cancellation was successful.",
       "user_prompt": "Hello, I'd like to cancel a specific order from my order history. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The unique order ID I'd like to cancel is \"ORD-4\". Can you confirm if the cancellation is successful? Thank you!",
       "user_goal": "cancel_order",
       "directed_action_graph": {
@@ -17229,7 +17229,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to cancel a specific order identified by the order_id in your account using your username and password, and you will find out if the cancellation was successful.",
+      "user_instruction": "You are attempting to cancel a specific order identified by the order_id in your account using your username and password, and you will find out if the cancellation was successful.",
       "user_prompt": "Hi, I need some help with managing my orders. I'd like to cancel a specific order that I placed. The order ID is \"ORD-2\". Could you assist me with that? I'll also need to log in to my account. My username is \"alice\" and my password is \"incorrect_password\". Please let me know if the cancellation is successful. Thank you!",
       "user_goal": "cancel_order",
       "directed_action_graph": {
@@ -17526,7 +17526,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to cancel a specific order from your order history by providing your username, password, and the unique order ID to verify and process the cancellation request.",
+      "user_instruction": "You are attempting to cancel a specific order from your order history by providing your username, password, and the unique order ID to verify and process the cancellation request.",
       "user_prompt": "Hello! I'd like to request help in canceling an order. My username is \"bob\", my password is \"bobssecurepassword\", and the order ID I wish to cancel is \"ORD-2\". Could you assist me with that? Thank you!",
       "user_goal": "cancel_order",
       "directed_action_graph": {
@@ -17816,7 +17816,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to cancel a specific order by providing your username, password, and the unique order ID, aiming to change the order's status to canceled and receive confirmation of the cancellation's success.",
+      "user_instruction": "You are attempting to cancel a specific order by providing your username, password, and the unique order ID, aiming to change the order's status to canceled and receive confirmation of the cancellation's success.",
       "user_prompt": "Hi, I'd like to cancel an order. Here are my details:  \n- Username: alice  \n- Password: sadfnjskdanfksadjnfl  \n- Order ID: ORD-2  \n\nCould you please change the status of this order to canceled and confirm the cancellation for me? Thanks!",
       "user_goal": "cancel_order",
       "directed_action_graph": {
@@ -18139,7 +18139,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to cancel a specific order from your order history by providing your username, password, and the unique order ID, and you want to know if the cancellation was successful.",
+      "user_instruction": "You are attempting to cancel a specific order from your order history by providing your username, password, and the unique order ID, and you want to know if the cancellation was successful.",
       "user_prompt": "Hi! I would like to cancel a specific order from my order history. My username is \"alice\", my password is \"sadfnjskdanfksadjnfl\", and the order ID I want to cancel is \"ORD-2\". Could you please let me know if the cancellation was successful? Thank you!",
       "user_goal": "cancel_order",
       "directed_action_graph": {
@@ -18474,7 +18474,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity you wish to exchange.",
       "user_prompt": "Hi there! I'd like to initiate a product exchange for my recent order. Here are the details:\n\n- Username: alice\n- Password: correct_password\n- Order ID: ORD-2\n- Old Product ID: Headphones\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please update the order details accordingly? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -18805,7 +18805,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by using your username and password to access your account, specifying the order ID and old product ID for the item you wish to exchange, and providing the new product ID and quantity for the desired replacement.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by using your username and password to access your account, specifying the order ID and old product ID for the item you wish to exchange, and providing the new product ID and quantity for the desired replacement.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my recent order. Here are my details:\n\n- **Username**: alice\n- **Password**: correct_password\n- **Order ID**: ORD-1\n- **Old Product ID**: Laptop\n- **New Product ID**: Tablet\n- **Quantity**: 1\n\nCould you assist me with this exchange, please?",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -19130,7 +19130,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order with ID \"order_id,\" by exchanging the product with ID \"old_product_id\" for a new product with ID \"new_product_id,\" in the quantity specified, using your account credentials (username and password).",
+      "user_instruction": "You are attempting to initiate a product exchange for your order with ID \"order_id,\" by exchanging the product with ID \"old_product_id\" for a new product with ID \"new_product_id,\" in the quantity specified, using your account credentials (username and password).",
       "user_prompt": "Hello, I would like to initiate a product exchange for my order. Here are the details:\n\n- Order ID: ORD-1\n- I want to exchange the product with ID \"Laptop\" for a new product with ID \"Smartphone\".\n- The quantity for the exchange is 1.\n\nHere are my account credentials:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n\nCan you help me process this exchange?",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -19484,7 +19484,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by providing your username, password, order ID, old product ID, new product ID, and the quantity you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by providing your username, password, order ID, old product ID, new product ID, and the quantity you wish to exchange.",
       "user_prompt": "Hi, I would like to initiate a product exchange for my order. Here's the necessary information:\n\n- Username: alice\n- Password: securepassword123\n- Order ID: ORD-4\n- Old Product ID: Laptop\n- New Product ID: Tablet\n- Quantity: -1\n\nPlease let me know how to proceed with the exchange. Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -19822,7 +19822,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: hsuwMHtjPLWfxe\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nPlease let me know if you need any more information. Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -20160,7 +20160,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by using your username and password to update the order with the new product ID, replacing the old product ID, and specifying the quantity for the exchange.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by using your username and password to update the order with the new product ID, replacing the old product ID, and specifying the quantity for the exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for an order. My username is \"alice\", and my password is \"sadfnjskdanfksadjnfl\". I want to update my order with the ID \"ORD-2\" by replacing the old product ID \"Headphones\" with the new product ID \"Mouse\". I'd like the quantity for the exchange to be \"1\". Can you help me with that? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -20527,7 +20527,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order with order ID, using your username and password, by exchanging the product with old product ID for a new product with new product ID, and specifying the quantity you wish to exchange.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order with order ID, using your username and password, by exchanging the product with old product ID for a new product with new product ID, and specifying the quantity you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. My order ID is \"ORD-2\". My username is \"alice\", and my password is \"sadfnjskdanfksadjnfl\". I need to exchange the product with the old product ID \"Headphones\" for a new product with the new product ID \"Tablet\". I would like to exchange a quantity of \"1\". Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -20894,7 +20894,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order with ID `order_id`, replacing the product with ID `old_product_id` with a new product with ID `new_product_id`, and updating the quantity to `quantity`, using your account credentials `username` and `password`.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order with ID `order_id`, replacing the product with ID `old_product_id` with a new product with ID `new_product_id`, and updating the quantity to `quantity`, using your account credentials `username` and `password`.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. My order ID is \"ORD-2\". I want to replace the product with ID \"Headphones\" with a new product that has ID \"Mouse\". Also, please update the quantity to \"1\". I will provide my account credentials for verification: username is \"alice\" and password is \"sadfnjskdanfksadjnfl\". Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -21260,7 +21260,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order with the old product ID, new product ID, and the quantity you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order with the old product ID, new product ID, and the quantity you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- **Username**: alice\n- **Password**: securepassword123\n- **Order ID**: ORD-2\n- **Old Product ID**: Headphones\n- **New Product ID**: Smartphone\n- **Quantity**: 1\n\nCould you please assist me in updating my order with these changes? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -21645,7 +21645,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by providing your username, password, order ID, old product ID, new product ID, and the quantity of the product you wish to exchange, in order to update your order details and determine if the exchange was successful.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by providing your username, password, order ID, old product ID, new product ID, and the quantity of the product you wish to exchange, in order to update your order details and determine if the exchange was successful.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the necessary details:\n\n- Username: alice\n- Password: correctpassword\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please update my order details and let me know if the exchange was successful? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -22106,7 +22106,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order with the old product ID, new product ID, order ID, and the quantity of items you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order with the old product ID, new product ID, order ID, and the quantity of items you wish to exchange.",
       "user_prompt": "Hi, I would like to initiate a product exchange for my order. Here's the information you need:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please update my order with these details? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -22616,7 +22616,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here's the information you need:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please help me with updating the order details? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -23126,7 +23126,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password, specifying the old product ID, new product ID, order ID, and the quantity you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password, specifying the old product ID, new product ID, order ID, and the quantity you wish to exchange.",
       "user_prompt": "Hello! I would like to initiate a product exchange for my recent order. Here are the details:\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please assist me with this exchange? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -23636,7 +23636,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by providing your username and password, specifying the order ID, and indicating the old product ID and new product ID along with the desired quantity to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by providing your username and password, specifying the order ID, and indicating the old product ID and new product ID along with the desired quantity to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. My username is \"alice\", and my password is \"sadfnjskdanfksadjnfl\". The order ID is \"ORD-1\", and I want to exchange the old product, \"Laptop\", for a new product, \"Mouse\". I'd like to exchange a quantity of \"1\". Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -24146,7 +24146,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by providing your username, password, order ID, old product ID, new product ID, and the quantity you wish to exchange, with the aim of successfully updating your order details.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by providing your username, password, order ID, old product ID, new product ID, and the quantity you wish to exchange, with the aim of successfully updating your order details.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my recent order. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please help me update my order with these details? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -24609,7 +24609,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order, using your username and password to update the order with the new product ID in place of the old product ID, while specifying the quantity to be exchanged.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order, using your username and password to update the order with the new product ID in place of the old product ID, while specifying the quantity to be exchanged.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1 \n\nPlease let me know if you need any additional information. Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -25039,7 +25039,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by using your username and password to update the order with the new product ID, replacing the old product ID, and specifying the quantity to exchange.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by using your username and password to update the order with the new product ID, replacing the old product ID, and specifying the quantity to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order using my username and password. Here's the information for the exchange:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-4\n- Old Product ID: Headphones\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please update my order with the new information? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -25453,7 +25453,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order with the new product ID, replacing the old product ID, and specifying the quantity to be exchanged.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order with the new product ID, replacing the old product ID, and specifying the quantity to be exchanged.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details: My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The order ID is \"ORD-1\". I want to update the order by replacing the old product ID, \"Laptop,\" with the new product ID, \"Smartphone,\" and I would like to exchange a quantity of \"1.\" Can you help me with that?",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -25936,7 +25936,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID you want to exchange, the new product ID you want to receive, the order ID associated with the exchange, and the quantity of the product involved.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID you want to exchange, the new product ID you want to receive, the order ID associated with the exchange, and the quantity of the product involved.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are my details:\n- Username: alice\n- Password: correct_password\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Headphones\n- Quantity: 1\n\nCould you please update my order details accordingly? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -26475,7 +26475,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, exchanging the product with ID 'old_product_id' for 'new_product_id' in the specified quantity, and checking if the exchange was successful for order 'order_id'.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, exchanging the product with ID 'old_product_id' for 'new_product_id' in the specified quantity, and checking if the exchange was successful for order 'order_id'.",
       "user_prompt": "Hi, I would like to initiate a product exchange for my order. Here are the details:\n\n- **Username:** alice\n- **Password:** sadfnjskdanfksadjnfl\n- **Order ID:** ORD-1\n- **Old Product ID:** Laptop\n- **New Product ID:** Mouse\n- **Quantity:** 1\n\nCan you please update the order details and let me know if the exchange was successful? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -26993,7 +26993,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity involved in the exchange.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity involved in the exchange.",
       "user_prompt": "Hello, I need help with initiating a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: correct_password\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please assist me with this exchange? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -27532,7 +27532,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by using your username and password to update the order with the old product ID, new product ID, order ID, and specifying the quantity of the product to be exchanged.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by using your username and password to update the order with the old product ID, new product ID, order ID, and specifying the quantity of the product to be exchanged.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details: \n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please update my order with these details? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -28064,7 +28064,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order with the old product ID and new product ID, specifying the quantity you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order with the old product ID and new product ID, specifying the quantity you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are my details:  \n- **Username**: alice  \n- **Password**: sadfnjskdanfksadjnfl  \n- **Order ID**: ORD-1  \n- **Old Product ID**: Laptop  \n- **New Product ID**: Headphones  \n- **Quantity**: 1  \n\nCould you please assist me in updating my order with these details? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -28603,7 +28603,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please update the order details for me? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -29142,7 +29142,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID and new product ID, along with the order ID and quantity of the product you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID and new product ID, along with the order ID and quantity of the product you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Smartphone\n- Quantity: 1\n\nPlease let me know how we can proceed with updating the order. Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -29674,7 +29674,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order with order ID using your account credentials, replacing the product with ID old_product_id with the new product ID and updating the quantity as specified.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order with order ID using your account credentials, replacing the product with ID old_product_id with the new product ID and updating the quantity as specified.",
       "user_prompt": "Hi, I want to initiate a product exchange for my order. Here's my information:  \n- Username: alice  \n- Password: sadfnjskdanfksadjnfl  \n- Order ID: ORD-1  \n- Current Product: Laptop  \n- New Product ID: Headphones  \n- Quantity: 1  \n\nPlease let me know the next steps. Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -30212,7 +30212,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using the order ID and swapping the old product with a new one, while ensuring you provide your username, password, and the desired quantity for the exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using the order ID and swapping the old product with a new one, while ensuring you provide your username, password, and the desired quantity for the exchange.",
       "user_prompt": "Hello! I would like to initiate a product exchange for my order. Here are the details:\n\n- **Username**: alice\n- **Password**: sadfnjskdanfksadjnfl\n- **Order ID**: ORD-1\n- **Old Product ID**: Laptop\n- **New Product ID**: Tablet\n- **Quantity**: 1\n\nCould you please process this exchange for me? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -30769,7 +30769,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order with ID `order_id`, swapping the product with ID `old_product_id` for a new product with ID `new_product_id`, and updating the quantity to `quantity`, using your account credentials, username `username` and password `password`.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order with ID `order_id`, swapping the product with ID `old_product_id` for a new product with ID `new_product_id`, and updating the quantity to `quantity`, using your account credentials, username `username` and password `password`.",
       "user_prompt": "Hello! I would like to initiate a product exchange for my order. Here are the details:\n\n- Order ID: ORD-1\n- Current Product ID: Laptop\n- New Product ID: Smartphone\n- Quantity: 1\n\nAlso, here are my account credentials:\n- Username: alice\n- Password: securepassword123\n\nCould you please assist me with this exchange?",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -31326,7 +31326,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your account credentials to update the order details, specifying the old product ID, new product ID, order ID, and the quantity you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your account credentials to update the order details, specifying the old product ID, new product ID, order ID, and the quantity you wish to exchange.",
       "user_prompt": "Hello! I would like to initiate a product exchange for one of my orders. Here are my account credentials and exchange details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Old product ID: Laptop\n- New product ID: Mouse\n- Order ID: ORD-1\n- Quantity: 1\n\nCould you please update the order details for me accordingly? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -31876,7 +31876,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you want to exchange.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you want to exchange.",
       "user_prompt": "Hi! I'd like to initiate a product exchange for my recent order. Here are the details:\n\n- Username: alice\n- Password: alicepassword123\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Headphones\n- Quantity: 1\n\nPlease let me know if you need any more information from my side to proceed with the exchange. Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -32433,7 +32433,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by using your username and password to update the order with the old product ID, new product ID, and the desired quantity.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by using your username and password to update the order with the old product ID, new product ID, and the desired quantity.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order, please. Here are the details you'll need:\n\n- Order ID: ORD-1\n- Username: alice\n- Password: correcthorsebatterystaple\n- Old Product ID: Laptop\n- New Product ID: Tablet\n- Quantity: 1\n\nCould you help me update my order with this information?",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -32983,7 +32983,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for order ID [order_id] by replacing the old product ID [old_product_id] with the new product ID [new_product_id], for a quantity of [quantity], using your username [username] and password.",
+      "user_instruction": "You are attempting to initiate a product exchange for order ID [order_id] by replacing the old product ID [old_product_id] with the new product ID [new_product_id], for a quantity of [quantity], using your username [username] and password.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Headphones\n- Quantity: 1\n\nI'll be using my username \"alice\" and my password \"sadfnjskdanfksadjnfl\" for this process. Could you please assist me with the exchange? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -33540,7 +33540,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by providing your username and password, specifying the old product ID and new product ID, along with the order ID and quantity, to update your order details accordingly.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by providing your username and password, specifying the old product ID and new product ID, along with the order ID and quantity, to update your order details accordingly.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for one of my orders. Here are the details:\n\n- Username: alice\n- Password: correctpassword\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Keyboard\n- Quantity: 1\n\nCould you please update my order accordingly? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -34097,7 +34097,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: correctpassword\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please help me update the order details with this information? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -34683,7 +34683,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nPlease update my order details accordingly. Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -35269,7 +35269,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order with the order ID, using your username and password, by exchanging the product with ID for a new product with ID, and specifying the quantity you wish to exchange.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order with the order ID, using your username and password, by exchanging the product with ID for a new product with ID, and specifying the quantity you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- **Username**: alice\n- **Password**: sadfnjskdanfksadjnfl\n- **Order ID**: ORD-1\n- **Old Product ID**: Laptop\n- **New Product ID**: Mouse\n- **Quantity**: 1\n\nCould you assist me with this exchange, please?",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -35834,7 +35834,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID you want to exchange, the new product ID you want to receive, the order ID, and the quantity involved in the exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID you want to exchange, the new product ID you want to receive, the order ID, and the quantity involved in the exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: securepassword123\n- Order ID: ORD-2\n- Old Product ID: Headphones\n- New Product ID: Smartphone\n- Quantity: 1\n\nCould you please update the order details for this exchange? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -36420,7 +36420,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order with order ID using your username and password, exchanging the product with old product ID for a new product with new product ID, and specifying the quantity to be exchanged.",
+      "user_instruction": "You are trying to initiate a product exchange for your order with order ID using your username and password, exchanging the product with old product ID for a new product with new product ID, and specifying the quantity to be exchanged.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Exchange old product with Product ID: Laptop\n- New product ID: Mouse\n- Quantity to be exchanged: 1\n\nCould you help me with this exchange request?",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -37006,7 +37006,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by providing your username and password, specifying the old product ID and new product ID, and indicating the order ID and quantity for the exchange.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by providing your username and password, specifying the old product ID and new product ID, and indicating the order ID and quantity for the exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange, please. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". I want to exchange the old product with ID \"Headphones\" for a new product with ID \"Mouse\". The order ID is \"ORD-2\" and the quantity for the exchange is \"1\". Can you help me with this process? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -37592,7 +37592,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity to be exchanged.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity to be exchanged.",
       "user_prompt": "Hi there! I'd like to initiate a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nCould you please help me with updating the order with these details? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -38171,7 +38171,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: securepassword123\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Headphones\n- Quantity: 1\n\nPlease assist me with updating the order details. Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -38757,7 +38757,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: securepassword123\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 1\n\nThank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -39343,7 +39343,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID and new product ID, along with the quantity you wish to exchange.",
+      "user_instruction": "You are attempting to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID and new product ID, along with the quantity you wish to exchange.",
       "user_prompt": "Hello! I'd like to initiate a product exchange for my order. Here are the details you'll need:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID: Laptop\n- New Product ID: Mouse\n- Quantity: 6\n\nCould you please update the order details with this information? Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -39929,7 +39929,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by providing your username and password, specifying the order ID, and indicating the old product ID you want to exchange, the new product ID you want in return, and the quantity involved.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by providing your username and password, specifying the order ID, and indicating the old product ID you want to exchange, the new product ID you want in return, and the quantity involved.",
       "user_prompt": "Hello. I'd like to initiate a product exchange for my order, please. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The order ID is \"ORD-1\". I want to exchange the old product with ID \"Laptop\" for a new product with ID \"Mouse\". I'll need a quantity of \"1\" for the new product. Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -40515,7 +40515,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
+      "user_instruction": "You are trying to initiate a product exchange for your order by using your username and password to update the order details, specifying the old product ID, new product ID, order ID, and the quantity of the product you wish to exchange.",
       "user_prompt": "Hi! I would like to initiate a product exchange for my order. Here are the details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n- Old Product ID (current product): Laptop\n- New Product ID (desired product): Mouse\n- Quantity: 1\n\nPlease let me know if you need any additional information to process this exchange. Thank you!",
       "user_goal": "exchange_product",
       "directed_action_graph": {
@@ -40876,7 +40876,7 @@
         }
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to retrieve a list of all the coupons you have used by providing your username and password.",
+      "user_instruction": "You are trying to retrieve a list of all the coupons you have used by providing your username and password.",
       "user_prompt": "Hi, I'd like to retrieve a list of all the coupons I've used. My username is \"alice\" and my password is \"correcthorsebatterystaple\". Could you help me with that?",
       "user_goal": "get_coupons_used",
       "directed_action_graph": {
@@ -41036,7 +41036,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to retrieve a list of all the coupons you have used by providing your account name as the username.",
+      "user_instruction": "You are trying to retrieve a list of all the coupons you have used by providing your account name as the username.",
       "user_prompt": "Hello! I'd like to retrieve a list of all the coupons I've used. My account name as the username is \"bob.\" Can you assist me with this? Thank you!",
       "user_goal": "get_coupons_used",
       "directed_action_graph": {
@@ -41230,7 +41230,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to retrieve a list of all coupons you have used by providing your account's username and password.",
+      "user_instruction": "You are attempting to retrieve a list of all coupons you have used by providing your account's username and password.",
       "user_prompt": "Hi, I'm trying to retrieve a list of all the coupons I have used. My account's username is \"alice\" and my password is \"QaPakElqOFXgLoBpDla\". Can you assist me with that?",
       "user_goal": "get_coupons_used",
       "directed_action_graph": {
@@ -41447,7 +41447,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to fetch detailed information about a specific order by providing your username, password, and the unique order ID to access details such as order items, status, cost, address, placed date, coupons used, and the number of exchanges.",
+      "user_instruction": "You are trying to fetch detailed information about a specific order by providing your username, password, and the unique order ID to access details such as order items, status, cost, address, placed date, coupons used, and the number of exchanges.",
       "user_prompt": "Hello! I'd like to fetch detailed information about a specific order I placed. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-2\n\nCould you provide me with information regarding the order items, status, cost, delivery address, date placed, any coupons used, and the number of exchanges for this order? Thank you!",
       "user_goal": "get_order_details",
       "directed_action_graph": {
@@ -41708,7 +41708,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to retrieve detailed information about a specific order using your username, password, and the order ID to understand the order items, status, cost, address, placed date, coupons used, and number of exchanges.",
+      "user_instruction": "You are trying to retrieve detailed information about a specific order using your username, password, and the order ID to understand the order items, status, cost, address, placed date, coupons used, and number of exchanges.",
       "user_prompt": "Hello! I'd like to retrieve detailed information about one of my orders. Here are my details:  \n- Username: alice  \n- Password: pEEpEDCxMeTzYB  \n- Order ID: ORD-1  \n\nCould you please provide me with information regarding the order items, status, cost, delivery address, date the order was placed, if any coupons were used, and the number of exchanges made? Thank you!",
       "user_goal": "get_order_details",
       "directed_action_graph": {
@@ -42005,7 +42005,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to retrieve detailed information about a specific order by using your username and password to access your account, and specifying the unique order ID to view details such as the order items, status, cost, address, placed date, coupons used, and number of exchanges.",
+      "user_instruction": "You are trying to retrieve detailed information about a specific order by using your username and password to access your account, and specifying the unique order ID to view details such as the order items, status, cost, address, placed date, coupons used, and number of exchanges.",
       "user_prompt": "Hi, I'd like to retrieve detailed information about a specific order. My username is \"bob\" and my password is \"password123\". The unique order ID is \"ORD-1\". I want to view details such as the order items, status, cost, address, placed date, coupons used, and number of exchanges. Can you help me with that?",
       "user_goal": "get_order_details",
       "directed_action_graph": {
@@ -42226,7 +42226,7 @@
       "dependency": null,
       "dependency_original": null,
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to obtain comprehensive details about a specific product by using its unique product ID, allowing you to access information such as price, stock availability, and customer reviews.",
+      "user_instruction": "You are trying to obtain comprehensive details about a specific product by using its unique product ID, allowing you to access information such as price, stock availability, and customer reviews.",
       "user_prompt": "Hi! I'm looking for some detailed information about a specific product. I have the product ID, which is \"Laptop.\" Could you provide me with comprehensive details about this product, such as its price, stock availability, and any customer reviews? Thanks!",
       "user_goal": "get_product_details",
       "directed_action_graph": {
@@ -42392,7 +42392,7 @@
       "dependency": null,
       "dependency_original": null,
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to log in to your online market account by providing your username and password to authenticate access.",
+      "user_instruction": "You are trying to log in to your online market account by providing your username and password to authenticate access.",
       "user_prompt": "Hello! I'd like to log in to my online market account. Here are my credentials: \n\nUsername: alice\nPassword: correcthorsebatterystaple\n\nThank you!",
       "user_goal": "login_user",
       "directed_action_graph": {
@@ -42570,7 +42570,7 @@
         }
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to log out by clearing your session information for the account associated with the username you provided.",
+      "user_instruction": "You are trying to log out by clearing your session information for the account associated with the username you provided.",
       "user_prompt": "Hi, I would like to log out of my account. My username is \"alice.\" Could you please clear my session information so that I'm securely logged out? Thank you!",
       "user_goal": "logout_user",
       "directed_action_graph": {
@@ -42771,7 +42771,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to log out by clearing your session information, ensuring that your account, identified by the username, is securely logged out.",
+      "user_instruction": "You are trying to log out by clearing your session information, ensuring that your account, identified by the username, is securely logged out.",
       "user_prompt": "Hello! I’d like to log out of my account by clearing my session information. Can you please ensure that my account, identified by the username \"KtVzeUeMSJgSQUMRirb,\" is securely logged out? Thank you!",
       "user_goal": "logout_user",
       "directed_action_graph": {
@@ -43041,7 +43041,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to place an order for all items in your cart by using your account credentials, including your username and password, to ensure a successful transaction.",
+      "user_instruction": "You are attempting to place an order for all items in your cart by using your account credentials, including your username and password, to ensure a successful transaction.",
       "user_prompt": "Hello! I'd like to place an order for all the items in my cart. My account username is \"alice\" and the password is \"sadfnjskdanfksadjnfl\". Can you please proceed with the transaction? Thanks!",
       "user_goal": "place_order",
       "directed_action_graph": {
@@ -43348,7 +43348,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to place an order for all items in your cart by providing your username and password to ensure a successful transaction.",
+      "user_instruction": "You are attempting to place an order for all items in your cart by providing your username and password to ensure a successful transaction.",
       "user_prompt": "Hello! I'd like to place an order for all the items in my cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". Can you ensure that my transaction is successful?",
       "user_goal": "place_order",
       "directed_action_graph": {
@@ -43657,7 +43657,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to place an order for all items in your cart by using your username and password to authenticate and complete the transaction successfully.",
+      "user_instruction": "You are trying to place an order for all items in your cart by using your username and password to authenticate and complete the transaction successfully.",
       "user_prompt": "Hello! I'd like to place an order for all the items in my cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". Could you assist me with completing the transaction?",
       "user_goal": "place_order",
       "directed_action_graph": {
@@ -43970,7 +43970,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to place an order for all items in your cart using your account credentials, including your username and password, to ensure a successful transaction.",
+      "user_instruction": "You are attempting to place an order for all items in your cart using your account credentials, including your username and password, to ensure a successful transaction.",
       "user_prompt": "Hello! I would like to place an order for all the items currently in my cart. My username is \"alice\" and my password is \"LBnlCIBKLmfCLZJjIjU\". Can you help ensure that the transaction is successful? Thank you!",
       "user_goal": "place_order",
       "directed_action_graph": {
@@ -44309,7 +44309,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to place an order for all items in your cart by using your username and password to authenticate your account, aiming for a successful transaction.",
+      "user_instruction": "You are trying to place an order for all items in your cart by using your username and password to authenticate your account, aiming for a successful transaction.",
       "user_prompt": "Hello! I would like to place an order for all the items currently in my cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". Could you please go ahead and authenticate my account and process the transaction? Thank you!",
       "user_goal": "place_order",
       "directed_action_graph": {
@@ -44667,7 +44667,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to place an order for all items in your cart by using your username and password to authenticate your account, aiming for a successful transaction.",
+      "user_instruction": "You are attempting to place an order for all items in your cart by using your username and password to authenticate your account, aiming for a successful transaction.",
       "user_prompt": "Hi! I'd like to place an order for all the items in my cart. My username is \"alice\" and my password is \"correcthorsebatterystaple\". Can you help me complete the transaction?",
       "user_goal": "place_order",
       "directed_action_graph": {
@@ -44987,7 +44987,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to initiate a return for a delivered order using your account credentials, including your username and password, and specifying the unique order ID to determine if the return process is successful.",
+      "user_instruction": "You are attempting to initiate a return for a delivered order using your account credentials, including your username and password, and specifying the unique order ID to determine if the return process is successful.",
       "user_prompt": "Hi there! I'd like to initiate a return for an order that was delivered. Here are my details:\n\n- **Username**: alice\n- **Password**: sadfnjskdanfksadjnfl\n- **Order ID**: ORD-2\n\nCould you please check if the return process is successful for this order? Thank you!",
       "user_goal": "return_order",
       "directed_action_graph": {
@@ -45310,7 +45310,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a return for a delivered order using your account credentials, including your username and password, and the specific order ID from your order history.",
+      "user_instruction": "You are attempting to initiate a return for a delivered order using your account credentials, including your username and password, and the specific order ID from your order history.",
       "user_prompt": "Hello! I would like to initiate a return for a delivered order. My username is \"alice\", my password is \"sadfnjskdanfksadjnfl\", and the order ID for the item I want to return is \"ORD-1\". Can you assist me with this process, please?",
       "user_goal": "return_order",
       "directed_action_graph": {
@@ -45669,7 +45669,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to initiate a return for a delivered order by providing your username, password, and the specific order ID to determine if the return process can be successfully started.",
+      "user_instruction": "You are attempting to initiate a return for a delivered order by providing your username, password, and the specific order ID to determine if the return process can be successfully started.",
       "user_prompt": "Hello! I'd like to initiate a return for an order that has already been delivered. My username is \"alice\", my password is \"sadfnjskdanfksadjnfl\", and the specific order ID is \"ORD-1\". Could you please check if the return process can be started for this order?",
       "user_goal": "return_order",
       "directed_action_graph": {
@@ -46070,7 +46070,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to initiate a return for a delivered order using your account credentials, including your username, password, and the specific order ID, to determine if the return process is successful.",
+      "user_instruction": "You are attempting to initiate a return for a delivered order using your account credentials, including your username, password, and the specific order ID, to determine if the return process is successful.",
       "user_prompt": "Hello! I'd like to initiate a return for an order that was delivered. Here are my account credentials: My username is \"alice\" and the password is \"sadfnjskdanfksadjnfl\". The order ID for the item I want to return is \"ORD-1\". Could you please guide me through the return process and confirm if the return is successful? Thank you!",
       "user_goal": "return_order",
       "directed_action_graph": {
@@ -46471,7 +46471,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a return for a delivered order using your account credentials, including your username and password, and by providing the unique order ID to determine if the return process is successful.",
+      "user_instruction": "You are trying to initiate a return for a delivered order using your account credentials, including your username and password, and by providing the unique order ID to determine if the return process is successful.",
       "user_prompt": "Hello! I need assistance with initiating a return for an order that I've already received. Here are my account credentials and the order ID for reference:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n\nCould you let me know if the return process is successful?",
       "user_goal": "return_order",
       "directed_action_graph": {
@@ -46901,7 +46901,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to initiate a return for a delivered order using your account credentials, identified by the order ID, to determine if the return process is successfully started.",
+      "user_instruction": "You are attempting to initiate a return for a delivered order using your account credentials, identified by the order ID, to determine if the return process is successfully started.",
       "user_prompt": "Hi, I'd like to initiate a return for a delivered order using my account. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The order ID for the item I want to return is \"ORD-1\". Could you please help me start the return process and let me know if it's successfully initiated?",
       "user_goal": "return_order",
       "directed_action_graph": {
@@ -47348,7 +47348,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to initiate a return for a delivered order using your username and password, by providing the order ID to check if the return process is successfully started.",
+      "user_instruction": "You are trying to initiate a return for a delivered order using your username and password, by providing the order ID to check if the return process is successfully started.",
       "user_prompt": "Hello! I'd like to initiate a return for an order that was delivered. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Order ID: ORD-1\n\nCan you check if the return process is successfully started? Thank you!",
       "user_goal": "return_order",
       "directed_action_graph": {
@@ -47795,7 +47795,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a return for a delivered order by providing your username, password, and the specific order ID to determine if the return process can be successfully started.",
+      "user_instruction": "You are attempting to initiate a return for a delivered order by providing your username, password, and the specific order ID to determine if the return process can be successfully started.",
       "user_prompt": "Hello! I'd like to initiate a return for a delivered order. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The order ID I want to return is \"ORD-3\". Could you please check if I can start the return process? Thank you!",
       "user_goal": "return_order",
       "directed_action_graph": {
@@ -48242,7 +48242,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to initiate a return for a delivered order by providing your username, password, and the specific order ID to determine if the return process is successful.",
+      "user_instruction": "You are trying to initiate a return for a delivered order by providing your username, password, and the specific order ID to determine if the return process is successful.",
       "user_prompt": "Hi! I would like to initiate a return for a delivered order. My username is \"alice\", my password is \"sadfnjskdanfksadjnfl\", and the order ID I want to return is \"ORD-1\". Could you let me know if the return process is successful?",
       "user_goal": "return_order",
       "directed_action_graph": {
@@ -48689,7 +48689,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to initiate a return for a delivered order by providing your username, password, and the order ID to verify if the return process is successfully started.",
+      "user_instruction": "You are attempting to initiate a return for a delivered order by providing your username, password, and the order ID to verify if the return process is successfully started.",
       "user_prompt": "Hello! I would like to initiate a return for a delivered order. My username is \"alice\", my password is \"sadfnjskdanfksadjnfl\", and the order ID is \"ORD-1\". Could you please check if the return process is successfully started? Thank you!",
       "user_goal": "return_order",
       "directed_action_graph": {
@@ -49086,7 +49086,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to apply a coupon using the coupon code to your current cart, adjusting the total price, by logging in with your username and password, and possibly associating it with a specific order using the order ID.",
+      "user_instruction": "You are attempting to apply a coupon using the coupon code to your current cart, adjusting the total price, by logging in with your username and password, and possibly associating it with a specific order using the order ID.",
       "user_prompt": "Hi, I'd like to log in using my username and password. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". Once I'm logged in, I want to apply a coupon to my current cart. The coupon code I have is \"SAVE10\". Also, if possible, I would like to associate this coupon with a specific order using the order ID \"ORD-1\" and see the adjusted total price. Can you help me with that? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -49445,7 +49445,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by your coupon_code, to your current cart associated with your order_id, using your username and password to adjust the total price, and determine if the coupon was successfully applied.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by your coupon_code, to your current cart associated with your order_id, using your username and password to adjust the total price, and determine if the coupon was successfully applied.",
       "user_prompt": "Hello! I would like to apply a coupon to my current cart. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-2\n\nCould you please let me know if the coupon was successfully applied and how it adjusts the total price? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -49787,7 +49787,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart under your username and password, adjusting the total price and checking if it was successfully applied to the order associated with the order_id.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart under your username and password, adjusting the total price and checking if it was successfully applied to the order associated with the order_id.",
       "user_prompt": "Hello! I would like to apply a coupon to my current cart. Here's the information you might need:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCould you please help me apply this coupon and let me know if it was successfully used and how it adjusts the total price? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -50117,7 +50117,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a coupon with the code you have to your current cart, using your username and password to access your account, and adjust the total price for the order associated with your order ID.",
+      "user_instruction": "You are trying to apply a coupon with the code you have to your current cart, using your username and password to access your account, and adjust the total price for the order associated with your order ID.",
       "user_prompt": "Hi! I would like to log into my account using my username \"alice\" and my password \"sadfnjskdanfksadjnfl\". After that, I want to apply the coupon with the code \"DISCOUNT20\" to my current cart. I need to adjust the total price for the order associated with my order ID \"ORD-1\". Thanks!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -50438,7 +50438,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply the coupon code to your current cart using your username and password, and check if it successfully adjusts the total price for your order with the specified order ID.",
+      "user_instruction": "You are trying to apply the coupon code to your current cart using your username and password, and check if it successfully adjusts the total price for your order with the specified order ID.",
       "user_prompt": "Hello! I'd like to apply a coupon code to my current cart. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCould you please check if the coupon successfully adjusts the total price for my order? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -50746,7 +50746,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to apply a coupon code to your current cart using your username and password, aiming to adjust the total price of your order identified by the order ID.",
+      "user_instruction": "You are attempting to apply a coupon code to your current cart using your username and password, aiming to adjust the total price of your order identified by the order ID.",
       "user_prompt": "Hello! I'd like to apply a coupon code to my current cart to adjust the total price of my order. Here are the details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon code: SAVE10\n- Order ID: ORD-1\n\nCould you please assist me with this? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -51056,7 +51056,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by your coupon_code, to your current cart associated with your order_id, using your username and password, to adjust the total price and determine if the coupon was successfully applied.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by your coupon_code, to your current cart associated with your order_id, using your username and password, to adjust the total price and determine if the coupon was successfully applied.",
       "user_prompt": "Hi! I would like to apply a coupon code to my current cart. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCould you please let me know if the coupon was successfully applied and the adjusted total price? Thanks!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -51376,7 +51376,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to apply a coupon code to your current cart using your account credentials and order ID to adjust the total price, and you will know if it was successful based on a true or false response.",
+      "user_instruction": "You are attempting to apply a coupon code to your current cart using your account credentials and order ID to adjust the total price, and you will know if it was successful based on a true or false response.",
       "user_prompt": "Hello! I would like to apply a coupon code to my current cart. Here are my account and order details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCould you please let me know if the coupon application was successful or not? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -51735,7 +51735,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to apply a coupon code to your current cart using your account credentials, identified by your username and password, to adjust the total price of your order associated with a specific order ID.",
+      "user_instruction": "You are attempting to apply a coupon code to your current cart using your account credentials, identified by your username and password, to adjust the total price of your order associated with a specific order ID.",
       "user_prompt": "Hi, I would like to apply a coupon code to my current cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The coupon code I want to use is \"SAVE10\", and it's for the order with the ID \"ORD-1\". Could you please assist me with adjusting the total price?",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -52152,7 +52152,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials (username and password), and check if it successfully adjusts the total price for your order, identified by the order ID.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials (username and password), and check if it successfully adjusts the total price for your order, identified by the order ID.",
       "user_prompt": "Hi, I'd like to apply a valid coupon to my current cart. Here are the details you'll need to help me with that:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: NEWYEAR20\n- Order ID: ORD-1\n\nPlease let me know if the coupon is successfully applied and if the total price for my order has been adjusted. Thanks!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -52563,7 +52563,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by its unique coupon code, to your current cart using your account credentials, which will adjust the total price and return whether the coupon was successfully applied.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by its unique coupon code, to your current cart using your account credentials, which will adjust the total price and return whether the coupon was successfully applied.",
       "user_prompt": "Hello, I'd like to apply a coupon with the code \"SAVE10\" to my current cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The order ID for my cart is \"ORD-1\". Could you let me know if the coupon is successfully applied and if my total price has been adjusted accordingly? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -52974,7 +52974,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart under your account, using your username and password, to adjust the total price and determine if the coupon was successfully applied.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart under your account, using your username and password, to adjust the total price and determine if the coupon was successfully applied.",
       "user_prompt": "Hi! I would like to apply a coupon to my current cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The coupon code I'd like to use is \"SAVE10\" for order ID \"ORD-1\". Could you help me with that and let me know if it was successfully applied and if there is any adjustment to the total price? Thanks!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -53378,7 +53378,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to apply a coupon code to your current cart using your username and password, aiming to adjust the total price of your order identified by the order ID, and you will receive a confirmation on whether the coupon was successfully applied.",
+      "user_instruction": "You are attempting to apply a coupon code to your current cart using your username and password, aiming to adjust the total price of your order identified by the order ID, and you will receive a confirmation on whether the coupon was successfully applied.",
       "user_prompt": "Hello! I'd like to apply a coupon code to my current cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The coupon code I want to apply is \"SAVE10\", and the order ID I'm referring to is \"ORD-2\". Could you please let me know if the coupon was successfully applied? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -53782,7 +53782,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials, and check if it successfully adjusts the total price for the order associated with your order ID.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials, and check if it successfully adjusts the total price for the order associated with your order ID.",
       "user_prompt": "Hello! I would like to apply a coupon to my current cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The coupon code I'd like to use is \"SAVE10\". Also, could you please check if it successfully adjusts the total price for my order with order ID \"ORD-1\"? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -54188,7 +54188,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart under your account using your username and password, to adjust the total price of the order associated with the order ID.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart under your account using your username and password, to adjust the total price of the order associated with the order ID.",
       "user_prompt": "Hi, I'd like to apply a coupon to my current cart. Here are the details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nPlease apply the coupon to adjust the total price of my order. Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -54608,7 +54608,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to apply a coupon code to your current cart using your username and password, in order to adjust the total price of your order identified by the order ID, and determine if the coupon was successfully applied.",
+      "user_instruction": "You are attempting to apply a coupon code to your current cart using your username and password, in order to adjust the total price of your order identified by the order ID, and determine if the coupon was successfully applied.",
       "user_prompt": "Hi, I'd like to apply a coupon code to my current cart. Here are the details you might need:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon code: NEWYEAR2024\n- Order ID: ORD-2\n\nCould you please help me adjust the total price of my order and let me know if the coupon was successfully applied? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -55024,7 +55024,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to apply a coupon with the code you have to your current cart under your account, using your username and password, to see if it successfully adjusts the total price for your order identified by the order ID.",
+      "user_instruction": "You are attempting to apply a coupon with the code you have to your current cart under your account, using your username and password, to see if it successfully adjusts the total price for your order identified by the order ID.",
       "user_prompt": "Hello! I'd like to apply a coupon to my current cart. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCan you please apply the coupon and let me know if it successfully adjusts the total price for my order? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -55419,7 +55419,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials, and check if it successfully adjusts the total price for your order identified by the order ID.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials, and check if it successfully adjusts the total price for your order identified by the order ID.",
       "user_prompt": "Hello! I'd like to apply a coupon to my current cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The coupon code I'm trying to use is \"SAVE10\". Can you also check if it successfully adjusts the total price of my order identified by order ID \"ORD-1\"? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -55785,7 +55785,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart to adjust the total price, using your username and password for authentication, and checking if it was successfully applied to your order with the order_id.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart to adjust the total price, using your username and password for authentication, and checking if it was successfully applied to your order with the order_id.",
       "user_prompt": "Hi there! I have a shopping cart ready and I would like to apply a coupon to my order. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". I have a coupon code \"SAVE10\" that I'd like to use and I need to check if it was successfully applied to my order with the order ID \"ORD-1\". Could you assist me with that, please?",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -56151,7 +56151,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon code to your current cart, using your username and password for authentication, to adjust the total price and determine if the coupon was successfully applied to your order identified by the order ID.",
+      "user_instruction": "You are trying to apply a valid coupon code to your current cart, using your username and password for authentication, to adjust the total price and determine if the coupon was successfully applied to your order identified by the order ID.",
       "user_prompt": "Hi, I'd like to apply a coupon code to my current cart. My username is \"alice\", and my password is \"sadfnjskdanfksadjnfl\". The coupon code I'd like to apply is \"SAVE10\" for my order with the order ID \"ORD-1\". Could you please let me know if the coupon was successfully applied and if the total price has been adjusted? Thanks!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -56519,7 +56519,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart using your username and password, and check if it successfully adjusts the total price for the order associated with the order_id.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart using your username and password, and check if it successfully adjusts the total price for the order associated with the order_id.",
       "user_prompt": "Hi! I'd like to apply a coupon to my current cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The coupon code I want to use is \"SAVE10\" for the order with the ID \"ORD-1\". Could you check if this successfully adjusts the total price for my order?",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -56904,7 +56904,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a coupon with the code you have to your current cart, using your account credentials, to adjust the total price of your order identified by the order ID.",
+      "user_instruction": "You are trying to apply a coupon with the code you have to your current cart, using your account credentials, to adjust the total price of your order identified by the order ID.",
       "user_prompt": "Hi! I'd like to apply a coupon to my current cart. Here are my details: username is \"alice\", password is \"sadfnjskdanfksadjnfl\", the coupon code I have is \"NEWYEAR2025\", and my order is identified by \"order_id\" which is \"ORD-1\". Please let me know if there's anything more I need to provide!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -57282,7 +57282,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart under your account, using your username and password, to adjust the total price and see if it was successfully applied.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart under your account, using your username and password, to adjust the total price and see if it was successfully applied.",
       "user_prompt": "Hello! I'd like to apply a coupon code to my current cart. Could you please help me with that? My username is \"alice\" and my password is \"alice_secure_password\". I'm looking to apply the coupon code \"SAVE10\" to my order with the ID \"ORD-1\". I want to see if it adjusts the total price and whether it gets successfully applied. Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -57658,7 +57658,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply a coupon code to your current cart using your account credentials, aiming to adjust the total price of your order associated with a specific order ID.",
+      "user_instruction": "You are trying to apply a coupon code to your current cart using your account credentials, aiming to adjust the total price of your order associated with a specific order ID.",
       "user_prompt": "Hi, I'd like to apply a coupon code to my current cart. My username is \"alice\" and password is \"sadfnjskdanfksadjnfl\". The coupon code I want to use is \"SAVE10\". This is for my order with the ID \"ORD-1\". Could you assist me with that, please?",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -58021,7 +58021,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a coupon with the code you have to your current cart using your account credentials, aiming to adjust the total price of your order identified by its order ID.",
+      "user_instruction": "You are trying to apply a coupon with the code you have to your current cart using your account credentials, aiming to adjust the total price of your order identified by its order ID.",
       "user_prompt": "Hi, I would like to apply a coupon to my current cart using my account. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCould you help me adjust the total price for my order using this coupon? Thanks!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -58386,7 +58386,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a coupon with the code you have to your current cart, using your account credentials and order ID, to see if it successfully reduces the total price.",
+      "user_instruction": "You are trying to apply a coupon with the code you have to your current cart, using your account credentials and order ID, to see if it successfully reduces the total price.",
       "user_prompt": "Hello! I would like to apply a coupon with the code \"SAVE10\" to my current cart. Here are my account credentials:  \nUsername: alice  \nPassword: sadfnjskdanfksadjnfl  \nOrder ID: ORD-1  \n\nCan you help me see if it successfully reduces the total price? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -58790,7 +58790,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials, with the aim of adjusting the total price for the order associated with the specific order ID.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials, with the aim of adjusting the total price for the order associated with the specific order ID.",
       "user_prompt": "Hi there! I'd like to apply a coupon to my current cart. Here are my details: \n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCould you please help me adjust the total price for my order using this coupon? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -59246,7 +59246,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a coupon code to your current cart using your username and password, aiming to adjust the total price of your order identified by the order ID.",
+      "user_instruction": "You are trying to apply a coupon code to your current cart using your username and password, aiming to adjust the total price of your order identified by the order ID.",
       "user_prompt": "Hello! I would like to apply a coupon code to my current cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The coupon code I want to use is \"SAVE10\" and my order ID is \"ORD-2\". Could you please help me with this? Thanks!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -59718,7 +59718,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a coupon code to your current cart using your account credentials, adjusting the total price of your order identified by the order ID, and determining if the coupon application was successful.",
+      "user_instruction": "You are trying to apply a coupon code to your current cart using your account credentials, adjusting the total price of your order identified by the order ID, and determining if the coupon application was successful.",
       "user_prompt": "Hi, I would like to apply a coupon code to my current cart. My account credentials are as follows: the username is \"alice\", and the password is \"sadfnjskdanfksadjnfl\". The coupon code I am trying to use is \"SAVE10\", and the order I want to apply it to is identified by the order ID \"ORD-1\". I'm looking to adjust the total price of my order and would like to determine if the coupon application was successful. Can you help me with this?",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -60174,7 +60174,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to apply a valid coupon, identified by your coupon_code, to your current cart using your account credentials (username and password) and order_id, to adjust the total price and determine if the coupon was successfully applied.",
+      "user_instruction": "You are attempting to apply a valid coupon, identified by your coupon_code, to your current cart using your account credentials (username and password) and order_id, to adjust the total price and determine if the coupon was successfully applied.",
       "user_prompt": "Hi! I'd like to apply a coupon to my current cart. Here are my details:\n\n- **Username:** alice\n- **Password:** securepassword123\n- **Coupon Code:** SAVE10\n- **Order ID:** ORD-1\n\nCould you please apply this coupon and let me know if it was successfully applied and the updated total price? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -60632,7 +60632,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart for order ID, adjusting the total price, using your username and password for authentication.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart for order ID, adjusting the total price, using your username and password for authentication.",
       "user_prompt": "Hi! I'd like to apply a coupon to my current cart. Here are the details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCould you please help me with this? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -61104,7 +61104,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart under your account using your username and password, and you want to know if it was successfully applied to the order associated with your order ID.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart under your account using your username and password, and you want to know if it was successfully applied to the order associated with your order ID.",
       "user_prompt": "Hello! I need some help with my current order. I'd like to apply a coupon to it. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The coupon code I want to use is \"NEWYEAR2025\". Could you please check if this coupon has been successfully applied to the order associated with my order ID, which is \"ORD-2\"? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -61570,7 +61570,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a coupon code to your current cart using your account credentials and order details to adjust the total price, and you want to know if the coupon was successfully applied.",
+      "user_instruction": "You are trying to apply a coupon code to your current cart using your account credentials and order details to adjust the total price, and you want to know if the coupon was successfully applied.",
       "user_prompt": "Hi, I'd like to apply a coupon code to my current cart. Here are my account details and order information:  \n- Username: alice  \n- Password: sadfnjskdanfksadjnfl  \n- Coupon code: SAVE10  \n- Order ID: ORD-1  \n\nCould you please let me know if the coupon was successfully applied? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -62038,7 +62038,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart using your username and password, and check if it successfully adjusts the total price for the order associated with the order_id.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart using your username and password, and check if it successfully adjusts the total price for the order associated with the order_id.",
       "user_prompt": "Hi! I'd like to apply a coupon to my current cart. Here are the details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCould you please check if this successfully adjusts the total price for my order? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -62504,7 +62504,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply a coupon code to your current cart by using your username and password, aiming to adjust the total price of your order with the order ID.",
+      "user_instruction": "You are trying to apply a coupon code to your current cart by using your username and password, aiming to adjust the total price of your order with the order ID.",
       "user_prompt": "Hi, I'd like to apply a coupon code to my current cart. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCan you help me with that, please?",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -62969,7 +62969,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart for order_id, using your account credentials (username and password), to adjust the total price and determine if the coupon was successfully applied.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart for order_id, using your account credentials (username and password), to adjust the total price and determine if the coupon was successfully applied.",
       "user_prompt": "Hello! I'd like to apply a coupon to my current cart. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: NEWUSER\n- Order ID: ORD-1\n\nCould you please apply the coupon and let me know if it was successful? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -63428,7 +63428,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a coupon with the code you have to your current cart using your account credentials and order history to adjust the total price and see if it is successful.",
+      "user_instruction": "You are trying to apply a coupon with the code you have to your current cart using your account credentials and order history to adjust the total price and see if it is successful.",
       "user_prompt": "Hi, I would like to apply a coupon to my current cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". I have a coupon code \"SAVE10\". Could you please use this code and adjust the total price? Also, I'd like to see if it is successful. Additionally, please refer to my past order history, specifically \"order_id\" which is \"ORD-1\", for any applicable discounts or deals. Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -63889,7 +63889,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials (username and password), and you want to know if it was successfully applied to the order identified by the order ID.",
+      "user_instruction": "You are attempting to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials (username and password), and you want to know if it was successfully applied to the order identified by the order ID.",
       "user_prompt": "Hello! I would like to apply a valid coupon code to my current cart. \n\nMy account credentials are:\n- Username: alice\n- Password: securepassword123\n\nThe coupon code I want to apply is \"SAVE10\".\n\nCould you please check if it was successfully applied to my order identified by the order ID \"ORD-1\"? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -64331,7 +64331,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart under your account, using your username and password, to adjust the total price and determine if the coupon was successfully applied, while referencing your order_id.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon_code, to your current cart under your account, using your username and password, to adjust the total price and determine if the coupon was successfully applied, while referencing your order_id.",
       "user_prompt": "Hi there! I would like to apply a coupon to my current cart. My details are as follows:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCould you help me apply the coupon and let me know if it was successfully applied and how it affects the total price? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -64761,7 +64761,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart under the account associated with your username and password, adjusting the total price of the order linked to your order ID.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart under the account associated with your username and password, adjusting the total price of the order linked to your order ID.",
       "user_prompt": "Hello! I'd like to apply a coupon to my cart. Here are my details:\n- **Username**: alice\n- **Password**: sadfnjskdanfksadjnfl\n- **Coupon Code**: NEWYEAR25\n- **Order ID**: ORD-1\n\nCan you please apply the coupon and confirm the updated total price? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -65182,7 +65182,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are attempting to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials, adjusting the total price of your order associated with the order ID.",
+      "user_instruction": "You are attempting to apply a valid coupon, identified by the coupon code, to your current cart using your account credentials, adjusting the total price of your order associated with the order ID.",
       "user_prompt": "Hi there! I'd like to apply a valid coupon to my current cart. Here are my details: \n\n- **Username:** alice\n- **Password:** sadfnjskdanfksadjnfl\n- **Coupon Code:** SAVE10\n- **Order ID:** ORD-1\n\nPlease let me know if you need any more information to apply the coupon. Thanks!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -65605,7 +65605,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a coupon with the code you have to your current cart, using your account credentials and order ID, to see if it successfully adjusts the total price.",
+      "user_instruction": "You are trying to apply a coupon with the code you have to your current cart, using your account credentials and order ID, to see if it successfully adjusts the total price.",
       "user_prompt": "Hello! I'd like to apply a coupon to my current cart. Here are my details:\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon code: SAVE10\n- Order ID: ORD-1\n\nCould you check if the coupon successfully adjusts the total price, please?",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -66069,7 +66069,7 @@
         ]
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are attempting to apply a coupon code to your current cart using your account credentials, with the aim of adjusting the total price for the order associated with the specified order ID.",
+      "user_instruction": "You are attempting to apply a coupon code to your current cart using your account credentials, with the aim of adjusting the total price for the order associated with the specified order ID.",
       "user_prompt": "Hi, I would like to apply a coupon code to my current cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The coupon code I want to use is \"SAVE10\" for the order associated with order ID \"ORD-1\". Can you help me adjust the total price using this coupon? Thanks!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -66580,7 +66580,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a coupon code to your current cart using your username and password, aiming to adjust the total price of your order identified by the order ID.",
+      "user_instruction": "You are trying to apply a coupon code to your current cart using your username and password, aiming to adjust the total price of your order identified by the order ID.",
       "user_prompt": "Hello! I'd like to apply a coupon code to my current cart to adjust the total price of my order. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-2\n\nThanks for your assistance in applying the coupon!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -67107,7 +67107,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a coupon code to your current cart using your account credentials and order ID to adjust the total price, aiming to determine if the coupon was successfully applied.",
+      "user_instruction": "You are trying to apply a coupon code to your current cart using your account credentials and order ID to adjust the total price, aiming to determine if the coupon was successfully applied.",
       "user_prompt": "Hello! I'd like to apply a coupon code to my current cart. Here are my details:\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-4\n\nCould you please check if the coupon was successfully applied and adjust the total price accordingly? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -67618,7 +67618,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart, using your username and password to authenticate, and adjusting the total price for the order associated with the specified order ID.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart, using your username and password to authenticate, and adjusting the total price for the order associated with the specified order ID.",
       "user_prompt": "Hi! I'd like to apply a coupon to my current cart. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". The coupon code I'd like to use is \"SAVE10\". Also, I need to adjust the total price for the order associated with the order ID \"ORD-1\". Can you assist me with that? Thank you!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -68131,7 +68131,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart associated with your account, using your username and password, to adjust the total price and determine if the coupon was successfully applied to your order.",
+      "user_instruction": "You are trying to apply a valid coupon, identified by the coupon code, to your current cart associated with your account, using your username and password, to adjust the total price and determine if the coupon was successfully applied to your order.",
       "user_prompt": "Hi! I'd like to apply a coupon to my current cart. Here are my details:\n\n- Username: alice\n- Password: sadfnjskdanfksadjnfl\n- Coupon Code: SAVE10\n- Order ID: ORD-1\n\nCan you help me adjust the total price and let me know if the coupon was successfully applied to my order? Thanks!",
       "user_goal": "use_coupon",
       "directed_action_graph": {
@@ -68502,7 +68502,7 @@
         }
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to view the current contents of your cart, including product details and total cost, by using your username and password to access your account.",
+      "user_instruction": "You are trying to view the current contents of your cart, including product details and total cost, by using your username and password to access your account.",
       "user_prompt": "Hi! I'd like to view the current contents of my cart, including the product details and total cost. Can you help me log in to my account using my username \"alice\" and my password \"securepassword123\"?",
       "user_goal": "view_cart",
       "directed_action_graph": {
@@ -68702,7 +68702,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to view the current contents of your cart, including product details and total cost, for your account with the username provided.",
+      "user_instruction": "You are trying to view the current contents of your cart, including product details and total cost, for your account with the username provided.",
       "user_prompt": "Hello! I would like to view the current contents of my cart, including product details and total cost, for my account. My username is \"rsSUqzStzJahkXPTCeX\". Could you help me with that, please?",
       "user_goal": "view_cart",
       "directed_action_graph": {
@@ -68903,7 +68903,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to view the current contents of your cart, including product details and total cost, by using your username and password to access your account.",
+      "user_instruction": "You are trying to view the current contents of your cart, including product details and total cost, by using your username and password to access your account.",
       "user_prompt": "Hi! I would like to view the current contents of my cart, along with the product details and total cost. I'll use my username and password to access my account. My username is \"alice\" and my password is \"cDRsISTsOProLlMZHkS\". Could you assist me with that, please?",
       "user_goal": "view_cart",
       "directed_action_graph": {
@@ -69093,7 +69093,7 @@
         }
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to retrieve your complete order history, including all order details and statuses, by providing your username and password.",
+      "user_instruction": "You are trying to retrieve your complete order history, including all order details and statuses, by providing your username and password.",
       "user_prompt": "Hello! I'd like to retrieve my complete order history, including all order details and statuses. My username is \"alice\" and my password is \"sadfnjskdanfksadjnfl\". Could you assist me with that, please?",
       "user_goal": "view_order_history",
       "directed_action_graph": {
@@ -69282,7 +69282,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to retrieve your complete order history, including all order details and statuses, by using your account name, \"username\".",
+      "user_instruction": "You are trying to retrieve your complete order history, including all order details and statuses, by using your account name, \"username\".",
       "user_prompt": "Hello! I need to retrieve my complete order history, including all order details and statuses. My account name is \"sZXbnFOVgzvzcnDOGpS\". Could you please provide me with that information?",
       "user_goal": "view_order_history",
       "directed_action_graph": {
@@ -69472,7 +69472,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to access your complete order history by providing your account's username and password to retrieve a detailed list of your past orders and their statuses.",
+      "user_instruction": "You are trying to access your complete order history by providing your account's username and password to retrieve a detailed list of your past orders and their statuses.",
       "user_prompt": "Hi, I'd like to access my complete order history. My username is \"alice\" and my password is \"incorrect_password\". Could you help me retrieve a detailed list of my past orders and their statuses?",
       "user_goal": "view_order_history",
       "directed_action_graph": {
@@ -69665,7 +69665,7 @@
         }
       ],
       "action_should_succeed": 1,
-      "verb_user_goal": "You are trying to retrieve a list of all shipping addresses linked to your account, including identifying your default address, by using your username and password.",
+      "user_instruction": "You are trying to retrieve a list of all shipping addresses linked to your account, including identifying your default address, by using your username and password.",
       "user_prompt": "Hi! I would like to retrieve a list of all shipping addresses linked to my account. Specifically, I want to identify which one is my default address. My username is \"alice\" and my password is \"correcthorsebatterystaple\". Can you help me with this?",
       "user_goal": "view_shipping_addresses",
       "directed_action_graph": {
@@ -69854,7 +69854,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to retrieve a list of all shipping addresses associated with your account, including the default address, using your username.",
+      "user_instruction": "You are trying to retrieve a list of all shipping addresses associated with your account, including the default address, using your username.",
       "user_prompt": "Hello! I'd like to retrieve a list of all shipping addresses associated with my account, including the default address. My username is \"VhYgaHePXDkLEAWOahd\". Can you assist me with that? Thank you!",
       "user_goal": "view_shipping_addresses",
       "directed_action_graph": {
@@ -70044,7 +70044,7 @@
         }
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to retrieve a list of all shipping addresses linked to your account, including identifying your default address, by using your username and password.",
+      "user_instruction": "You are trying to retrieve a list of all shipping addresses linked to your account, including identifying your default address, by using your username and password.",
       "user_prompt": "Hello! I would like to retrieve a list of all the shipping addresses linked to my account, including identifying my default address. My username is \"alice\" and my password is \"VDzdtySCnvAVqDLERoh\". Could you please help me with that? Thank you!",
       "user_goal": "view_shipping_addresses",
       "directed_action_graph": {

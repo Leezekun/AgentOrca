@@ -167,7 +167,7 @@
         ]
       ],
       "action_should_succeed": 0,
-      "verb_user_goal": "You are trying to add a new authorized healthcare provider, identified by the provider ID, to your policy using your username and either your account password or driver's license for identification, aiming for a successful addition indicated by a true or false response.",
+      "user_instruction": "You are trying to add a new authorized healthcare provider, identified by the provider ID, to your policy using your username and either your account password or driver's license for identification, aiming for a successful addition indicated by a true or false response.",
       "user_prompt": "Hello, I am trying to add a new authorized healthcare provider to my policy. The provider ID is \"new_provider_123\". My username is \"Henry Smith\", and I will provide \"sdfojngsmnlvx\" for identification. Can you please help me with the addition and inform me if it's successful (true or false)?",
       "user_goal": "add_authorized_provider",
       "directed_action_graph": {

@@ -945,8 +945,7 @@ def generate_action_task(domain_str:str, user_goal:str, default_dependency_optio
                 "dependency":               dep,
                 "dependency_original":      dep_orig,
                 "user_prompt":              verb_user_goal_oneround,
-                "user_prompt_multi":        verb_user_goal,
-                "constraint_composition":   dep_orig,
+                "user_instruction":         verb_user_goal,
                 "action_should_succeed":    task_succ,
                 "directed_action_graph":    directed_action_graph,
             }
@@ -996,7 +995,6 @@ def task_generation(args):
         if args.testing_mode_user_goal in eval_ds_method_name_set else set([random.choice(list(eval_ds_method_name_set))])
     eval_ds_method_name_list = sorted(list(eval_ds_method_name_set)) # sort it to keep number of tasks constant from the dep remembering
     # parsing output variables
-    domain_system_dir = f"{args.domains_dir}/{args.domain_str}"
     tasks_filename = f"{args.domain_str}_tasks.json"
     intermediate_tasks_filename = f"{args.domain_str}_intermediate_tasks.json"
     # for each method, construct the outcomes, decision tree, then the task with user known parameters, initial database, and user goal
@@ -1051,17 +1049,17 @@ def task_generation(args):
         # write partial just in case
         if write_output_bool:
             dict_key_str = f",\n\"{user_goal}\": " if not first_bool else f"{{\n\"{user_goal}\": "
-            write_data_file(domain_system_dir, tasks_filename,
+            write_data_file(args.data_dir, tasks_filename,
                 dict_key_str+json.dumps(tasks[user_goal], indent=args.indent_amount), option="a" if not first_bool else 'w')
-            write_data_file(domain_system_dir, intermediate_tasks_filename,
+            write_data_file(args.data_dir, intermediate_tasks_filename,
                 dict_key_str+json.dumps(intermediate_tasks[user_goal], indent=args.indent_amount), option="a" if not first_bool else 'w')
             first_bool = False
         # update the progress bar
         pbar.update(int(len(list_task_obj)))
     pbar.close()
     if write_output_bool:
-        write_data_file(domain_system_dir, tasks_filename, "\n}", option="a")
-        write_data_file(domain_system_dir, intermediate_tasks_filename, "\n}", option="a")
+        write_data_file(args.data_dir, tasks_filename, "\n}", option="a")
+        write_data_file(args.data_dir, intermediate_tasks_filename, "\n}", option="a")
     # print diagnostic information
     if print_pipeline:
         skipped_methods_report_str = f"methods skipped due to error: {skipped_methods}" if skipped_methods else "no methods skipped"

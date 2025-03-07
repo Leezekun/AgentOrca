@@ -93,25 +93,6 @@ def exit_conversation():
         It takes no parameters and returns None."""
         return
 
-def check_database_call(interaction):
-    """
-    Check if an interaction contains a call to internal_get_database.
-    
-    Args:
-        interaction (list): List of interaction messages
-        
-    Returns:
-        bool: True if interaction contains database call, False otherwise
-    """
-    for message in interaction:
-        if "tool_calls" in message:
-            tool_calls = message["tool_calls"]
-            if tool_calls:
-                for tool_call in tool_calls:
-                    if tool_call["function"]["name"] == "internal_get_database":
-                        return True
-    return False
-
 def run_task_simulation(
     args: argparse.Namespace,
     task: dict,
@@ -321,14 +302,6 @@ def main():
         if i < len(results):
             result = results[i]
             runs = result["interactions"]
-            # Filter out interactions that call internal_get_database
-            filtered_runs = []
-            for interaction_log in runs:
-                if not check_database_call(interaction_log["interaction"]):
-                    filtered_runs.append(interaction_log)
-                else:
-                    print(f"Removing interaction that calls internal_get_database!")
-            runs = filtered_runs
         else:
             result = None
             runs = []

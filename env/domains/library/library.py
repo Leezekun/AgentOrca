@@ -411,11 +411,11 @@ class Library_State_Tracker:
         self.previously_logged_in_username = None
 
  # required and customizable dependencies are separated
-class Library_Dynamic_Dependencies:
+class Library_w_Dependency_Verifier:
     # initialization of library functionality
     def __init__(self, data:dict=default_data,
         dep_innate_full:dict=get_domain_dependency_none("Library"),
-        dep_full:dict=get_domain_dependency_none("Library_Dynamic_Dependencies"),
+        dep_full:dict=get_domain_dependency_none("Library_w_Dependency_Verifier"),
         dep_params:dict=default_dependency_parameters,
         data_descriptions:dict=default_data_descriptions):
         self.dep_params = dep_params

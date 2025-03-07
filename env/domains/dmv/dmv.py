@@ -396,11 +396,11 @@ class DMV_State_Tracker:
     def set_authenticate_admin_password(self): self.prev_auth_admin_pass = True
 
 # required and customizable dependencies are separated
-class DMV_Dynamic_Dependencies:
+class DMV_w_Dependency_Verifier:
     # initialization of dmv functionality
     def __init__(self, data:dict=default_data,
         dep_innate_full:dict=get_domain_dependency_none("DMV"),
-        dep_full:dict=get_domain_dependency_none("DMV_Dynamic_Dependencies"),
+        dep_full:dict=get_domain_dependency_none("DMV_w_Dependency_Verifier"),
         dep_params:dict=default_dependency_parameters,
         data_descriptions:dict=default_data_descriptions):
         self.dep_params = dep_params

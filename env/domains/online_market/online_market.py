@@ -461,11 +461,11 @@ class OnlineMarket_State_Tracker:
     
 
 
-class OnlineMarket_Dynamic_Dependencies:
+class OnlineMarket_w_Dependency_Verifier:
 
     def __init__(self, data:dict=default_data,
         dep_innate_full:dict=get_domain_dependency_none("OnlineMarket"),
-        dep_full:dict=get_domain_dependency_none("OnlineMarket_Dynamic_Dependencies"),
+        dep_full:dict=get_domain_dependency_none("OnlineMarket_w_Dependency_Verifier"),
         dep_params:dict=default_dependency_parameters,
         data_descriptions:dict=default_data_descriptions):
         self.dep_params = dep_params

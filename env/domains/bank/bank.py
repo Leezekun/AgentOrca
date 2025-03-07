@@ -311,11 +311,11 @@ class Bank_State_Tracker:
 
 
 # required and customizable dependencies are separated
-class Bank_Dynamic_Dependencies:
+class Bank_w_Dependency_Verifier:
     # initialization of bank functionality
     def __init__(self, data:dict=default_data,
         dep_innate_full:dict=get_domain_dependency_none("Bank"),
-        dep_full:dict=get_domain_dependency_none("Bank_Dynamic_Dependencies"),
+        dep_full:dict=get_domain_dependency_none("Bank_w_Dependency_Verifier"),
         dep_params:dict=default_dependency_parameters,
         data_descriptions:dict=default_data_descriptions):
         self.dep_params = dep_params

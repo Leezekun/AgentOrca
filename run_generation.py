@@ -22,7 +22,7 @@ if __name__ == "__main__":
     parser.add_argument("--testing_mode_last_task", action="store_true")
     parser.add_argument("--testing_mode_user_goal", type=str, default="transfer_funds")
     parser.add_argument("--print_pipeline_disable", action="store_false")
-    parser.add_argument("--domains_dir", type=str, default="env\\domains")
+    parser.add_argument("--data_dir", type=str, default="./data_new")
     parser.add_argument("--write_output_disable", action="store_false")
     parser.add_argument("--indent_amount", type=int, default=2)
     args = parser.parse_args()

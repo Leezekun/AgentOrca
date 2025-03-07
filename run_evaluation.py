@@ -4,7 +4,7 @@ import copy
 import argparse
 import json
 from tqdm import tqdm
-from env.task import evaluator_function_directed_graph
+from env.evaluator import evaluator_function_directed_graph
 
 def try_eval(x):
     try:
@@ -105,14 +105,11 @@ def main():
     
     # Initialize combined results for all domains
     combined_results = {}
-    # Initialize global counters for call_database when domain is "all"
-    total_call_database_count = 0
-    total_cases_count = 0
     
     for current_domain in domains_to_process:
         # Setup output path
         output_dir = f"{args.output_dir}/{current_domain}"
-        new_output_dir = f"{args.output_dir}/eval_results/{current_domain}"
+        new_output_dir = f"{args.output_dir}/{current_domain}"
         os.makedirs(output_dir, exist_ok=True)
         os.makedirs(new_output_dir, exist_ok=True)
         output_file = os.path.join(
@@ -147,11 +144,6 @@ def main():
             "avg_num_function_calls": 0,
             "avg_num_constraints": 0,
             "avg_num_constraints_expanded": 0,
-            "call_database_stats": {          # Add this new field
-                "total_call_database": 0,
-                "total_cases": 0,
-                "percentage": 0
-            },
             "goal_statistics": {},
             "constraint_group_statistics": {},  # Group by constraint count
             "error_statistics": {              # Modified error tracking
@@ -178,9 +170,7 @@ def main():
         updated_task_simulations = []
         
         # Add a counter for call_database in the main function where evaluations are processed
-        call_database_count = 0
-        total_cases = 0
-        
+        total_cases = 0        
         for idx, task_simulation in tqdm(enumerate(task_simulations), desc="Evaluating task simulations"):
             evaluations = []
             user_goal = task_simulation["task"]["user_goal"]
@@ -208,19 +198,10 @@ def main():
                     print_results["goal_statistics"][user_goal][f"pass@{i+1}"] = 0
                     print_results["goal_statistics"][user_goal][f"total_test_cases@{i+1}"] = 0
             
-            call_database = False
             for interaction_log in task_simulation["interactions"]:
                 
                 results = {"final_database": interaction_log["database"]}
                 interaction = interaction_log["interaction"]
-                for message in interaction:
-                    if "tool_calls" in message.keys():
-                        tool_calls = message["tool_calls"]
-                        if tool_calls:
-                            for tool_call in tool_calls:
-                                if tool_call["function"]["name"] == "internal_get_database":
-                                    call_database = True
-                                    break
                 
                 # collect the function call and response
                 func_calls = []
@@ -266,15 +247,8 @@ def main():
 
                     if not evaluation_result["action_called_correctly"]:
                         print_results["error_statistics"]["error_causes"]["action_called_correctly"] += 1
-
-                if call_database:
-                    break
             
             # Increment counters after checking all interactions for this task
-            if call_database:
-                call_database_count += 1
-                if args.domain == "all":
-                    total_call_database_count += 1
             total_cases += 1
             if args.domain == "all":
                 total_cases_count += 1
@@ -349,27 +323,12 @@ def main():
                 group_stats["avg_num_messages"] += updated_simulation["statistics"]["avg_num_messages"]
                 group_stats["avg_num_function_calls"] += updated_simulation["statistics"]["avg_num_function_calls"]
 
-        # After processing all tasks, update call_database statistics
-        print_results["call_database_stats"]["total_call_database"] = call_database_count
-        print_results["call_database_stats"]["total_cases"] = total_cases
-        print_results["call_database_stats"]["percentage"] = (call_database_count / total_cases) * 100 if total_cases > 0 else 0
-
         # Save the updated task simulations
         save_results(new_output_file, updated_task_simulations, verbose=True)
         
         if args.domain == "all":
             combined_results[current_domain] = print_results
         
-        # Calculate percentage for individual domain
-        if args.domain != "all":
-            call_database_percentage = (call_database_count / total_cases) * 100 if total_cases > 0 else 0
-            print(f"Call database count for {current_domain}: {call_database_count}/{total_cases} ({call_database_percentage:.2f}%)")
-    
-    # Calculate and print overall percentage for "all" domains
-    if args.domain == "all":
-        overall_percentage = (total_call_database_count / total_cases_count) * 100 if total_cases_count > 0 else 0
-        print(f"Total call database count across all domains: {total_call_database_count}/{total_cases_count} ({overall_percentage:.2f}%)")
-
     if args.domain == "all":
         # Create "all" directory
         all_output_dir = f"{args.output_dir}/all"
@@ -392,12 +351,7 @@ def main():
                 "avg_num_constraints": sum(r["avg_num_constraints"] * r["total_tasks"] for r in combined_results.values()) / 
                                      sum(r["total_tasks"] for r in combined_results.values()),
                 "avg_num_constraints_expanded": sum(r["avg_num_constraints_expanded"] * r["total_tasks"] for r in combined_results.values()) / 
-                                              sum(r["total_tasks"] for r in combined_results.values()),
-                "call_database_stats": {          # Add this new field
-                    "total_call_database": total_call_database_count,
-                    "total_cases": total_cases_count,
-                    "percentage": (total_call_database_count / total_cases_count) * 100 if total_cases_count > 0 else 0
-                }
+                                              sum(r["total_tasks"] for r in combined_results.values())
             },
             "error_statistics": {              # Add error statistics for all domains
                 "total_evaluations": sum(r["error_statistics"]["total_evaluations"] for r in combined_results.values()),
@@ -492,11 +446,6 @@ def main():
         print_results["avg_num_function_calls"] /= print_results["total_tasks"]
         print_results["avg_num_constraints"] /= print_results["total_tasks"]
         print_results["avg_num_constraints_expanded"] /= print_results["total_tasks"]
-        
-        # Update call_database statistics in the final output
-        print_results["call_database_stats"]["total_call_database"] = call_database_count
-        print_results["call_database_stats"]["total_cases"] = total_cases
-        print_results["call_database_stats"]["percentage"] = (call_database_count / total_cases) * 100 if total_cases > 0 else 0
         
         # calculate pass rate
         for i in range(args.num_run_per_interaction):

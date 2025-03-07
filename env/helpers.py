@@ -772,5 +772,7 @@ def recur_data_consistency(d1, d2)->bool:
 # writes to a file
 import os
 def write_data_file(data_dir:str, document_name:str, data:str, option:str='w'):
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
     with open(os.path.join(data_dir, document_name), option, encoding='utf-8', errors='ignore') as f:
         f.write(data)

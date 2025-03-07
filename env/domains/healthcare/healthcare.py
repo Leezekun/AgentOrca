@@ -412,10 +412,10 @@ class Healthcare_State_Tracker:
     
 
 
-class Healthcare_Dynamic_Dependencies:
+class Healthcare_w_Dependency_Verifier:
     def __init__(self, data:dict=default_data,
         dep_innate_full:dict=get_domain_dependency_none("Healthcare"),
-        dep_full:dict=get_domain_dependency_none("Healthcare_Dynamic_Dependencies"),
+        dep_full:dict=get_domain_dependency_none("Healthcare_w_Dependency_Verifier"),
         dep_params:dict=default_dependency_parameters,
         data_descriptions:dict=default_data_descriptions):
         

@@ -1,0 +1,1745 @@
+{
+"apply_credit_card": [
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1200.0,
+          "owed_balance": 150.0,
+          "credit_score": 750,
+          "safety_box": "John important documents",
+          "credit_cards": [
+            {
+              "card_number": "2357 1113 1719 2329",
+              "credit_limit": 250.0,
+              "credit_balance": 0.0
+            }
+          ]
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 500,
+      "maximum_exchange": 3000,
+      "minimum_credit_score": 600,
+      "minimum_account_balance_safety_box": 300,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "total_assets": 5000.0,
+      "username": "john_doe",
+      "monthly_income": 3000.0
+    },
+    "dependency": [
+      "single",
+      "internal_check_username_exist",
+      {
+        "username": "username"
+      }
+    ],
+    "dependency_original": [
+      "single",
+      "internal_check_username_exist",
+      {
+        "username": "username"
+      }
+    ],
+    "user_prompt": "Hello, I would like to apply for a credit card. Here is my information:\n\n- Username: john_doe\n- Total Assets: 5000.0\n- Monthly Income: 3000.0\n\nPlease let me know if I am eligible for the credit card and what my spending limit would be. Thank you!",
+    "user_instruction": "You are applying for a credit card by providing your username, total assets, and monthly income to determine your eligibility and spending limit, with the aim of receiving a true or false response regarding the success of your application.",
+    "action_should_succeed": 1,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "apply_credit_card",
+          {
+            "total_assets": "total_assets",
+            "username": "username",
+            "monthly_income": "monthly_income"
+          }
+        ],
+        "or",
+        [
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "internal_get_database",
+          {}
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    }
+  },
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1000.0,
+          "owed_balance": 200.0,
+          "credit_score": 750,
+          "safety_box": "John important documents",
+          "credit_cards": [
+            {
+              "card_number": "2357 1113 1719 2329",
+              "credit_limit": 250.0,
+              "credit_balance": 0.0
+            }
+          ]
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        },
+        "alice_smith": {
+          "identification": "qwerty12345",
+          "admin_password": "adminpass123",
+          "balance": 1200.0,
+          "owed_balance": 150.0,
+          "credit_score": 700,
+          "safety_box": "Alice important documents",
+          "credit_cards": []
+        },
+        "bob_brown": {
+          "identification": "newuserpass123",
+          "admin_password": "newadminpass456",
+          "balance": 800.0,
+          "owed_balance": 50.0,
+          "credit_score": 720,
+          "safety_box": "Bob important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 1000,
+      "maximum_exchange": 3000,
+      "minimum_credit_score": 650,
+      "minimum_account_balance_safety_box": 300,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "total_assets": 5000.0,
+      "username": "new_user_2023",
+      "monthly_income": 3000.0
+    },
+    "dependency": [
+      "single",
+      "internal_check_username_exist",
+      {
+        "username": "username"
+      }
+    ],
+    "dependency_original": [
+      "single",
+      "internal_check_username_exist",
+      {
+        "username": "username"
+      }
+    ],
+    "user_prompt": "Hello, I would like to apply for a credit card. Here are my details:\n\n- Username: new_user_2023\n- Total Assets: 5000.0\n- Monthly Income: 3000.0\n\nPlease let me know if I am eligible for a credit card and what my spending limit would be. Thank you!",
+    "user_instruction": "You are applying for a credit card by providing your username, total assets, and monthly income to determine your eligibility and spending limit, with the aim of receiving a true or false response regarding the success of your application.",
+    "action_should_succeed": 0,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "apply_credit_card",
+          {
+            "total_assets": "total_assets",
+            "username": "username",
+            "monthly_income": "monthly_income"
+          }
+        ],
+        "or",
+        [
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "internal_get_database",
+          {}
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    }
+  },
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1000.0,
+          "owed_balance": 200.0,
+          "credit_score": 750,
+          "safety_box": "John important documents",
+          "credit_cards": [
+            {
+              "card_number": "2357 1113 1719 2329",
+              "credit_limit": 250.0,
+              "credit_balance": 0.0
+            }
+          ]
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 500,
+      "maximum_exchange": 3000,
+      "minimum_credit_score": 600,
+      "minimum_account_balance_safety_box": 300,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "total_assets": 15000.0,
+      "username": "john_doe",
+      "monthly_income": 4000.0
+    },
+    "dependency": [
+      "chain",
+      [
+        [
+          "single",
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "minimal_elgibile_credit_score",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "dependency_original": [
+      "and",
+      [
+        [
+          "single",
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "minimal_elgibile_credit_score",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "user_prompt": "Hello, I would like to apply for a credit card. Here are my details:\n\n- Username: john_doe\n- Total Assets: 15000.0\n- Monthly Income: 4000.0\n\nCould you please let me know if my application is successful and what my spending limit would be? Thank you!",
+    "user_instruction": "You are applying for a credit card by providing your username, total assets, and monthly income to determine your eligibility and spending limit, and you want to know if your application is successful.",
+    "action_should_succeed": 1,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "apply_credit_card",
+          {
+            "total_assets": "total_assets",
+            "username": "username",
+            "monthly_income": "monthly_income"
+          }
+        ],
+        "and",
+        "or",
+        "or",
+        [
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "internal_get_database",
+          {}
+        ],
+        [
+          "internal_get_credit_score",
+          {
+            "username": "username"
+          }
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ]
+      ]
+    }
+  },
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1000.0,
+          "owed_balance": 200.0,
+          "credit_score": 500,
+          "safety_box": "John important documents",
+          "credit_cards": []
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 500,
+      "maximum_exchange": 3000,
+      "minimum_credit_score": 600,
+      "minimum_account_balance_safety_box": 300,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "total_assets": 1500.0,
+      "username": "john_doe",
+      "monthly_income": 3000.0
+    },
+    "dependency": [
+      "chain",
+      [
+        [
+          "single",
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "minimal_elgibile_credit_score",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "dependency_original": [
+      "and",
+      [
+        [
+          "single",
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "minimal_elgibile_credit_score",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "user_prompt": "Hello, I would like to apply for a credit card. Here are my details:\n\n- Username: john_doe\n- Total Assets: 1500.0\n- Monthly Income: 3000.0\n\nCould you please let me know if my application is successful and what my spending limit would be? Thank you!",
+    "user_instruction": "You are applying for a credit card by providing your username, total assets, and monthly income to determine your eligibility and spending limit, and you want to know if your application is successful.",
+    "action_should_succeed": 0,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "apply_credit_card",
+          {
+            "total_assets": "total_assets",
+            "username": "username",
+            "monthly_income": "monthly_income"
+          }
+        ],
+        "and",
+        "or",
+        "or",
+        [
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "internal_get_database",
+          {}
+        ],
+        [
+          "internal_get_credit_score",
+          {
+            "username": "username"
+          }
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ]
+      ]
+    }
+  },
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1000.0,
+          "owed_balance": 200.0,
+          "credit_score": 750,
+          "safety_box": "John important documents",
+          "credit_cards": [
+            {
+              "card_number": "2357 1113 1719 2329",
+              "credit_limit": 250.0,
+              "credit_balance": 0.0
+            }
+          ]
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        },
+        "alice_smith": {
+          "identification": "alicepassword123",
+          "admin_password": "adminpassword123",
+          "balance": 1500.0,
+          "owed_balance": 300.0,
+          "credit_score": 700,
+          "safety_box": "Alice important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 500,
+      "maximum_exchange": 3000,
+      "minimum_credit_score": 650,
+      "minimum_account_balance_safety_box": 300,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "identification": "alicepassword123",
+      "total_assets": 20000.0,
+      "username": "alice_smith",
+      "monthly_income": 4000.0
+    },
+    "dependency": [
+      "and",
+      [
+        [
+          "single",
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "logged_in_user",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "dependency_original": [
+      "and",
+      [
+        [
+          "single",
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "logged_in_user",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "user_prompt": "Hello, I would like to apply for a credit card. Here is my information:\n\n- Username: alice_smith\n- Identification: alicepassword123\n- Total Assets: 20000.0\n- Monthly Income: 4000.0\n\nPlease let me know if I am eligible for the credit card and what my spending limit would be. Thank you!",
+    "user_instruction": "You are applying for a credit card by providing your username, identification, total assets, and monthly income to determine your eligibility and spending limit, with the aim of receiving a true or false response regarding the success of your application.",
+    "action_should_succeed": 1,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "apply_credit_card",
+          {
+            "total_assets": "total_assets",
+            "username": "username",
+            "monthly_income": "monthly_income"
+          }
+        ],
+        "and",
+        [
+          "login_user",
+          {
+            "username": "username",
+            "identification": "identification"
+          }
+        ],
+        "or",
+        [
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "internal_get_database",
+          {}
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ]
+    }
+  },
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1000.0,
+          "owed_balance": 200.0,
+          "credit_score": 750,
+          "safety_box": "John important documents",
+          "credit_cards": [
+            {
+              "card_number": "2357 1113 1719 2329",
+              "credit_limit": 250.0,
+              "credit_balance": 0.0
+            }
+          ]
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        },
+        "alice_smith": {
+          "identification": "QGuqBysUCnbxIdie",
+          "admin_password": "admin_password_123",
+          "balance": 1500.0,
+          "owed_balance": 600.0,
+          "credit_score": 650,
+          "safety_box": "Alice important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 700,
+      "maximum_exchange": 3000,
+      "minimum_credit_score": 600,
+      "minimum_account_balance_safety_box": 1000,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "identification": "XIdzHONCkLBqpOlzPTn",
+      "total_assets": 20000.0,
+      "username": "alice_smith",
+      "monthly_income": 4000.0
+    },
+    "dependency": [
+      "and",
+      [
+        [
+          "single",
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "logged_in_user",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "dependency_original": [
+      "and",
+      [
+        [
+          "single",
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "logged_in_user",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "user_prompt": "Hello, I would like to apply for a credit card. Here are my details:\n\n- Username: alice_smith\n- Identification: UNKNOWN_PLACEHOLDER\n- Total Assets: 20000.0\n- Monthly Income: 4000.0\n\nPlease let me know if I am eligible and what my spending limit would be. Thank you!",
+    "user_instruction": "You are applying for a credit card by providing your username, identification, total assets, and monthly income to determine your eligibility and spending limit, with the aim of receiving a true or false response regarding the success of your application.",
+    "action_should_succeed": 0,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "apply_credit_card",
+          {
+            "total_assets": "total_assets",
+            "username": "username",
+            "monthly_income": "monthly_income"
+          }
+        ],
+        "and",
+        [
+          "login_user",
+          {
+            "username": "username",
+            "identification": "identification"
+          }
+        ],
+        "or",
+        [
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "internal_get_database",
+          {}
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ]
+    }
+  },
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1000.0,
+          "owed_balance": 200.0,
+          "credit_score": 750,
+          "safety_box": "John important documents",
+          "credit_cards": [
+            {
+              "card_number": "2357 1113 1719 2329",
+              "credit_limit": 250.0,
+              "credit_balance": 0.0
+            }
+          ]
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        },
+        "alice_smith": {
+          "identification": "securepassword123",
+          "admin_password": "adminpass456",
+          "balance": 1500.0,
+          "owed_balance": 50.0,
+          "credit_score": 800,
+          "safety_box": "Alice important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 500,
+      "maximum_exchange": 3000,
+      "minimum_credit_score": 700,
+      "minimum_account_balance_safety_box": 300,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "identification": "securepassword123",
+      "total_assets": 20000.0,
+      "username": "alice_smith",
+      "monthly_income": 4000.0
+    },
+    "dependency": [
+      "and",
+      [
+        [
+          "chain",
+          [
+            [
+              "single",
+              "internal_check_username_exist",
+              {
+                "username": "username"
+              }
+            ],
+            [
+              "single",
+              "minimal_elgibile_credit_score",
+              {
+                "username": "username"
+              }
+            ]
+          ]
+        ],
+        [
+          "single",
+          "logged_in_user",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "dependency_original": [
+      "and",
+      [
+        [
+          "single",
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "minimal_elgibile_credit_score",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "logged_in_user",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "user_prompt": "Hello, I would like to apply for a credit card. Here are my details for the application:\n\n- Username: alice_smith\n- Identification: securepassword123\n- Total Assets: 20000.0\n- Monthly Income: 4000.0\n\nPlease let me know if I am eligible and what my spending limit would be. Thank you!",
+    "user_instruction": "You are applying for a credit card by providing your username, identification, total assets, and monthly income to determine your eligibility and spending limit, ultimately seeking a successful application result.",
+    "action_should_succeed": 1,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "apply_credit_card",
+          {
+            "total_assets": "total_assets",
+            "username": "username",
+            "monthly_income": "monthly_income"
+          }
+        ],
+        "and",
+        [
+          "login_user",
+          {
+            "username": "username",
+            "identification": "identification"
+          }
+        ],
+        "or",
+        "or",
+        [
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "internal_get_database",
+          {}
+        ],
+        [
+          "internal_get_credit_score",
+          {
+            "username": "username"
+          }
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ]
+      ]
+    }
+  },
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1000.0,
+          "owed_balance": 200.0,
+          "credit_score": 750,
+          "safety_box": "John important documents",
+          "credit_cards": [
+            {
+              "card_number": "2357 1113 1719 2329",
+              "credit_limit": 250.0,
+              "credit_balance": 0.0
+            }
+          ]
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        },
+        "alice_smith": {
+          "identification": "alicepassword123",
+          "admin_password": "adminpass123",
+          "balance": 1200.0,
+          "owed_balance": 150.0,
+          "credit_score": 580,
+          "safety_box": "Alice important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 500,
+      "maximum_exchange": 3000,
+      "minimum_credit_score": 600,
+      "minimum_account_balance_safety_box": 300,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "identification": "alicepassword123",
+      "total_assets": 15000.0,
+      "username": "alice_smith",
+      "monthly_income": 4000.0
+    },
+    "dependency": [
+      "and",
+      [
+        [
+          "chain",
+          [
+            [
+              "single",
+              "internal_check_username_exist",
+              {
+                "username": "username"
+              }
+            ],
+            [
+              "single",
+              "minimal_elgibile_credit_score",
+              {
+                "username": "username"
+              }
+            ]
+          ]
+        ],
+        [
+          "single",
+          "logged_in_user",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "dependency_original": [
+      "and",
+      [
+        [
+          "single",
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "minimal_elgibile_credit_score",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "logged_in_user",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "user_prompt": "Hello, I would like to apply for a credit card. Here are my details:\n\n- Username: alice_smith\n- Identification: alicepassword123\n- Total Assets: 15000.0\n- Monthly Income: 4000.0\n\nPlease let me know if I am eligible for a credit card and what my spending limit would be. Thank you!",
+    "user_instruction": "You are applying for a credit card by providing your username, identification, total assets, and monthly income to determine your eligibility and spending limit, ultimately seeking a successful application result.",
+    "action_should_succeed": 0,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "apply_credit_card",
+          {
+            "total_assets": "total_assets",
+            "username": "username",
+            "monthly_income": "monthly_income"
+          }
+        ],
+        "and",
+        [
+          "login_user",
+          {
+            "username": "username",
+            "identification": "identification"
+          }
+        ],
+        "or",
+        "or",
+        [
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "internal_get_database",
+          {}
+        ],
+        [
+          "internal_get_credit_score",
+          {
+            "username": "username"
+          }
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ]
+      ]
+    }
+  },
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1000.0,
+          "owed_balance": 200.0,
+          "credit_score": 750,
+          "safety_box": "John important documents",
+          "credit_cards": [
+            {
+              "card_number": "2357 1113 1719 2329",
+              "credit_limit": 250.0,
+              "credit_balance": 0.0
+            }
+          ]
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        },
+        "mark_smith": {
+          "identification": "marksmithpass",
+          "admin_password": "markadminpass",
+          "balance": 1500.0,
+          "owed_balance": 300.0,
+          "credit_score": 650,
+          "safety_box": "Mark's important documents",
+          "credit_cards": []
+        },
+        "alice_jones": {
+          "identification": "alicepass123",
+          "admin_password": "aliceadminpass",
+          "balance": 2000.0,
+          "owed_balance": 100.0,
+          "credit_score": 700,
+          "safety_box": "Alice's important documents",
+          "credit_cards": []
+        },
+        "bob_brown": {
+          "identification": "bobpass456",
+          "admin_password": "bobadminpass",
+          "balance": 800.0,
+          "owed_balance": 50.0,
+          "credit_score": 720,
+          "safety_box": "Bob's important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 500,
+      "maximum_exchange": 3000,
+      "minimum_credit_score": 600,
+      "minimum_account_balance_safety_box": 300,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "identification": "zkJaJvSOUmosvnBGzZf",
+      "total_assets": 1200.0,
+      "username": "bob_brown",
+      "monthly_income": 3000.0
+    },
+    "dependency": [
+      "and",
+      [
+        [
+          "chain",
+          [
+            [
+              "single",
+              "internal_check_username_exist",
+              {
+                "username": "username"
+              }
+            ],
+            [
+              "single",
+              "minimal_elgibile_credit_score",
+              {
+                "username": "username"
+              }
+            ]
+          ]
+        ],
+        [
+          "single",
+          "logged_in_user",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "dependency_original": [
+      "and",
+      [
+        [
+          "single",
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "minimal_elgibile_credit_score",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "single",
+          "logged_in_user",
+          {
+            "username": "username"
+          }
+        ]
+      ]
+    ],
+    "user_prompt": "Hello, I would like to apply for a credit card. Here are my details for the application:\n\n- Username: bob_brown\n- Identification: UNKNOWN_PLACEHOLDER\n- Total Assets: 1200.0\n- Monthly Income: 3000.0\n\nPlease let me know if I am eligible and what my spending limit would be. Thank you!",
+    "user_instruction": "You are applying for a credit card by providing your username, identification, total assets, and monthly income to determine your eligibility and spending limit, ultimately seeking a successful application result.",
+    "action_should_succeed": 0,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "apply_credit_card",
+          {
+            "total_assets": "total_assets",
+            "username": "username",
+            "monthly_income": "monthly_income"
+          }
+        ],
+        "and",
+        [
+          "login_user",
+          {
+            "username": "username",
+            "identification": "identification"
+          }
+        ],
+        "or",
+        "or",
+        [
+          "internal_check_username_exist",
+          {
+            "username": "username"
+          }
+        ],
+        [
+          "internal_get_database",
+          {}
+        ],
+        [
+          "internal_get_credit_score",
+          {
+            "username": "username"
+          }
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ]
+      ]
+    }
+  }
+],
+"authenticate_admin_password": [
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1000.0,
+          "owed_balance": 200.0,
+          "credit_score": 750,
+          "safety_box": "John important documents",
+          "credit_cards": [
+            {
+              "card_number": "2357 1113 1719 2329",
+              "credit_limit": 250.0,
+              "credit_balance": 0.0
+            }
+          ]
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        },
+        "admin_user": {
+          "identification": "admin_password123",
+          "admin_password": "secureadminpass",
+          "balance": 1500.0,
+          "owed_balance": 0.0,
+          "credit_score": 800,
+          "safety_box": "Admin important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 500,
+      "maximum_exchange": 3000,
+      "minimum_credit_score": 600,
+      "minimum_account_balance_safety_box": 300,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "username": "admin_user",
+      "identification": "admin_password123",
+      "admin_password": "secureadminpass"
+    },
+    "dependency": [
+      "single",
+      "logged_in_user",
+      {
+        "username": "username"
+      }
+    ],
+    "dependency_original": [
+      "single",
+      "logged_in_user",
+      {
+        "username": "username"
+      }
+    ],
+    "user_prompt": "Hello, I would like to verify my admin password for my account. Here are my details:\n\n- Username: admin_user\n- Identification: admin_password123\n- Admin Password: secureadminpass\n\nPlease confirm if the entered admin password is correct. Thank you!",
+    "user_instruction": "You are trying to verify the entered admin password for your account using your username and identification, which will enable additional functionalities and return a true or false result for the verification.",
+    "action_should_succeed": 1,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "authenticate_admin_password",
+          {
+            "username": "username",
+            "admin_password": "admin_password"
+          }
+        ],
+        [
+          "login_user",
+          {
+            "username": "username",
+            "identification": "identification"
+          }
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1000.0,
+          "owed_balance": 200.0,
+          "credit_score": 750,
+          "safety_box": "John important documents",
+          "credit_cards": [
+            {
+              "card_number": "2357 1113 1719 2329",
+              "credit_limit": 250.0,
+              "credit_balance": 0.0
+            }
+          ]
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 2000,
+      "maximum_exchange": 5000,
+      "minimum_credit_score": 300,
+      "minimum_account_balance_safety_box": 100,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "username": "new_user123",
+      "admin_password": "IQhurTNAuHoQlamoMQf"
+    },
+    "dependency": [
+      "single",
+      "logged_in_user",
+      {
+        "username": "username"
+      }
+    ],
+    "dependency_original": [
+      "single",
+      "logged_in_user",
+      {
+        "username": "username"
+      }
+    ],
+    "user_prompt": "{\"username\": \"new_user123\", \"admin_password\": \"UNKNOWN_PLACEHOLDER\"}",
+    "user_instruction": "You are trying to verify the entered admin password for your account using your username and identification, which will enable additional functionalities and return a true or false result for the verification.",
+    "action_should_succeed": 0,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "authenticate_admin_password",
+          {
+            "username": "username",
+            "admin_password": "admin_password"
+          }
+        ],
+        [
+          "login_user",
+          {
+            "username": "username",
+            "identification": "identification"
+          }
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "initial_database": {
+      "accounts": {
+        "john_doe": {
+          "identification": "padoesshnwojord",
+          "admin_password": "addoeminhnpajoss",
+          "balance": 1000.0,
+          "owed_balance": 200.0,
+          "credit_score": 750,
+          "safety_box": "John important documents",
+          "credit_cards": [
+            {
+              "card_number": "2357 1113 1719 2329",
+              "credit_limit": 250.0,
+              "credit_balance": 0.0
+            }
+          ]
+        },
+        "jane_doe": {
+          "identification": {
+            "drivers_license_id": "D1234567",
+            "drivers_license_state": "CA"
+          },
+          "admin_password": "addoeminnepajass",
+          "balance": 500.0,
+          "owed_balance": 1000.0,
+          "credit_score": 300,
+          "safety_box": "Jane important documents",
+          "credit_cards": []
+        },
+        "alice_smith": {
+          "identification": "qwerty123",
+          "admin_password": "adminpass123",
+          "balance": 1500.0,
+          "owed_balance": 300.0,
+          "credit_score": 650,
+          "safety_box": "Alice important documents",
+          "credit_cards": []
+        }
+      },
+      "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+      },
+      "interaction_time": "2024-11-21T16:25:31"
+    },
+    "dependency_parameters": {
+      "maximum_owed_balance": 500,
+      "maximum_exchange": 3000,
+      "minimum_credit_score": 600,
+      "minimum_account_balance_safety_box": 300,
+      "maximum_deposit": 10000
+    },
+    "user_known": {
+      "username": "john_doe",
+      "identification": "qwerty123",
+      "admin_password": "cwDDgjQJYBPBrDzLtBz"
+    },
+    "dependency": [
+      "single",
+      "logged_in_user",
+      {
+        "username": "username"
+      }
+    ],
+    "dependency_original": [
+      "single",
+      "logged_in_user",
+      {
+        "username": "username"
+      }
+    ],
+    "user_prompt": "{\"username\": \"john_doe\", \"identification\": \"qwerty123\", \"admin_password\": \"UNKNOWN_PLACEHOLDER\"}",
+    "user_instruction": "You are trying to verify the entered admin password for your account using your username and identification, which will enable additional functionalities and return a true or false result for the verification.",
+    "action_should_succeed": 0,
+    "directed_action_graph": {
+      "nodes": [
+        [
+          "authenticate_admin_password",
+          {
+            "username": "username",
+            "admin_password": "admin_password"
+          }
+        ],
+        [
+          "login_user",
+          {
+            "username": "username",
+            "identification": "identification"
+          }
+        ]
+      ],
+      "connections": [
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  }
+]
