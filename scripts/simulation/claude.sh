@@ -1,7 +1,7 @@
 cd ../..
 devices="0"
 
-model="claude-3-5-haiku-20241022"
+model="claude-3-5-sonnet-20241022"
 domains=("dmv" "healthcare" "library" "online_market" "bank")
 tool_lists=("full" "test")
 method="fc"
@@ -13,8 +13,7 @@ for domain in "${domains[@]}"; do
                 --assistant_model $model \
                 --env_mode prompt \
                 --tool_list $tool_list \
-                --tool_call_mode $method \
-                --print_conv
+                --tool_call_mode $method
     done
 done
 
