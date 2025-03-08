@@ -267,7 +267,7 @@ class Swarm:
             # Check if there is valid tool call
             if message.tool_calls:
                 for tool_call in message.tool_calls:
-                    if "none" in tool_call.function.name.lower():
+                    if tool_call.function.name.lower() in ["none", "n/a"]:
                         message.tool_calls = None
                         break
             

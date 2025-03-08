@@ -2,7 +2,7 @@ cd ../..
 
 model="qwen2.5-72b-instruct"
 domains=("dmv" "healthcare" "library" "online_market" "bank")
-tool_list=("full" "oracle")
+tool_lists=("full" "oracle")
 method="fc"
 
 for domain in "${domains[@]}"; do

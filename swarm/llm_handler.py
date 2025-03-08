@@ -10,6 +10,9 @@ import json
 import requests
 from tqdm import tqdm
 import copy
+import signal
+import atexit
+import weakref
 from typing import Literal
 from swarm.gemini import gemini_chat_completion_openai_format
 from swarm.claude import claude_chat_completion_openai_format
@@ -18,13 +21,39 @@ from swarm.constants import (OPENAI_MODELS,
                              CLAUDE_MODELS, 
                              FIREWORKS_MODELS,
                              OSS_MODELS, 
-                             TOOL_CHAT_PARSERS, 
-                             TOOL_CHAT_TEMPLATES,
                              FUNCTION_CALLING_MODELS,
                              AVAILABLE_MODELS)
 from swarm.util import display_messages
 from dotenv import load_dotenv
 load_dotenv()
+
+# Global registry to keep track of all handler instances
+_handler_instances = set()
+
+def _cleanup_all_handlers():
+    """Kill all registered handler processes."""
+    for handler_ref in list(_handler_instances):
+        handler = handler_ref()
+        if handler is not None and handler.process is not None:
+            try:
+                handler.kill_process()
+            except Exception as e:
+                print(f"Error killing process: {e}")
+
+# Register the cleanup function to be called when Python exits
+atexit.register(_cleanup_all_handlers)
+
+# Register signal handlers for common termination signals
+def _signal_handler(sig, frame):
+    print(f"\nReceived signal {sig}, cleaning up...")
+    _cleanup_all_handlers()
+    # Re-raise the signal after cleanup
+    signal.signal(sig, signal.SIG_DFL)
+    os.kill(os.getpid(), sig)
+
+# Register handlers for common termination signals
+signal.signal(signal.SIGINT, _signal_handler)   # Ctrl+C
+signal.signal(signal.SIGTERM, _signal_handler)  # Termination request
 
 class OpenAIHandler:
     """Handles interactions with OpenAI and VLLM-based models."""
@@ -65,6 +94,9 @@ class OpenAIHandler:
         self.tool_calling = tool_calling
         self.process = None
         
+        # Add this instance to the global registry
+        _handler_instances.add(weakref.ref(self))
+        
         # Check model support with case-insensitive comparison
         if model_name in OPENAI_MODELS:
             self.backend = "openai"
@@ -78,6 +110,7 @@ class OpenAIHandler:
             self.backend = "vllm"
         else:
             raise ValueError(f"Model {model_name} is not supported.")
+        print(f"Using {self.backend} backend.")
         
         # Initialize the backend and the client
         if self.backend == "vllm":
@@ -92,6 +125,18 @@ class OpenAIHandler:
             self._init_claude()
         elif self.backend == "gemini":
             self._init_gemini()
+        else:
+            raise ValueError(f"Model {model_name} is not supported.")
+        print(f"Initialized {self.backend} backend.")
+    
+    def __del__(self):
+        """Destructor to ensure process is killed when object is garbage collected."""
+        self.kill_process()
+        # Remove this instance from the global registry
+        for handler_ref in list(_handler_instances):
+            if handler_ref() is self:
+                _handler_instances.remove(handler_ref)
+                break
 
     def _init_openai(self) -> None:
         """Initialize OpenAI backend."""
@@ -138,25 +183,9 @@ class OpenAIHandler:
         elif "mistral" in self.model_name_huggingface.lower():
             vllm_cmd.append("8192")
         elif "llama-3-" in self.model_name_huggingface.lower():
-            vllm_cmd.append("8192")
+            vllm_cmd.append("16000")
         else:
-            vllm_cmd.append("8192")
-        
-        # Check if tool calling is enabled
-        if self.tool_calling:
-            # Find the corresponding tool chat template
-            tool_chat_parser, tool_chat_template = self._get_tool_chat_setup()
-            
-            if tool_chat_parser is not None:
-                vllm_cmd.extend([
-                    "--enable-auto-tool-choice",
-                    "--tool-call-parser", tool_chat_parser,
-                ])
-            # The tool chat template is optional
-            if tool_chat_template is not None:
-                vllm_cmd.extend([
-                    "--chat-template", tool_chat_template
-                ])
+            vllm_cmd.append("16000")
 
         # Check if LoRA is enabled  
         if self.lora_path:
@@ -217,38 +246,21 @@ class OpenAIHandler:
         Kill the server process.
         """
         if self.process:
-            self.process.terminate()
-            self.process.wait()
-            print("Server process terminated.")
+            try:
+                self.process.terminate()
+                # Give it a moment to terminate gracefully
+                try:
+                    self.process.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    # Force kill if it doesn't terminate gracefully
+                    self.process.kill()
+                    self.process.wait()
+                print(f"Server process for {self.model_name} terminated.")
+            except Exception as e:
+                print(f"Error terminating process: {e}")
+            finally:
+                self.process = None
 
-    def _get_tool_chat_setup(self) -> str:
-        """Get the appropriate tool chat parser and template for the model.
-        
-        Returns:
-            tuple: (tool_chat_parser, tool_chat_template)
-        
-        Raises:
-            ValueError: If the model is not supported
-        """
-        # First, get the tool chat parser. Ensure that the model is supported.
-        tool_chat_parser = None
-        for parser, supported_models in TOOL_CHAT_PARSERS.items():
-            if self.model_name_huggingface in supported_models:
-                tool_chat_parser = parser
-                break
-        
-        if tool_chat_parser is None:
-            raise ValueError(f"Model {self.model_name_huggingface} is not supported.")
-        
-        # Then, get the tool chat template. The template can be None.
-        tool_chat_template = None
-        for model_family, template in TOOL_CHAT_TEMPLATES.items():
-            if model_family in self.model_name_huggingface.lower():
-                tool_chat_template = template
-                break
-        
-        return (tool_chat_parser, tool_chat_template)
-    
     def chat_completion(self, test_entry: dict, include_debugging_log: bool, tool_call_mode: Literal["fc", "prompt", "react", "act-only"] = "fc"):
         """
         OSS models have a different inference method.

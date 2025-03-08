@@ -109,8 +109,8 @@ def display_task_info(task):
     for key, value in task['user_known'].items():
         print(f"  {Fore.YELLOW}{key}:{Style.RESET_ALL} {value}")
     
-    print(f"\n{Fore.CYAN}Should Succeed:{Style.RESET_ALL} {Fore.GREEN if task['action_should_succeed'] else Fore.RED}{task['action_should_succeed']}{Style.RESET_ALL}")
-    print(f"{Fore.CYAN}User Goal Verb:{Style.RESET_ALL} {task['verb_user_goal']}")
+    print(f"\n{Fore.CYAN}Should Succeed:{Style.RESET_ALL} {Fore.GREEN if bool(task['action_should_succeed']) else Fore.RED}{bool(task['action_should_succeed'])}{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}User Goal Verb:{Style.RESET_ALL} {task['user_instruction']}")
     print(f"\n{Fore.YELLOW}User Prompt:{Style.RESET_ALL}")
     print(task['user_prompt'])
     # print(f"\n{Fore.YELLOW}Assistant Prompt:{Style.RESET_ALL}")
@@ -189,7 +189,7 @@ def main():
                        choices=["old", "structured"], 
                        help="Constraint dependency description format")
     parser.add_argument("--tool_list", type=str, default="full",
-                       choices=["full", "test"],
+                       choices=["full", "oracle"],
                        help="Tool list to use for the simulation")
     parser.add_argument("--shuffle_func", action="store_true",
                        help="Whether to shuffle assistant functions")

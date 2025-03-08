@@ -2,7 +2,7 @@ cd ../..
 
 model="llama3.1-70b-instruct"
 domains=("dmv" "healthcare" "library" "online_market" "bank")
-tool_list=("full" "oracle")
+tool_lists=("full" "oracle")
 method="fc"
 
 for domain in "${domains[@]}"; do

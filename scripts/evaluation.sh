@@ -7,9 +7,9 @@ domains=("healthcare" "dmv" "library" "online_market" "bank")
 tool_lists=("full" "oracle")
 tool_call_modes=("fc" "react" "act-only")
 
-model="claude-3-5-sonnet-20241022"
-domain="dmv"
-tool_list="full"
+model="gpt-4o"
+domain="online_market"
+tool_list="oracle"
 tool_call_mode="fc"
 
 # Default settings

@@ -2,7 +2,7 @@ cd ../..
 
 model="gemini-2.0-flash-001"
 domains=("dmv" "healthcare" "library" "online_market" "bank")
-tool_list=("full" "oracle")
+tool_lists=("full" "oracle")
 method="fc"
 
 for domain in "${domains[@]}"; do

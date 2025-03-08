@@ -223,7 +223,7 @@ class OnlineMarket:
         # Update average rating
         reviews = self.products[product_id]["reviews"]
         self.products[product_id]["average_rating"] = round(
-            sum(r["rating"] for r in reviews) / len(reviews), 2
+            sum(int(r["rating"]) for r in reviews) / len(reviews), 2
         )
         return True
 

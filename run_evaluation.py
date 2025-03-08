@@ -148,13 +148,13 @@ def main():
             "constraint_group_statistics": {},  # Group by constraint count
             "error_statistics": {              # Modified error tracking
                 "total_evaluations": 0,
-                "total_failures": 0,           # Add counter for failed cases
+                "total_failures": 0,           
                 "error_causes": {
-                    "no_tool_call_error": 0,
-                    "constraint_not_violated": 0,
-                    "database_match": 0,
-                    "dirgraph_satisfied": 0,
-                    "action_called_correctly": 0
+                    "tool_call_errors": 0,            # Changed from no_tool_call_error
+                    "constraint_violations": 0,        # Changed from constraint_not_violated
+                    "database_mismatches": 0,          # Changed from database_match
+                    "dirgraph_violations": 0,          # Changed from dirgraph_satisfied
+                    "incorrect_action_calls": 0        # Changed from action_called_correctly
                 }
             },
         }
@@ -206,12 +206,17 @@ def main():
                 # collect the function call and response
                 func_calls = []
                 for i in range(len(interaction)-1):
-                    if interaction[i].get("tool_calls", None):
-                        func_calls.append({
-                            "tool_name": interaction[i+1]["tool_name"],
-                            "arguments": try_eval(interaction[i]["tool_calls"][0]["function"]["arguments"]),
-                            "content": try_eval(interaction[i+1]["content"])
-                        })
+                    if interaction[i].get("tool_calls", []):
+                        # Clean N/A function call
+                        for tool_call in interaction[i]["tool_calls"]:
+                            if tool_call["function"]["name"].lower() in ["n/a", "na", "none", "null"]:
+                                interaction[i]["tool_calls"].remove(tool_call)
+                        if len(interaction[i]["tool_calls"]) > 0:
+                            func_calls.append({
+                                "tool_name": interaction[i+1]["tool_name"],
+                                "arguments": try_eval(interaction[i]["tool_calls"][0]["function"]["arguments"]),
+                                "content": try_eval(interaction[i+1]["content"])
+                            })
 
                 # Use directed graph evaluator instead of gorilla
                 evaluation_result = evaluator_function_directed_graph(
@@ -234,19 +239,19 @@ def main():
                     print_results["error_statistics"]["total_failures"] += 1
                     # Check all status indicators for each failed evaluation
                     if not evaluation_result["no_tool_call_error"]:
-                        print_results["error_statistics"]["error_causes"]["no_tool_call_error"] += 1
+                        print_results["error_statistics"]["error_causes"]["tool_call_errors"] += 1
 
                     if not evaluation_result["constraint_not_violated"]:
-                        print_results["error_statistics"]["error_causes"]["constraint_not_violated"] += 1
+                        print_results["error_statistics"]["error_causes"]["constraint_violations"] += 1
 
                     if not evaluation_result["database_match"]:
-                        print_results["error_statistics"]["error_causes"]["database_match"] += 1
+                        print_results["error_statistics"]["error_causes"]["database_mismatches"] += 1
 
                     if not evaluation_result["dirgraph_satisfied"]:
-                        print_results["error_statistics"]["error_causes"]["dirgraph_satisfied"] += 1
+                        print_results["error_statistics"]["error_causes"]["dirgraph_violations"] += 1
 
                     if not evaluation_result["action_called_correctly"]:
-                        print_results["error_statistics"]["error_causes"]["action_called_correctly"] += 1
+                        print_results["error_statistics"]["error_causes"]["incorrect_action_calls"] += 1
             
             # Increment counters after checking all interactions for this task
             total_cases += 1
@@ -353,15 +358,15 @@ def main():
                 "avg_num_constraints_expanded": sum(r["avg_num_constraints_expanded"] * r["total_tasks"] for r in combined_results.values()) / 
                                               sum(r["total_tasks"] for r in combined_results.values())
             },
-            "error_statistics": {              # Add error statistics for all domains
+            "error_statistics": {             
                 "total_evaluations": sum(r["error_statistics"]["total_evaluations"] for r in combined_results.values()),
                 "total_failures": sum(r["error_statistics"]["total_failures"] for r in combined_results.values()),
                 "error_causes": {
-                    "no_tool_call_error": sum(r["error_statistics"]["error_causes"]["no_tool_call_error"] for r in combined_results.values()),
-                    "constraint_not_violated": sum(r["error_statistics"]["error_causes"]["constraint_not_violated"] for r in combined_results.values()),
-                    "database_match": sum(r["error_statistics"]["error_causes"]["database_match"] for r in combined_results.values()),
-                    "dirgraph_satisfied": sum(r["error_statistics"]["error_causes"]["dirgraph_satisfied"] for r in combined_results.values()),
-                    "action_called_correctly": sum(r["error_statistics"]["error_causes"]["action_called_correctly"] for r in combined_results.values())
+                    "tool_call_errors": sum(r["error_statistics"]["error_causes"]["tool_call_errors"] for r in combined_results.values()),
+                    "constraint_violations": sum(r["error_statistics"]["error_causes"]["constraint_violations"] for r in combined_results.values()),
+                    "database_mismatches": sum(r["error_statistics"]["error_causes"]["database_mismatches"] for r in combined_results.values()),
+                    "dirgraph_violations": sum(r["error_statistics"]["error_causes"]["dirgraph_violations"] for r in combined_results.values()),
+                    "incorrect_action_calls": sum(r["error_statistics"]["error_causes"]["incorrect_action_calls"] for r in combined_results.values())
                 }
             }
         }

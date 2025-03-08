@@ -23,7 +23,7 @@ class Agent(BaseModel):
     tool_call_mode: Literal["fc", "react", "act-only"] = "fc"
     temperature: float = 1.0
     top_p: float = 1.0
-    max_tokens: int = 8096
+    max_tokens: int = 512
     default_response: Optional[str] = None
     response_repeat: bool = True
 
