@@ -183,9 +183,9 @@ class OpenAIHandler:
         elif "mistral" in self.model_name_huggingface.lower():
             vllm_cmd.append("8192")
         elif "llama-3-" in self.model_name_huggingface.lower():
-            vllm_cmd.append("16000")
+            vllm_cmd.append("32000")
         else:
-            vllm_cmd.append("16000")
+            vllm_cmd.append("32000")
 
         # Check if LoRA is enabled  
         if self.lora_path:

@@ -1,6 +1,6 @@
 cd ../..
 
-devices="4,5,6,7"
+devices="0,1,2,3"
 
 model="qwen2.5-3b-instruct"
 domains=("dmv" "healthcare" "library" "online_market" "bank")

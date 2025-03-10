@@ -35,6 +35,8 @@ def parse_args() -> argparse.Namespace:
                         choices=["old", "structured"], help="Constraint dependency description format")
     parser.add_argument("--num_run_per_interaction", type=int, default=1,
                        help="Number of interactions per task")
+    parser.add_argument("--verbose", action="store_true",
+                       help="Whether to print verbose output")
     
     # Data settings
     parser.add_argument("--output_dir", type=str, default="./output",
@@ -226,10 +228,10 @@ def main():
                     func_calls=func_calls,
                     results=results,
                     default_constraint_option=args.default_constraint_option)
-                print(json.dumps(evaluation_result, indent=4))
-                # _ = input("Press ENTER to continue...")
-                # save the evaluation result for this interaction
                 evaluations.append(evaluation_result)
+                if args.verbose:
+                    print(json.dumps(evaluation_result, indent=4))
+                
 
                 # Update error statistics
                 print_results["error_statistics"]["total_evaluations"] += 1

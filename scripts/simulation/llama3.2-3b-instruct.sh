@@ -1,6 +1,6 @@
 cd ../..
 
-devices="4,5,6,7"
+devices="0,1,2,3"
 
 model="llama3.2-3b-instruct"
 domains=("dmv" "healthcare" "library" "online_market" "bank")
