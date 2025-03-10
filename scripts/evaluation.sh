@@ -1,38 +1,38 @@
 cd ..
 
 models=(
-        # "gpt-4o" 
-        # "gpt-4o-mini" 
-        # "claude-3-5-sonnet-20241022" 
-        # "gemini-2.0-flash-001" 
-        # "gemini-1.5-pro"
-        # "gemini-2.0-flash-thinking-exp" 
-        # "o1"
-        # "deepseek-r1"
-        # "llama3.1-70b-instruct" 
+        "gpt-4o" 
+        "gpt-4o-mini" 
+        "claude-3-5-sonnet-20241022" 
+        "gemini-2.0-flash-001" 
+        "gemini-1.5-pro"
+        "gemini-2.0-flash-thinking-exp" 
+        "o1"
+        "deepseek-r1"
+        "llama3.1-70b-instruct" 
+        "qwen2.5-72b-instruct" 
         # "llama3.1-8b-instruct"
         # "llama3.2-3b-instruct"
-        # "qwen2.5-72b-instruct" 
-        "qwen2.5-32b-instruct"
+        # "qwen2.5-32b-instruct"
         # "qwen2.5-14b-instruct"
         # "qwen2.5-7b-instruct"
         # "qwen2.5-3b-instruct"
         )
 domains=(
-    # "healthcare" 
-    # "dmv" 
-    # "library" 
+    "healthcare" 
+    "dmv" 
+    "library" 
     "online_market" 
-    # "bank"
+    "bank"
     )
 tool_lists=(
-    # "full" 
+    "full" 
     "oracle"
     )
 tool_call_modes=(
-    # "fc" 
+    "fc" 
     "react" 
-    # "act-only"
+    "act-only"
     )
 
 # model="qwen2.5-72b-instruct"
