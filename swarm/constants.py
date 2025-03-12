@@ -35,10 +35,8 @@ FIREWORKS_MODELS = {
     "deepseek-r1": "accounts/fireworks/models/deepseek-r1", # 3.0/M
 }
 
-# 7B-32B Models
+# 3B-32B Models
 OSS_MODELS = {
-    "qwen2.5-0.5b-instruct": "Qwen/Qwen2.5-0.5B-Instruct",
-    "qwen2.5-1.5b-instruct": "Qwen/Qwen2.5-1.5B-Instruct",
     "qwen2.5-3b-instruct": "Qwen/Qwen2.5-3B-Instruct",
     "qwen2.5-7b-instruct": "Qwen/Qwen2.5-7B-Instruct",
     "qwen2.5-14b-instruct": "Qwen/Qwen2.5-14B-Instruct",
@@ -50,13 +48,15 @@ OSS_MODELS = {
 # Available Models
 AVAILABLE_MODELS = {
     "vllm": [
+        "qwen2.5-3b-instruct",
         "qwen2.5-7b-instruct",
         "qwen2.5-14b-instruct",
         "qwen2.5-32b-instruct",
         "llama3.1-8b-instruct",
-        "toolace-8b",
-        "qwen2.5-coder-7b-instruct",
-        "qwen2.5-coder-32b-instruct",
+        "llama3.2-3b-instruct",
+        # "toolace-8b",
+        # "qwen2.5-coder-7b-instruct",
+        # "qwen2.5-coder-32b-instruct",
     ],
     "fireworks": [
         "llama3.1-405b-instruct",
@@ -89,6 +89,7 @@ AVAILABLE_MODELS = {
 }
 
 # Model Class That Supports Function Calling
+# Fireworks models: https://docs.fireworks.ai/guides/function-calling
 FUNCTION_CALLING_MODELS = {
     "vllm": [
     ],

@@ -10,7 +10,6 @@ test*.py
 .DS_Store
 .env
 *_task.py
-run_checking.py
 sync.sh
 
 # keys
