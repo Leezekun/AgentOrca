@@ -49,16 +49,16 @@ CLAUDE_MODELS = [
 
 # Fireworks models
 FIREWORKS_MODELS = {
-    "llama3.1-70b-instruct": "accounts/fireworks/models/llama-v3p1-70b-instruct", # 0.9/M
-    "qwen2.5-72b-instruct": "accounts/fireworks/models/qwen2p5-72b-instruct", # 0.9/M
+    "llama3.1-70b-it-fireworks": "accounts/fireworks/models/llama-v3p1-70b-instruct", # 0.9/M
+    "qwen2.5-72b-it-fireworks": "accounts/fireworks/models/qwen2p5-72b-instruct", # 0.9/M
     "deepseek-v3": "accounts/fireworks/models/deepseek-v3", # 0.9/M
     "deepseek-r1": "accounts/fireworks/models/deepseek-r1", # 3.0/M
 }
 
 # 3B-32B Models
 OSS_MODELS = {
-    "llama3.1-70b-instruct-hf": "meta-llama/Llama-3.1-70B-Instruct",
-    "qwen2.5-72b-instruct-hf": "Qwen/Qwen2.5-72B-Instruct",
+    "llama3.1-70b-instruct": "meta-llama/Llama-3.1-70B-Instruct",
+    "qwen2.5-72b-instruct": "Qwen/Qwen2.5-72B-Instruct",
     "qwen2.5-3b-instruct": "Qwen/Qwen2.5-3B-Instruct",
     "qwen2.5-7b-instruct": "Qwen/Qwen2.5-7B-Instruct",
     "qwen2.5-14b-instruct": "Qwen/Qwen2.5-14B-Instruct",
@@ -117,10 +117,8 @@ AVAILABLE_MODELS = {
 FUNCTION_CALLING_MODELS = {
     "vllm": [],
     "fireworks": [
-        "llama3.1-405b-instruct",
-        "llama3.1-70b-instruct",
-        "qwen2.5-72b-instruct",
-        "mistral-8x22b-instruct",
+        "llama3.1-70b-it-fireworks",
+        "qwen2.5-72b-it-fireworks",
     ],
     "gemini": [
         "gemini-1.5-flash",
