@@ -290,11 +290,11 @@ def gemini_chat_completion_openai_format(
                 return completion
             except requests.exceptions.RequestException as e:
                 print(f"Request failed (attempt {retry + 1}/{max_retries}): {str(e)}")
-                time.sleep(1.5 * min((1.1**retry), 5))
+                time.sleep(1.5 * min((1.2**retry), 10))
                 retry += 1
             except Exception as e:
                 print(f"Unexpected error (attempt {retry + 1}/{max_retries}): {str(e)}")
-                time.sleep(1.5 * min((1.1**retry), 5))
+                time.sleep(1.5 * min((1.2**retry), 10))
                 retry += 1
         return None
     
@@ -401,7 +401,7 @@ if __name__ == "__main__":
         }
     ]
     
-    content = gemini_chat_completion_openai_format(model="gemini-1.5-flash", messages=messages, tools=tools)
+    content = gemini_chat_completion_openai_format(model="gemini-2.5-pro-exp-03-25", messages=messages, tools=tools)
     """
     Target Output: ChatCompletion(id='chatcmpl-AckLkaZwrVVBWdSAez5lJTzke9YK0', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='The delivery date for your order (Dominos Pizza) is December 12, 2024.', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None)), Choice(finish_reason='stop', index=1, logprobs=None, message=ChatCompletionMessage(content='The delivery date for your order (Dominos Pizza) is December 12, 2024.', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None))], created=1733797996, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier=None, system_fingerprint='fp_bba3c8e70b', usage=CompletionUsage(completion_tokens=42, prompt_tokens=188, total_tokens=230, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
     """

@@ -3,12 +3,15 @@ cd ..
 
 # Default values
 output_dir="./output"
-domain="online_market"
-assistant_model="gpt-4o"
-tool_call_mode="fc"
+domain="bank"
+# assistant_model="claude-3-7-sonnet-20250219"
+# assistant_model="gemini-2.0-flash-thinking-exp"
+# assistant_model="o4-mini"
+assistant_model="qwen2.5-32b-instruct"
+tool_call_mode="react"
 default_constraint_option="full"
 constraint_descr_format="structured"
-tool_list="oracle"
+tool_list="full"
 
 python run_checking.py \
   --output_dir $output_dir \

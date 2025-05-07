@@ -253,14 +253,18 @@ class Swarm:
             message = completion.choices[0].message
             debug_print(debug, "Received completion:", message)
             
-            # Instead of trying to set message.sender, create a new dictionary with the sender
-            if hasattr(message, 'model_dump_json'):
+            # Convert the message to a dictionary
+            if hasattr(message, "to_dict"):
+                message_dict = message.to_dict()
+            elif hasattr(message, "model_dump_json"):
                 message_dict = json.loads(message.model_dump_json())
+            elif isinstance(message, dict):
+                message_dict = message
             else:
-                # Convert message attributes to dict and then to JSON string
                 message_dict_raw = model_dump_json(message)
                 message_dict = json.loads(message_dict_raw)
             
+            # Add the sender to the message
             message_dict["sender"] = active_agent.name
             history.append(message_dict)
 

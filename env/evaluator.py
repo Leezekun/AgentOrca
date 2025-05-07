@@ -17,6 +17,8 @@ from env.helpers import (
     dfsins_cl_cd_aid,
     get_dag_connections_invnodes, 
     dfsgather_dag_func,
+    gather_action_default_dependencies,
+    compare_lists
 )
 
 # account for the json tuple to list aspect by dfs converting every function response to a tuple
@@ -39,10 +41,26 @@ def dfsconvert_list_to_tuple(fr):
     for ele_fr in fr: fr_copy.append(dfsconvert_list_to_tuple(ele_fr))
     return tuple(fr_copy)
 
+def verify_full_dependency(domain_str:str, task:dict, default_constraint_option:str)->bool:
+    # gathering the permutations of constraints for each task dependency
+    aid = domain_assistant_keys[domain_str].action_innate_dependencies
+    ard = domain_assistant_keys[domain_str].action_required_dependencies
+    acd = domain_assistant_keys[domain_str].action_customizable_dependencies
+    cl = domain_assistant_keys[domain_str].constraint_links
+    cd = domain_assistant_keys[domain_str].constraint_dependencies
+    ad = gather_action_default_dependencies(ard, acd, cd, default_constraint_option)
+    
+    # filter for the tasks with the full dep
+    this_task_dep = task["dependency"]
+    full_dep = ad[task["user_goal"]]
+    fulldeptasks = compare_lists(this_task_dep, full_dep)
+    return fulldeptasks
+
 # evaluates the interaction with function call tree search, detects if the action should be called or not, matches the database
 def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:list[tuple], func_calls:list[tuple], results:dict, default_constraint_option:str)->dict:
     evaluation_result = {}
     dep_innate_full = domain_assistant_keys[domain_str].action_innate_dependencies
+    fulldep_task = verify_full_dependency(domain_str, task, default_constraint_option)
     default_dep_full = get_default_dep_full(domain_str, default_constraint_option)
     default_dep_full[task["user_goal"]] = task["dependency"]
     # gathering statistics
@@ -76,7 +94,12 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
     for i in range(len(func_calls)):
         func_response = func_calls[i]["content"]
         status_id, gt_response = gt_responses[i]
-        func_resp_equal = dfsconvert_tuple_to_list(func_response) == dfsconvert_tuple_to_list(gt_response) if status_id == 0 else True
+        # convert the response to a list
+        func_resp_list = dfsconvert_tuple_to_list(func_response)
+        gt_resp_list = dfsconvert_tuple_to_list(gt_response)
+        # the func response sometimes contains a boolean first element which indicates the success of the function call
+        resp_match = (func_resp_list == gt_resp_list) or ([True, func_resp_list] == gt_resp_list)
+        func_resp_equal = resp_match if status_id == 0 else True
         if evaluation_result["constraint_not_violated"] and not func_resp_equal:
             evaluation_result["constraint_not_violated"] = False
     evaluation_result["database_match"] = results["final_database"] == gt_final_database

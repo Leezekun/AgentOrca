@@ -4,7 +4,7 @@ import copy
 import argparse
 import json
 from tqdm import tqdm
-from env.evaluator import evaluator_function_directed_graph
+from env.evaluator import evaluator_function_directed_graph, verify_full_dependency
 
 def try_eval(x):
     try:
@@ -91,19 +91,20 @@ def load_existing_results(output_file):
         print(f"Error loading results from {output_file}: {str(e)}")
     return []
 
+# Define sort key function for constraint groups
+def constraint_group_sort_key(item):
+    key = item[0]
+    if key == "9+":
+        return 9  # Make "6+" sort after 5
+    return int(key)  # Convert other keys to integers
+    
 def main():
     """Main function to run the simulation."""
     args = parse_args()
     
-    # Define sort key function for constraint groups
-    def constraint_group_sort_key(item):
-        key = item[0]
-        if key == "6+":
-            return 6  # Make "6+" sort after 5
-        return int(key)  # Convert other keys to integers
-    
     # Define domains to process
-    domains_to_process = ["bank", "online_market", "dmv", "healthcare", "library"] if args.domain == "all" else [args.domain]
+    domains_to_process = ["bank", "online_market", "dmv", "healthcare", "library"] \
+        if args.domain == "all" else [args.domain]
     
     # Initialize combined results for all domains
     combined_results = {}
@@ -159,6 +160,7 @@ def main():
                     "incorrect_action_calls": 0        # Changed from action_called_correctly
                 }
             },
+            "constraint_relation_group_statistics": {},  # Group by constraint relation counts
         }
         # Accuracy Metrics: Pass@N
         for i in range(args.num_run_per_interaction):
@@ -178,10 +180,12 @@ def main():
             user_goal = task_simulation["task"]["user_goal"]
             dependency = task_simulation["task"]["dependency_original"]
             dependency_expanded = task_simulation["task"]["dependency"]
-            
+                
             # Count constraints for this task
             num_constraints = count_constraint_units(dependency)
             num_constraints_expanded = count_constraint_units(dependency_expanded)
+            # print("Number of constraints in dependency_original:", num_constraints)
+            # print("Number of constraints in dependency:", num_constraints_expanded)
 
             # Initialize goal statistics if not exists
             if user_goal not in print_results["goal_statistics"]:
@@ -219,7 +223,7 @@ def main():
                                 "arguments": try_eval(interaction[i]["tool_calls"][0]["function"]["arguments"]),
                                 "content": try_eval(interaction[i+1]["content"])
                             })
-
+                
                 # Use directed graph evaluator instead of gorilla
                 evaluation_result = evaluator_function_directed_graph(
                     domain_str=task_simulation["domain"],
@@ -231,8 +235,8 @@ def main():
                 evaluations.append(evaluation_result)
                 if args.verbose:
                     print(json.dumps(evaluation_result, indent=4))
+                    _ = input("Press Enter to continue...")
                 
-
                 # Update error statistics
                 print_results["error_statistics"]["total_evaluations"] += 1
                 
@@ -257,8 +261,6 @@ def main():
             
             # Increment counters after checking all interactions for this task
             total_cases += 1
-            if args.domain == "all":
-                total_cases_count += 1
             
             # collect the function call and response
             func_calls = []
@@ -307,8 +309,8 @@ def main():
 
             # Group by number of constraints
             constraint_count = num_constraints
-            if constraint_count >= 6:  # Group all counts >= 6 into "6+"
-                constraint_count = "6+"
+            if constraint_count >= 9:  # Group all counts >= 6 into "6+"
+                constraint_count = "9+"
             elif constraint_count <= 1:  # Group 0 and 1 together as "1"
                 constraint_count = 1
                 
@@ -329,6 +331,30 @@ def main():
                 group_stats["total_success"] += updated_simulation["statistics"]["total_success"]
                 group_stats["avg_num_messages"] += updated_simulation["statistics"]["avg_num_messages"]
                 group_stats["avg_num_function_calls"] += updated_simulation["statistics"]["avg_num_function_calls"]
+
+            # Count constraint relations and create group key
+            num_constraint_relations = count_constraint_relations(dependency)
+            relation_group_key = "-".join(["{}:{}".format(r, bool(v)) for r, v in sorted(num_constraint_relations.items()) if v > 0])
+            
+            # Initialize constraint relation group if not exists
+            if relation_group_key not in print_results["constraint_relation_group_statistics"]:
+                print_results["constraint_relation_group_statistics"][relation_group_key] = {
+                    "total_tasks": 0,
+                    "total_interactions": 0,
+                    "total_success": 0,
+                    "avg_num_messages": 0,
+                    "avg_num_function_calls": 0,
+                    "pass_rate": 0
+                }
+            
+            # Update constraint relation group statistics
+            if updated_simulation["statistics"]["total_interactions"] > 0:
+                relation_group_stats = print_results["constraint_relation_group_statistics"][relation_group_key]
+                relation_group_stats["total_tasks"] += 1
+                relation_group_stats["total_interactions"] += updated_simulation["statistics"]["total_interactions"]
+                relation_group_stats["total_success"] += updated_simulation["statistics"]["total_success"]
+                relation_group_stats["avg_num_messages"] += updated_simulation["statistics"]["avg_num_messages"]
+                relation_group_stats["avg_num_function_calls"] += updated_simulation["statistics"]["avg_num_function_calls"]
 
         # Save the updated task simulations
         save_results(new_output_file, updated_task_simulations, verbose=True)
@@ -429,6 +455,40 @@ def main():
                 error_percentages[f"{error}_percentage"] = (count / total_evaluations) * 100
             aggregate_results["error_statistics"]["percentages"] = error_percentages
         
+        # Aggregate constraint relation group statistics across all domains
+        all_relation_groups = {}
+        
+        for domain_results in combined_results.values():
+            for relation_group, stats in domain_results["constraint_relation_group_statistics"].items():
+                if relation_group not in all_relation_groups:
+                    all_relation_groups[relation_group] = {
+                        "total_tasks": 0,
+                        "total_interactions": 0,
+                        "total_success": 0,
+                        "avg_num_messages": 0,
+                        "avg_num_function_calls": 0,
+                    }
+                group = all_relation_groups[relation_group]
+                group["total_tasks"] += stats["total_tasks"]
+                group["total_interactions"] += stats["total_interactions"]
+                group["total_success"] += stats["total_success"]
+                group["avg_num_messages"] += stats["avg_num_messages"] * stats["total_tasks"]
+                group["avg_num_function_calls"] += stats["avg_num_function_calls"] * stats["total_tasks"]
+        
+        # Calculate averages for aggregated relation groups
+        for stats in all_relation_groups.values():
+            if stats["total_tasks"] > 0:
+                stats["avg_num_messages"] /= stats["total_tasks"]
+                stats["avg_num_function_calls"] /= stats["total_tasks"]
+                stats["pass_rate"] = stats["total_success"] / stats["total_interactions"] if stats["total_interactions"] > 0 else 0
+        
+        # Sort relation groups by total tasks
+        aggregate_results["aggregate_relation_groups"] = dict(sorted(
+            all_relation_groups.items(),
+            key=lambda x: x[1]["total_tasks"],
+            reverse=True
+        ))
+
         # Save aggregate results in the "all" directory
         aggregate_output_file = os.path.join(
             all_output_dir,
@@ -510,6 +570,20 @@ def main():
                 error_percentages[f"{error}_percentage"] = (count / total_evaluations) * 100
             print_results["error_statistics"]["percentages"] = error_percentages
 
+        # Calculate averages for constraint relation groups
+        for stats in print_results["constraint_relation_group_statistics"].values():
+            if stats["total_tasks"] > 0:
+                stats["avg_num_messages"] /= stats["total_tasks"]
+                stats["avg_num_function_calls"] /= stats["total_tasks"]
+                stats["pass_rate"] = stats["total_success"] / stats["total_interactions"] if stats["total_interactions"] > 0 else 0
+        
+        # Sort constraint relation groups by total tasks
+        print_results["constraint_relation_group_statistics"] = dict(sorted(
+            print_results["constraint_relation_group_statistics"].items(),
+            key=lambda x: x[1]["total_tasks"],
+            reverse=True
+        ))
+
         # Print the results
         print(json.dumps(print_results, indent=4))
 
@@ -539,6 +613,82 @@ def count_constraint_units(dependency):
             count += count_constraint_units(branch)
         return count
     return 0
+
+def count_constraint_relations(dependency):
+    """
+    Count occurrences of relation types in a dependency structure.
+    Handles different dependency formats including:
+    - Lists and nested lists
+    - Strings
+    - Dictionaries
+    - None values
+    
+    Relations counted:
+    - "single"
+    - "and"
+    - "or"
+    - "chain"
+    
+    Args:
+        dependency: A dependency structure that could be a list, nested list, string, dict, or None
+        
+    Returns:
+        dict: Number of constraint relations found
+    """
+    relations = {"single": 0, "and": 0, "or": 0, "chain": 0}
+    
+    # Handle None or empty cases
+    if dependency is None or (isinstance(dependency, (list, dict)) and not dependency):
+        return relations
+    
+    # Handle string case
+    if isinstance(dependency, str):
+        return relations
+    
+    # Handle dictionary case
+    if isinstance(dependency, dict):
+        # Recursively process all values in the dictionary
+        for value in dependency.values():
+            sub_relations = count_constraint_relations(value)
+            for key in relations:
+                relations[key] += sub_relations[key]
+        return relations
+    
+    # Handle list case
+    if isinstance(dependency, list):
+        # Empty list
+        if not dependency:
+            return relations
+            
+        # Get the relation type (first element)
+        relation_type = dependency[0] if isinstance(dependency[0], str) else None
+        
+        # Count the relation if it's one we're tracking
+        if relation_type in relations:
+            relations[relation_type] += 1
+        
+        # Process remaining elements based on relation type
+        if len(dependency) > 1:
+            if relation_type in ["and", "or"]:
+                # For 'and' and 'or', expect a list of branches as second element
+                if isinstance(dependency[1], list):
+                    for branch in dependency[1]:
+                        sub_relations = count_constraint_relations(branch)
+                        for key in relations:
+                            relations[key] += sub_relations[key]
+            elif relation_type in ["single", "chain"]:
+                # For 'single' and 'chain', process the second element
+                sub_relations = count_constraint_relations(dependency[1])
+                for key in relations:
+                    relations[key] += sub_relations[key]
+            else:
+                # If relation_type not recognized, process all elements
+                for element in dependency[1:]:
+                    sub_relations = count_constraint_relations(element)
+                    for key in relations:
+                        relations[key] += sub_relations[key]
+    
+    return relations
 
 def task_statistics(evaluations):
     """Calculate statistics for a task's evaluations."""

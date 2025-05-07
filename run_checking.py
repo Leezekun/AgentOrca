@@ -209,7 +209,6 @@ def main():
     )
     
     data = load_json_file(output_file)
-    
     for i, scenario in enumerate(data, 1):
         clear_screen()
         print("Loading data from", output_file + '\n\n')

@@ -50,9 +50,20 @@ cd ..
 #     done
 # done
 
-model="qwen2.5-7b-instruct"
-domain="library"
-tool_list="oracle"
+# model="gemini-1.5-pro"
+# model="llama3.1-70b-instruct"
+# model="gpt-4o"
+# model="qwen2.5-72b-instruct"
+# model="gemini-2.0-flash-thinking-exp"
+# model="claude-3-7-sonnet-20250219"
+# model="o4-mini"
+# model="gpt-4.1"
+# model="gemini-2.0-flash-thinking-exp"
+# model="gpt-4o-mini"
+# model="llama3.1-8b-instruct"
+model="qwen2.5-14b-instruct"
+domain="all"
+tool_list="full"
 tool_call_mode="react"
 
 CUDA_VISIBLE_DEVICES=$devices python run_evaluation.py \

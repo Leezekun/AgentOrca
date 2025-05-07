@@ -68,7 +68,7 @@ class Domain_Dependencies:
         return False
 
 # dependency check here is given that there is a violating dependency somewhere
-class Domain_Dependencies_Verify:
+class Domain_Dependencies_Verifier:
     def __init__(self, database=None, state_tracker=None, all_dep:dict=None,
         domain_dep:Domain_Dependencies=None, constraint_values:dict={}):
         self.database = database            if not domain_dep else domain_dep.database

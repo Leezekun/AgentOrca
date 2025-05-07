@@ -9,22 +9,42 @@ OPENAI_MODELS = [
     
     # o1
     "o1", # -> o1-2024-12-17
+    
+    # o3-mini
     "o3-mini", # -> o3-mini-2025-01-31
+    
+    # o3
+    "o3", "o3-low", "o3-medium", "o3-high", 
+    
+    # o3 mini
+    "o3-mini", "o3-mini-low", "o3-mini-medium", "o3-mini-high",
+    
+    # o4 mini
+    "o4-mini", "o4-mini-low", "o4-mini-medium", "o4-mini-high",
+    
+    # gpt-4.1
+    "gpt-4.1-mini", "gpt-4.1",
 ]
 
 # Gemini models
 GEMINI_MODELS = [
     "gemini-1.5-flash",
     "gemini-1.5-pro",
+    # gemini 2.0
     "gemini-2.0-flash-001",
     "gemini-2.0-flash",
     "gemini-2.0-flash-thinking-exp",
+    # gemini 2.5
+    "gemini-2.5-pro-preview-03-25",
+    "gemini-2.5-flash-preview-04-17",
 ]
 
 # Claude models
 CLAUDE_MODELS = [
     "claude-3-5-sonnet-20241022",
     "claude-3-5-haiku-20241022",
+    "claude-3-7-sonnet-20250219", 
+    "claude-3-7-sonnet-20250219-thinking",
 ]
 
 # Fireworks models
@@ -37,6 +57,8 @@ FIREWORKS_MODELS = {
 
 # 3B-32B Models
 OSS_MODELS = {
+    "llama3.1-70b-instruct-hf": "meta-llama/Llama-3.1-70B-Instruct",
+    "qwen2.5-72b-instruct-hf": "Qwen/Qwen2.5-72B-Instruct",
     "qwen2.5-3b-instruct": "Qwen/Qwen2.5-3B-Instruct",
     "qwen2.5-7b-instruct": "Qwen/Qwen2.5-7B-Instruct",
     "qwen2.5-14b-instruct": "Qwen/Qwen2.5-14B-Instruct",
@@ -85,14 +107,15 @@ AVAILABLE_MODELS = {
         "gpt-4o-mini",
         "o1",
         "o3-mini",
+        "gpt-4.1-mini",
+        "gpt-4.1",
     ]
 }
 
 # Model Class That Supports Function Calling
 # Fireworks models: https://docs.fireworks.ai/guides/function-calling
 FUNCTION_CALLING_MODELS = {
-    "vllm": [
-    ],
+    "vllm": [],
     "fireworks": [
         "llama3.1-405b-instruct",
         "llama3.1-70b-instruct",
@@ -104,10 +127,15 @@ FUNCTION_CALLING_MODELS = {
         "gemini-1.5-pro",
         "gemini-2.0-flash-001",
         "gemini-2.0-flash",
+        "gemini-2.0-flash-thinking-exp",
+        "gemini-2.5-pro-preview-03-25",
+        "gemini-2.5-flash-preview-04-17",
     ],
     "claude": [
         "claude-3-5-sonnet-20241022",
         "claude-3-5-haiku-20241022",
+        "claude-3-7-sonnet-20250219", 
+        "claude-3-7-sonnet-20250219-thinking",
     ],
     "openai": [
         "gpt-4o",
@@ -115,5 +143,10 @@ FUNCTION_CALLING_MODELS = {
         "gpt-4o-mini",
         "o1",
         "o3-mini",
+        "o3", "o3-low", "o3-medium", "o3-high", 
+        "o3-mini", "o3-mini-low", "o3-mini-medium", "o3-mini-high",
+        "o4-mini", "o4-mini-low", "o4-mini-medium", "o4-mini-high",
+        "gpt-4.1-mini",
+        "gpt-4.1",
     ]
 }

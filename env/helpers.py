@@ -776,3 +776,63 @@ def write_data_file(data_dir:str, document_name:str, data:str, option:str='w'):
         os.makedirs(data_dir)
     with open(os.path.join(data_dir, document_name), option, encoding='utf-8', errors='ignore') as f:
         f.write(data)
+        
+def compare_lists(list1, list2):
+    # Handle None inputs
+    if list1 is None or list2 is None:
+        return list1 is None and list2 is None
+        
+    # Convert tuples to lists recursively
+    def convert_to_list(item):
+        if isinstance(item, tuple):
+            return [convert_to_list(x) for x in item]
+        elif isinstance(item, list):
+            return [convert_to_list(x) for x in item]
+        else:
+            return item
+    
+    # Convert both inputs to lists
+    list1 = convert_to_list(list1)
+    list2 = convert_to_list(list2)
+    
+    # Check if lengths are different
+    if len(list1) != len(list2):
+        return False
+    
+    # Special case for 'and' operator - order doesn't matter
+    if len(list1) > 0 and list1[0] == 'and' and list2[0] == 'and':
+        if len(list1) != 2 or len(list2) != 2:
+            return False
+        
+        # For 'and' operator, the second element contains the list of conditions
+        conditions1 = list1[1]
+        conditions2 = list2[1]
+        
+        if len(conditions1) != len(conditions2):
+            return False
+        
+        # Check if each condition in list1 has a match in list2
+        matched_indices = set()
+        for condition1 in conditions1:
+            found_match = False
+            for i, condition2 in enumerate(conditions2):
+                if i not in matched_indices and compare_lists(condition1, condition2):
+                    matched_indices.add(i)
+                    found_match = True
+                    break
+            if not found_match:
+                return False
+        
+        return True
+    
+    # For all other cases, compare elements in order
+    for i in range(len(list1)):
+        # If both elements are lists, recursively compare them
+        if isinstance(list1[i], list) and isinstance(list2[i], list):
+            if not compare_lists(list1[i], list2[i]):
+                return False
+        # Otherwise do direct comparison
+        elif list1[i] != list2[i]:
+            return False
+    
+    return True

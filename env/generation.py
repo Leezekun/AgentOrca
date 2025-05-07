@@ -26,7 +26,7 @@ import os
 import sys
 
 from env.variables import domain_keys, domain_assistant_keys
-from env.dependencies import Domain_Dependencies_Verify
+from env.dependencies import Domain_Dependencies_Verifier
 from env.helpers import recur_data_consistency, write_data_file
 
 import inspect
@@ -463,7 +463,7 @@ def verify_gen_succ(task_obj:Task, dep:tuple, dep_perm:tuple, domain_str:str, us
     all_dep_perm[user_goal] = dep_perm
     act_innate_dep_perms = {key: dfsins_cl_cd_aid(act_innate_deps[key], cl, act_innate_deps, act_def_deps, cd, action_parameters) for key in act_innate_deps}
     domain_system_perm = domain_keys[domain_str](copy.deepcopy(data), act_innate_dep_perms, dep_params)
-    domain_dep_ver = Domain_Dependencies_Verify(database=domain_system_perm, state_tracker=copy.deepcopy(state_tracker),
+    domain_dep_ver = Domain_Dependencies_Verifier(database=domain_system_perm, state_tracker=copy.deepcopy(state_tracker),
         all_dep=all_dep_perm, constraint_values=task_single)
     # run through the required actions, making sure the constraints in task_single are satisfied
     constr_values_fully_followed = True

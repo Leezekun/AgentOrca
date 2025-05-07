@@ -5,6 +5,7 @@ import copy
 import atexit
 import signal
 import sys
+import traceback
 from tqdm import tqdm
 from typing import Optional, Dict, List, Any, Tuple
 from termcolor import colored
@@ -13,6 +14,7 @@ from colorama import init, Fore, Back, Style
 from swarm.core import *
 from swarm.llm_handler import OpenAIHandler, _cleanup_all_handlers
 from swarm.util import function_to_json, _generate_random_id
+from run_evaluation import count_constraint_units
 from env.task import task_default_dep_full, task_initializer
 
 # Store handlers for cleanup
@@ -88,7 +90,7 @@ def parse_args() -> argparse.Namespace:
                         choices=["old", "structured"], help="Constraint dependency description format")
     parser.add_argument("--shuffle_func", action="store_true",
                        help="Whether to shuffle assistant functions")
-
+    
     # Experiment settings
     parser.add_argument("--num_tasks", type=int, default=None,
                        help="Number of interactions to run in this experiment")
@@ -100,9 +102,11 @@ def parse_args() -> argparse.Namespace:
                        help="Maximum number of actions, i.e., tool calls, per run")
     parser.add_argument("--max_num_retries", type=int, default=1,
                        help="Number of retries for each interaction")
+    parser.add_argument("--min_constraints", type=int, default=0,
+                       help="Minimum number of constraints required to run a task")
     parser.add_argument("--print_conv", action="store_true",
                        help="Whether to print conversations")
-
+    
     args = parser.parse_args()
     
     # Add validation
@@ -233,6 +237,7 @@ def save_results(output_file: str, results: List[Dict[str, Any]], verbose: bool 
     if verbose:
         print(f"Saved results to {output_file}")
 
+
 def main():
     """Main function to run the simulation."""
     args = parse_args()
@@ -347,6 +352,13 @@ def main():
         # Run remaining interactions
         for i in tqdm(range(num_tasks), desc="Running interactions"):
             
+            # Skip tasks with fewer constraints than the minimum specified
+            dependency = tasks[i]["dependency_original"]   
+            constraint_count = count_constraint_units(dependency)
+            if constraint_count < args.min_constraints:
+                print(f"{Fore.YELLOW}[Skip] Task {i} has only {constraint_count} constraints (min required: {args.min_constraints}){Style.RESET_ALL}")
+                continue
+            
             # Load existing results if available
             if i < len(results):
                 result = results[i]
@@ -390,6 +402,8 @@ def main():
                 
                 except Exception as e:
                     print(f"An error occurred during task {i}: {e.__class__.__name__}: {e}")
+                    print("Full traceback:")
+                    traceback.print_exc()
                     num_retry += 1
                     continue
             

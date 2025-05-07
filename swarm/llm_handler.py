@@ -23,7 +23,7 @@ from swarm.constants import (OPENAI_MODELS,
                              OSS_MODELS, 
                              FUNCTION_CALLING_MODELS,
                              AVAILABLE_MODELS)
-from swarm.util import display_messages
+from swarm.util import *
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -261,6 +261,31 @@ class OpenAIHandler:
             finally:
                 self.process = None
 
+    def _extract_thinking_from_content(self, completion: ChatCompletion) -> ChatCompletion:
+        """Extract <think>xxx</think> content and store it in the thinking field of ChatCompletionMessage."""
+        import re
+        
+        # Process each choice in the completion
+        for choice in completion.choices:
+            if choice.message.content:
+                # Look for <think>xxx</think> patterns
+                think_pattern = re.compile(r'<think>(.*?)</think>', re.DOTALL)
+                matches = think_pattern.findall(choice.message.content)
+                
+                if matches:
+                    # Extract the thinking content (join if multiple matches)
+                    thinking_content = '\n'.join(matches)
+                    # Store in thinking field
+                    choice.message.thinking = thinking_content
+                    # Remove the <think>xxx</think> pattern from content
+                    choice.message.content = think_pattern.sub('', choice.message.content).strip()
+                elif "</think>" in choice.message.content:
+                    # split the content by </think>
+                    thinking_content = choice.message.content.split("</think>")[0]
+                    choice.message.thinking = thinking_content
+                    choice.message.content = choice.message.content.split("</think>")[1].strip()
+        return completion
+    
     def chat_completion(self, test_entry: dict, include_debugging_log: bool, tool_call_mode: Literal["fc", "prompt", "react", "act-only"] = "fc"):
         """
         OSS models have a different inference method.
@@ -270,11 +295,26 @@ class OpenAIHandler:
         """        
         # remove the "tool_name" field for real openai format messages for chat completion
         norm_messages = copy.deepcopy(test_entry["messages"])
-        if self.backend in ["openai", "vllm", "fireworks"]:
+        if self.backend in ["openai", "vllm", "fireworks", "gemini"]:
             for message in norm_messages:
+                # convert the message to a dict
+                if not isinstance(message, dict):
+                    message = ChatCompletionMessage_to_dict(message)
+                    
+                # cache_control is only used in claude
+                if "cache_control" in message:
+                    del message["cache_control"]
+                
+                # remove thinking process used in claude
+                if "thinking" in message:
+                    del message["thinking"]
+                if "thinking_signature" in message:
+                    del message["thinking_signature"]
+                
+                # openai format does not have tool_name
                 if message["role"] == "tool":
-                    # openai format does not have tool_name
                     del message["tool_name"] 
+                
                 if message["role"] == "user":
                     if "sender" in message:
                         del message["sender"]
@@ -284,6 +324,7 @@ class OpenAIHandler:
                 # remove the sender field
                 if "sender" in message:
                     del message["sender"]
+                    
                 # remove the unneeded fields for non-openai format messages
                 if self.backend != "openai" and message["role"] == "assistant":
                     if "function_call" in message:
@@ -309,14 +350,18 @@ class OpenAIHandler:
             "logprobs": test_entry.get("logprobs", False),
             "stop": test_entry.get("stop", None)
         }
-        
-        # o1 and o3 do not support a few parameters
-        if self.model_name_huggingface in ["o3-mini", "o1-mini", "o1", "o3"]:
+    
+        # thinking mode does not support a few parameters
+        if self.model_name_huggingface.split("-")[0].strip() in ["o1", "o3", "o4"]:
             chat_completion_params["max_completion_tokens"] = chat_completion_params["max_tokens"]
-            del chat_completion_params["max_tokens"]
             del chat_completion_params["temperature"]
+            del chat_completion_params["max_tokens"]
             del chat_completion_params["top_p"]
-        
+            # reasoning effort is only supported for openai reasoning models
+            if self.model_name_huggingface.split("-")[-1] in ["low", "medium", "high"]:
+                chat_completion_params["model"] = self.model_name_huggingface.replace("-low", "").replace("-medium", "").replace("-high", "")
+                chat_completion_params["reasoning_effort"] = self.model_name_huggingface.split("-")[-1]
+                
         ######################################################################
         # TOOL CALLING: Different ways to call tools and take actions
         ######################################################################
@@ -328,17 +373,19 @@ class OpenAIHandler:
                 completion = self.client(**chat_completion_params)
             else:
                 raise ValueError(f"Model {self.model_name_huggingface} is not supported.")
+            # Process completion to extract thinking content
+            completion = self._extract_thinking_from_content(completion)
             return {"idx": test_entry.get("idx", 0), "completion": completion}
         
         ######################################################################
         # FC or Prompt-based tool calling
         ######################################################################
-        # FC-based tool calling
         if tool_call_mode == "fc":
             assert self.model_name in FUNCTION_CALLING_MODELS[self.backend], f"Model {self.model_name} is not supported for tool calling."
             chat_completion_params["tools"] = tools
             if self.backend in ["openai", "vllm"]:
-                if self.model_name_huggingface not in ["o3-mini", "o1-mini", "o1", "o3"]: # o1 and o3 do not support parallel tool calls
+                # o1 and o3 do not support parallel tool calls
+                if self.model_name_huggingface not in ["o3-mini", "o1-mini", "o1", "o3", "o4", "o4-mini"]: 
                     chat_completion_params["parallel_tool_calls"] = test_entry.get("parallel_tool_calls", False)
                 completion = self.client.chat.completions.create(**chat_completion_params)
             elif self.backend in ["fireworks"]:
@@ -379,7 +426,6 @@ class OpenAIHandler:
         
         else:
             raise ValueError(f"Tool call mode {tool_call_mode} is not supported.")
-        
 
     def text_completion(self, test_entry: dict, include_debugging_log: bool):
         """
@@ -499,12 +545,12 @@ if __name__ == "__main__":
                     "reminder_content": {
                         "type": "string",
                         "description": "The content of the reminder.",
-                        },
                     },
-                    "required": ["reminder_time", "reminder_content"],
                 },
-            }
+                "required": ["reminder_time", "reminder_content"],
+            },
         }
+    }
     ]
 
     messages = [
@@ -519,6 +565,7 @@ if __name__ == "__main__":
         # {
         #     "role": "assistant",
         #     "content": None,
+        #     "thinking": "I need to get the delivery date for the user's order. The user's order person is John Doe and the order name is Dominos Pizza.",
         #     "tool_calls": [
         #         {
         #             "id": "call_sNcq3LV89bWJCWgZvJpCac7I",
@@ -538,8 +585,11 @@ if __name__ == "__main__":
         # }
     ]
     
+    # model_name = "claude-3-7-sonnet-20250219-thinking"
+    # model_name = "gpt-4.1-mini"
+    model_name = "o4-mini"
     model = OpenAIHandler(
-        model_name="claude-3-5-sonnet-20241022",
+        model_name=model_name,
         temperature=0.0,
         top_p=0.01,
         tool_calling=True,

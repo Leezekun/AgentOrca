@@ -8,8 +8,8 @@ import base64
 import random
 from dataclasses import dataclass
 from typing import List, Optional, Dict, Any, Union
-from anthropic import Anthropic
-from anthropic.types import TextBlock, ToolUseBlock
+from anthropic import Anthropic, AnthropicBedrock
+from anthropic.types import TextBlock, ToolUseBlock, ThinkingBlock
 import anthropic
 from swarm.util import (Function, 
                   ChatCompletionMessageToolCall, 
@@ -42,6 +42,7 @@ def convert_claude_to_openai_format(claude_response) -> ChatCompletion:
     tool_calls = []
     text_content = None
     thinking_content = None
+    thinking_signature = None
     
     if isinstance(content_blocks, list):
         # Handle list of content blocks
@@ -49,7 +50,8 @@ def convert_claude_to_openai_format(claude_response) -> ChatCompletion:
             if block.type == 'text':
                 text_content = block.text
             elif block.type == 'thinking':
-                thinking_content = block.text
+                thinking_signature = block.signature
+                thinking_content = block.thinking
             elif block.type == 'tool_use':
                 tool_calls.append(
                     ChatCompletionMessageToolCall(
@@ -70,6 +72,7 @@ def convert_claude_to_openai_format(claude_response) -> ChatCompletion:
         role='assistant',
         content=text_content,
         thinking=thinking_content,
+        thinking_signature=thinking_signature,
         tool_calls=tool_calls if tool_calls else None
     )
     
@@ -134,8 +137,8 @@ def format_tool_input(tools):
             "input_schema": function["parameters"],
         }
         # Use cache control for the last tool
-        if idx == len(tools) - 1:
-            formatted_tool["cache_control"] = {"type": "ephemeral"}
+        # if idx == len(tools) - 1:
+        #     formatted_tool["cache_control"] = {"type": "ephemeral"}
         formatted_tools.append(formatted_tool)
     return formatted_tools
 
@@ -153,10 +156,16 @@ def claude_chat_completion_openai_format(
     logprobs=False,
 ):
     assert n == 1
-    client = Anthropic(api_key=api_key)
+    # client = Anthropic(api_key=api_key)
+    client = AnthropicBedrock(
+        aws_access_key=os.getenv('AWS_ACCESS_KEY'),
+        aws_secret_key=os.getenv('AWS_SECRET_KEY'),
+        aws_region=os.getenv('AWS_REGION'),
+    )
 
     if "-thinking" in model:
         thinking_mode = True
+        model = model.split("-thinking")[0].strip()
     else:
         thinking_mode = False
 
@@ -166,68 +175,103 @@ def claude_chat_completion_openai_format(
     for _message in messages:
         # avoid modifying the original message
         message = copy.deepcopy(_message)
-        if message["role"] == "system":
-            system_message = [{"type": "text", "text": message["content"], "cache_control": {"type": "ephemeral"}}]
-            continue
-        elif message["role"] == "user":
-            # only keep the role and content for user messages
-            # avoid the additional field from assistant role
-            message_list.append(
-                {
+        if isinstance(message, dict):
+            if message["role"] == "system":
+                system_message = [{"type": "text", "text": message["content"]}]
+                continue
+            elif message["role"] == "user":
+                # only keep the role and content for user messages
+                # avoid the additional field from assistant role
+                message_list.append(
+                    {
+                        "role": "user",
+                        "content": message["content"]
+                    }
+                ) 
+            elif message["role"] == "assistant":
+                if message.get("tool_calls", None):
+                    assistant_messages = []
+                    if "thinking" in message and "thinking_signature" in message:
+                        if message.get("thinking_signature", None) and message.get("thinking_signature", None):
+                            thinking_block = ThinkingBlock(thinking=message["thinking"], 
+                                                           signature=message["thinking_signature"], 
+                                                           type="thinking")
+                            assistant_messages.append(thinking_block)
+                    if message["content"]:
+                        assistant_messages.append(TextBlock(text=message["content"], type="text"))
+                    for tool_call in message["tool_calls"]:
+                        assistant_messages.append(ToolUseBlock(
+                            id=tool_call["id"], 
+                            name=tool_call["function"]["name"], 
+                            input=json.loads(tool_call["function"]["arguments"]),
+                            type="tool_use"
+                        ))
+                    message_list.append({
+                        "role": "assistant",
+                        "content": assistant_messages
+                    })
+                elif message.get("content", None):
+                    message_list.append({
+                        "role": "assistant",
+                        "content": message["content"]
+                    })
+                else:
+                    # raise ValueError(f"Invalid assistant message: {message}")
+                    pass
+            elif message["role"] == "tool":
+                message_list.append({
                     "role": "user",
-                    "content": message["content"]
-                }
-            ) 
-        elif message["role"] == "assistant":
-            if message.get("tool_calls", None):
+                    "content": [{
+                        "type": "tool_result",
+                        "tool_use_id": message["tool_call_id"],
+                        "content": str(message["content"]),
+                    }]
+                })
+        # only the assistant message is not dict but ChatCompletionMessage
+        elif isinstance(message, ChatCompletionMessage):
+            assert message.role == "assistant"
+            if message.tool_calls:
                 assistant_messages = []
-                # if "thinking" in message:
-                #     assistant_messages.append(ThinkingBlock(text=message["thinking"], type="thinking"))
-                if message["content"]:
-                    assistant_messages.append(TextBlock(text=message["content"], type="text"))
-                for tool_call in message["tool_calls"]:
+                if message.content:
+                    assistant_messages.append(TextBlock(text=message.content, type="text"))
+                for tool_call in message.tool_calls:
                     assistant_messages.append(ToolUseBlock(
-                        id=tool_call["id"], 
-                        name=tool_call["function"]["name"], 
-                        input=json.loads(tool_call["function"]["arguments"]),
+                        id=tool_call.id, 
+                        name=tool_call.function.name, 
+                        input=json.loads(tool_call.function.arguments),
                         type="tool_use"
                     ))
                 message_list.append({
                     "role": "assistant",
                     "content": assistant_messages
                 })
-            elif message.get("content", None):
+            elif message.content:
                 message_list.append({
                     "role": "assistant",
-                    "content": message["content"]
+                    "content": message.content
                 })
             else:
-                # raise ValueError(f"Invalid assistant message: {message}")
-                pass
-        elif message["role"] == "tool":
-            message_list.append({
-                "role": "user",
-                "content": [{
-                    "type": "tool_result",
-                    "tool_use_id": message["tool_call_id"],
-                    "content": str(message["content"]),
-                }]
-            })
+                raise ValueError(f"Invalid assistant message: {message}")
         else:
-            raise ValueError(f"Invalid message role: {message['role']}")
+            raise ValueError(f"Invalid message type: {type(message)}")
             
-    # Format the tool in Claude's format
-    if tools:
-        tools = format_tool_input(tools)
-    else:
-        tools = []
-
+    # Format tools for Claude
+    formatted_tools = format_tool_input(tools) if tools else []
+    
+    # Change the model name to the Bedrock model name
+    bedrock_model_names = {
+        "claude-3-5-haiku-20241022": "us.anthropic.claude-3-5-haiku-20241022-v1:0",
+        "claude-3-5-sonnet-20240229": "us.anthropic.claude-3-5-sonnet-20240229-v1:0",
+        "claude-3-5-sonnet-20241022": "us.anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "claude-3-7-sonnet-20250219": "us.anthropic.claude-3-7-sonnet-20250219-v1:0",
+    }
+    
     create_params = {
-        "model": model,
+        "model": bedrock_model_names[model],
         "max_tokens": max_tokens,
         "system": system_message,
         "messages": message_list,
-        "tools": tools,
+        "tools": formatted_tools,
         "temperature": temperature,
         "top_p": top_p,
     }
@@ -235,8 +279,7 @@ def claude_chat_completion_openai_format(
     if thinking_mode:
         del create_params["top_p"]
         create_params["temperature"] = 1.0 # thinking mode only supports temperature 1.0
-        create_params["model"] = model.split("-thinking")[0].strip()
-        budget_tokens = model.split("-thinking")[1].strip()
+        budget_tokens = None if "-thinking" not in model else int(model.split("-thinking")[1].strip())
         budget_tokens = int(budget_tokens) if budget_tokens else 10000
         create_params["max_tokens"] = budget_tokens + max_tokens
         create_params["thinking"] = {"type": "enabled", "budget_tokens": budget_tokens}
@@ -248,7 +291,8 @@ def claude_chat_completion_openai_format(
                 **create_params
             )
             # Convert the Claude response to OpenAI format
-            return convert_claude_to_openai_format(completion)
+            openai_completion = convert_claude_to_openai_format(completion)
+            return openai_completion
         except anthropic.APIError as e:
             print(f"API Error (attempt {attempt + 1}/{max_retries}): {e}")
             if e.status_code == 429:  # Rate limit

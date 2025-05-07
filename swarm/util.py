@@ -11,22 +11,50 @@ import time
 class Function:
     arguments: str
     name: str
+    
+    def to_dict(self):
+        return {
+            "arguments": self.arguments,
+            "name": self.name
+        }
 
 @dataclass
 class ChatCompletionMessageToolCall:
     id: str
     function: Function
     type: str
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "function": self.function.to_dict(),
+            "type": self.type
+        }
 
 @dataclass
 class ChatCompletionMessage:
     role: str
     content: Optional[str]
     thinking: Optional[str] = None
+    thinking_signature: Optional[str] = None
     tool_calls: Optional[List[ChatCompletionMessageToolCall]] = None
     function_call: Optional[Any] = None
     refusal: Optional[Any] = None
     audio: Optional[Any] = None
+    
+    def to_dict(self):
+        tool_calls_dict = [tool_call.to_dict() for tool_call in self.tool_calls] if self.tool_calls else None
+        return {
+            "content": self.content,
+            "thinking": self.thinking,
+            "thinking_signature": self.thinking_signature,
+            "role": self.role,
+            "tool_calls": tool_calls_dict,
+            "function_call": self.function_call,
+            "refusal": self.refusal,
+            "audio": self.audio
+        }
+
 
 @dataclass
 class Choice:
@@ -71,6 +99,34 @@ def _generate_random_id(length: int = 24) -> str:
     characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     return ''.join(random.choice(characters) for _ in range(length))
 
+def ChatCompletionMessage_to_dict(msg) -> Dict[str, Any]:
+    """Convert ChatCompletionMessage to a dict."""
+    try:
+        msg_dict = msg.to_dict()
+        return msg_dict
+    except Exception as e:
+        # Convert ChatCompletionMessage to dict and print
+        msg_dict = {
+            "role": msg.role,
+            "content": msg.content,
+        }
+        
+        # Add tool_calls if present
+        if hasattr(msg, 'tool_calls') and msg.tool_calls:
+            tool_calls = []
+            for tool_call in msg.tool_calls:
+                tool_call_dict = {
+                    "id": tool_call.id,
+                    "type": tool_call.type,
+                    "function": {
+                        "name": tool_call.function.name,
+                        "arguments": tool_call.function.arguments
+                    }
+                }
+                tool_calls.append(tool_call_dict)
+            msg_dict["tool_calls"] = tool_calls
+        return msg_dict
+    
 
 def construct_chatcompletion(role: str, 
                    content: str, 
@@ -110,6 +166,8 @@ def construct_chatcompletion(role: str,
 def model_dump_json(message):
     message_raw = {
                     'content': message.content,
+                    'thinking': message.thinking,
+                    'thinking_signature': message.thinking_signature,
                     'role': message.role,
                     'tool_calls': [
                         {

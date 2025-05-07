@@ -1,7 +1,7 @@
 cd ../..
 
-model="gemini-2.0-flash-thinking"
-domains=("healthcare")
+model="gemini-2.0-flash-thinking-exp"
+domains=("dmv" "healthcare" "library" "online_market" "bank")
 
 # Experiment 1: Full and only Test Env Tool List on Five Domains with FC
 method="react"

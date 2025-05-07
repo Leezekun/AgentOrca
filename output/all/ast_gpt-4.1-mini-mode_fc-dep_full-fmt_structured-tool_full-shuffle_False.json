@@ -1,0 +1,1830 @@
+{
+    "user_model": null,
+    "assistant_model": "gpt-4.1-mini",
+    "domain": "all",
+    "domain_specific_results": {
+        "bank": {
+            "user_model": null,
+            "assistant_model": "gpt-4.1-mini",
+            "domain": "bank",
+            "total_tasks": 153,
+            "total_interactions": 153,
+            "total_success": 96,
+            "avg_num_messages": 928.0,
+            "avg_num_function_calls": 407.0,
+            "avg_num_constraints": 437,
+            "avg_num_constraints_expanded": 308,
+            "goal_statistics": {
+                "apply_credit_card": {
+                    "total_interactions": 9,
+                    "total_success": 7,
+                    "avg_num_messages": 52.0,
+                    "avg_num_function_calls": 21.0,
+                    "total_tasks": 9,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 19,
+                    "total_constraints_expanded": 14,
+                    "pass@1": 103,
+                    "total_test_cases@1": 10
+                },
+                "authenticate_admin_password": {
+                    "total_interactions": 3,
+                    "total_success": 3,
+                    "avg_num_messages": 13.0,
+                    "avg_num_function_calls": 4.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 99,
+                    "total_test_cases@1": 4
+                },
+                "cancel_credit_card": {
+                    "total_interactions": 17,
+                    "total_success": 10,
+                    "avg_num_messages": 118.0,
+                    "avg_num_function_calls": 65.0,
+                    "total_tasks": 17,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 49,
+                    "total_constraints_expanded": 37,
+                    "pass@1": 106,
+                    "total_test_cases@1": 18
+                },
+                "close_account": {
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 11.0,
+                    "avg_num_function_calls": 7.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 97,
+                    "total_test_cases@1": 3
+                },
+                "deposit_funds": {
+                    "total_interactions": 5,
+                    "total_success": 4,
+                    "avg_num_messages": 24.0,
+                    "avg_num_function_calls": 9.0,
+                    "total_tasks": 5,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 13,
+                    "total_constraints_expanded": 13,
+                    "pass@1": 100,
+                    "total_test_cases@1": 6
+                },
+                "exchange_foreign_currency": {
+                    "total_interactions": 4,
+                    "total_success": 2,
+                    "avg_num_messages": 19.0,
+                    "avg_num_function_calls": 7.0,
+                    "total_tasks": 4,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 6,
+                    "total_constraints_expanded": 6,
+                    "pass@1": 98,
+                    "total_test_cases@1": 5
+                },
+                "get_account_balance": {
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 10.0,
+                    "avg_num_function_calls": 4.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 97,
+                    "total_test_cases@1": 3
+                },
+                "get_account_owed_balance": {
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 9.0,
+                    "avg_num_function_calls": 3.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 97,
+                    "total_test_cases@1": 3
+                },
+                "get_bank_maximum_loan_amount": {
+                    "total_interactions": 1,
+                    "total_success": 0,
+                    "avg_num_messages": 4.0,
+                    "avg_num_function_calls": 1.0,
+                    "total_tasks": 1,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 1,
+                    "total_constraints_expanded": 1,
+                    "pass@1": 96,
+                    "total_test_cases@1": 2
+                },
+                "get_credit_card_info": {
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 12.0,
+                    "avg_num_function_calls": 6.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 97,
+                    "total_test_cases@1": 3
+                },
+                "get_credit_cards": {
+                    "total_interactions": 2,
+                    "total_success": 2,
+                    "avg_num_messages": 11.0,
+                    "avg_num_function_calls": 5.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 6,
+                    "total_constraints_expanded": 6,
+                    "pass@1": 98,
+                    "total_test_cases@1": 3
+                },
+                "get_loan": {
+                    "total_interactions": 12,
+                    "total_success": 5,
+                    "avg_num_messages": 79.0,
+                    "avg_num_function_calls": 43.0,
+                    "total_tasks": 12,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 38,
+                    "total_constraints_expanded": 19,
+                    "pass@1": 101,
+                    "total_test_cases@1": 13
+                },
+                "get_safety_box": {
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 11.0,
+                    "avg_num_function_calls": 5.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 6,
+                    "total_constraints_expanded": 6,
+                    "pass@1": 97,
+                    "total_test_cases@1": 3
+                },
+                "login_user": {
+                    "total_interactions": 1,
+                    "total_success": 0,
+                    "avg_num_messages": 6.0,
+                    "avg_num_function_calls": 1.0,
+                    "total_tasks": 1,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 0,
+                    "total_constraints_expanded": 0,
+                    "pass@1": 96,
+                    "total_test_cases@1": 2
+                },
+                "logout_user": {
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 8.0,
+                    "avg_num_function_calls": 2.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 2,
+                    "total_constraints_expanded": 2,
+                    "pass@1": 97,
+                    "total_test_cases@1": 3
+                },
+                "open_account": {
+                    "total_interactions": 5,
+                    "total_success": 2,
+                    "avg_num_messages": 32.0,
+                    "avg_num_function_calls": 17.0,
+                    "total_tasks": 5,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 9,
+                    "total_constraints_expanded": 5,
+                    "pass@1": 98,
+                    "total_test_cases@1": 6
+                },
+                "pay_bill": {
+                    "total_interactions": 5,
+                    "total_success": 4,
+                    "avg_num_messages": 33.0,
+                    "avg_num_function_calls": 8.0,
+                    "total_tasks": 5,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 13,
+                    "total_constraints_expanded": 8,
+                    "pass@1": 100,
+                    "total_test_cases@1": 6
+                },
+                "pay_bill_with_credit_card": {
+                    "total_interactions": 5,
+                    "total_success": 3,
+                    "avg_num_messages": 33.0,
+                    "avg_num_function_calls": 14.0,
+                    "total_tasks": 5,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 13,
+                    "total_constraints_expanded": 8,
+                    "pass@1": 99,
+                    "total_test_cases@1": 6
+                },
+                "pay_loan": {
+                    "total_interactions": 8,
+                    "total_success": 4,
+                    "avg_num_messages": 52.0,
+                    "avg_num_function_calls": 18.0,
+                    "total_tasks": 8,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 29,
+                    "total_constraints_expanded": 13,
+                    "pass@1": 100,
+                    "total_test_cases@1": 9
+                },
+                "set_account_information": {
+                    "total_interactions": 2,
+                    "total_success": 2,
+                    "avg_num_messages": 12.0,
+                    "avg_num_function_calls": 6.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 98,
+                    "total_test_cases@1": 3
+                },
+                "set_admin_password": {
+                    "total_interactions": 4,
+                    "total_success": 4,
+                    "avg_num_messages": 19.0,
+                    "avg_num_function_calls": 7.0,
+                    "total_tasks": 4,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 100,
+                    "total_test_cases@1": 5
+                },
+                "set_safety_box": {
+                    "total_interactions": 35,
+                    "total_success": 19,
+                    "avg_num_messages": 211.0,
+                    "avg_num_function_calls": 84.0,
+                    "total_tasks": 35,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 126,
+                    "total_constraints_expanded": 75,
+                    "pass@1": 115,
+                    "total_test_cases@1": 36
+                },
+                "transfer_funds": {
+                    "total_interactions": 23,
+                    "total_success": 19,
+                    "avg_num_messages": 149.0,
+                    "avg_num_function_calls": 70.0,
+                    "total_tasks": 23,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 80,
+                    "total_constraints_expanded": 68,
+                    "pass@1": 115,
+                    "total_test_cases@1": 24
+                }
+            },
+            "constraint_group_statistics": {
+                "1": {
+                    "total_tasks": 17,
+                    "total_interactions": 17,
+                    "total_success": 13,
+                    "avg_num_messages": 78.0,
+                    "avg_num_function_calls": 25.0,
+                    "pass_rate": 0
+                },
+                "2": {
+                    "total_tasks": 37,
+                    "total_interactions": 37,
+                    "total_success": 19,
+                    "avg_num_messages": 230.0,
+                    "avg_num_function_calls": 89.0,
+                    "pass_rate": 0
+                },
+                "3": {
+                    "total_tasks": 56,
+                    "total_interactions": 56,
+                    "total_success": 34,
+                    "avg_num_messages": 351.0,
+                    "avg_num_function_calls": 153.0,
+                    "pass_rate": 0
+                },
+                "4": {
+                    "total_tasks": 36,
+                    "total_interactions": 36,
+                    "total_success": 25,
+                    "avg_num_messages": 225.0,
+                    "avg_num_function_calls": 115.0,
+                    "pass_rate": 0
+                },
+                "5": {
+                    "total_tasks": 7,
+                    "total_interactions": 7,
+                    "total_success": 5,
+                    "avg_num_messages": 44.0,
+                    "avg_num_function_calls": 25.0,
+                    "pass_rate": 0
+                }
+            },
+            "error_statistics": {
+                "total_evaluations": 153,
+                "total_failures": 57,
+                "error_causes": {
+                    "tool_call_errors": 5,
+                    "constraint_violations": 22,
+                    "database_mismatches": 14,
+                    "dirgraph_violations": 25,
+                    "incorrect_action_calls": 44
+                }
+            },
+            "constraint_relation_group_statistics": {
+                "single:True": {
+                    "total_tasks": 16,
+                    "total_interactions": 16,
+                    "total_success": 13,
+                    "avg_num_messages": 72.0,
+                    "avg_num_function_calls": 24.0,
+                    "pass_rate": 0
+                },
+                "and:True-single:True": {
+                    "total_tasks": 128,
+                    "total_interactions": 128,
+                    "total_success": 79,
+                    "avg_num_messages": 798.0,
+                    "avg_num_function_calls": 364.0,
+                    "pass_rate": 0
+                },
+                "": {
+                    "total_tasks": 1,
+                    "total_interactions": 1,
+                    "total_success": 0,
+                    "avg_num_messages": 6.0,
+                    "avg_num_function_calls": 1.0,
+                    "pass_rate": 0
+                },
+                "and:True-or:True-single:True": {
+                    "total_tasks": 8,
+                    "total_interactions": 8,
+                    "total_success": 4,
+                    "avg_num_messages": 52.0,
+                    "avg_num_function_calls": 18.0,
+                    "pass_rate": 0
+                }
+            },
+            "pass@1": 96,
+            "total_test_cases@1": 153
+        },
+        "online_market": {
+            "user_model": null,
+            "assistant_model": "gpt-4.1-mini",
+            "domain": "online_market",
+            "total_tasks": 187,
+            "total_interactions": 187,
+            "total_success": 110,
+            "avg_num_messages": 1255.0,
+            "avg_num_function_calls": 699.0,
+            "avg_num_constraints": 751,
+            "avg_num_constraints_expanded": 323,
+            "goal_statistics": {
+                "add_review": {
+                    "total_interactions": 51,
+                    "total_success": 25,
+                    "avg_num_messages": 279.0,
+                    "avg_num_function_calls": 124.0,
+                    "total_tasks": 51,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 163,
+                    "total_constraints_expanded": 79,
+                    "pass@1": 135,
+                    "total_test_cases@1": 52
+                },
+                "add_shipping_address": {
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 10.0,
+                    "avg_num_function_calls": 4.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 2,
+                    "pass@1": 111,
+                    "total_test_cases@1": 3
+                },
+                "add_to_cart": {
+                    "total_interactions": 2,
+                    "total_success": 0,
+                    "avg_num_messages": 12.0,
+                    "avg_num_function_calls": 6.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 2,
+                    "pass@1": 110,
+                    "total_test_cases@1": 3
+                },
+                "cancel_order": {
+                    "total_interactions": 5,
+                    "total_success": 4,
+                    "avg_num_messages": 29.0,
+                    "avg_num_function_calls": 14.0,
+                    "total_tasks": 5,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 12,
+                    "total_constraints_expanded": 10,
+                    "pass@1": 114,
+                    "total_test_cases@1": 6
+                },
+                "exchange_product": {
+                    "total_interactions": 45,
+                    "total_success": 28,
+                    "avg_num_messages": 340.0,
+                    "avg_num_function_calls": 205.0,
+                    "total_tasks": 45,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 279,
+                    "total_constraints_expanded": 90,
+                    "pass@1": 138,
+                    "total_test_cases@1": 46
+                },
+                "get_coupons_used": {
+                    "total_interactions": 3,
+                    "total_success": 3,
+                    "avg_num_messages": 13.0,
+                    "avg_num_function_calls": 4.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 113,
+                    "total_test_cases@1": 4
+                },
+                "get_order_details": {
+                    "total_interactions": 3,
+                    "total_success": 1,
+                    "avg_num_messages": 16.0,
+                    "avg_num_function_calls": 7.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 6,
+                    "total_constraints_expanded": 6,
+                    "pass@1": 111,
+                    "total_test_cases@1": 4
+                },
+                "get_product_details": {
+                    "total_interactions": 1,
+                    "total_success": 0,
+                    "avg_num_messages": 4.0,
+                    "avg_num_function_calls": 1.0,
+                    "total_tasks": 1,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 0,
+                    "total_constraints_expanded": 0,
+                    "pass@1": 110,
+                    "total_test_cases@1": 2
+                },
+                "login_user": {
+                    "total_interactions": 1,
+                    "total_success": 1,
+                    "avg_num_messages": 4.0,
+                    "avg_num_function_calls": 1.0,
+                    "total_tasks": 1,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 0,
+                    "total_constraints_expanded": 0,
+                    "pass@1": 111,
+                    "total_test_cases@1": 2
+                },
+                "logout_user": {
+                    "total_interactions": 2,
+                    "total_success": 2,
+                    "avg_num_messages": 9.0,
+                    "avg_num_function_calls": 3.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 2,
+                    "total_constraints_expanded": 2,
+                    "pass@1": 112,
+                    "total_test_cases@1": 3
+                },
+                "place_order": {
+                    "total_interactions": 6,
+                    "total_success": 1,
+                    "avg_num_messages": 32.0,
+                    "avg_num_function_calls": 16.0,
+                    "total_tasks": 6,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 20,
+                    "total_constraints_expanded": 6,
+                    "pass@1": 111,
+                    "total_test_cases@1": 7
+                },
+                "return_order": {
+                    "total_interactions": 10,
+                    "total_success": 3,
+                    "avg_num_messages": 70.0,
+                    "avg_num_function_calls": 40.0,
+                    "total_tasks": 10,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 43,
+                    "total_constraints_expanded": 20,
+                    "pass@1": 113,
+                    "total_test_cases@1": 11
+                },
+                "use_coupon": {
+                    "total_interactions": 47,
+                    "total_success": 34,
+                    "avg_num_messages": 397.0,
+                    "avg_num_function_calls": 261.0,
+                    "total_tasks": 47,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 206,
+                    "total_constraints_expanded": 94,
+                    "pass@1": 144,
+                    "total_test_cases@1": 48
+                },
+                "view_cart": {
+                    "total_interactions": 3,
+                    "total_success": 2,
+                    "avg_num_messages": 13.0,
+                    "avg_num_function_calls": 4.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 112,
+                    "total_test_cases@1": 4
+                },
+                "view_order_history": {
+                    "total_interactions": 3,
+                    "total_success": 3,
+                    "avg_num_messages": 13.0,
+                    "avg_num_function_calls": 4.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 113,
+                    "total_test_cases@1": 4
+                },
+                "view_shipping_addresses": {
+                    "total_interactions": 3,
+                    "total_success": 2,
+                    "avg_num_messages": 14.0,
+                    "avg_num_function_calls": 5.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 112,
+                    "total_test_cases@1": 4
+                }
+            },
+            "constraint_group_statistics": {
+                "1": {
+                    "total_tasks": 20,
+                    "total_interactions": 20,
+                    "total_success": 17,
+                    "avg_num_messages": 91.0,
+                    "avg_num_function_calls": 29.0,
+                    "pass_rate": 0
+                },
+                "2": {
+                    "total_tasks": 18,
+                    "total_interactions": 18,
+                    "total_success": 8,
+                    "avg_num_messages": 96.0,
+                    "avg_num_function_calls": 42.0,
+                    "pass_rate": 0
+                },
+                "3": {
+                    "total_tasks": 40,
+                    "total_interactions": 40,
+                    "total_success": 19,
+                    "avg_num_messages": 252.0,
+                    "avg_num_function_calls": 132.0,
+                    "pass_rate": 0
+                },
+                "4": {
+                    "total_tasks": 43,
+                    "total_interactions": 43,
+                    "total_success": 27,
+                    "avg_num_messages": 302.0,
+                    "avg_num_function_calls": 175.0,
+                    "pass_rate": 0
+                },
+                "5": {
+                    "total_tasks": 29,
+                    "total_interactions": 29,
+                    "total_success": 16,
+                    "avg_num_messages": 220.0,
+                    "avg_num_function_calls": 138.0,
+                    "pass_rate": 0
+                },
+                "6": {
+                    "total_tasks": 10,
+                    "total_interactions": 10,
+                    "total_success": 6,
+                    "avg_num_messages": 89.0,
+                    "avg_num_function_calls": 59.0,
+                    "pass_rate": 0
+                },
+                "7": {
+                    "total_tasks": 16,
+                    "total_interactions": 16,
+                    "total_success": 8,
+                    "avg_num_messages": 118.0,
+                    "avg_num_function_calls": 70.0,
+                    "pass_rate": 0
+                },
+                "8": {
+                    "total_tasks": 11,
+                    "total_interactions": 11,
+                    "total_success": 9,
+                    "avg_num_messages": 87.0,
+                    "avg_num_function_calls": 54.0,
+                    "pass_rate": 0
+                }
+            },
+            "error_statistics": {
+                "total_evaluations": 187,
+                "total_failures": 77,
+                "error_causes": {
+                    "tool_call_errors": 0,
+                    "constraint_violations": 45,
+                    "database_mismatches": 39,
+                    "dirgraph_violations": 63,
+                    "incorrect_action_calls": 45
+                }
+            },
+            "constraint_relation_group_statistics": {
+                "single:True": {
+                    "total_tasks": 18,
+                    "total_interactions": 18,
+                    "total_success": 16,
+                    "avg_num_messages": 83.0,
+                    "avg_num_function_calls": 27.0,
+                    "pass_rate": 0
+                },
+                "and:True-single:True": {
+                    "total_tasks": 127,
+                    "total_interactions": 127,
+                    "total_success": 70,
+                    "avg_num_messages": 858.0,
+                    "avg_num_function_calls": 484.0,
+                    "pass_rate": 0
+                },
+                "and:True-or:True-single:True": {
+                    "total_tasks": 40,
+                    "total_interactions": 40,
+                    "total_success": 23,
+                    "avg_num_messages": 306.0,
+                    "avg_num_function_calls": 186.0,
+                    "pass_rate": 0
+                },
+                "": {
+                    "total_tasks": 2,
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 8.0,
+                    "avg_num_function_calls": 2.0,
+                    "pass_rate": 0
+                }
+            },
+            "pass@1": 110,
+            "total_test_cases@1": 187
+        },
+        "dmv": {
+            "user_model": null,
+            "assistant_model": "gpt-4.1-mini",
+            "domain": "dmv",
+            "total_tasks": 115,
+            "total_interactions": 115,
+            "total_success": 85,
+            "avg_num_messages": 706.0,
+            "avg_num_function_calls": 339.0,
+            "avg_num_constraints": 318,
+            "avg_num_constraints_expanded": 224,
+            "goal_statistics": {
+                "authenticate_admin_password": {
+                    "total_interactions": 3,
+                    "total_success": 2,
+                    "avg_num_messages": 13.0,
+                    "avg_num_function_calls": 4.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 87,
+                    "total_test_cases@1": 4
+                },
+                "cancel_test": {
+                    "total_interactions": 5,
+                    "total_success": 5,
+                    "avg_num_messages": 31.0,
+                    "avg_num_function_calls": 14.0,
+                    "total_tasks": 5,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 12,
+                    "total_constraints_expanded": 5,
+                    "pass@1": 90,
+                    "total_test_cases@1": 6
+                },
+                "change_dl_address": {
+                    "total_interactions": 10,
+                    "total_success": 10,
+                    "avg_num_messages": 52.0,
+                    "avg_num_function_calls": 22.0,
+                    "total_tasks": 10,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 20,
+                    "total_constraints_expanded": 15,
+                    "pass@1": 95,
+                    "total_test_cases@1": 11
+                },
+                "change_vehicle_address": {
+                    "total_interactions": 10,
+                    "total_success": 8,
+                    "avg_num_messages": 55.0,
+                    "avg_num_function_calls": 21.0,
+                    "total_tasks": 10,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 20,
+                    "total_constraints_expanded": 15,
+                    "pass@1": 93,
+                    "total_test_cases@1": 11
+                },
+                "get_dl_status": {
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 9.0,
+                    "avg_num_function_calls": 3.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 86,
+                    "total_test_cases@1": 3
+                },
+                "get_reg_status": {
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 9.0,
+                    "avg_num_function_calls": 3.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 86,
+                    "total_test_cases@1": 3
+                },
+                "login_user": {
+                    "total_interactions": 1,
+                    "total_success": 1,
+                    "avg_num_messages": 4.0,
+                    "avg_num_function_calls": 1.0,
+                    "total_tasks": 1,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 0,
+                    "total_constraints_expanded": 0,
+                    "pass@1": 86,
+                    "total_test_cases@1": 2
+                },
+                "logout_user": {
+                    "total_interactions": 3,
+                    "total_success": 0,
+                    "avg_num_messages": 12.0,
+                    "avg_num_function_calls": 3.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 85,
+                    "total_test_cases@1": 4
+                },
+                "register_vehicle": {
+                    "total_interactions": 6,
+                    "total_success": 6,
+                    "avg_num_messages": 32.0,
+                    "avg_num_function_calls": 14.0,
+                    "total_tasks": 6,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 14,
+                    "total_constraints_expanded": 14,
+                    "pass@1": 91,
+                    "total_test_cases@1": 7
+                },
+                "renew_dl": {
+                    "total_interactions": 5,
+                    "total_success": 2,
+                    "avg_num_messages": 28.0,
+                    "avg_num_function_calls": 11.0,
+                    "total_tasks": 5,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 13,
+                    "total_constraints_expanded": 8,
+                    "pass@1": 87,
+                    "total_test_cases@1": 6
+                },
+                "renew_vehicle": {
+                    "total_interactions": 17,
+                    "total_success": 7,
+                    "avg_num_messages": 118.0,
+                    "avg_num_function_calls": 59.0,
+                    "total_tasks": 17,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 51,
+                    "total_constraints_expanded": 27,
+                    "pass@1": 92,
+                    "total_test_cases@1": 18
+                },
+                "schedule_test": {
+                    "total_interactions": 18,
+                    "total_success": 13,
+                    "avg_num_messages": 143.0,
+                    "avg_num_function_calls": 87.0,
+                    "total_tasks": 18,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 104,
+                    "total_constraints_expanded": 60,
+                    "pass@1": 98,
+                    "total_test_cases@1": 19
+                },
+                "set_admin_password": {
+                    "total_interactions": 4,
+                    "total_success": 4,
+                    "avg_num_messages": 20.0,
+                    "avg_num_function_calls": 8.0,
+                    "total_tasks": 4,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 89,
+                    "total_test_cases@1": 5
+                },
+                "show_available_test_slots": {
+                    "total_interactions": 3,
+                    "total_success": 2,
+                    "avg_num_messages": 19.0,
+                    "avg_num_function_calls": 6.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 87,
+                    "total_test_cases@1": 4
+                },
+                "transfer_title": {
+                    "total_interactions": 11,
+                    "total_success": 11,
+                    "avg_num_messages": 77.0,
+                    "avg_num_function_calls": 44.0,
+                    "total_tasks": 11,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 43,
+                    "total_constraints_expanded": 43,
+                    "pass@1": 96,
+                    "total_test_cases@1": 12
+                },
+                "update_dl_legal_name": {
+                    "total_interactions": 2,
+                    "total_success": 2,
+                    "avg_num_messages": 10.0,
+                    "avg_num_function_calls": 4.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 87,
+                    "total_test_cases@1": 3
+                },
+                "update_test_status": {
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 14.0,
+                    "avg_num_function_calls": 8.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 6,
+                    "total_constraints_expanded": 2,
+                    "pass@1": 86,
+                    "total_test_cases@1": 3
+                },
+                "validate_vehicle_insurance": {
+                    "total_interactions": 11,
+                    "total_success": 9,
+                    "avg_num_messages": 60.0,
+                    "avg_num_function_calls": 27.0,
+                    "total_tasks": 11,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 10,
+                    "total_constraints_expanded": 10,
+                    "pass@1": 94,
+                    "total_test_cases@1": 12
+                }
+            },
+            "constraint_group_statistics": {
+                "1": {
+                    "total_tasks": 28,
+                    "total_interactions": 28,
+                    "total_success": 21,
+                    "avg_num_messages": 134.0,
+                    "avg_num_function_calls": 46.0,
+                    "pass_rate": 0
+                },
+                "2": {
+                    "total_tasks": 34,
+                    "total_interactions": 34,
+                    "total_success": 26,
+                    "avg_num_messages": 195.0,
+                    "avg_num_function_calls": 81.0,
+                    "pass_rate": 0
+                },
+                "3": {
+                    "total_tasks": 30,
+                    "total_interactions": 30,
+                    "total_success": 23,
+                    "avg_num_messages": 190.0,
+                    "avg_num_function_calls": 96.0,
+                    "pass_rate": 0
+                },
+                "4": {
+                    "total_tasks": 8,
+                    "total_interactions": 8,
+                    "total_success": 5,
+                    "avg_num_messages": 56.0,
+                    "avg_num_function_calls": 32.0,
+                    "pass_rate": 0
+                },
+                "7": {
+                    "total_tasks": 6,
+                    "total_interactions": 6,
+                    "total_success": 3,
+                    "avg_num_messages": 50.0,
+                    "avg_num_function_calls": 30.0,
+                    "pass_rate": 0
+                },
+                "8": {
+                    "total_tasks": 6,
+                    "total_interactions": 6,
+                    "total_success": 4,
+                    "avg_num_messages": 56.0,
+                    "avg_num_function_calls": 38.0,
+                    "pass_rate": 0
+                },
+                "5": {
+                    "total_tasks": 3,
+                    "total_interactions": 3,
+                    "total_success": 3,
+                    "avg_num_messages": 25.0,
+                    "avg_num_function_calls": 16.0,
+                    "pass_rate": 0
+                }
+            },
+            "error_statistics": {
+                "total_evaluations": 115,
+                "total_failures": 30,
+                "error_causes": {
+                    "tool_call_errors": 1,
+                    "constraint_violations": 16,
+                    "database_mismatches": 8,
+                    "dirgraph_violations": 22,
+                    "incorrect_action_calls": 18
+                }
+            },
+            "constraint_relation_group_statistics": {
+                "single:True": {
+                    "total_tasks": 19,
+                    "total_interactions": 19,
+                    "total_success": 14,
+                    "avg_num_messages": 90.0,
+                    "avg_num_function_calls": 29.0,
+                    "pass_rate": 0
+                },
+                "and:True-single:True": {
+                    "total_tasks": 72,
+                    "total_interactions": 72,
+                    "total_success": 54,
+                    "avg_num_messages": 446.0,
+                    "avg_num_function_calls": 214.0,
+                    "pass_rate": 0
+                },
+                "": {
+                    "total_tasks": 1,
+                    "total_interactions": 1,
+                    "total_success": 1,
+                    "avg_num_messages": 4.0,
+                    "avg_num_function_calls": 1.0,
+                    "pass_rate": 0
+                },
+                "and:True-or:True-single:True": {
+                    "total_tasks": 12,
+                    "total_interactions": 12,
+                    "total_success": 7,
+                    "avg_num_messages": 106.0,
+                    "avg_num_function_calls": 68.0,
+                    "pass_rate": 0
+                },
+                "chain:True-single:True": {
+                    "total_tasks": 4,
+                    "total_interactions": 4,
+                    "total_success": 3,
+                    "avg_num_messages": 19.0,
+                    "avg_num_function_calls": 7.0,
+                    "pass_rate": 0
+                },
+                "and:True-chain:True-single:True": {
+                    "total_tasks": 7,
+                    "total_interactions": 7,
+                    "total_success": 6,
+                    "avg_num_messages": 41.0,
+                    "avg_num_function_calls": 20.0,
+                    "pass_rate": 0
+                }
+            },
+            "pass@1": 85,
+            "total_test_cases@1": 115
+        },
+        "healthcare": {
+            "user_model": null,
+            "assistant_model": "gpt-4.1-mini",
+            "domain": "healthcare",
+            "total_tasks": 130,
+            "total_interactions": 130,
+            "total_success": 88,
+            "avg_num_messages": 871.0,
+            "avg_num_function_calls": 479.0,
+            "avg_num_constraints": 513,
+            "avg_num_constraints_expanded": 220,
+            "goal_statistics": {
+                "add_authorized_provider": {
+                    "total_interactions": 6,
+                    "total_success": 6,
+                    "avg_num_messages": 36.0,
+                    "avg_num_function_calls": 16.0,
+                    "total_tasks": 6,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 14,
+                    "total_constraints_expanded": 6,
+                    "pass@1": 94,
+                    "total_test_cases@1": 7
+                },
+                "appeal_claim": {
+                    "total_interactions": 7,
+                    "total_success": 3,
+                    "avg_num_messages": 50.0,
+                    "avg_num_function_calls": 29.0,
+                    "total_tasks": 7,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 24,
+                    "total_constraints_expanded": 7,
+                    "pass@1": 91,
+                    "total_test_cases@1": 8
+                },
+                "deactivate_policy": {
+                    "total_interactions": 2,
+                    "total_success": 0,
+                    "avg_num_messages": 12.0,
+                    "avg_num_function_calls": 6.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 6,
+                    "total_constraints_expanded": 2,
+                    "pass@1": 88,
+                    "total_test_cases@1": 3
+                },
+                "get_claim_details": {
+                    "total_interactions": 3,
+                    "total_success": 2,
+                    "avg_num_messages": 15.0,
+                    "avg_num_function_calls": 6.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 90,
+                    "total_test_cases@1": 4
+                },
+                "get_claim_history": {
+                    "total_interactions": 3,
+                    "total_success": 3,
+                    "avg_num_messages": 14.0,
+                    "avg_num_function_calls": 5.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 91,
+                    "total_test_cases@1": 4
+                },
+                "get_policy_details": {
+                    "total_interactions": 3,
+                    "total_success": 2,
+                    "avg_num_messages": 13.0,
+                    "avg_num_function_calls": 4.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 90,
+                    "total_test_cases@1": 4
+                },
+                "get_provider_details": {
+                    "total_interactions": 1,
+                    "total_success": 0,
+                    "avg_num_messages": 4.0,
+                    "avg_num_function_calls": 1.0,
+                    "total_tasks": 1,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 0,
+                    "total_constraints_expanded": 0,
+                    "pass@1": 88,
+                    "total_test_cases@1": 2
+                },
+                "login_user": {
+                    "total_interactions": 1,
+                    "total_success": 1,
+                    "avg_num_messages": 5.0,
+                    "avg_num_function_calls": 2.0,
+                    "total_tasks": 1,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 0,
+                    "total_constraints_expanded": 0,
+                    "pass@1": 89,
+                    "total_test_cases@1": 2
+                },
+                "logout_user": {
+                    "total_interactions": 2,
+                    "total_success": 2,
+                    "avg_num_messages": 7.0,
+                    "avg_num_function_calls": 3.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 2,
+                    "total_constraints_expanded": 2,
+                    "pass@1": 90,
+                    "total_test_cases@1": 3
+                },
+                "reactivate_policy": {
+                    "total_interactions": 6,
+                    "total_success": 4,
+                    "avg_num_messages": 37.0,
+                    "avg_num_function_calls": 19.0,
+                    "total_tasks": 6,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 14,
+                    "total_constraints_expanded": 8,
+                    "pass@1": 92,
+                    "total_test_cases@1": 7
+                },
+                "schedule_appointment": {
+                    "total_interactions": 27,
+                    "total_success": 21,
+                    "avg_num_messages": 196.0,
+                    "avg_num_function_calls": 113.0,
+                    "total_tasks": 27,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 128,
+                    "total_constraints_expanded": 44,
+                    "pass@1": 109,
+                    "total_test_cases@1": 28
+                },
+                "submit_claim": {
+                    "total_interactions": 24,
+                    "total_success": 13,
+                    "avg_num_messages": 179.0,
+                    "avg_num_function_calls": 107.0,
+                    "total_tasks": 24,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 116,
+                    "total_constraints_expanded": 41,
+                    "pass@1": 101,
+                    "total_test_cases@1": 25
+                },
+                "update_policy": {
+                    "total_interactions": 45,
+                    "total_success": 31,
+                    "avg_num_messages": 303.0,
+                    "avg_num_function_calls": 168.0,
+                    "total_tasks": 45,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 200,
+                    "total_constraints_expanded": 101,
+                    "pass@1": 119,
+                    "total_test_cases@1": 46
+                }
+            },
+            "constraint_group_statistics": {
+                "2": {
+                    "total_tasks": 8,
+                    "total_interactions": 8,
+                    "total_success": 7,
+                    "avg_num_messages": 50.0,
+                    "avg_num_function_calls": 24.0,
+                    "pass_rate": 0
+                },
+                "3": {
+                    "total_tasks": 24,
+                    "total_interactions": 24,
+                    "total_success": 16,
+                    "avg_num_messages": 156.0,
+                    "avg_num_function_calls": 86.0,
+                    "pass_rate": 0
+                },
+                "4": {
+                    "total_tasks": 30,
+                    "total_interactions": 30,
+                    "total_success": 19,
+                    "avg_num_messages": 208.0,
+                    "avg_num_function_calls": 116.0,
+                    "pass_rate": 0
+                },
+                "1": {
+                    "total_tasks": 13,
+                    "total_interactions": 13,
+                    "total_success": 10,
+                    "avg_num_messages": 58.0,
+                    "avg_num_function_calls": 21.0,
+                    "pass_rate": 0
+                },
+                "5": {
+                    "total_tasks": 36,
+                    "total_interactions": 36,
+                    "total_success": 27,
+                    "avg_num_messages": 264.0,
+                    "avg_num_function_calls": 154.0,
+                    "pass_rate": 0
+                },
+                "6": {
+                    "total_tasks": 19,
+                    "total_interactions": 19,
+                    "total_success": 9,
+                    "avg_num_messages": 135.0,
+                    "avg_num_function_calls": 78.0,
+                    "pass_rate": 0
+                }
+            },
+            "error_statistics": {
+                "total_evaluations": 130,
+                "total_failures": 42,
+                "error_causes": {
+                    "tool_call_errors": 0,
+                    "constraint_violations": 19,
+                    "database_mismatches": 16,
+                    "dirgraph_violations": 23,
+                    "incorrect_action_calls": 32
+                }
+            },
+            "constraint_relation_group_statistics": {
+                "and:True-single:True": {
+                    "total_tasks": 80,
+                    "total_interactions": 80,
+                    "total_success": 56,
+                    "avg_num_messages": 540.0,
+                    "avg_num_function_calls": 298.0,
+                    "pass_rate": 0
+                },
+                "single:True": {
+                    "total_tasks": 11,
+                    "total_interactions": 11,
+                    "total_success": 9,
+                    "avg_num_messages": 49.0,
+                    "avg_num_function_calls": 18.0,
+                    "pass_rate": 0
+                },
+                "": {
+                    "total_tasks": 2,
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 9.0,
+                    "avg_num_function_calls": 3.0,
+                    "pass_rate": 0
+                },
+                "and:True-or:True-single:True": {
+                    "total_tasks": 37,
+                    "total_interactions": 37,
+                    "total_success": 22,
+                    "avg_num_messages": 273.0,
+                    "avg_num_function_calls": 160.0,
+                    "pass_rate": 0
+                }
+            },
+            "pass@1": 88,
+            "total_test_cases@1": 130
+        },
+        "library": {
+            "user_model": null,
+            "assistant_model": "gpt-4.1-mini",
+            "domain": "library",
+            "total_tasks": 78,
+            "total_interactions": 78,
+            "total_success": 20,
+            "avg_num_messages": 455.0,
+            "avg_num_function_calls": 213.0,
+            "avg_num_constraints": 234,
+            "avg_num_constraints_expanded": 78,
+            "goal_statistics": {
+                "add_book": {
+                    "total_interactions": 4,
+                    "total_success": 2,
+                    "avg_num_messages": 20.0,
+                    "avg_num_function_calls": 8.0,
+                    "total_tasks": 4,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 8,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 22,
+                    "total_test_cases@1": 5
+                },
+                "borrow_book": {
+                    "total_interactions": 32,
+                    "total_success": 6,
+                    "avg_num_messages": 179.0,
+                    "avg_num_function_calls": 83.0,
+                    "total_tasks": 32,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 138,
+                    "total_constraints_expanded": 32,
+                    "pass@1": 26,
+                    "total_test_cases@1": 33
+                },
+                "check_return_date": {
+                    "total_interactions": 4,
+                    "total_success": 1,
+                    "avg_num_messages": 24.0,
+                    "avg_num_function_calls": 10.0,
+                    "total_tasks": 4,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 8,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 21,
+                    "total_test_cases@1": 5
+                },
+                "credit_balance": {
+                    "total_interactions": 4,
+                    "total_success": 3,
+                    "avg_num_messages": 17.0,
+                    "avg_num_function_calls": 5.0,
+                    "total_tasks": 4,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 23,
+                    "total_test_cases@1": 5
+                },
+                "get_account_balance": {
+                    "total_interactions": 3,
+                    "total_success": 1,
+                    "avg_num_messages": 14.0,
+                    "avg_num_function_calls": 5.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 21,
+                    "total_test_cases@1": 4
+                },
+                "login_user": {
+                    "total_interactions": 1,
+                    "total_success": 1,
+                    "avg_num_messages": 7.0,
+                    "avg_num_function_calls": 2.0,
+                    "total_tasks": 1,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 0,
+                    "total_constraints_expanded": 0,
+                    "pass@1": 21,
+                    "total_test_cases@1": 2
+                },
+                "logout_user": {
+                    "total_interactions": 1,
+                    "total_success": 1,
+                    "avg_num_messages": 7.0,
+                    "avg_num_function_calls": 4.0,
+                    "total_tasks": 1,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 2,
+                    "total_constraints_expanded": 2,
+                    "pass@1": 21,
+                    "total_test_cases@1": 2
+                },
+                "pay_late_fee": {
+                    "total_interactions": 2,
+                    "total_success": 1,
+                    "avg_num_messages": 14.0,
+                    "avg_num_function_calls": 8.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 2,
+                    "pass@1": 21,
+                    "total_test_cases@1": 3
+                },
+                "remove_book": {
+                    "total_interactions": 2,
+                    "total_success": 0,
+                    "avg_num_messages": 15.0,
+                    "avg_num_function_calls": 9.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 6,
+                    "total_constraints_expanded": 2,
+                    "pass@1": 20,
+                    "total_test_cases@1": 3
+                },
+                "reserve_room": {
+                    "total_interactions": 13,
+                    "total_success": 0,
+                    "avg_num_messages": 95.0,
+                    "avg_num_function_calls": 54.0,
+                    "total_tasks": 13,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 43,
+                    "total_constraints_expanded": 13,
+                    "pass@1": 20,
+                    "total_test_cases@1": 14
+                },
+                "return_book": {
+                    "total_interactions": 4,
+                    "total_success": 1,
+                    "avg_num_messages": 23.0,
+                    "avg_num_function_calls": 11.0,
+                    "total_tasks": 4,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 8,
+                    "total_constraints_expanded": 4,
+                    "pass@1": 21,
+                    "total_test_cases@1": 5
+                },
+                "show_available_book": {
+                    "total_interactions": 3,
+                    "total_success": 2,
+                    "avg_num_messages": 13.0,
+                    "avg_num_function_calls": 4.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 22,
+                    "total_test_cases@1": 4
+                },
+                "show_available_rooms": {
+                    "total_interactions": 3,
+                    "total_success": 1,
+                    "avg_num_messages": 16.0,
+                    "avg_num_function_calls": 5.0,
+                    "total_tasks": 3,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 3,
+                    "total_constraints_expanded": 3,
+                    "pass@1": 21,
+                    "total_test_cases@1": 4
+                },
+                "update_membership": {
+                    "total_interactions": 2,
+                    "total_success": 0,
+                    "avg_num_messages": 11.0,
+                    "avg_num_function_calls": 5.0,
+                    "total_tasks": 2,
+                    "avg_num_constraints": 0,
+                    "avg_num_constraints_expanded": 0,
+                    "total_constraints": 4,
+                    "total_constraints_expanded": 2,
+                    "pass@1": 20,
+                    "total_test_cases@1": 3
+                }
+            },
+            "constraint_group_statistics": {
+                "2": {
+                    "total_tasks": 25,
+                    "total_interactions": 25,
+                    "total_success": 10,
+                    "avg_num_messages": 150.0,
+                    "avg_num_function_calls": 71.0,
+                    "pass_rate": 0
+                },
+                "3": {
+                    "total_tasks": 9,
+                    "total_interactions": 9,
+                    "total_success": 1,
+                    "avg_num_messages": 58.0,
+                    "avg_num_function_calls": 31.0,
+                    "pass_rate": 0
+                },
+                "4": {
+                    "total_tasks": 13,
+                    "total_interactions": 13,
+                    "total_success": 1,
+                    "avg_num_messages": 87.0,
+                    "avg_num_function_calls": 48.0,
+                    "pass_rate": 0
+                },
+                "5": {
+                    "total_tasks": 10,
+                    "total_interactions": 10,
+                    "total_success": 0,
+                    "avg_num_messages": 54.0,
+                    "avg_num_function_calls": 24.0,
+                    "pass_rate": 0
+                },
+                "6": {
+                    "total_tasks": 7,
+                    "total_interactions": 7,
+                    "total_success": 0,
+                    "avg_num_messages": 39.0,
+                    "avg_num_function_calls": 18.0,
+                    "pass_rate": 0
+                },
+                "1": {
+                    "total_tasks": 14,
+                    "total_interactions": 14,
+                    "total_success": 8,
+                    "avg_num_messages": 67.0,
+                    "avg_num_function_calls": 21.0,
+                    "pass_rate": 0
+                }
+            },
+            "error_statistics": {
+                "total_evaluations": 78,
+                "total_failures": 58,
+                "error_causes": {
+                    "tool_call_errors": 2,
+                    "constraint_violations": 40,
+                    "database_mismatches": 20,
+                    "dirgraph_violations": 41,
+                    "incorrect_action_calls": 29
+                }
+            },
+            "constraint_relation_group_statistics": {
+                "and:True-single:True": {
+                    "total_tasks": 34,
+                    "total_interactions": 34,
+                    "total_success": 11,
+                    "avg_num_messages": 204.0,
+                    "avg_num_function_calls": 98.0,
+                    "pass_rate": 0
+                },
+                "and:True-or:True-single:True": {
+                    "total_tasks": 30,
+                    "total_interactions": 30,
+                    "total_success": 1,
+                    "avg_num_messages": 184.0,
+                    "avg_num_function_calls": 94.0,
+                    "pass_rate": 0
+                },
+                "single:True": {
+                    "total_tasks": 13,
+                    "total_interactions": 13,
+                    "total_success": 7,
+                    "avg_num_messages": 60.0,
+                    "avg_num_function_calls": 19.0,
+                    "pass_rate": 0
+                },
+                "": {
+                    "total_tasks": 1,
+                    "total_interactions": 1,
+                    "total_success": 1,
+                    "avg_num_messages": 7.0,
+                    "avg_num_function_calls": 2.0,
+                    "pass_rate": 0
+                }
+            },
+            "pass@1": 20,
+            "total_test_cases@1": 78
+        }
+    },
+    "aggregate_statistics": {
+        "total_tasks": 663,
+        "total_interactions": 663,
+        "total_success": 399,
+        "avg_num_messages": 914.9004524886877,
+        "avg_num_function_calls": 468.8582202111614,
+        "avg_num_constraints": 495.9426847662142,
+        "avg_num_constraints_expanded": 253.34690799396682,
+        "pass_rate": 0.6018099547511312
+    },
+    "error_statistics": {
+        "total_evaluations": 663,
+        "total_failures": 264,
+        "error_causes": {
+            "tool_call_errors": 8,
+            "constraint_violations": 142,
+            "database_mismatches": 97,
+            "dirgraph_violations": 174,
+            "incorrect_action_calls": 168
+        },
+        "percentages": {
+            "tool_call_errors_percentage": 1.206636500754148,
+            "constraint_violations_percentage": 21.417797888386122,
+            "database_mismatches_percentage": 14.630467571644044,
+            "dirgraph_violations_percentage": 26.244343891402718,
+            "incorrect_action_calls_percentage": 25.339366515837103
+        }
+    },
+    "aggregate_constraint_groups": {
+        "1": {
+            "total_tasks": 92,
+            "total_interactions": 92,
+            "total_success": 69,
+            "avg_num_messages": 93.3695652173913,
+            "avg_num_function_calls": 31.08695652173913,
+            "pass_rate": 0.75
+        },
+        "2": {
+            "total_tasks": 122,
+            "total_interactions": 122,
+            "total_success": 70,
+            "avg_num_messages": 172.27868852459017,
+            "avg_num_function_calls": 71.88524590163935,
+            "pass_rate": 0.5737704918032787
+        },
+        "3": {
+            "total_tasks": 159,
+            "total_interactions": 159,
+            "total_success": 93,
+            "avg_num_messages": 249.69811320754718,
+            "avg_num_function_calls": 119.94339622641509,
+            "pass_rate": 0.5849056603773585
+        },
+        "4": {
+            "total_tasks": 130,
+            "total_interactions": 130,
+            "total_success": 77,
+            "avg_num_messages": 222.34615384615384,
+            "avg_num_function_calls": 123.26923076923077,
+            "pass_rate": 0.5923076923076923
+        },
+        "5": {
+            "total_tasks": 85,
+            "total_interactions": 85,
+            "total_success": 51,
+            "avg_num_messages": 197.72941176470587,
+            "avg_num_function_calls": 117.75294117647059,
+            "pass_rate": 0.6
+        },
+        "6": {
+            "total_tasks": 36,
+            "total_interactions": 36,
+            "total_success": 15,
+            "avg_num_messages": 103.55555555555556,
+            "avg_num_function_calls": 61.05555555555556,
+            "pass_rate": 0.4166666666666667
+        },
+        "7": {
+            "total_tasks": 22,
+            "total_interactions": 22,
+            "total_success": 11,
+            "avg_num_messages": 99.45454545454545,
+            "avg_num_function_calls": 59.09090909090909,
+            "pass_rate": 0.5
+        },
+        "8": {
+            "total_tasks": 17,
+            "total_interactions": 17,
+            "total_success": 13,
+            "avg_num_messages": 76.05882352941177,
+            "avg_num_function_calls": 48.35294117647059,
+            "pass_rate": 0.7647058823529411
+        }
+    },
+    "aggregate_relation_groups": {
+        "and:True-single:True": {
+            "total_tasks": 441,
+            "total_interactions": 441,
+            "total_success": 270,
+            "avg_num_messages": 665.2108843537414,
+            "avg_num_function_calls": 341.58730158730157,
+            "pass_rate": 0.6122448979591837
+        },
+        "and:True-or:True-single:True": {
+            "total_tasks": 127,
+            "total_interactions": 127,
+            "total_success": 57,
+            "avg_num_messages": 232.66929133858267,
+            "avg_num_function_calls": 134.96062992125985,
+            "pass_rate": 0.44881889763779526
+        },
+        "single:True": {
+            "total_tasks": 77,
+            "total_interactions": 77,
+            "total_success": 59,
+            "avg_num_messages": 73.7012987012987,
+            "avg_num_function_calls": 24.233766233766232,
+            "pass_rate": 0.7662337662337663
+        },
+        "": {
+            "total_tasks": 7,
+            "total_interactions": 7,
+            "total_success": 4,
+            "avg_num_messages": 7.285714285714286,
+            "avg_num_function_calls": 2.0,
+            "pass_rate": 0.5714285714285714
+        },
+        "and:True-chain:True-single:True": {
+            "total_tasks": 7,
+            "total_interactions": 7,
+            "total_success": 6,
+            "avg_num_messages": 41.0,
+            "avg_num_function_calls": 20.0,
+            "pass_rate": 0.8571428571428571
+        },
+        "chain:True-single:True": {
+            "total_tasks": 4,
+            "total_interactions": 4,
+            "total_success": 3,
+            "avg_num_messages": 19.0,
+            "avg_num_function_calls": 7.0,
+            "pass_rate": 0.75
+        }
+    }
+}
