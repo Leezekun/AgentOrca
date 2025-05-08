@@ -41,6 +41,7 @@ class ChatCompletionMessage:
     function_call: Optional[Any] = None
     refusal: Optional[Any] = None
     audio: Optional[Any] = None
+    response_id: Optional[str] = None
     
     def to_dict(self):
         tool_calls_dict = [tool_call.to_dict() for tool_call in self.tool_calls] if self.tool_calls else None
@@ -52,7 +53,8 @@ class ChatCompletionMessage:
             "tool_calls": tool_calls_dict,
             "function_call": self.function_call,
             "refusal": self.refusal,
-            "audio": self.audio
+            "audio": self.audio,
+            "response_id": self.response_id
         }
 
 

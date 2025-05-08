@@ -80,7 +80,16 @@ class Swarm:
             create_params["tools"] = tools
             create_params["parallel_tool_calls"] = agent.parallel_tool_calls
         
-        return agent.client.chat_completion(create_params, debug, tool_call_mode=agent.tool_call_mode)["completion"]
+        # use chat mode by default, only if using openai o-series models
+        model_name = agent.client.model_name_huggingface
+        mode = "chat"
+        for _ in ["o1", "o3", "o4"]:
+            if _ in model_name:
+                mode = "reasoning"
+                break
+            
+        return agent.client.inference(
+            create_params, debug, mode=mode, tool_call_mode=agent.tool_call_mode)["completion"]
 
     def handle_function_result(self, result, debug) -> Result:
         match result:

@@ -124,9 +124,10 @@ def display_interaction(interaction):
     print(f"\n{Back.GREEN}{Fore.WHITE}=== INTERACTION TURNS ==={Style.RESET_ALL}")
     
     i = 0
+    turn_idx = 0
     while i < len(interaction):
         turn = interaction[i]
-        print(f"\n{Back.WHITE}{Fore.BLACK}--- Turn {i+1} ---{Style.RESET_ALL}")
+        print(f"\n{Back.WHITE}{Fore.BLACK}--- Turn {turn_idx+1} ---{Style.RESET_ALL}")
         
         # Display sender if present
         if 'sender' in turn:
@@ -136,6 +137,10 @@ def display_interaction(interaction):
         # Display assistant's message
         if 'content' in turn and turn['content']:
             print(f"\n{Fore.YELLOW}Message:{Style.RESET_ALL} {turn['content']}")
+        
+        # display thinking if present
+        if 'thinking' in turn:
+            print(f"\n{Fore.YELLOW}Thinking:{Style.RESET_ALL} {turn['thinking']}")
         
         # Display tool calls and their immediate responses
         if 'tool_calls' in turn:
@@ -165,7 +170,8 @@ def display_interaction(interaction):
                     print(f"{Fore.CYAN}Response:{Style.RESET_ALL} {Fore.YELLOW}None{Style.RESET_ALL}")
         
         i += 1
-
+        turn_idx += 1
+        
 def main():
     parser = argparse.ArgumentParser(description='Run checking tool for evaluating interactions')
     
@@ -227,8 +233,9 @@ def main():
             display_interaction(interaction_group['interaction'])
             
         # Display evaluation results
-        for evaluation in scenario['evaluations']:
-            display_evaluation(evaluation)
+        if "evaluations" in scenario:
+            for evaluation in scenario['evaluations']:
+                display_evaluation(evaluation)
         
         print(f"\n{Fore.YELLOW}Press Enter to continue to next scenario...{Style.RESET_ALL}")
         input()

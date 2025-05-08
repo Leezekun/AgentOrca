@@ -2,9 +2,10 @@ cd ../..
 
 devices="0,1,2,3,4,5,6,7"
 
-model="qwen2.5-72b-instruct-hf"
+model="llama3.3-70b-instruct"
 domains=("dmv" "healthcare" "library" "online_market" "bank")
-tool_lists=("full" "oracle")
+# tool_lists=("full" "oracle")
+tool_lists=("full")
 method="react"
 
 for tool_list in "${tool_lists[@]}"; do
@@ -31,7 +32,7 @@ done
 #                 --env_mode prompt \
 #                 --tool_list $tool_list \
 #                 --tool_call_mode $method \
-#                 --num_gpus 4 \
+#                 --num_gpus 8 \
 #                 --gpu_memory_utilization 0.9
 #     done
 # done

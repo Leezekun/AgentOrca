@@ -2,13 +2,14 @@
 cd ..
 
 # Default values
-output_dir="./output"
-domain="bank"
-# assistant_model="claude-3-7-sonnet-20250219"
+# assistant_model="claude-3-7-sonnet-20250219-thinking"
 # assistant_model="gemini-2.0-flash-thinking-exp"
 # assistant_model="o4-mini"
-assistant_model="qwen2.5-32b-instruct"
-tool_call_mode="react"
+assistant_model="o4-mini-high"
+
+output_dir="./output"
+domain="dmv"
+tool_call_mode="fc"
 default_constraint_option="full"
 constraint_descr_format="structured"
 tool_list="full"

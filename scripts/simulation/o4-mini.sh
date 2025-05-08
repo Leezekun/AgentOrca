@@ -1,19 +1,22 @@
 cd ../..
 
-model="o4-mini"
+model="o4-mini-high"
 domains=("dmv" "healthcare" "library" "online_market" "bank")
 tool_lists=("full")
 method="fc"
 
-for domain in "${domains[@]}"; do
-    for tool_list in "${tool_lists[@]}"; do
-        CUDA_VISIBLE_DEVICES=$devices python run_simulation.py \
+# Run 5 times to ensure all the cases are covered
+for i in {1..5}; do
+    for domain in "${domains[@]}"; do
+        for tool_list in "${tool_lists[@]}"; do
+            CUDA_VISIBLE_DEVICES=$devices python run_simulation.py \
                 --domain $domain \
                 --assistant_model $model \
                 --env_mode prompt \
                 --tool_list $tool_list \
                 --tool_call_mode $method \
-                --assistant_max_tokens 2048
+                --assistant_max_tokens 4096
+        done
     done
 done
 

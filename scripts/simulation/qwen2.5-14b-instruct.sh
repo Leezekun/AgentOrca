@@ -4,7 +4,7 @@ devices="0,1,2,3,4,5,6,7"
 
 model="qwen2.5-14b-instruct"
 domains=("dmv" "healthcare" "library" "online_market" "bank")
-tool_lists=("full" "oracle")
+tool_lists=("full")
 method="react"
 
 for domain in "${domains[@]}"; do

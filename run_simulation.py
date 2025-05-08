@@ -194,10 +194,9 @@ def run_task_simulation(
     
     # Update default user message if no user model
     elif not args.user_model:
-        default_user_message = f"Please take actions to fulfill my request. If you have completed my request or determine you cannot assist me with this request, " + \
-            f"please use the `{exit_conversation.__name__}` action to end our conversation. " + \
-            "Otherwise, below is all the information I can provide:\n" + \
-            json.dumps(user_info["known"], indent=4)
+        default_user_message = f"Here is all the information I can provide:\n" + \
+            json.dumps(user_info["known"], indent=4) + \
+            f"\nIf you have completed my request or cannot assist me with this request, please use the `{exit_conversation.__name__}` action to end our conversation. "
         user_agent.default_response = default_user_message
         
     # Run the interaction

@@ -24,6 +24,7 @@ from swarm.constants import (OPENAI_MODELS,
                              FUNCTION_CALLING_MODELS,
                              AVAILABLE_MODELS)
 from swarm.util import *
+from swarm.util import _generate_random_id
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -286,6 +287,208 @@ class OpenAIHandler:
                     choice.message.content = choice.message.content.split("</think>")[1].strip()
         return completion
     
+    def format_message(self, message) -> dict:
+        """
+        Format the message to the correct format for all chat completion API.
+        """
+        # convert the message to a dict
+        if not isinstance(message, dict):
+            message = ChatCompletionMessage_to_dict(message)
+        assert isinstance(message, dict), "Message must be a dict."
+        
+        # cache_control is only used in claude
+        if "cache_control" in message:
+            del message["cache_control"]
+        
+        # remove thinking process used in claude
+        if "thinking" in message:
+            del message["thinking"]
+        if "thinking_signature" in message:
+            del message["thinking_signature"]
+        
+        # openai format does not have tool_name
+        if message["role"] == "tool":
+            del message["tool_name"] 
+        
+        if message["role"] == "user":
+            if "sender" in message:
+                del message["sender"]
+            if "tool_calls" in message:
+                del message["tool_calls"]
+                
+        # remove the sender field
+        if "sender" in message:
+            del message["sender"]
+            
+        if "response_id" in message:
+            del message["response_id"]
+            
+        # remove the unneeded fields for non-openai format messages
+        if self.backend != "openai" and message["role"] == "assistant":
+            if "function_call" in message:
+                del message["function_call"]
+            if "refusal" in message:
+                del message["refusal"]
+            if "audio" in message:
+                del message["audio"]
+
+        return message
+    
+    def response_completion(self, test_entry: dict, include_debugging_log: bool, tool_call_mode: Literal["fc", "prompt", "react", "act-only"] = "fc"):
+        """
+        Response completion API from OpenAI o-series models
+        Reference: https://platform.openai.com/docs/guides/reasoning
+        """
+        def format_tools(tools: List[dict]) -> List[dict]:
+            """
+            Format the tools for the response completion API.
+            """
+            formatted_tools = []
+            for tool in tools:
+                formatted_tool = {
+                    "type": "function",
+                    "name": tool["function"]["name"],
+                    "description": tool["function"]["description"],
+                    "parameters": tool["function"]["parameters"],
+                }
+                formatted_tools.append(formatted_tool)
+            return formatted_tools
+        
+        max_tokens = max(test_entry.get("max_tokens", self.max_tokens), 2048)
+        model_name = self.model_name_huggingface
+        reasoning_effort = "medium"
+        tools = test_entry.get("tools", None)
+        formatted_tools = format_tools(tools)
+        # reasoning effort is only supported for openai reasoning models
+        if self.model_name_huggingface.split("-")[-1] in ["low", "medium", "high"]:
+            model_name = self.model_name_huggingface.replace("-low", "").replace("-medium", "").replace("-high", "")
+            reasoning_effort = self.model_name_huggingface.split("-")[-1]
+            assert reasoning_effort in ["low", "medium", "high"], f"Reasoning effort {reasoning_effort} is not supported."
+        
+        # Format the messages into the correct format for all chat completion API
+        norm_messages = copy.deepcopy(test_entry["messages"])        
+        # First check if using previous_response_id
+        last_response_id = None
+        last_respond_turn = -1
+        last_assistant_turn = -1
+        for idx, message in enumerate(norm_messages):
+            if message["role"] == "assistant":
+                last_assistant_turn = idx
+                if message.get("response_id", None):
+                    last_response_id = message["response_id"]
+                    last_respond_turn = idx
+        # Then clean the messages after recording the last response ID
+        norm_messages = [self.format_message(message) for message in norm_messages]
+
+        if last_response_id:
+            # put all the turns after the last response turn into the input
+            # format the input messages
+            input_messages = []
+            for message in norm_messages[last_respond_turn+1:]:
+                if message["role"] == "user":
+                    input_messages.append({
+                        "role": "user",
+                        "content": message["content"]
+                    })
+                elif message.get("tool_call_id", None):
+                    input_messages.append({
+                        "type": "function_call_output",
+                        "call_id": message["tool_call_id"],
+                        "output": message["content"]
+                    })
+                elif message["role"] == "assistant":
+                    raise ValueError("Assistant message is not allowed in the input.")
+            
+            print("Using previous response ID in response API!")
+            response = self.client.responses.create(model=model_name, 
+                                                    input=input_messages,
+                                                    reasoning={"effort": reasoning_effort},
+                                                    tools=formatted_tools,
+                                                    max_output_tokens=max_tokens,
+                                                    previous_response_id=last_response_id)
+        elif last_assistant_turn == -1: # no previous assistant turn, so it is the first turn
+            print("First turn without using previous response ID in response API!")
+            # format the input messages
+            input_messages = norm_messages
+            response = self.client.responses.create(model=model_name, 
+                                                    input=input_messages,
+                                                    reasoning={"effort": reasoning_effort},
+                                                    tools=formatted_tools,
+                                                    max_output_tokens=max_tokens)            
+        else:
+            raise ValueError("Invalid test entry. Not the first turn and no response ID found.")
+        
+        # convert the response back to chat completion format
+        response_id = response.id
+        response_text = response.output_text
+        output = response.output
+        function_calls = []
+        thinking = None
+        thinking_signature = None
+        for item in output:
+            if item.type == "function_call":
+                function_calls.append(
+                    ChatCompletionMessageToolCall(
+                        id=item.call_id,
+                        type='function',
+                        function=Function(
+                            name=item.name,
+                            arguments=item.arguments
+                        )
+                    )
+                )
+            elif item.type == "reasoning":
+                thinking = item.summary if item.summary else ""
+                thinking_signature = item.id
+        
+        message = ChatCompletionMessage(
+            role='assistant',
+            content=response_text,
+            thinking=thinking,
+            thinking_signature=thinking_signature,
+            response_id=response_id, # record the response id for the next turn
+            tool_calls=function_calls if function_calls else None
+        )
+        
+        # Create the choice
+        choice = Choice(
+            finish_reason='stop' if hasattr(response, 'stop_reason') and response.stop_reason == 'end_turn' 
+                        else getattr(response, 'stop_reason', 'stop'),
+            index=0,
+            logprobs=None,
+            message=message
+        )
+        choices = [choice]
+        
+        # Create usage details
+        if hasattr(response, 'usage'):
+            # Handle both OpenAI and Claude usage formats
+            usage_obj = response.usage.to_dict()
+            completion_tokens = usage_obj["output_tokens"]
+            prompt_tokens = usage_obj["input_tokens"]
+            total_tokens = usage_obj["total_tokens"]
+            reasoning_tokens = usage_obj["output_tokens_details"]["reasoning_tokens"]
+            
+            usage = CompletionUsage(
+                completion_tokens=completion_tokens,
+                prompt_tokens=prompt_tokens,
+                total_tokens=total_tokens,
+                completion_tokens_details=CompletionTokensDetails(),
+                prompt_tokens_details=PromptTokensDetails()
+            )
+
+        # Create the complete ChatCompletion object
+        completion = ChatCompletion(
+            id=response.id,
+            choices=choices,
+            created=int(time.time()),
+            model=response.model,
+            object='chat.completion',
+            system_fingerprint=f'fp_{_generate_random_id(8)}',
+            usage=usage
+        )
+        return {"idx": test_entry.get("idx", 0), "completion": completion}
+    
     def chat_completion(self, test_entry: dict, include_debugging_log: bool, tool_call_mode: Literal["fc", "prompt", "react", "act-only"] = "fc"):
         """
         OSS models have a different inference method.
@@ -293,51 +496,11 @@ class OpenAIHandler:
         It is more efficient to spin up the server once for the whole batch, instead of for each individual entry.
         So we implement batch_inference method instead.
         """        
-        # remove the "tool_name" field for real openai format messages for chat completion
+        # format the messages into the correct format for all chat completion API
         norm_messages = copy.deepcopy(test_entry["messages"])
         if self.backend in ["openai", "vllm", "fireworks", "gemini"]:
-            for message in norm_messages:
-                # convert the message to a dict
-                if not isinstance(message, dict):
-                    message = ChatCompletionMessage_to_dict(message)
-                    
-                # cache_control is only used in claude
-                if "cache_control" in message:
-                    del message["cache_control"]
-                
-                # remove thinking process used in claude
-                if "thinking" in message:
-                    del message["thinking"]
-                if "thinking_signature" in message:
-                    del message["thinking_signature"]
-                
-                # openai format does not have tool_name
-                if message["role"] == "tool":
-                    del message["tool_name"] 
-                
-                if message["role"] == "user":
-                    if "sender" in message:
-                        del message["sender"]
-                    if "tool_calls" in message:
-                        del message["tool_calls"]
-                        
-                # remove the sender field
-                if "sender" in message:
-                    del message["sender"]
-                    
-                # remove the unneeded fields for non-openai format messages
-                if self.backend != "openai" and message["role"] == "assistant":
-                    if "function_call" in message:
-                        del message["function_call"]
-                    if "refusal" in message:
-                        del message["refusal"]
-                    if "audio" in message:
-                        del message["audio"]
-
-        # # For debugging
-        # print("--------------------------------")
-        # display_messages(norm_messages)
-        # print("--------------------------------")
+            for idx, message in enumerate(norm_messages):
+                norm_messages[idx] = self.format_message(message)
         
         # Create base parameters for completion request
         chat_completion_params = {
@@ -350,17 +513,6 @@ class OpenAIHandler:
             "logprobs": test_entry.get("logprobs", False),
             "stop": test_entry.get("stop", None)
         }
-    
-        # thinking mode does not support a few parameters
-        if self.model_name_huggingface.split("-")[0].strip() in ["o1", "o3", "o4"]:
-            chat_completion_params["max_completion_tokens"] = chat_completion_params["max_tokens"]
-            del chat_completion_params["temperature"]
-            del chat_completion_params["max_tokens"]
-            del chat_completion_params["top_p"]
-            # reasoning effort is only supported for openai reasoning models
-            if self.model_name_huggingface.split("-")[-1] in ["low", "medium", "high"]:
-                chat_completion_params["model"] = self.model_name_huggingface.replace("-low", "").replace("-medium", "").replace("-high", "")
-                chat_completion_params["reasoning_effort"] = self.model_name_huggingface.split("-")[-1]
                 
         ######################################################################
         # TOOL CALLING: Different ways to call tools and take actions
@@ -384,8 +536,7 @@ class OpenAIHandler:
             assert self.model_name in FUNCTION_CALLING_MODELS[self.backend], f"Model {self.model_name} is not supported for tool calling."
             chat_completion_params["tools"] = tools
             if self.backend in ["openai", "vllm"]:
-                # o1 and o3 do not support parallel tool calls
-                if self.model_name_huggingface not in ["o3-mini", "o1-mini", "o1", "o3", "o4", "o4-mini"]: 
+                if not any(_ in self.model_name_huggingface for _ in ["o1", "o3", "o4"]):
                     chat_completion_params["parallel_tool_calls"] = test_entry.get("parallel_tool_calls", False)
                 completion = self.client.chat.completions.create(**chat_completion_params)
             elif self.backend in ["fireworks"]:
@@ -450,7 +601,9 @@ class OpenAIHandler:
     def inference(
         self, test_entry: dict, include_debugging_log: bool, mode: str = "chat", tool_call_mode: str = "fc"
     ):
-        if mode == "chat":
+        if mode == "reasoning":
+            return self.response_completion(test_entry, include_debugging_log, tool_call_mode)
+        elif mode == "chat":
             return self.chat_completion(test_entry, include_debugging_log, tool_call_mode)
         elif mode == "text":
             return self.text_completion(test_entry, include_debugging_log)
@@ -565,7 +718,7 @@ if __name__ == "__main__":
         # {
         #     "role": "assistant",
         #     "content": None,
-        #     "thinking": "I need to get the delivery date for the user's order. The user's order person is John Doe and the order name is Dominos Pizza.",
+        #     "thinking": "",
         #     "tool_calls": [
         #         {
         #             "id": "call_sNcq3LV89bWJCWgZvJpCac7I",
@@ -574,12 +727,13 @@ if __name__ == "__main__":
         #                 "name": "get_delivery_date"
         #             },
         #             "type": "function"
-        #         }
-        #     ]
+        #         },
+        #     ],
+        #     "response_id": "resp_681c43a70440819195651a76d75f3def02f8ecc0cd0ebd91"
         # },
         # {
         #     "role": "tool",
-        #     "tool_call_id": "call_sNcq3LV89bWJCWgZvJpCac7I",
+        #     "tool_call_id": "call_6pITl9bo8BF4OzvckSXkQVQh",
         #     "tool_name": "get_delivery_date",
         #     "content": "2024-12-12"
         # }
@@ -604,8 +758,8 @@ if __name__ == "__main__":
     }
 
     print(model.inference(test_entry, include_debugging_log=True, 
-                          mode="chat", tool_call_mode="fc"))
-
+                          mode="response", tool_call_mode="fc"))
+    # print(model.response_completion(test_entry, include_debugging_log=True, tool_call_mode="fc"))
     model.kill_process()
 
     

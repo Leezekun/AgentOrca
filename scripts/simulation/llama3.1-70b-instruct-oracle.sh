@@ -5,7 +5,7 @@ devices="0,1,2,3,4,5,6,7"
 model="llama3.1-70b-instruct"
 domains=("dmv" "healthcare" "library" "online_market" "bank")
 # tool_lists=("full" "oracle")
-tool_lists=("full")
+tool_lists=("oracle")
 method="react"
 
 for tool_list in "${tool_lists[@]}"; do

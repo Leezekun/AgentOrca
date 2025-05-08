@@ -57,6 +57,7 @@ FIREWORKS_MODELS = {
 
 # 3B-32B Models
 OSS_MODELS = {
+    "llama3.3-70b-instruct": "meta-llama/Llama-3.3-70B-Instruct",
     "llama3.1-70b-instruct": "meta-llama/Llama-3.1-70B-Instruct",
     "qwen2.5-72b-instruct": "Qwen/Qwen2.5-72B-Instruct",
     "qwen2.5-3b-instruct": "Qwen/Qwen2.5-3B-Instruct",
