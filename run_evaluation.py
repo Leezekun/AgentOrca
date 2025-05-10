@@ -4,7 +4,7 @@ import copy
 import argparse
 import json
 from tqdm import tqdm
-from env.evaluator import evaluator_function_directed_graph, verify_full_dependency
+from env.evaluator import evaluator_function_directed_graph
 
 def try_eval(x):
     try:
@@ -42,7 +42,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output_dir", type=str, default="./output",
                        help="Output directory")
     parser.add_argument("--domain", type=str, default="bank",
-                       choices=["bank", "online_market", "dmv", "healthcare", "library", "all"], help="Domain name")
+                       choices=["bank", "online_market", "dmv", "healthcare", "library", "hotel", "university", "all"], help="Domain name")
     
     args = parser.parse_args()
     

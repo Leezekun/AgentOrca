@@ -1,8 +1,8 @@
 cd ../..
 
 model="gpt-4.1-mini"
-domains=("dmv" "healthcare" "library" "online_market" "bank")
-tool_lists=("full")
+domains=("university")
+tool_lists=("full" "oracle")
 method="fc"
 
 for domain in "${domains[@]}"; do

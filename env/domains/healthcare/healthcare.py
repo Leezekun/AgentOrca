@@ -6,7 +6,7 @@ database dependencies assume chatbot dependencies are followed perfectly
 assumes previous stpes in the dependency chain were called
 """
 
-from env.dependencies import Domain_Dependencies
+from env.dep_eval import Dependency_Evaluator
 from env.helpers import get_domain_dependency_none
 
 import copy
@@ -141,7 +141,7 @@ class Healthcare:
         self.providers = self.data["providers"] if data else {}
         self.interaction_time = self.data["interaction_time"]
         self.innate_state_tracker = Healthcare_State_Tracker(self, **dep_params)
-        self.domain_dep = Domain_Dependencies(self, self.innate_state_tracker, dep_innate_full) 
+        self.domain_dep = Dependency_Evaluator(self, self.innate_state_tracker, dep_innate_full) 
         self.data_descriptions = data_descriptions
 
 
@@ -412,17 +412,17 @@ class Healthcare_State_Tracker:
     
 
 
-class Healthcare_w_Dependency_Verifier:
+class Healthcare_Strict:
     def __init__(self, data:dict=default_data,
         dep_innate_full:dict=get_domain_dependency_none("Healthcare"),
-        dep_full:dict=get_domain_dependency_none("Healthcare_w_Dependency_Verifier"),
+        dep_full:dict=get_domain_dependency_none("Healthcare_Strict"),
         dep_params:dict=default_dependency_parameters,
         data_descriptions:dict=default_data_descriptions):
         
         self.dep_params = dep_params
         self.domain_system:Healthcare = Healthcare(data, dep_innate_full, dep_params, data_descriptions)
         self.state_tracker:Healthcare_State_Tracker = Healthcare_State_Tracker(self.domain_system, **dep_params)
-        self.domain_dep:Domain_Dependencies = Domain_Dependencies(self.domain_system, self.state_tracker, dep_full)
+        self.domain_dep:Dependency_Evaluator = Dependency_Evaluator(self.domain_system, self.state_tracker, dep_full)
     
     # Root functions
     def login_user(self, username:str, identification:str|dict[str:str|int]=None)->bool:
@@ -511,7 +511,7 @@ class Healthcare_w_Dependency_Verifier:
         return self.domain_system
     def evaluation_get_database_descriptions(self)->dict:
         return self.domain_system.evaluation_get_database_descriptions()
-    def evaluation_get_domain_dependencies(self)->Domain_Dependencies:
+    def evaluation_get_Dependency_Evaluator(self)->Dependency_Evaluator:
         return self.domain_dep
     def evaluation_get_state_tracker(self)->Healthcare_State_Tracker:
         return self.state_tracker

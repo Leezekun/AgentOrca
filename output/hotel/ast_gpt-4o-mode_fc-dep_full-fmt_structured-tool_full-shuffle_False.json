@@ -1,0 +1,974 @@
+[
+    {
+        "domain": "hotel",
+        "setup": {
+            "env_mode": "prompt",
+            "shuffle_func": false,
+            "default_constraint_option": "full",
+            "constraint_descr_format": "structured",
+            "tool_list": "full",
+            "user_agent": {
+                "model": null,
+                "temperature": 1.0,
+                "top_p": 1.0,
+                "max_tokens": 128,
+                "tool_call_mode": "fc"
+            },
+            "assistant_agent": {
+                "model": "gpt-4o",
+                "temperature": 0.0,
+                "top_p": 0.01,
+                "max_tokens": 512,
+                "tool_call_mode": "fc"
+            }
+        },
+        "task": {
+            "initial_database": {
+                "rooms": {
+                    "single": {
+                        "availability": {
+                            "101": [
+                                "2024-12-04",
+                                "2024-12-05",
+                                "2024-12-06"
+                            ],
+                            "102": [
+                                "2024-12-02",
+                                "2024-12-03",
+                                "2024-12-04",
+                                "2024-12-05",
+                                "2024-12-06"
+                            ]
+                        },
+                        "price_per_night": 80
+                    },
+                    "double": {
+                        "availability": {
+                            "107": [
+                                "2024-12-02",
+                                "2024-12-03",
+                                "2024-12-04",
+                                "2024-12-05",
+                                "2024-12-06"
+                            ],
+                            "108": [
+                                "2024-12-02",
+                                "2024-12-06"
+                            ]
+                        },
+                        "price_per_night": 110
+                    },
+                    "suite": {
+                        "availability": {
+                            "110": [
+                                "2024-12-02",
+                                "2024-12-03",
+                                "2024-12-04",
+                                "2024-12-05",
+                                "2024-12-06"
+                            ]
+                        },
+                        "price_per_night": 160
+                    }
+                },
+                "room_checkins": {
+                    "101": {
+                        "booking_id": "BK001",
+                        "check_in_time": "2024-12-02T17:28:31",
+                        "identity_document": "driver_license"
+                    }
+                },
+                "bookings": {
+                    "BK001": {
+                        "guest": "John Doe",
+                        "room_type": "single",
+                        "check_in_date": "2024-12-02",
+                        "check_out_date": "2024-12-04",
+                        "booking_time": "2024-11-20T12:26:39",
+                        "status": "checked-in",
+                        "loyalty_points_to_add": 20,
+                        "room_change": 0,
+                        "room_service": {
+                            "2024-12-02": 1
+                        }
+                    },
+                    "BK002": {
+                        "guest": "Jane Smith",
+                        "room_type": "double",
+                        "check_in_date": "2024-12-03",
+                        "check_out_date": "2024-12-06",
+                        "booking_time": "2024-11-25T09:30:00",
+                        "status": "confirmed",
+                        "loyalty_points_to_add": 0,
+                        "room_change": 0,
+                        "room_service": {}
+                    }
+                },
+                "room_assignment": {
+                    "BK001": "101",
+                    "BK002": "108"
+                },
+                "room_service_options": {
+                    "dining": {
+                        "club_sandwich": 12,
+                        "caesar_salad": 10,
+                        "grilled_salmon": 20,
+                        "steak_frites": 24,
+                        "cheesecake": 7,
+                        "bottled_water": 3,
+                        "coffee": 4,
+                        "coke": 4,
+                        "orange_juice": 5
+                    },
+                    "spa": {
+                        "swedish_massage": 50,
+                        "deep_tissue_massage": 70,
+                        "facial": 40,
+                        "aromatherapy_session": 30
+                    },
+                    "housekeeping": {
+                        "extra_towels": 0,
+                        "pillow_request": 0,
+                        "laundry_service": 15,
+                        "dry_cleaning": 25
+                    },
+                    "tech_support": {
+                        "wifi_router_delivery": 0,
+                        "hdmi_cable": 5,
+                        "universal_adapter": 10
+                    }
+                },
+                "room_service_payment_method": [
+                    "credit_card",
+                    "loyalty_points"
+                ],
+                "room_service_orders": {
+                    "RS001": {
+                        "room": "101",
+                        "order_time": "2024-12-02T20:00:00",
+                        "order_type": "dining",
+                        "order_details": [
+                            {
+                                "item": "club_sandwich",
+                                "quantity": 1,
+                                "price": 12
+                            },
+                            {
+                                "item": "coke",
+                                "quantity": 2,
+                                "price": 8
+                            }
+                        ],
+                        "order_total": 20,
+                        "payment": "loyalty_points",
+                        "status": "in-progress"
+                    }
+                },
+                "loyalty_members": {
+                    "HTL0386Y": {
+                        "name": "John Doe",
+                        "loyalty_points": 250,
+                        "tier": "silver"
+                    },
+                    "HTL1003C": {
+                        "name": "Sakana Inoue",
+                        "loyalty_points": 1500,
+                        "tier": "gold"
+                    }
+                },
+                "valid_room_change_reasons": [
+                    "upgrade",
+                    "maintenance",
+                    "noise",
+                    "accessibility",
+                    "temperature",
+                    "cleanliness",
+                    "safety",
+                    "other"
+                ],
+                "interaction_time": "2024-12-02T20:04:31"
+            },
+            "dependency_parameters": {
+                "min_booking_lead_time_days": 1,
+                "max_booking_lead_time_days": 30,
+                "max_stays": 10,
+                "modification_deadline_hours": 48,
+                "min_age": 18,
+                "valid_document_types": [
+                    "driver_license",
+                    "passport",
+                    "state_id",
+                    "military_id"
+                ],
+                "check_in_time": "15:00",
+                "check_out_time": "11:00",
+                "max_room_changes": 1,
+                "room_service_start": "8:00",
+                "room_service_end": "22:00",
+                "max_room_service_orders_per_day": 3
+            },
+            "user_known": {
+                "room_type": "single",
+                "amount": 240,
+                "guest_name": "Alex Green",
+                "check_out_date": "2024-12-07",
+                "check_in_date": "2024-12-04"
+            },
+            "dependency": [
+                "and",
+                [
+                    [
+                        "single",
+                        "room_type_available_for_dates",
+                        {
+                            "room_type": "room_type",
+                            "check_in_date": "check_in_date",
+                            "check_out_date": "check_out_date"
+                        }
+                    ],
+                    [
+                        "chain",
+                        [
+                            [
+                                "and",
+                                [
+                                    [
+                                        "single",
+                                        "internal_valid_room_type",
+                                        {
+                                            "room_type": "room_type"
+                                        }
+                                    ],
+                                    [
+                                        "single",
+                                        "valid_booking_date_pair",
+                                        {
+                                            "check_in_date": "check_in_date",
+                                            "check_out_date": "check_out_date"
+                                        }
+                                    ],
+                                    [
+                                        "single",
+                                        "amount_positive_restr",
+                                        {
+                                            "amount": "amount"
+                                        }
+                                    ]
+                                ]
+                            ],
+                            [
+                                "single",
+                                "sufficient_amount_for_booking",
+                                {
+                                    "room_type": "room_type",
+                                    "check_in_date": "check_in_date",
+                                    "check_out_date": "check_out_date",
+                                    "amount": "amount"
+                                }
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            "dependency_original": [
+                "and",
+                [
+                    [
+                        "single",
+                        "room_type_available_for_dates",
+                        {
+                            "room_type": "room_type",
+                            "check_in_date": "check_in_date",
+                            "check_out_date": "check_out_date"
+                        }
+                    ],
+                    [
+                        "single",
+                        "sufficient_amount_for_booking",
+                        {
+                            "room_type": "room_type",
+                            "check_in_date": "check_in_date",
+                            "check_out_date": "check_out_date",
+                            "amount": "amount"
+                        }
+                    ]
+                ]
+            ],
+            "action_should_succeed": 1,
+            "directed_action_graph": {
+                "nodes": [
+                    [
+                        "book_room",
+                        {
+                            "room_type": "room_type",
+                            "amount": "amount",
+                            "guest_name": "guest_name",
+                            "check_out_date": "check_out_date",
+                            "check_in_date": "check_in_date"
+                        }
+                    ],
+                    [
+                        "show_available_rooms",
+                        {}
+                    ]
+                ],
+                "connections": [
+                    [
+                        0,
+                        1
+                    ]
+                ]
+            },
+            "user_instruction": "You are trying to book a room for the guest named {guest_name} in the {room_type} category, for the dates from {check_in_date} to {check_out_date}, using a payment amount of {amount}.",
+            "user_prompt": "Hello, I would like to book a room for the guest named Alex Green in the single category, for the dates from 2024-12-04 to 2024-12-07, using a payment amount of 240.",
+            "user_goal": "book_room"
+        },
+        "interactions": []
+    },
+    {
+        "domain": "hotel",
+        "setup": {
+            "env_mode": "prompt",
+            "shuffle_func": false,
+            "default_constraint_option": "full",
+            "constraint_descr_format": "structured",
+            "tool_list": "full",
+            "user_agent": {
+                "model": null,
+                "temperature": 1.0,
+                "top_p": 1.0,
+                "max_tokens": 128,
+                "tool_call_mode": "fc"
+            },
+            "assistant_agent": {
+                "model": "gpt-4o",
+                "temperature": 0.0,
+                "top_p": 0.01,
+                "max_tokens": 512,
+                "tool_call_mode": "fc"
+            }
+        },
+        "task": {
+            "initial_database": {
+                "rooms": {
+                    "single": {
+                        "availability": {
+                            "101": [
+                                "2024-12-06"
+                            ],
+                            "102": [
+                                "2024-12-06"
+                            ]
+                        },
+                        "price_per_night": 80
+                    },
+                    "double": {
+                        "availability": {
+                            "107": [
+                                "2024-12-02",
+                                "2024-12-03",
+                                "2024-12-04",
+                                "2024-12-05",
+                                "2024-12-06"
+                            ],
+                            "108": [
+                                "2024-12-02",
+                                "2024-12-06"
+                            ]
+                        },
+                        "price_per_night": 110
+                    },
+                    "suite": {
+                        "availability": {
+                            "110": [
+                                "2024-12-02",
+                                "2024-12-03",
+                                "2024-12-04",
+                                "2024-12-05",
+                                "2024-12-06"
+                            ]
+                        },
+                        "price_per_night": 160
+                    }
+                },
+                "room_checkins": {
+                    "101": {
+                        "booking_id": "BK001",
+                        "check_in_time": "2024-12-02T17:28:31",
+                        "identity_document": "driver_license"
+                    }
+                },
+                "bookings": {
+                    "BK001": {
+                        "guest": "John Doe",
+                        "room_type": "single",
+                        "check_in_date": "2024-12-02",
+                        "check_out_date": "2024-12-04",
+                        "booking_time": "2024-11-20T12:26:39",
+                        "status": "checked-in",
+                        "loyalty_points_to_add": 20,
+                        "room_change": 0,
+                        "room_service": {
+                            "2024-12-02": 1
+                        }
+                    },
+                    "BK002": {
+                        "guest": "Jane Smith",
+                        "room_type": "double",
+                        "check_in_date": "2024-12-03",
+                        "check_out_date": "2024-12-06",
+                        "booking_time": "2024-11-25T09:30:00",
+                        "status": "confirmed",
+                        "loyalty_points_to_add": 0,
+                        "room_change": 0,
+                        "room_service": {}
+                    }
+                },
+                "room_assignment": {
+                    "BK001": "101",
+                    "BK002": "108"
+                },
+                "room_service_options": {
+                    "dining": {
+                        "club_sandwich": 12,
+                        "caesar_salad": 10,
+                        "grilled_salmon": 20,
+                        "steak_frites": 24,
+                        "cheesecake": 7,
+                        "bottled_water": 3,
+                        "coffee": 4,
+                        "coke": 4,
+                        "orange_juice": 5
+                    },
+                    "spa": {
+                        "swedish_massage": 50,
+                        "deep_tissue_massage": 70,
+                        "facial": 40,
+                        "aromatherapy_session": 30
+                    },
+                    "housekeeping": {
+                        "extra_towels": 0,
+                        "pillow_request": 0,
+                        "laundry_service": 15,
+                        "dry_cleaning": 25
+                    },
+                    "tech_support": {
+                        "wifi_router_delivery": 0,
+                        "hdmi_cable": 5,
+                        "universal_adapter": 10
+                    }
+                },
+                "room_service_payment_method": [
+                    "credit_card",
+                    "loyalty_points"
+                ],
+                "room_service_orders": {
+                    "RS001": {
+                        "room": "101",
+                        "order_time": "2024-12-02T20:00:00",
+                        "order_type": "dining",
+                        "order_details": [
+                            {
+                                "item": "club_sandwich",
+                                "quantity": 1,
+                                "price": 12
+                            },
+                            {
+                                "item": "coke",
+                                "quantity": 2,
+                                "price": 8
+                            }
+                        ],
+                        "order_total": 20,
+                        "payment": "loyalty_points",
+                        "status": "in-progress"
+                    }
+                },
+                "loyalty_members": {
+                    "HTL0386Y": {
+                        "name": "John Doe",
+                        "loyalty_points": 250,
+                        "tier": "silver"
+                    },
+                    "HTL1003C": {
+                        "name": "Sakana Inoue",
+                        "loyalty_points": 1500,
+                        "tier": "gold"
+                    }
+                },
+                "valid_room_change_reasons": [
+                    "upgrade",
+                    "maintenance",
+                    "noise",
+                    "accessibility",
+                    "temperature",
+                    "cleanliness",
+                    "safety",
+                    "other"
+                ],
+                "interaction_time": "2024-12-02T20:04:31"
+            },
+            "dependency_parameters": {
+                "min_booking_lead_time_days": 1,
+                "max_booking_lead_time_days": 30,
+                "max_stays": 10,
+                "modification_deadline_hours": 48,
+                "min_age": 18,
+                "valid_document_types": [
+                    "driver_license",
+                    "passport",
+                    "state_id",
+                    "military_id"
+                ],
+                "check_in_time": "15:00",
+                "check_out_time": "11:00",
+                "max_room_changes": 1,
+                "room_service_start": "8:00",
+                "room_service_end": "22:00",
+                "max_room_service_orders_per_day": 3
+            },
+            "user_known": {
+                "room_type": "single",
+                "amount": 240.0,
+                "guest_name": "Michael Lee",
+                "check_out_date": "2024-12-06",
+                "check_in_date": "2024-12-04"
+            },
+            "dependency": [
+                "and",
+                [
+                    [
+                        "single",
+                        "room_type_available_for_dates",
+                        {
+                            "room_type": "room_type",
+                            "check_in_date": "check_in_date",
+                            "check_out_date": "check_out_date"
+                        }
+                    ],
+                    [
+                        "chain",
+                        [
+                            [
+                                "and",
+                                [
+                                    [
+                                        "single",
+                                        "internal_valid_room_type",
+                                        {
+                                            "room_type": "room_type"
+                                        }
+                                    ],
+                                    [
+                                        "single",
+                                        "valid_booking_date_pair",
+                                        {
+                                            "check_in_date": "check_in_date",
+                                            "check_out_date": "check_out_date"
+                                        }
+                                    ],
+                                    [
+                                        "single",
+                                        "amount_positive_restr",
+                                        {
+                                            "amount": "amount"
+                                        }
+                                    ]
+                                ]
+                            ],
+                            [
+                                "single",
+                                "sufficient_amount_for_booking",
+                                {
+                                    "room_type": "room_type",
+                                    "check_in_date": "check_in_date",
+                                    "check_out_date": "check_out_date",
+                                    "amount": "amount"
+                                }
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            "dependency_original": [
+                "and",
+                [
+                    [
+                        "single",
+                        "room_type_available_for_dates",
+                        {
+                            "room_type": "room_type",
+                            "check_in_date": "check_in_date",
+                            "check_out_date": "check_out_date"
+                        }
+                    ],
+                    [
+                        "single",
+                        "sufficient_amount_for_booking",
+                        {
+                            "room_type": "room_type",
+                            "check_in_date": "check_in_date",
+                            "check_out_date": "check_out_date",
+                            "amount": "amount"
+                        }
+                    ]
+                ]
+            ],
+            "action_should_succeed": 0,
+            "directed_action_graph": {
+                "nodes": [
+                    [
+                        "book_room",
+                        {
+                            "room_type": "room_type",
+                            "amount": "amount",
+                            "guest_name": "guest_name",
+                            "check_out_date": "check_out_date",
+                            "check_in_date": "check_in_date"
+                        }
+                    ],
+                    [
+                        "show_available_rooms",
+                        {}
+                    ]
+                ],
+                "connections": [
+                    [
+                        0,
+                        1
+                    ]
+                ]
+            },
+            "user_instruction": "You are trying to book a room for the guest named {guest_name} in the {room_type} category, for the dates from {check_in_date} to {check_out_date}, using a payment amount of {amount}.",
+            "user_prompt": "Hi, I would like to book a room for the guest named Michael Lee in the single category, for the dates from 2024-12-04 to 2024-12-06, using a payment amount of 240.0.",
+            "user_goal": "book_room"
+        },
+        "interactions": []
+    },
+    {
+        "domain": "hotel",
+        "setup": {
+            "env_mode": "prompt",
+            "shuffle_func": false,
+            "default_constraint_option": "full",
+            "constraint_descr_format": "structured",
+            "tool_list": "full",
+            "user_agent": {
+                "model": null,
+                "temperature": 1.0,
+                "top_p": 1.0,
+                "max_tokens": 128,
+                "tool_call_mode": "fc"
+            },
+            "assistant_agent": {
+                "model": "gpt-4o",
+                "temperature": 0.0,
+                "top_p": 0.01,
+                "max_tokens": 512,
+                "tool_call_mode": "fc"
+            }
+        },
+        "task": {
+            "initial_database": {
+                "rooms": {
+                    "single": {
+                        "availability": {
+                            "101": [
+                                "2024-12-04",
+                                "2024-12-05",
+                                "2024-12-06"
+                            ],
+                            "102": [
+                                "2024-12-02",
+                                "2024-12-03",
+                                "2024-12-04",
+                                "2024-12-05",
+                                "2024-12-06"
+                            ]
+                        },
+                        "price_per_night": 80
+                    },
+                    "double": {
+                        "availability": {
+                            "107": [
+                                "2024-12-02",
+                                "2024-12-03",
+                                "2024-12-04",
+                                "2024-12-05",
+                                "2024-12-06"
+                            ],
+                            "108": [
+                                "2024-12-02",
+                                "2024-12-06"
+                            ]
+                        },
+                        "price_per_night": 110
+                    },
+                    "suite": {
+                        "availability": {
+                            "110": [
+                                "2024-12-02",
+                                "2024-12-03",
+                                "2024-12-04",
+                                "2024-12-05",
+                                "2024-12-06"
+                            ]
+                        },
+                        "price_per_night": 160
+                    }
+                },
+                "room_checkins": {
+                    "101": {
+                        "booking_id": "BK001",
+                        "check_in_time": "2024-12-02T17:28:31",
+                        "identity_document": "driver_license"
+                    }
+                },
+                "bookings": {
+                    "BK001": {
+                        "guest": "John Doe",
+                        "room_type": "single",
+                        "check_in_date": "2024-12-02",
+                        "check_out_date": "2024-12-04",
+                        "booking_time": "2024-11-20T12:26:39",
+                        "status": "checked-in",
+                        "loyalty_points_to_add": 20,
+                        "room_change": 0,
+                        "room_service": {
+                            "2024-12-02": 1
+                        }
+                    },
+                    "BK002": {
+                        "guest": "Jane Smith",
+                        "room_type": "double",
+                        "check_in_date": "2024-12-03",
+                        "check_out_date": "2024-12-06",
+                        "booking_time": "2024-11-25T09:30:00",
+                        "status": "confirmed",
+                        "loyalty_points_to_add": 0,
+                        "room_change": 0,
+                        "room_service": {}
+                    }
+                },
+                "room_assignment": {
+                    "BK001": "101",
+                    "BK002": "108"
+                },
+                "room_service_options": {
+                    "dining": {
+                        "club_sandwich": 12,
+                        "caesar_salad": 10,
+                        "grilled_salmon": 20,
+                        "steak_frites": 24,
+                        "cheesecake": 7,
+                        "bottled_water": 3,
+                        "coffee": 4,
+                        "coke": 4,
+                        "orange_juice": 5
+                    },
+                    "spa": {
+                        "swedish_massage": 50,
+                        "deep_tissue_massage": 70,
+                        "facial": 40,
+                        "aromatherapy_session": 30
+                    },
+                    "housekeeping": {
+                        "extra_towels": 0,
+                        "pillow_request": 0,
+                        "laundry_service": 15,
+                        "dry_cleaning": 25
+                    },
+                    "tech_support": {
+                        "wifi_router_delivery": 0,
+                        "hdmi_cable": 5,
+                        "universal_adapter": 10
+                    }
+                },
+                "room_service_payment_method": [
+                    "credit_card",
+                    "loyalty_points"
+                ],
+                "room_service_orders": {
+                    "RS001": {
+                        "room": "101",
+                        "order_time": "2024-12-02T20:00:00",
+                        "order_type": "dining",
+                        "order_details": [
+                            {
+                                "item": "club_sandwich",
+                                "quantity": 1,
+                                "price": 12
+                            },
+                            {
+                                "item": "coke",
+                                "quantity": 2,
+                                "price": 8
+                            }
+                        ],
+                        "order_total": 20,
+                        "payment": "loyalty_points",
+                        "status": "in-progress"
+                    }
+                },
+                "loyalty_members": {
+                    "HTL0386Y": {
+                        "name": "John Doe",
+                        "loyalty_points": 250,
+                        "tier": "silver"
+                    },
+                    "HTL1003C": {
+                        "name": "Sakana Inoue",
+                        "loyalty_points": 1500,
+                        "tier": "gold"
+                    }
+                },
+                "valid_room_change_reasons": [
+                    "upgrade",
+                    "maintenance",
+                    "noise",
+                    "accessibility",
+                    "temperature",
+                    "cleanliness",
+                    "safety",
+                    "other"
+                ],
+                "interaction_time": "2024-12-02T20:04:31"
+            },
+            "dependency_parameters": {
+                "min_booking_lead_time_days": 1,
+                "max_booking_lead_time_days": 30,
+                "max_stays": 10,
+                "modification_deadline_hours": 48,
+                "min_age": 18,
+                "valid_document_types": [
+                    "driver_license",
+                    "passport",
+                    "state_id",
+                    "military_id"
+                ],
+                "check_in_time": "15:00",
+                "check_out_time": "11:00",
+                "max_room_changes": 1,
+                "room_service_start": "8:00",
+                "room_service_end": "22:00",
+                "max_room_service_orders_per_day": 3
+            },
+            "user_known": {
+                "room_type": "single",
+                "amount": 120,
+                "guest_name": "Alice Brown",
+                "check_out_date": "2024-12-06",
+                "check_in_date": "2024-12-04"
+            },
+            "dependency": [
+                "and",
+                [
+                    [
+                        "single",
+                        "room_type_available_for_dates",
+                        {
+                            "room_type": "room_type",
+                            "check_in_date": "check_in_date",
+                            "check_out_date": "check_out_date"
+                        }
+                    ],
+                    [
+                        "chain",
+                        [
+                            [
+                                "and",
+                                [
+                                    [
+                                        "single",
+                                        "internal_valid_room_type",
+                                        {
+                                            "room_type": "room_type"
+                                        }
+                                    ],
+                                    [
+                                        "single",
+                                        "valid_booking_date_pair",
+                                        {
+                                            "check_in_date": "check_in_date",
+                                            "check_out_date": "check_out_date"
+                                        }
+                                    ],
+                                    [
+                                        "single",
+                                        "amount_positive_restr",
+                                        {
+                                            "amount": "amount"
+                                        }
+                                    ]
+                                ]
+                            ],
+                            [
+                                "single",
+                                "sufficient_amount_for_booking",
+                                {
+                                    "room_type": "room_type",
+                                    "check_in_date": "check_in_date",
+                                    "check_out_date": "check_out_date",
+                                    "amount": "amount"
+                                }
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            "dependency_original": [
+                "and",
+                [
+                    [
+                        "single",
+                        "room_type_available_for_dates",
+                        {
+                            "room_type": "room_type",
+                            "check_in_date": "check_in_date",
+                            "check_out_date": "check_out_date"
+                        }
+                    ],
+                    [
+                        "single",
+                        "sufficient_amount_for_booking",
+                        {
+                            "room_type": "room_type",
+                            "check_in_date": "check_in_date",
+                            "check_out_date": "check_out_date",
+                            "amount": "amount"
+                        }
+                    ]
+                ]
+            ],
+            "action_should_succeed": 0,
+            "directed_action_graph": {
+                "nodes": [
+                    [
+                        "book_room",
+                        {
+                            "room_type": "room_type",
+                            "amount": "amount",
+                            "guest_name": "guest_name",
+                            "check_out_date": "check_out_date",
+                            "check_in_date": "check_in_date"
+                        }
+                    ],
+                    [
+                        "show_available_rooms",
+                        {}
+                    ]
+                ],
+                "connections": [
+                    [
+                        0,
+                        1
+                    ]
+                ]
+            },
+            "user_instruction": "You are trying to book a room for the guest named {guest_name} in the {room_type} category, for the dates from {check_in_date} to {check_out_date}, using a payment amount of {amount}.",
+            "user_prompt": "Hello, I would like to book a room for the guest named Alice Brown in the single room category, for the dates from 2024-12-04 to 2024-12-06, using a payment amount of 120.",
+            "user_goal": "book_room"
+        },
+        "interactions": []
+    }
+]

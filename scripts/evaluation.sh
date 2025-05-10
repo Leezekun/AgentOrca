@@ -55,20 +55,20 @@ cd ..
 # model="gpt-4o"
 # model="qwen2.5-72b-instruct"
 # model="gemini-2.0-flash-thinking-exp"
-# model="claude-3-7-sonnet-20250219-thinking"
+# model="claude-3-7-sonnet-20250219"
 # model="o4-mini"
 # model="gpt-4.1"
 # model="gemini-2.0-flash-thinking-exp"
-# model="gpt-4o-mini"
 # model="llama3.1-70b-instruct"
-model="qwen2.5-14b-instruct"
-# model="gemini-2.0-flash"
+# model="qwen2.5-14b-instruct"
+model="gemini-1.5-pro"
 # model="o4-mini-high"
-domain="dmv"
+# model="gpt-4o-mini"
+domain="university"
 tool_list="full"
 tool_call_mode="react"
 
-CUDA_VISIBLE_DEVICES=$devices python run_evaluation.py \
+python run_evaluation.py \
     --domain $domain \
     --assistant_model $model \
     --tool_list $tool_list \

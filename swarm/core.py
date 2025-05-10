@@ -146,7 +146,11 @@ class Swarm:
                     }
                 )
                 continue
-            args = json.loads(tool_call.function.arguments)
+            try:
+                args = json.loads(tool_call.function.arguments)
+            except Exception as e:
+                print(f"Error parsing tool call arguments: {tool_call.function.arguments}")
+                raise e
             debug_print(
                 debug, f"Processing tool call: {name} with arguments {args}")
 

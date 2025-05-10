@@ -5,6 +5,7 @@ import json
 import copy
 import requests
 import os
+import traceback
 from dataclasses import dataclass
 from typing import List, Optional, Dict, Any
 from swarm.util import (Function, 
@@ -51,9 +52,9 @@ def _create_message(candidate: Dict, tool_calls: Optional[List[ChatCompletionMes
 def _create_usage(gemini_metadata: Dict) -> CompletionUsage:
     """Create CompletionUsage from Gemini metadata."""
     return CompletionUsage(
-        completion_tokens=gemini_metadata['candidatesTokenCount'],
-        prompt_tokens=gemini_metadata['promptTokenCount'],
-        total_tokens=gemini_metadata['totalTokenCount'],
+        completion_tokens=gemini_metadata.get('candidatesTokenCount', 0),
+        prompt_tokens=gemini_metadata.get('promptTokenCount', 0),
+        total_tokens=gemini_metadata.get('totalTokenCount', 0),
         completion_tokens_details=CompletionTokensDetails(),
         prompt_tokens_details=PromptTokensDetails()
     )
@@ -90,6 +91,9 @@ def format_function_input(function: Dict) -> Dict:
             new_property = copy.deepcopy(property)
             if "additionalProperties" in new_property:
                 del new_property["additionalProperties"]
+            if "items" in new_property:
+                if "additionalProperties" in new_property["items"]:
+                    del new_property["items"]["additionalProperties"]
             new_properties[key] = new_property
             
     function["parameters"]["properties"] = new_properties
@@ -200,8 +204,9 @@ def gemini_chat_completion_openai_format(
         
         # Convert messages from OpenAI format to Gemini format
         gemini_messages = []
+        used_tools = {}
         sys_prompt = ""
-        for message in messages:
+        for msg_idx, message in enumerate(messages):
             role = message["role"]
             if role == "system":
                 sys_prompt = message["content"]
@@ -214,6 +219,7 @@ def gemini_chat_completion_openai_format(
                     for tool_call in message["tool_calls"]:
                         function_calls.append({"functionCall": {"name": tool_call.get("function").get("name"), 
                                                                 "args": json.loads(tool_call.get("function").get("arguments"))}})
+                        used_tools[tool_call.get("id")] = tool_call.get("function").get("name")
                     gemini_messages.append(
                         {"role": "model", "parts": function_calls}
                     )
@@ -225,9 +231,9 @@ def gemini_chat_completion_openai_format(
                 gemini_messages.append(
                     {"role": "user", "parts": [{
                         "functionResponse": {
-                            "name": message["tool_name"],
+                            "name": used_tools[message["tool_call_id"]],
                             "response": {
-                                "name": message["tool_name"],
+                                "name": used_tools[message["tool_call_id"]],
                                 "content": message["content"]
                             }
                         }
@@ -284,16 +290,16 @@ def gemini_chat_completion_openai_format(
                 response = requests.post(url, headers=headers, json=payload)
                 # response.raise_for_status()
                 completion = response.json()
+                print(json.dumps(completion, indent=4))
+                _ = input("Check the completion")
                 completion = convert_gemini_to_openai_format(completion)
                 # clean the output of the function call
                 completion = format_function_output(completion)
                 return completion
-            except requests.exceptions.RequestException as e:
-                print(f"Request failed (attempt {retry + 1}/{max_retries}): {str(e)}")
-                time.sleep(1.5 * min((1.2**retry), 10))
-                retry += 1
             except Exception as e:
-                print(f"Unexpected error (attempt {retry + 1}/{max_retries}): {str(e)}")
+                # print full traceback
+                traceback.print_exc()
+                print(f"Error: {str(e)}")
                 time.sleep(1.5 * min((1.2**retry), 10))
                 retry += 1
         return None

@@ -2,8 +2,8 @@ cd ../..
 devices="0"
 
 model="claude-3-5-sonnet-20241022"
-domains=("dmv" "healthcare" "library" "online_market" "bank")
-tool_lists=("full" "oracle")
+domains=("university")
+tool_lists=("oracle" "full")
 method="fc"
 
 for domain in "${domains[@]}"; do

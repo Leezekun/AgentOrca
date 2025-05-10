@@ -159,7 +159,7 @@ class OpenAIHandler:
     
     def _init_vllm(self, num_gpus: int, gpu_memory_utilization: float) -> None:
         """Initialize VLLM backend."""
-        self.VLLM_PORT = random.randint(1000, 2000)
+        self.VLLM_PORT = random.randint(3000, 8000)
         self.client = OpenAI(
             base_url=f"http://localhost:{self.VLLM_PORT}/v1", 
             api_key="EMPTY"

@@ -1,0 +1,189 @@
+\begin{minted}[fontsize=\small, breaklines, breaksymbol=, breaksymbolleft=, breaksymbolright=, breakanywhere]{json}
+{
+    "user_goal": "transfer_funds",
+    "user_prompt": "Hi there! I would like to transfer an amount of funds from my account to another user's account. The username for the destination account is \"jane_doe\". I would like to transfer 200.0 dollars. My username is \"john_doe\", and I have my identification, which is \"padoesshnwojord\". If needed, I also have an admin password for further functionalities: \"addoeminhnpajoss\". Can you assist me with this transfer? Thank you!",
+    "initial_database": {
+        "accounts": {
+            "john_doe": {
+                "identification": "padoesshnwojord",
+                "admin_password": "addoeminhnpajoss",
+                "balance": 1000.0,
+                "owed_balance": 200.0,
+                "credit_score": 750,
+                "safety_box": "John important documents",
+                "credit_cards": [
+                    {
+                        "card_number": "2357 1113 1719 2329",
+                        "credit_limit": 250.0,
+                        "credit_balance": 0.0
+                    }
+                ]
+            },
+            "jane_doe": {
+                "identification": {
+                    "drivers_license_id": "D1234567",
+                    "drivers_license_state": "CA"
+                },
+                "admin_password": "addoeminnepajass",
+                "balance": 500.0,
+                "owed_balance": 1000.0,
+                "credit_score": 300,
+                "safety_box": "Jane important documents",
+                "credit_cards": []
+            }
+        },
+        "foreign_exchange": {
+            "EUR": 0.93,
+            "RMB": 7.12,
+            "GBP": 0.77,
+            "NTD": 32.08
+        },
+        "interaction_time": "2024-11-21T16:25:31"
+    },
+    "user_known": {
+        "destination_username": "jane_doe",
+        "amount": 200.0,
+        "unit": "dollars",
+        "username": "john_doe",
+        "identification": "padoesshnwojord",
+        "admin_password": "addoeminhnpajoss"
+    },
+    "constraint_composition": [
+        "and",
+        [
+            ["single", "internal_check_username_exist", {"username": "username"}],
+            ["single", "internal_check_username_exist", {"username": "destination_username"}],
+            ["single", "authenticated_admin_password", {"username": "username"}],
+            ["single", "sufficient_account_balance", {"username": "username", "amount": "amount"}]
+        ]
+    ],
+    "action_should_succeed": 1,
+    "directed_action_graph": {
+        "nodes": [
+            [
+                "transfer_funds",
+                {
+                    "destination_username": "destination_username",
+                    "username": "username",
+                    "amount": "amount",
+                    "unit": "unit"
+                }
+            ],
+            "and",
+            [
+                "authenticate_admin_password",
+                {"username": "username", "admin_password": "admin_password"}
+            ],
+            ["get_account_balance", {"username": "username"}],
+            ["internal_check_username_exist", {"username": "destination_username"}],
+            ["login_user", {"username": "username", "identification": "identification"}],
+            ["internal_check_username_exist", {"username": "username"}]
+        ],
+        "connections": [
+            [0, 1],
+            [1, 2],
+            [1, 3],
+            [1, 4],
+            [2, 5],
+            [3, 6]
+        ]
+    }
+}
+\end{minted}
+    
+    
+\begin{minted}[escapeinside=||, fontsize=\small, breaklines, breaksymbol=, breaksymbolleft=, breaksymbolright=, breakanywhere]{text}
+|\bf{user}|: Hi there! I would like to transfer an amount of funds from my account to another user’s account. The username for the destination account is jane_doe. I would like to transfer 200.0 dollars. My username is john_doe, and I have my identification, which is padoesshnwojord. If needed, I also have an admin password for further functionalities: addoeminhnpajoss. Can you assist me with this transfer? Thank you!
+
+|\bf{assistant}|: To assist you with the funds transfer, I need to follow a series of steps according to your inputs. Here’s what I will do:
+    1. Verify User Existence: Check if both your account, john_doe, and the destination account, jane_doe, exist in the database.
+    2. Authenticate Your Credentials: Ensure that you are logged in to perform this action.
+    3. Authenticate Admin Password: Ensure your admin password is authenticated for this transaction.
+    4. Check Account Balance: Ensure that you have sufficient funds to carry out this transfer.
+Let me begin by verifying the existence of both accounts.
+
+|\bf{user}|: If you have completed my request or determine you cannot assist me with this request, please use the exit_conversation action to end our conversation. Otherwise, below is all the information I can provide:
+{
+    destination_username: jane_doe,
+    amount: 200.0,
+    unit: dollars,
+    username: john_doe,
+    identification: padoesshnwojord,
+    admin_password: addoeminhnpajoss
+}
+
+|\bf{assistant}|:
+|\bf{tool}|: {
+    function: {
+        arguments: {username: john_doe},
+        name: internal_check_username_exist
+    },
+    content: True
+}
+
+|\bf{assistant}|:
+|\bf{tool}|: {
+    function: {
+        arguments: {username: jane_doe},
+        name: internal_check_username_exist
+    },
+    content: True
+}
+
+|\bf{assistant}|:
+|\bf{tool}|: {
+    function: {
+        arguments: {username: john_doe, identification: padoesshnwojord},
+        name: login_user
+    },
+    content: True
+}
+
+|\bf{assistant}|:
+|\bf{tool}|: {
+    function: {
+        arguments: {username: john_doe, admin_password: addoeminhnpajoss},
+        name: authenticate_admin_password
+    },
+    content: True
+}
+
+|\bf{assistant}|:
+|\bf{tool}|: {
+    function: {
+        arguments: {username: john_doe},
+        name: get_account_balance
+    },
+    content: 1000.0
+}
+
+|\bf{assistant}|:
+|\bf{tool}|: {
+    function: {
+        arguments: {username: john_doe, destination_username: jane_doe, amount: 200.0, unit: dollars},
+        name: transfer_funds
+    },
+    content: True
+}
+
+|\bf{assistant}|: The transfer of 200.0 dollars from your account john_doe to jane_doe has been successfully completed! If there’s anything else you need, feel free to let me know.
+\end{minted}
+    
+    
+\begin{minted}[fontsize=\small, breaklines, breaksymbol=, breaksymbolleft=, breaksymbolright=, breakanywhere]{json}
+{
+    "evaluations": {
+        "user_goal": "transfer_funds",
+        "action_should_succeed": 1,
+        "num_messages": 11,
+        "num_function_calls": 6,
+        "no_tool_call_error": true,
+        "constraint_not_violated": true,
+        "database_match": true,
+        "action_successfully_called": true,
+        "dirgraph_satisfied": true,
+        "action_called_correctly": true,
+        "success": true
+    }
+}
+\end{minted}

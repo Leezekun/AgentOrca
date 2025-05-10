@@ -2,21 +2,15 @@
 file used to task initialization, exchange internal state change, and evaluation
 """
 
-import json
 import copy
 import random
 import re
-import inspect
-from collections import Counter
-from collections.abc import Iterable
 
 from env.variables import domain_keys, domain_assistant_keys
-from env.helpers import (
-    dict_to_tuple, 
-    dfsgather_constr_singles_dep, 
-    InvalidConstraintOption,
-    gather_action_default_dependencies
-)
+from env.helpers import gather_action_default_dependencies
+
+
+"""prompt construction for simulating the task"""
 
 # retrieves the verbalization for a single constraint
 def get_single_dep_verb(domain_str:dict, dep:tuple, dep_params:dict)->str:
@@ -26,14 +20,6 @@ def get_single_dep_verb(domain_str:dict, dep:tuple, dep_params:dict)->str:
     pos_dep_str = domain_assistant.positive_constraint_descriptions[dep_not].format(**dep_str_params)
     neg_dep_str = domain_assistant.negative_constraint_descriptions[dep_not].format(**dep_str_params)
     return pos_dep_str if "not " not in dep[1] else neg_dep_str
-
-# returns the default dependency based on the domain and the option enumerated
-def get_default_dep_full(domain_str:str, default_constraint_option:str, add_constr_dep_bool:bool=True)->dict:
-    ard = domain_assistant_keys[domain_str].action_required_dependencies
-    acd = domain_assistant_keys[domain_str].action_customizable_dependencies
-    cd = domain_assistant_keys[domain_str].constraint_dependencies
-    return gather_action_default_dependencies(ard, acd, cd if add_constr_dep_bool else None, default_constraint_option)
-
 
 # dfs finds all constraints, then verbalizes them with format inputs
 def dfsget_depverb_old(domain_str:str, dep:tuple, dep_params:dict)->set[str]:
@@ -45,45 +31,42 @@ def dfsget_depverb_old(domain_str:str, dep:tuple, dep_params:dict)->set[str]:
         if set_dep_str_temp: set_dep_str = set_dep_str | set_dep_str_temp
     return set_dep_str
 
-# dfs finds all constraints, then verbalizes them with format inputs - structured format
+# dfs finds all constraints, then verbalizes them with format inputs
+def dfsget_depverb_tree(domain_str:str, dep:tuple, dep_params:dict)->str:
+    if not dep: return "None"
+    elif dep[0] == "single": return get_single_dep_verb(domain_str, dep, dep_params)
+    dep_str = "("
+    for i in range(len(dep[1])):
+        dep_part = dep[1][i]
+        dep_str_part = dfsget_depverb_tree(domain_str, dep_part, dep_params)
+        if i > 0: dep_str += "\nTHEN" if dep[0] == "chain" else f"\n{dep[0].upper()}"
+        dep_str += "\n" + dep_str_part
+    return dep_str + "\n)"
+
+# dfs finds all constraints, then verbalizes them with format inputs, structured format
 def dfsget_depverb_structured(domain_str:str, dep:tuple, dep_params:dict, indent_level:int=0)->str:
     if not dep: return "None"
-    elif dep[0] == "single": 
-        return get_single_dep_verb(domain_str, dep, dep_params)
-    
+    elif dep[0] == "single": return get_single_dep_verb(domain_str, dep, dep_params)
     parts = []
-    
     # Add header based on type
-    if dep[0] == "and":
-        parts.append("ALL of these conditions must be met:")
-    elif dep[0] == "or":
-        parts.append("ANY ONE of these conditions must be met:")
-    elif dep[0] == "chain":
-        parts.append("These steps must be completed in order:")
-    
+    if dep[0] == "and": parts.append("ALL of these conditions must be met:")
+    elif dep[0] == "or": parts.append("ANY ONE of these conditions must be met:")
+    elif dep[0] == "chain": parts.append("These steps must be completed in order:")
     # Process child constraints with increased indentation
     for i, dep_part in enumerate(dep[1], 1):
         part_str = dfsget_depverb_structured(domain_str, dep_part, dep_params, indent_level + 1)
         part_lines = part_str.split('\n')
-        
         # Calculate indentation for content
         indent = "  " * indent_level
-        
         # Add bullet or number
-        if dep[0] == "chain":
-            first_line = f"{indent}{i}. {part_lines[0]}"
-        else:
-            first_line = f"{indent}• {part_lines[0]}"
-        
+        if dep[0] == "chain": first_line = f"{indent}{i}. {part_lines[0]}"
+        else: first_line = f"{indent}• {part_lines[0]}"
         # For multiline content
         if len(part_lines) > 1:
             rest_lines = []
-            for line in part_lines[1:]:
-                rest_lines.append(f"{indent}  {line.strip()}")
+            for line in part_lines[1:]: rest_lines.append(f"{indent}  {line.strip()}")
             parts.append('\n'.join([first_line] + rest_lines))
-        else:
-            parts.append(first_line)
-    
+        else: parts.append(first_line)
     return '\n'.join(parts)
 
 # receives the dfs results, formats it into a string
@@ -96,10 +79,17 @@ def get_dep_verb(domain_str:str, dep:tuple, dep_params:dict, constraint_descr_fo
             dep_verb = list(set_dep_str)
             dep_verb = [f"{i+1}. {dep_verb[i]}" for i in range(len(dep_verb))]
             dep_verb = '\n'.join(dep_verb)
+        case "tree": dep_verb = dfsget_depverb_tree(domain_str, dep, dep_params)
         case "structured": dep_verb = dfsget_depverb_structured(domain_str, dep, dep_params)
         case _ : dep_verb = "None"
     return dep_verb
 
+# returns the default dependency based on the domain and the option enumerated
+def get_default_dep_full(domain_str:str, default_constraint_option:str, add_constr_dep_bool:bool=True)->dict:
+    ard = domain_assistant_keys[domain_str].action_required_dependencies
+    acd = domain_assistant_keys[domain_str].action_customizable_dependencies
+    cd = domain_assistant_keys[domain_str].constraint_dependencies
+    return gather_action_default_dependencies(ard, acd, cd if add_constr_dep_bool else None, default_constraint_option)
 
 # returns the default full dependency of the tasks and the default descriptions
 def task_default_dep_full(domain_str:str, default_constraint_option:str, constraint_descr_format:str, dependency_verb_dep_orig:bool=False)->tuple[dict,dict,dict]:
@@ -162,7 +152,7 @@ def gather_dependency_instructions(domain_str:str, dep_full_descr:dict, user_goa
 
 # initializes the task environment, need to consider if there is no task
 def task_initializer(domain_str:str, task:dict, dep_innate_full:dict, default_dep_full:dict, default_dep_full_descr:dict, 
-                     included_functions:list[str] | None, mode:str, shuffle_func:bool, constraint_descr_format:str, dependency_verb_dep_orig:bool=True)->tuple:
+    included_functions:list[str] | None, mode:str, shuffle_func:bool, constraint_descr_format:str, dependency_verb_dep_orig:bool=True)->tuple:
     # initializing the domain system
     dep_full = copy.deepcopy(default_dep_full)
     dep_full_descr = copy.deepcopy(default_dep_full_descr)
@@ -182,36 +172,24 @@ def task_initializer(domain_str:str, task:dict, dep_innate_full:dict, default_de
         domain_system = domain_keys[domain_str+"_strict"](dep_innate_full=dep_innate_full, dep_full=dep_full)
         dep_params = domain_system.evaluation_get_dependency_parameters()
         if mode != "program": domain_system = domain_keys[domain_str](dep_innate_full=dep_innate_full, dep_params=dep_params)
-    
     # compiling the user instructions
     user_instructions = f"You should roleplay as a user has requests within the {domain_str} domain. Your goal is: " + task["user_instruction"] if task else "None"
     user_known = task["user_known"] if task else {}
     for parameter in user_known: user_instructions += f" \"{parameter}\" is \"{user_known[parameter]}\"."
     user_info = {"instructions":user_instructions, "known":user_known}
- 
     # compiling the assistant dependency instructions
-    # assistant_dependency_instructions = gather_dependency_instructions(domain_str, dep_full_descr, user_goal, dep,
-        # dep_params, included_functions, shuffle_func, constraint_descr_format) if mode != "program" else None
     dep_to_be_verbalized = dep if not dependency_verb_dep_orig else dep_orig
     assistant_dependency_instructions = gather_dependency_instructions(domain_str, dep_full_descr, user_goal, dep_to_be_verbalized,
         dep_params, included_functions, shuffle_func, constraint_descr_format) if mode != "program" else None
     assistant_info = create_assistant(domain_str, shuffle_func, mode, included_functions, assistant_dependency_instructions)
-
     # task_information for internal state during the interaction
     task_information = {"domain_str": domain_str, "initial_database": copy.deepcopy(domain_system.evaluation_get_database())}
     return domain_system, user_info, assistant_info, task_information
 
-def dfsgather_constr_singles_dep(dep:tuple)->set:
-    params_set = set()
-    if not dep: return params_set
-    match dep[0]:
-        case "single":
-            params_set = {(dep[0], re.sub("not ", "", dep[1]), dict_to_tuple(dep[2]))}
-        case "and" | "or" | "chain" | "gate":
-            for ele in dep[1]: params_set = params_set | dfsgather_constr_singles_dep(ele)
-        case _: raise InvalidConstraintOption(f"invalid dependency option selected: {dep[0]}")
-    return params_set
 
+"""simulated characters construction"""
+
+# retrieves and assembles the information needed for the assistant
 def create_assistant(domain_str:str, shuffle_func:bool, mode:str, included_functions:list[str] | None, assistant_dependency_instructions:str=None, provide_database_getter:bool=False):
     # assistant description for all assistants, length limit 512
     assistant_description = """Roleplay as an assistant that helps the user with his request.
@@ -230,7 +208,6 @@ def create_assistant(domain_str:str, shuffle_func:bool, mode:str, included_funct
     3. Exit Conversation:
      - Exit the conversation if the request is completed or you cannot assist me with this request."""
     # assistant_core_instructions = re.sub(r"\n+\t*\s\s+", " ", assistant_core_instructions)
-    
     # parse the data
     domain_assistant = domain_assistant_keys[domain_str]
     name = domain_assistant.name
@@ -251,13 +228,11 @@ def create_assistant(domain_str:str, shuffle_func:bool, mode:str, included_funct
             if "internal_" not in action_complete_description_key: continue
             for action_description_part in action_complete_descriptions:
                 del action_description_part[action_complete_description_key]
-    
     # keep only the included functions
     if included_functions:
         actions = [action for action in actions if action["name"] in included_functions]
     if not provide_database_getter:
         actions = [action for action in actions if action["name"] != "internal_get_database"]
-    
     # constructing the action descriptions
     for action in actions:
         # each action is guaranteed to have a description and return
@@ -270,4 +245,13 @@ def create_assistant(domain_str:str, shuffle_func:bool, mode:str, included_funct
     if shuffle_func: random.shuffle(actions_shuffled)
     tools = [{"function":action, "type":"function"} for action in actions_shuffled]
     assistant = {"name":name, "instructions":instructions, "tools":tools}
+    return assistant
+
+# assembles the information for a user, may not be needed
+def create_user(domain_str:str):
+    # description for all simulated users
+    user_description = "Please roleplay as a customer that wants to inquire about some information from or complete some task with an clerk."\
+        + " If the asked to provide information as a customer, give the available information you have. You ABSOLUTELY MUST be a customer."\
+        + " As a customer, you must accomplish a goal."
+    assistant = {"name":f"{domain_str} User", "instructions":user_description}
     return assistant

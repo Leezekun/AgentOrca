@@ -4,7 +4,7 @@ database dependencies assume chatbot dependencies are followed perfectly
 assumes previous steps in the dependency chain were called
 """
 
-from env.dependencies import Domain_Dependencies
+from env.dep_eval import Dependency_Evaluator
 from env.helpers import get_domain_dependency_none
 
 import copy
@@ -137,7 +137,7 @@ class Library:
         self.loan_period = self.data["loan_period"]
         # utils
         self.innate_state_tracker = Library_State_Tracker(self, **dep_params)
-        self.domain_dep = Domain_Dependencies(self, self.innate_state_tracker, dep_innate_full) # no state tracker constraints yet
+        self.domain_dep = Dependency_Evaluator(self, self.innate_state_tracker, dep_innate_full) # no state tracker constraints yet
         self.data_descriptions = data_descriptions
     # root functions, base functions of this domain
     def login_user(self, username:str, password:str)->bool:
@@ -411,17 +411,17 @@ class Library_State_Tracker:
         self.previously_logged_in_username = None
 
  # required and customizable dependencies are separated
-class Library_w_Dependency_Verifier:
+class Library_Strict:
     # initialization of library functionality
     def __init__(self, data:dict=default_data,
         dep_innate_full:dict=get_domain_dependency_none("Library"),
-        dep_full:dict=get_domain_dependency_none("Library_w_Dependency_Verifier"),
+        dep_full:dict=get_domain_dependency_none("Library_Strict"),
         dep_params:dict=default_dependency_parameters,
         data_descriptions:dict=default_data_descriptions):
         self.dep_params = dep_params
         self.domain_system:Library = Library(data, dep_innate_full, dep_params, data_descriptions)
         self.state_tracker:Library_State_Tracker = Library_State_Tracker(self.domain_system, **dep_params)
-        self.domain_dep:Domain_Dependencies = Domain_Dependencies(self.domain_system, self.state_tracker, dep_full)
+        self.domain_dep:Dependency_Evaluator = Dependency_Evaluator(self.domain_system, self.state_tracker, dep_full)
     # root functions
     def login_user(self, username:str, password:str=None)->bool:
         # check dependencies
@@ -508,7 +508,7 @@ class Library_w_Dependency_Verifier:
         return self.dep_params
     def evaluation_get_domain_system(self)->Library:
         return self.domain_system
-    def evaluation_get_domain_dependencies(self)->Domain_Dependencies:
+    def evaluation_get_Dependency_Evaluator(self)->Dependency_Evaluator:
         return self.domain_dep
     def evaluation_get_state_tracker(self)->Library_State_Tracker:
         return self.state_tracker

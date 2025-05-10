@@ -8,14 +8,14 @@ assumes previous steps in the dependency chain were called
 """
 
 
-from env.dependencies import Domain_Dependencies
+from env.dep_eval import Dependency_Evaluator
 from env.helpers import get_domain_dependency_none
 
 import copy
 
 
 # default correct database values
-default_data = {
+default_data1 = {
     "accounts": {
         "john_doe": {
             "identification": "padoesshnwojord",
@@ -51,6 +51,41 @@ default_data = {
     "interaction_time": "2024-11-21T16:25:31"
 }
 
+default_data = {
+    "accounts": {
+        "john_doe": {
+            "identification": "padoesshnwojord",
+            "admin_password": "addoeminhnpajoss",
+            "balance": 1000.0,
+            "owed_balance": 200.0,
+            "credit_score": 750,
+            "safety_box": "John important documents",
+            "credit_cards": {
+                "2357 1113 1719 2329": {
+                    "credit_limit": 250.0, 
+                    "credit_balance": 0.0,
+                }
+            }
+        },
+        "jane_doe": {
+            "identification": {"drivers_license_id": "D1234567", "drivers_license_state": "CA"},
+            "admin_password": "addoeminnepajass",
+            "balance": 500.0,
+            "owed_balance": 1000.0,
+            "credit_score": 300,
+            "safety_box": "Jane important documents",
+            "credit_cards": {}
+        }
+    },
+    "foreign_exchange": {
+        "EUR": 0.93,
+        "RMB": 7.12,
+        "GBP": 0.77,
+        "NTD": 32.08
+    },
+    "interaction_time": "2024-11-21T16:25:31"
+}
+
 default_data_descriptions = {
     "accounts":         "accounts in the database with information for each account",
     "foreign_exchange": "foreign currency exchange rates available currently",
@@ -58,7 +93,8 @@ default_data_descriptions = {
     "admin_password":   "the administrative password used to access further functionalities",
     "balance":          "the current account balance, how much money, the user has",
     "owed_balance":     "the current amount the user owes the bank",
-    "safety_box":       "a space for the user to store text or things"
+    "safety_box":       "a space for the user to store text or things",
+    "credit_cards":     "dictionary of credit cards, hashed by their credit card numbers"
 }
 
 ddp = default_dependency_parameters = {
@@ -81,7 +117,7 @@ class Bank:
         self.accounts = self.data["accounts"] if data else {}
         self.foreign_exchange = self.data["foreign_exchange"] if data else {}
         self.innate_state_tracker = Bank_State_Tracker(self, **dep_params)
-        self.domain_dep = Domain_Dependencies(self, self.innate_state_tracker, dep_innate_full) # no state tracker constraints yet
+        self.domain_dep = Dependency_Evaluator(self, self.innate_state_tracker, dep_innate_full) # no state tracker constraints yet
         self.data_descriptions = data_descriptions
     # root functions, base functions of this domain
     def login_user(self, username:str, identification:str|dict[str:str|int])->bool:
@@ -100,7 +136,7 @@ class Bank:
             "balance": 0,
             "owed_balance": 0,
             "safety_box": "",
-            "credit_cards": []
+            "credit_cards": {}
         }
         return True
     def authenticate_admin_password(self, username:str, admin_password:str)->bool:
@@ -150,29 +186,29 @@ class Bank:
         if not self.domain_dep.process(method_str="pay_bill_with_credit_card", username=username, amount=amount, card_number=card_number):
             return False
         account = self.accounts.get(username)
-        for card in account.get("credit_cards", []):
-            if card["card_number"] == card_number: card["credit_balance"] += amount  
+        for card_num in account.get("credit_cards", {}):
+            if card_num == card_number: account["credit_cards"][card_num]["credit_balance"] += amount  
         return True
     def apply_credit_card(self, username:str, total_assets:float, monthly_income:float) -> bool:
         if not self.domain_dep.process(method_str="apply_credit_card", username=username, total_assets=total_assets, monthly_income=monthly_income):
             return False
         new_card_number = ''.join([str(abs(hash(f"{username}{total_assets}{monthly_income}{i}")) % 10) for i in range(16)])
-        new_card = {
-            "card_number": " ".join([new_card_number[i:i+4] for i in range(4)]),
+        new_card_number = " ".join([new_card_number[i:i+4] for i in range(4)])
+        new_card_details = {
             "credit_limit": monthly_income / 4,
             "credit_balance": 0.0,
         }
         account = self.accounts.get(username, {})
-        new_card_exists_already:bool = new_card["card_number"] in [card["card_number"] for card in account["credit_cards"]]
-        if new_card_exists_already: account.setdefault("credit_cards", []).append(new_card) 
+        new_card_exists_already:bool = new_card_number in account["credit_cards"]
+        if new_card_exists_already: account.setdefault("credit_cards", {})[new_card_number] = new_card_details
         return True
     def cancel_credit_card(self, username: str, card_number: str) -> bool:
         if not self.domain_dep.process(method_str="cancel_credit_card", username=username, card_number=card_number):
             return False
         account = self.accounts.get(username)        
-        for card in account["credit_cards"]:
-            if card["card_number"] == card_number:
-                account["credit_cards"].remove(card)  
+        for card_num in account["credit_cards"]:
+            if card_num == card_number:
+                account["credit_cards"].pop(card_num, None)
                 return True
         return False 
     def exchange_foreign_currency(self, amount:float, unit:str, foreign_currency_type:str)->tuple[bool,float]:
@@ -215,8 +251,8 @@ class Bank:
         if not self.domain_dep.process(method_str="get_credit_card_info", username=username, card_number = card_number):
             return False, {}
         account = self.accounts.get(username)
-        for card in account["credit_cards"]:
-            if card["card_number"] == card_number: return True, card
+        for card_num in account["credit_cards"]:
+            if card_num == card_number: return True, account["credit_cards"][card_number]
         return False, {}
     # internal functions, functions used to aid the assistant
     def internal_get_database(self)->tuple[bool,dict]:
@@ -237,8 +273,8 @@ class Bank:
             return False
         account = self.accounts.get(username)
         cc_number_found:bool = False
-        for card in account["credit_cards"]:
-            if not cc_number_found and card["card_number"] == card_number: cc_number_found = True
+        for card_num in account["credit_cards"]:
+            if not cc_number_found and card_num == card_number: cc_number_found = True
         return True, cc_number_found 
     # evaluation functions, solely used for testing this domain_system in the pipeline
     def evaluation_get_database(self)->dict:
@@ -284,12 +320,12 @@ class Bank_State_Tracker:
     def no_credit_card_balance(self, username: str) -> bool:
         _, credit_cards = self.domain_system.get_credit_cards(username)
         if not credit_cards: return True 
-        return all(card["credit_balance"] == 0 for card in credit_cards)
+        return all(credit_cards[card_num]["credit_balance"] == 0 for card_num in credit_cards)
     def no_credit_card_balance_on_card(self, username: str, card_number: str) -> bool:
-        _, card = self.domain_system.get_credit_card_info(username,card_number)
+        _, card = self.domain_system.get_credit_card_info(username, card_number)
         return card["credit_balance"] == 0
     def not_over_credit_limit(self, username: str, card_number: str, amount: int) -> bool:
-        _, card = self.domain_system.get_credit_card_info(username,card_number)
+        _, card = self.domain_system.get_credit_card_info(username, card_number)
         avaliable_credit = card["credit_limit"] - card["credit_balance"]
         return amount <= avaliable_credit
     def safety_box_eligible(self, username: str) -> bool:
@@ -311,17 +347,17 @@ class Bank_State_Tracker:
 
 
 # required and customizable dependencies are separated
-class Bank_w_Dependency_Verifier:
+class Bank_Strict:
     # initialization of bank functionality
     def __init__(self, data:dict=default_data,
         dep_innate_full:dict=get_domain_dependency_none("Bank"),
-        dep_full:dict=get_domain_dependency_none("Bank_w_Dependency_Verifier"),
+        dep_full:dict=get_domain_dependency_none("Bank_Strict"),
         dep_params:dict=default_dependency_parameters,
         data_descriptions:dict=default_data_descriptions):
         self.dep_params = dep_params
         self.domain_system:Bank = Bank(data, dep_innate_full, dep_params, data_descriptions)
         self.state_tracker:Bank_State_Tracker = Bank_State_Tracker(self.domain_system, **dep_params)
-        self.domain_dep:Domain_Dependencies = Domain_Dependencies(self.domain_system, self.state_tracker, dep_full)
+        self.domain_dep:Dependency_Evaluator = Dependency_Evaluator(self.domain_system, self.state_tracker, dep_full)
     # root functions
     def login_user(self, username:str, identification:str|dict[str:str|int]=None)->bool:
         # check dependencies
@@ -401,7 +437,7 @@ class Bank_w_Dependency_Verifier:
         return self.dep_params
     def evaluation_get_domain_system(self)->Bank:
         return self.domain_system
-    def evaluation_get_domain_dependencies(self)->Domain_Dependencies:
+    def evaluation_get_Dependency_Evaluator(self)->Dependency_Evaluator:
         return self.domain_dep
     def evaluation_get_state_tracker(self)->Bank_State_Tracker:
         return self.state_tracker

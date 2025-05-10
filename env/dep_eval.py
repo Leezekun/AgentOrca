@@ -14,7 +14,7 @@ conditions: ("chain", [("single", "logged_in"), ("single", "owed balance < 100")
 import re
 from env.helpers import InvalidConstraintOption, hashable_dep
 
-class Domain_Dependencies:
+class Dependency_Evaluator:
     def __init__(self, database, state_tracker, all_dep:dict):
         self.database = database # called for innate constraints
         self.state_tracker = state_tracker # called for specific state-based constraints
@@ -68,9 +68,9 @@ class Domain_Dependencies:
         return False
 
 # dependency check here is given that there is a violating dependency somewhere
-class Domain_Dependencies_Verifier:
+class Dependency_Evaluator_Verify:
     def __init__(self, database=None, state_tracker=None, all_dep:dict=None,
-        domain_dep:Domain_Dependencies=None, constraint_values:dict={}):
+        domain_dep:Dependency_Evaluator=None, constraint_values:dict={}):
         self.database = database            if not domain_dep else domain_dep.database
         self.state_tracker = state_tracker  if not domain_dep else domain_dep.state_tracker
         self.all_dep = all_dep              if not domain_dep else domain_dep.all_dep

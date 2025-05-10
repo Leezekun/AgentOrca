@@ -4,8 +4,8 @@ devices="0"
 model="claude-3-7-sonnet-20250219-thinking"
 # domains=("dmv" "healthcare" "library" "online_market" "bank")
 # tool_lists=("full")
-domains=("bank")
-tool_lists=("oracle")
+domains=("university")
+tool_lists=("oracle" "full")
 method="fc"
 
 for domain in "${domains[@]}"; do
@@ -16,7 +16,7 @@ for domain in "${domains[@]}"; do
                 --env_mode prompt \
                 --tool_list $tool_list \
                 --tool_call_mode $method \
-                --assistant_max_tokens 2048
+                --assistant_max_tokens 4096 \
     done
 done
 

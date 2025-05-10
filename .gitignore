@@ -3,6 +3,7 @@ __pycache__/
 __deprecated__/
 plotting/
 processing/
+env2/
 
 # files
 test*.py

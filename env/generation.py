@@ -22,12 +22,10 @@ Depending on the constraint, some actions may not need to be called to verify th
 
 """imports"""
 
-import os
-import sys
-
+from env.check_data_sanity import recur_data_consistency, check_data_sanity, run_domain_tests
 from env.variables import domain_keys, domain_assistant_keys
-from env.dependencies import Domain_Dependencies_Verifier
-from env.helpers import recur_data_consistency, write_data_file
+from env.dep_eval import Dependency_Evaluator_Verify
+from env.file_read_write import write_tasks
 
 import inspect
 import copy
@@ -38,6 +36,7 @@ import random
 from tqdm import tqdm
 from textwrap import dedent
 from itertools import chain, combinations, product
+from collections import deque
 
 
 from openai import OpenAI, LengthFinishReasonError
@@ -48,16 +47,14 @@ from pydantic import BaseModel, Field, model_validator
 """generates permutations of the constraints to create dependencies for each task"""
 
 from env.helpers import InvalidConstraintOption,\
-    inv_dep, modify_prompt, get_action_parameters,\
+    inv_constr, inv_dep, modify_prompt, get_action_full_description, get_domain_dependency_none, get_action_parameters,\
     dict_to_tuple, tuple_to_dict, hashable_dep, orig_dep
 
 from env.helpers import\
-    dfsprune_dep_pros,\
-    get_new_param_mapping, dfsgather_constr_singles_dep,\
-    dfsins_constr_deps, gather_action_default_dependencies,\
-    dfsins_cl_cd_aid,\
-    dfsgather_actions_required,\
-    dfsgather_directedactiongraph
+    check_dep_seen_or_encapsulated, dfsremove_if_unnecessary, dfscollapse_dep, dfsprune_dep_pro,\
+    get_new_param_mapping, dfsgather_constr_singles_dep, dfsgather_param_names_dep,\
+    dfsplace_param_names, dfsins_constr_deps, gather_action_default_dependencies, dfsins_innate_deps,\
+    get_cl_param_mapping, dfsins_constr_links, dfsins_cl_cd_aid
 
 # specifically checks for xor or xnor cases, where we need to allow for k = max
 def check_xor_xnor(dep:tuple)->bool:
@@ -271,9 +268,9 @@ def dependency_permutations(user_goal:str, aid:dict, ard:dict, acd:dict,
                 action_dep_tasks[False] = limit_num_tasks(action_dep_tasks[False])
             else: continue
         # record the results
-        action_dep_orig =   dfsprune_dep_pros(("and", [action_req_dep, action_cus_dep]))             if action_req_dep else action_cus_dep
-        action_dep =        dfsprune_dep_pros(("and", [action_req_dep_actu, action_cus_dep_actu]))   if action_req_dep_actu else action_cus_dep
-        action_dep_perm =   dfsprune_dep_pros(("and", [action_req_dep_perm, action_cus_dep_perm]))
+        action_dep_orig =   dfsprune_dep_pro(("and", [action_req_dep, action_cus_dep]))             if action_req_dep else action_cus_dep
+        action_dep =        dfsprune_dep_pro(("and", [action_req_dep_actu, action_cus_dep_actu]))   if action_req_dep_actu else action_cus_dep
+        action_dep_perm =   dfsprune_dep_pro(("and", [action_req_dep_perm, action_cus_dep_perm]))
         action_dependencies.append((action_dep_orig, action_dep, action_dep_perm, action_dep_tasks))
     # returning a list of tuples with the dependency and the contraint permutations
     return action_dependencies
@@ -404,7 +401,6 @@ class Task(BaseModel):
         except json.decoder.JSONDecodeError as e:
             raise ValueError(f"Invalid JSON data for user_known_str: {e.msg}\nDocument: {e.doc}\nPosition: {e.pos}\nData: {values['user_known_str']}") from e
         return values
-    
 def task_obj_str(task_obj:Task)->str:
     res = json.dumps(json.loads(task_obj.initial_database_str), indent=2)
     res += '\n' + json.dumps(json.loads(task_obj.dependency_parameters_str), indent=2)
@@ -427,6 +423,8 @@ def dfsreplace_placeholder(input_dict:dict|list|str)->dict|str:
 
 
 """verification and post generation processing"""
+
+from env.helpers import merge_sequences, dfsgather_actions_required
 
 # verifies that the formats between the initial and example database are the same, returns the new database if fitting was needed
 def verify_database_format(initial_database:dict, example_database:dict)->tuple[bool,str]:
@@ -455,7 +453,7 @@ def verify_gen_succ(task_obj:Task, dep:tuple, dep_perm:tuple, domain_str:str, us
     dep_params = json.loads(task_obj.dependency_parameters_str)
     domain_system_strict = domain_keys[domain_str+"_strict"](data, act_innate_deps, all_dep, dep_params)
     domain_system = domain_system_strict.evaluation_get_domain_system()
-    domain_dependencies = domain_system_strict.evaluation_get_domain_dependencies()
+    Dependency_Evaluator = domain_system_strict.evaluation_get_Dependency_Evaluator()
     state_tracker = domain_system_strict.evaluation_get_state_tracker()
     user_known = json.loads(task_obj.user_known_str)
     # initialize the constraint verifier to check if the generated scenario follows the constraints
@@ -463,13 +461,13 @@ def verify_gen_succ(task_obj:Task, dep:tuple, dep_perm:tuple, domain_str:str, us
     all_dep_perm[user_goal] = dep_perm
     act_innate_dep_perms = {key: dfsins_cl_cd_aid(act_innate_deps[key], cl, act_innate_deps, act_def_deps, cd, action_parameters) for key in act_innate_deps}
     domain_system_perm = domain_keys[domain_str](copy.deepcopy(data), act_innate_dep_perms, dep_params)
-    domain_dep_ver = Domain_Dependencies_Verifier(database=domain_system_perm, state_tracker=copy.deepcopy(state_tracker),
+    domain_dep_ver = Dependency_Evaluator_Verify(database=domain_system_perm, state_tracker=copy.deepcopy(state_tracker),
         all_dep=all_dep_perm, constraint_values=task_single)
     # run through the required actions, making sure the constraints in task_single are satisfied
     constr_values_fully_followed = True
     user_goal_succ_verified = not bool(actions_required)
     dss_pass = True
-    domain_dependencies_before_ug = domain_dependencies
+    Dependency_Evaluator_before_ug = Dependency_Evaluator
     for action, action_params in actions_required:
         action_params = get_new_param_mapping(user_known, action_params)
         signature = inspect.signature(getattr(domain_system, action))
@@ -481,7 +479,7 @@ def verify_gen_succ(task_obj:Task, dep:tuple, dep_perm:tuple, domain_str:str, us
         if missing_param_names: ds_perm_res = False
         elif func_dep_pass: ds_perm_res = getattr(domain_system_perm, action)(**get_new_param_mapping(user_known, {key: key for key in action_parameters[action]}))
         func_dep_pass = func_dep_pass and (ds_perm_res if isinstance(ds_perm_res, bool) else ds_perm_res[0])
-        if action == user_goal: domain_dependencies_before_ug = copy.deepcopy(domain_dependencies) # copying constraints before user_goal action
+        if action == user_goal: Dependency_Evaluator_before_ug = copy.deepcopy(Dependency_Evaluator) # copying constraints before user_goal action
         # call the domain to change the state tracker and verify
         if missing_param_names: dss_pass = False
         elif dss_pass and constr_values_fully_followed: dss_pass = getattr(domain_system_strict, action)(**action_params)
@@ -498,7 +496,7 @@ def verify_gen_succ(task_obj:Task, dep:tuple, dep_perm:tuple, domain_str:str, us
     for key in task_single:
         target_result = task_single[key]
         dep_perm_single = dfsins_cl_cd_aid(orig_dep(key), cl, act_innate_deps, act_def_deps, cd, action_parameters)
-        actual_result = int(domain_dependencies_before_ug._process(dep_perm_single, **user_known))\
+        actual_result = int(Dependency_Evaluator_before_ug._process(dep_perm_single, **user_known))\
             if task_single[key] >= 0 else task_single[key]
         verification_results[key] = (target_result, actual_result)
     # return the verification result and diagnostics
@@ -506,6 +504,13 @@ def verify_gen_succ(task_obj:Task, dep:tuple, dep_perm:tuple, domain_str:str, us
 
 
 """post processing functions"""
+
+from env.helpers import\
+    dfsgather_setfunccall_ifg, update_inv_func_graph_single, hash_node, dfscheck_same_andornode, ifg_pos_of_node, update_inv_func_graph,\
+    dfsgather_inv_func_graph_process, dfsgather_inv_func_graph_dependency,\
+    convert_ifg_connections_set_to_list, convert_ifg_connections_list_to_set, change_nodeorder_invfuncgraph,\
+    dfsgather_invfunccalldirgraph, renumber_nodes, prune_ifg,\
+    bfsconvert_ifg_to_tree, bfsconvert_tree_to_ifg
 
 # generates a verbalization of the user goal with parameters added in
 prompt_ugv_template = """
@@ -554,7 +559,10 @@ def generate_verb_user_goal_oneround(verb_user_goal:str, user_known:dict, domain
     verb_user_goal_oneround = completion_verb_user_goal_oneround.choices[0].message.content
     return verb_user_goal_oneround, completion_verb_user_goal_oneround.usage
 
+
 """miscellaneous and diagnostic functions"""
+
+from env.helpers import get_ifg_connections_invnodes, dfsgather_ifg_func
 
 # prints the dictionary in a pretty format
 def get_dict_str(d:dict)->str:
@@ -566,8 +574,8 @@ def get_dict_str(d:dict)->str:
         dict_str += '{0:{align}{max_key_len}} {b}\n'.format(str(key), b=str(d[key]), align="<", max_key_len=max_key_len)
     return dict_str[:-1]
 
-# dfs gather all needed action dependencies, dictionary of constraint (key) and parameters (value), dependency tree visualization, constraint dependencies already taken care of
-def dfsgather_dependency_tree_visualization(dependency:tuple, user_goal:str="",
+# visualizes the dependency or process by dfs gathering  all needed action dependencies
+def dfsgather_dep_tree_vis(dependency:tuple, user_goal:str="",
     constr_links:dict={}, action_deps:dict={}, constr_deps:dict={}, indent_amount:int=4)->str:
     indent_amount = max(indent_amount, 1)
     indent = ' ' * indent_amount
@@ -588,7 +596,7 @@ def dfsgather_dependency_tree_visualization(dependency:tuple, user_goal:str="",
     else: deps_to_loop.extend((dep, user_goal) for dep in dependency[1])
     for i in range(len(deps_to_loop)-1,-1,-1):
         dep, ug = deps_to_loop[i]
-        action_dep_tree_part = dfsgather_dependency_tree_visualization(dep, ug, constr_links, action_deps, constr_deps)
+        action_dep_tree_part = dfsgather_dep_tree_vis(dep, ug, constr_links, action_deps, constr_deps)
         # constructing the tree
         action_dep_tree_part = re.sub('\n', f"\n{indent}", action_dep_tree_part)\
             if i==len(deps_to_loop)-1 else re.sub('\n', f"\n|{indent[:-1]}", action_dep_tree_part)
@@ -618,14 +626,339 @@ def get_dep_task_str(dep_task:dict)->str:
     return dep_task_str
 
 # string representation of the inverse function call graph
-def get_directed_action_graph_str(directed_action_graph:dict)->str:
-    directed_action_graph_nodes_str = '\n'.join([f"{i} {directed_action_graph['nodes'][i]}" for i in range(len(directed_action_graph["nodes"]))])
-    directed_action_graph_connections_str = '\n'.join([str(conn) for conn in directed_action_graph["connections"]])
-    directed_action_graph_str = f"nodes\n{directed_action_graph_nodes_str}\nconnections\n{directed_action_graph_connections_str}"
-    return directed_action_graph_str
+def get_inv_func_graph_str(inv_func_graph:dict)->str:
+    inv_func_graph_nodes_str = '\n'.join([f"{i} {inv_func_graph['nodes'][i]}" for i in range(len(inv_func_graph["nodes"]))])
+    inv_func_graph_connections_str = '\n'.join([str(conn) for conn in inv_func_graph["connections"]])
+    inv_func_graph_str = f"nodes\n{inv_func_graph_nodes_str}\nconnections\n{inv_func_graph_connections_str}"
+    return inv_func_graph_str
+
+# visualization of the inverse function call graph
+"""
+Visualization Toolset:
+Horizontal Line         ─   \u2500
+Vertical Line           │   \u2502
+Right Branching         ├   \u251C
+Left Branching          ┤   \u2524
+Down Branching          ┬   \u252C
+Up Branching            ┴   \u2534
+Top-Left Corner         ┌   \u250C
+Top-Right Corner        ┐   \u2510
+Bottom-Left Corner      └   \u2514
+Bottom-Right Corner     ┘   \u2518
+All Branching           ┼   \u253C
+"""
+def gather_ifg_graph_vis(inv_func_graph:dict, transpose_bool:bool=False)->str:
+    nodes, conns_orig = inv_func_graph["nodes"], inv_func_graph["connections"] # index to node
+    conns, _ = get_ifg_connections_invnodes(inv_func_graph) # node from to node to
+    # Section: bfs calculate the levels of the graph, with the base level at the leaves
+    # each level determined by distance to root or leaves, whichever is closer
+    inv_conns = [set() for _ in range(len(conns))]
+    for node_ind_from in range(len(conns)):
+        node_conns = conns[node_ind_from]
+        for node_ind_to in node_conns: inv_conns[node_ind_to].add(node_ind_from)
+    node_to_level = [-1 for _ in nodes] # denotes the level that each node is on, with 0 at the leaves
+    leaf_inds = [node_ind for node_ind in range(len(conns)) if not conns[node_ind]]
+    for leaf_ind in leaf_inds: node_to_level[leaf_ind] = 0
+    queue_ind = deque(leaf_inds) # adding the leaves
+    while queue_ind:
+        node_ind = queue_ind.popleft()
+        for node_ind_from in inv_conns[node_ind]:
+            node_to_level[node_ind_from] = node_to_level[node_ind]+1 if node_to_level[node_ind] >= 0 else 0
+        queue_ind.extend(inv_conns[node_ind])
+    queue_ind = deque([0]) # adding the root
+    node_to_level[0] = -1
+    pref_leaves = 3 # bigger the value, the "midpoint" will be closer to the leaves, preferring leaves
+    while queue_ind:
+        node_ind = queue_ind.popleft()
+        for node_ind_from in conns[node_ind]:
+            if -(node_to_level[node_ind]-1) < node_to_level[node_ind_from]+pref_leaves: node_to_level[node_ind_from] = node_to_level[node_ind]-1
+        queue_ind.extend(conns[node_ind])
+    max_level = max(0, *node_to_level) # longest distance from the leaves
+    min_level = min(node_to_level) # longest distance from the root
+    node_to_level = [level if level >= 0 else (level - min_level + max_level + 1) for level in node_to_level]
+    max_level = max(node_to_level) # longest distance from the leaves
+    # Section: lightly sorting the nodes of the same level, putting the boolean relations ahead of the actions
+    level_to_order_to_node = [[] for _ in range(max_level+1)]
+    for node_ind in range(len(node_to_level)): level_to_order_to_node[node_to_level[node_ind]].append(node_ind)
+    def sort_tuples(tuple_list, index=0, reverse=False):
+        if not tuple_list: return tuple_list
+        return sorted(tuple_list, key=lambda x: x[index], reverse=reverse)
+    def sort_nodes_rel_first(nodes:list, node_inds:list[int])->list[int]:
+        # put the relations ahead
+        pos_first_non_rel = -1
+        i = 0
+        while i < len(node_inds):
+            if isinstance(nodes[node_inds[i]], str):
+                if pos_first_non_rel >= 0:
+                    ele = node_inds.pop(i)
+                    node_inds.insert(pos_first_non_rel, ele)
+                    pos_first_non_rel += 1
+            else:
+                if pos_first_non_rel < 0: pos_first_non_rel = i
+            i += 1
+        # sorted the relations based on alphabetical order
+        if pos_first_non_rel < 0: pos_first_non_rel = len(node_inds)
+        tuple_list = [(node_ind, nodes[node_ind]) for node_ind in node_inds[:pos_first_non_rel]]
+        node_inds[:pos_first_non_rel] = [a for a, _ in sort_tuples(tuple_list, 1)]
+        # sorting the other nodes based on alphabetical action name
+        tuple_list = [(node_ind, nodes[node_ind][0]) for node_ind in node_inds[pos_first_non_rel:]]
+        node_inds[pos_first_non_rel:] = [a for a, _ in sort_tuples(tuple_list, 1)]
+        return node_inds 
+    for i in range(len(level_to_order_to_node)): level_to_order_to_node[i] = sort_nodes_rel_first(nodes, level_to_order_to_node[i])
+    node_to_y = [-1 for _ in nodes]
+    for order_to_node in level_to_order_to_node:
+        for order in range(len(order_to_node)): node_to_y[order_to_node[order]] = order
+    # Section: calculating at which y (position top to bottom) should each node connection reside
+    # nodes at each level are shifted to the top, connections do not cross nodes nor other connections
+    # the offeset progenitor characters (point in the graph where each node receives and outputs all connections) are already considered
+    connsorig_to_y = {conn_orig: -1 for conn_orig in conns_orig}
+    levelnc_to_setyblocked = [] # level_to_y_to_nc: level 0 is root, maps the level to y to node/connection
+    for i in range(max_level*2+1):
+        level_appended = set(list(range(len(level_to_order_to_node[len(level_to_order_to_node)-1-i//2])))) if i % 2 == 0 else set()
+        levelnc_to_setyblocked.append(level_appended)
+    levelnc_to_nextavaispot = [len(ele) for ele in levelnc_to_setyblocked]
+    # finds a suitable y for this connection to reside across these levels given these nodes and connections at various values of y
+    def find_levelnc_ideal(levelnc_to_setyblocked:list, levelnc_fromto:tuple, levelnc_to_nextavaispot:list, levelncfrom_tempblocked:set, y_to:int)->int:
+        set_y_blocked = set.union(levelncfrom_tempblocked, *levelnc_to_setyblocked[levelnc_fromto[0]:levelnc_fromto[1]+1])
+        y_ideal = max(y_to, *levelnc_to_nextavaispot[levelnc_fromto[0]:levelnc_fromto[1]+1]) if levelnc_fromto[1]-levelnc_fromto[0] > 0 else y_to
+        while y_ideal in set_y_blocked: y_ideal += 1 # guaranteed to stop
+        return y_ideal
+    # returns the filled levels with the new connection y
+    def fill_with_connection(levelnc_to_setyblocked:list, levelnc_fromto:tuple, levelnc_to_nextavaispot:list, y_ideal:int)->tuple[list,list]:
+        for levelnc in range(levelnc_fromto[0], levelnc_fromto[1]+1):
+            levelnc_to_setyblocked[levelnc].add(y_ideal)
+            while levelnc_to_nextavaispot[levelnc] in levelnc_to_setyblocked[levelnc]: levelnc_to_nextavaispot[levelnc] += 1
+        return levelnc_to_setyblocked, levelnc_to_nextavaispot
+    # each level with nodes and connections
+    for level in range(len(level_to_order_to_node)-1, 0, -1):
+        levelnc = (max_level - level) * 2 # levelnc of node_from
+        levelncfrom_tempblocked = set([order for order in range(len(level_to_order_to_node[level])) if conns[level_to_order_to_node[level][order]]])
+        # each node of the level
+        for order in range(len(level_to_order_to_node[level])):
+            node_from = level_to_order_to_node[level][order]
+            levelncfrom_tempblocked.discard(order)
+            # each connection of the node
+            for node_to in conns[node_from]:
+                levelnc_nt = (max_level - node_to_level[node_to]) * 2 # levelnc of node_to
+                y_ideal = find_levelnc_ideal(levelnc_to_setyblocked, (levelnc+1, levelnc_nt-1), levelnc_to_nextavaispot, set(levelncfrom_tempblocked), node_to_y[node_to])
+                levelnc_to_setyblocked, levelnc_to_nextavaispot = fill_with_connection(levelnc_to_setyblocked, (levelnc+1, levelnc_nt-1), levelnc_to_nextavaispot, y_ideal)
+                connsorig_to_y[(node_from, node_to)] = y_ideal
+    max_y = max(list(connsorig_to_y.values()))
+    # Section: calculating the x +/- offset relative to the node layer of each progenitor node based on if it needs connections below its y position
+    # checks if the progenitor node has a connection down, returns True if true
+    def check_proge_connoverlap(connsorig_to_y:dict, prev_node:int, prev_node_conns:set, prev_y:int, curr_node:int, curr_node_conns:set, curr_y:int, from_to_bool:bool)->bool:
+        prev_node_conn_tuple = [(prev_node, node_to) if from_to_bool else (node_to, prev_node) for node_to in prev_node_conns]
+        curr_node_conn_tuple = [(curr_node, node_to) if from_to_bool else (node_to, curr_node) for node_to in curr_node_conns]
+        prev_node_conn_range = [prev_y, *[connsorig_to_y[conn] for conn in prev_node_conn_tuple]]
+        curr_node_conn_range = [curr_y, *[connsorig_to_y[conn] for conn in curr_node_conn_tuple]]
+        prev_min_y, prev_max_y = min(prev_node_conn_range), max(prev_node_conn_range)
+        curr_min_y, curr_max_y = min(curr_node_conn_range), max(curr_node_conn_range)
+        return not (prev_max_y < curr_min_y or curr_max_y < prev_min_y) # second condition should be theoretically impossible
+    levelp_to_proge_to_offset = [[] for _ in range(len(levelnc_to_setyblocked)-1)] # levelnc % 2 == 0 True (from progenitor) False (to progenitor), -1 means no proge node
+    for levelnc in range(len(levelp_to_proge_to_offset)):
+        from_to_bool:bool = levelnc % 2 == 0 # True for from, False for to
+        levelp = max_level-(levelnc+1)//2
+        for proge in range(0, len(level_to_order_to_node[levelp])):
+            curr_node = level_to_order_to_node[levelp][proge]
+            curr_node_conns = conns[curr_node] if from_to_bool else inv_conns[curr_node]
+            if not curr_node_conns:
+                levelp_to_proge_to_offset[levelnc].append(-1)
+                continue
+            elif proge == 0:
+                levelp_to_proge_to_offset[levelnc].append(0)
+                continue
+            prev_node = level_to_order_to_node[levelp][proge-1]
+            prev_node_conns = conns[prev_node] if from_to_bool else inv_conns[prev_node]
+            proge_offset = 0
+            if check_proge_connoverlap(connsorig_to_y, prev_node, prev_node_conns, proge-1, curr_node, curr_node_conns, proge, from_to_bool): proge_offset = 1
+            levelp_to_proge_to_offset[levelnc].append(max(levelp_to_proge_to_offset[levelnc][:proge]) + proge_offset)
+    # Section: calculate the max width and height of each string block
+    # calculating the max width and height for each column and row of nodes, each node block will have the action followed by a list of the parameter mapping
+    space = ' '
+    levelr_to_order_to_node = list(reversed(level_to_order_to_node)) # reversed for convenience
+    def transpose_blockstr(blockstr:str|list)->str|list:
+        list_line = blockstr.split('\n') if isinstance(blockstr, str) else blockstr
+        list_line_transposed = []
+        for x in range(len(list_line[0])):
+            line_transposed = ""
+            for y in range(len(list_line)): line_transposed += list_line[y][x]
+            list_line_transposed.append(line_transposed)
+        return '\n'.join(list_line_transposed) if isinstance(blockstr, str) else list_line_transposed
+    def get_block_str(action:tuple|str)->str:
+        if isinstance(action, str): return f"{action}\n{space * len(action)}" if not transpose_bool else f"{transpose_blockstr(action)}\n{space}"
+        if not action[1]: return f"{action[0]}\n{space * len(action[0])}" if not transpose_bool else f"{transpose_blockstr(action[0])}\n{space}"
+        list_line = [action[0], *(str(action[1])[1:-1].split(", "))]
+        max_line_len = max([len(line) for line in list_line])
+        list_line = [line + space * (max_line_len-len(line)) for line in list_line]
+        if transpose_bool:
+            list_line = transpose_blockstr(list_line)
+            max_line_len = len(list_line[0])
+        list_line.append(space * max_line_len) # a line of space for readability
+        return '\n'.join(list_line)
+    node_to_blockstr = [get_block_str(node) for node in nodes]
+    levelr_to_maxwidth = [1 for _ in levelr_to_order_to_node]
+    y_to_maxheight = [1 for _ in range(max_y+1)]
+    def calc_block_size(blockstr:str)->tuple:
+        list_line = blockstr.split('\n')
+        return len(list_line[0]), len(list_line)
+    for levelr in range(len(levelr_to_order_to_node)):
+        for order in range(len(levelr_to_order_to_node[levelr])):
+            width, height = calc_block_size(node_to_blockstr[levelr_to_order_to_node[levelr][order]])
+            if width > levelr_to_maxwidth[levelr]: levelr_to_maxwidth[levelr] = width
+            if height > y_to_maxheight[order]: y_to_maxheight[order] = height
+    # calculating the max widths of each progenitor block
+    levelp_to_maxwidth = [(max([offset for offset in proge_to_offset])+1) if proge_to_offset else 0 for proge_to_offset in levelp_to_proge_to_offset]
+    # Section: prettily display the graph using the previously calculated information: level_to_order_to_node, connsorig_to_y, levelp_to_proge_to_offset
+    # fill with nodes, progenitor nodes, and blank blocks (everything but connections)
+    ifg_grid = [["" for _ in range((len(levelr_to_order_to_node) - 1) * 4 + 1)] for _ in range(max_y+1)]
+    def get_blank_blockstr(dim:tuple)->str: return '\n'.join([space * dim[0] for _ in range(dim[1])])
+    def pad_with_spaces(blockstr:str, dim:tuple)->str:
+        list_line = blockstr.split('\n')
+        for y in range(len(list_line)): list_line[y] = list_line[y] + (space * (dim[0]-len(list_line[y])))
+        for _ in range(dim[1] - len(list_line)): list_line.append(space * dim[0])
+        return '\n'.join(list_line)
+    for levelr in range(len(levelr_to_order_to_node)): # adding nodes
+        for order in range(len(levelr_to_order_to_node[levelr])):
+            ifg_grid[order][4*levelr] = pad_with_spaces(node_to_blockstr[levelr_to_order_to_node[levelr][order]], (levelr_to_maxwidth[levelr], y_to_maxheight[order]))
+    for levelp in range(len(levelp_to_proge_to_offset)): # adding progenitor nodes
+        for proge in range(len(levelp_to_proge_to_offset[levelp])):
+            blockstr = get_blank_blockstr((levelp_to_maxwidth[levelp], y_to_maxheight[proge]))
+            ifg_grid[proge][2*levelp + 1] = blockstr
+    for y in range(len(ifg_grid)): # adding blank spaces in between
+        for x in range(len(ifg_grid[y])):
+            if ifg_grid[y][x]: continue
+            height = y_to_maxheight[y]
+            width = 0
+            if x % 4 == 0: width = levelr_to_maxwidth[x//4]
+            elif x % 2 == 1: width = levelp_to_maxwidth[(x-1)//2]
+            else: width = 1 # one space between progenitor blocks
+            ifg_grid[y][x] = get_blank_blockstr((width, height))
+    # adding the connections, finding the connections of each progenitor
+    levelp_to_pind_to_cind_to_y = [] # pind is progenitor index, cind is connection index
+    for levelp in range(len(levelp_to_proge_to_offset)):
+        pind_to_cind_to_y = []
+        for proge in range(len(levelp_to_proge_to_offset[levelp])):
+            node = levelr_to_order_to_node[(levelp+1)//2][proge]
+            from_to_bool:bool = levelp % 2 == 0
+            node_conns = conns[node] if from_to_bool else inv_conns[node]
+            cind_to_y = sorted([connsorig_to_y[(node, node_to) if from_to_bool else (node_to, node)] for node_to in node_conns])
+            pind_to_cind_to_y.append(cind_to_y)
+        levelp_to_pind_to_cind_to_y.append(pind_to_cind_to_y)
+    # inserts the vertical (branching) connector
+    def insert_vertb_into_blockstr(blockstr:str,
+        offset:int, proge_top_mid_bot_not:int, from_to_bool:bool, first_line_addconn:bool=False)->str:
+        list_lines = blockstr.split('\n')
+        connecting_char = None
+        match proge_top_mid_bot_not:
+            case 0: connecting_char = '+' if from_to_bool else '-'  # progenitor
+            case 1: connecting_char = '┌' if from_to_bool else '┐'  # top
+            case 2: connecting_char = '├' if from_to_bool else '┤'  # middle
+            case 3: connecting_char = '└' if from_to_bool else '┘'  # bottom
+            case 4: connecting_char = '│'                           # not a branching connector
+        list_lines[0] = f"{list_lines[0][:offset]}{connecting_char}{list_lines[0][offset+1:]}"
+        if proge_top_mid_bot_not == 0 and not first_line_addconn or proge_top_mid_bot_not == 3: return '\n'.join(list_lines)
+        for line_ind in range(1, len(list_lines)):
+            list_lines[line_ind] = f"{list_lines[line_ind][:offset]}│{list_lines[line_ind][offset+1:]}"
+        return '\n'.join(list_lines)
+    # loop through every connection of every progenitor node to insert vertical connectors
+    for levelp in range(len(levelp_to_pind_to_cind_to_y)):
+        pind_to_cind_to_y = levelp_to_pind_to_cind_to_y[levelp]
+        from_to_bool:bool = levelp % 2 == 0
+        for pind in range(len(pind_to_cind_to_y)):
+            cind_to_y = pind_to_cind_to_y[pind]
+            offset = levelp_to_proge_to_offset[levelp][pind]
+            if not cind_to_y: continue # no connections at this progenitor node
+            # adding the vertical connections
+            cind = 0
+            beg_y = min(pind, cind_to_y[0])
+            end_y = max(pind, cind_to_y[-1])
+            for y in range(beg_y, end_y+1):
+                top_mid_bot_not = 4
+                if cind < len(cind_to_y) and y == cind_to_y[cind]:
+                    if y == pind: top_mid_bot_not = 0
+                    elif y == beg_y: top_mid_bot_not = 1
+                    elif cind == len(cind_to_y)-1: top_mid_bot_not = 3
+                    else: top_mid_bot_not = 2
+                    cind += 1
+                elif y == pind: top_mid_bot_not = 0
+                first_line_addconn:bool = (top_mid_bot_not == 0)\
+                    and (cind < len(cind_to_y) and y <= cind_to_y[cind])\
+                    and not (cind == len(cind_to_y)-1 and y == cind_to_y[cind])
+                ifg_grid[y][2*levelp+1] = insert_vertb_into_blockstr(ifg_grid[y][2*levelp+1],
+                    offset, top_mid_bot_not, from_to_bool, first_line_addconn)
+    # inserts the horizonatal connector
+    def insert_hori_into_blockstr(blockstr:str, offset:int=-1, start_end:bool=False)->str:
+        list_lines = blockstr.split('\n')
+        block_width = len(list_lines[0])
+        start_line = list_lines[0]
+        if offset > -1:
+            if start_end: start_line = start_line[:offset+1] + ('─' * (block_width - offset - 1))
+            else: start_line = ('─' * offset) + start_line[offset:]
+        else: start_line = '─' * block_width
+        list_lines[0] = start_line
+        return '\n'.join(list_lines)
+    # loop through the connections to add the horizontal connectors, only the "from" progenitor nodes
+    progefrom_to_offset = [-2 for _ in nodes]
+    progeto_to_offset = [-2 for _ in nodes]
+    for levelr in range(len(levelr_to_order_to_node)):
+        for order in range(len(levelr_to_order_to_node[levelr])):
+            node = levelr_to_order_to_node[levelr][order]
+            if levelr < len(levelr_to_order_to_node)-1:
+                offset = levelp_to_proge_to_offset[2 * levelr][order]
+                progefrom_to_offset[node] = offset
+            if 0 < levelr:
+                offset = levelp_to_proge_to_offset[2 * levelr - 1][order]
+                progeto_to_offset[node] = offset
+    for levelp in range(0, len(levelp_to_pind_to_cind_to_y), 2):
+        pind_to_cind_to_y = levelp_to_pind_to_cind_to_y[levelp]
+        for pind in range(len(pind_to_cind_to_y)):
+            node_from = levelr_to_order_to_node[levelp//2][pind]
+            pf_x = 2 * levelp + 1 # x coordinate of the progenitor node in the grid
+            pf_offset = progefrom_to_offset[node_from]
+            for node_to in conns[node_from]:
+                y = connsorig_to_y[(node_from, node_to)]
+                pt_levelp = 2 * (max_level - node_to_level[node_to]) - 1
+                pt_x = 2 * pt_levelp + 1
+                pt_offset = progeto_to_offset[node_to]
+                ifg_grid[y][pf_x] = insert_hori_into_blockstr(ifg_grid[y][pf_x], pf_offset, True) # beginning block
+                ifg_grid[y][pt_x] = insert_hori_into_blockstr(ifg_grid[y][pt_x], pt_offset, False) # ending block
+                for x in range(pf_x + 1, pt_x): ifg_grid[y][x] = insert_hori_into_blockstr(ifg_grid[y][x])
+    # Section: assembling the grid and returning the string
+    def transpose_grid_str(ifg_grid_str:str|list)->str|list:
+        list_line = ifg_grid_str.split('\n') if isinstance(ifg_grid_str, str) else blockstr
+        list_line_transposed = []
+        for x in range(len(list_line[0])):
+            line_transposed = ""
+            for y in range(len(list_line)):
+                char_t = list_line[y][x]
+                match char_t:
+                    case '─': char_t = '│'
+                    case '│': char_t = '─'
+                    case '├': char_t = '┬'
+                    case '┤': char_t = '┴'
+                    case '┌': char_t = '┌'
+                    case '┐': char_t = '└'
+                    case '└': char_t = '┐'
+                    case '┘': char_t = '┘'
+                    case _: pass
+                line_transposed += char_t
+            list_line_transposed.append(line_transposed)
+        return '\n'.join(list_line_transposed) if isinstance(ifg_grid_str, str) else list_line_transposed
+    def assemble_ifg_grid(ifg_grid:list[list[str]])->str:
+        grid_lines = []
+        for y in range(len(ifg_grid)):
+            grid_y = ["" for _ in range(len(ifg_grid[y][0].split('\n')))]
+            for x in range(len(ifg_grid[y])):
+                grid_yx = ifg_grid[y][x].split('\n')
+                for line_ind in range(len(grid_yx)): grid_y[line_ind] += grid_yx[line_ind]
+            grid_lines.extend(grid_y)
+        return '\n'.join(grid_lines)
+    ifg_grid_str = assemble_ifg_grid(ifg_grid)
+    if transpose_bool: ifg_grid_str = transpose_grid_str(ifg_grid_str)
+    return ifg_grid_str
     
 # calculates the number of tasks for each action
-def calc_num_tasks(domain_str:str, action:str, default_dependency_option:str, all_generated_dependencies:set=set())->tuple[int,set]:
+def calc_num_tasks(domain_str:str, action:str, default_dependency_option:str, gen_fulldeptasks:bool, all_generated_dependencies:set=set())->tuple[int,set]:
     # gathering the permutations of constraints for each task dependency
     aid = domain_assistant_keys[domain_str].action_innate_dependencies
     ard = domain_assistant_keys[domain_str].action_required_dependencies
@@ -648,23 +981,24 @@ def calc_num_tasks(domain_str:str, action:str, default_dependency_option:str, al
     # calculate the action dependencies
     action_dependencies_tasks = dependency_permutations(action, aid, ard, acd, cl, cd, ad, action_parameters)
     action_dependencies_tasks = remove_call_constr_false(action_dependencies_tasks) # removing tasks with the call_ constraints set to false
+    if gen_fulldeptasks: action_dependencies_tasks = [do_d_dp_t for do_d_dp_t in action_dependencies_tasks if do_d_dp_t[1] == ad[action]] # filter for the tasks with the full dep
     # constraint redundancy reduction, keeps the last dependency
     i = 0
     while i < len(action_dependencies_tasks) and len(action_dependencies_tasks) > 1:
-        dep, _, _, _ = action_dependencies_tasks[i]
+        _, dep, _, _ = action_dependencies_tasks[i]
         if hashable_dep(dep) in all_generated_dependencies: action_dependencies_tasks.pop(i)
         else: i += 1
     # return the number of tasks and set of generated dependencies
     num_tasks = int(sum([num_permutations(task[key]) for _, _, _, task in action_dependencies_tasks for key in task]))
-    generated_dependencies = set(hashable_dep(dep) for dep, _, _, _ in action_dependencies_tasks)
+    generated_dependencies = set(hashable_dep(dep) for _, dep, _, _ in action_dependencies_tasks)
     return num_tasks, generated_dependencies
 
 # calculates the number of tasks for the entire domain
-def calc_total_num_tasks(domain_str:str, actions:list, default_dependency_option:str, actions_skip:set=set())->int:
+def calc_total_num_tasks(domain_str:str, actions:list, default_dependency_option:str, gen_fulldeptasks:bool=False, actions_skip:set=set())->int:
     total_num_tasks = 0
     all_gen_dep = set()
     for action in actions:
-        num_tasks, gen_dep = calc_num_tasks(domain_str, action, default_dependency_option, all_gen_dep)
+        num_tasks, gen_dep = calc_num_tasks(domain_str, action, default_dependency_option, gen_fulldeptasks, all_gen_dep)
         total_num_tasks += num_tasks
         if action not in actions_skip: all_gen_dep = all_gen_dep | gen_dep
     return int(total_num_tasks)
@@ -709,7 +1043,7 @@ prompt_task_template = """
 """
 def generate_action_task(domain_str:str, user_goal:str, default_dependency_option:str,
     client:OpenAI, temperature:float, max_completion_tokens:int, gpt_model:str, generation_limit:int,
-    all_generated_dependencies:set=set(), autogen_manfix:bool=False,
+    all_generated_dependencies:set=set(), autogen_manfix:bool=False, gen_fulldeptasks:bool=False,
     debug_mode:bool=False, testing_mode:bool=False, testing_mode_last_task:bool=False,
     indent_amount:int=2)->tuple[list[Task],list[dict],list[dict],list[Usage]]:
     # return variable initialization
@@ -747,6 +1081,7 @@ def generate_action_task(domain_str:str, user_goal:str, default_dependency_optio
     action_dependencies_tasks = dependency_permutations(user_goal, aid, ard, acd, cl, cd, ad, action_parameters)
     hashed_cl_funcs = {(cl[constr][0], dict_to_tuple({func_param: func_param for func_param in action_parameters[cl[constr][0]]})) for constr in cl}
     action_dependencies_tasks = remove_call_constr_false(action_dependencies_tasks) # removing tasks with the call_ constraints set to false
+    if gen_fulldeptasks: action_dependencies_tasks = [do_d_dp_t for do_d_dp_t in action_dependencies_tasks if do_d_dp_t[1] == ad[user_goal]] # filter for the tasks with the full dep
     # gathers the action parameter types for LLM user known generation
     action_parameter_types = gather_action_parameter_types(domain_str)
     for key in action_parameter_types: # assumes all type "object" are just dictionaries
@@ -760,10 +1095,10 @@ def generate_action_task(domain_str:str, user_goal:str, default_dependency_optio
     # constraint redundancy reduction, keeps the last dependency
     i = 0
     while i < len(action_dependencies_tasks) and len(action_dependencies_tasks) > 1:
-        dep, _, _, _ = action_dependencies_tasks[i]
+        _, dep, _, _ = action_dependencies_tasks[i]
         if hashable_dep(dep) in all_generated_dependencies: action_dependencies_tasks.pop(i)
         else: i += 1
-    generated_dependencies = set(hashable_dep(dep) for dep, _, _, _ in action_dependencies_tasks)
+    generated_dependencies = set(hashable_dep(dep) for _, dep, _, _ in action_dependencies_tasks)
     # derived variabled that is constant for this user goal
     action_params = action_parameters[user_goal]
     if hasattr(domain_assistant_keys[domain_str], "action_params_user_not_needed")\
@@ -776,10 +1111,10 @@ def generate_action_task(domain_str:str, user_goal:str, default_dependency_optio
         dep_orig, dep, dep_perm, task = action_dependencies_tasks[i]
         if testing_mode_last_task and i < len(action_dependencies_tasks)-1: continue
         if testing_mode:
-            print(dfsgather_dependency_tree_visualization(dep_orig))
-            print(dfsgather_dependency_tree_visualization(dep))
-            print(dfsgather_dependency_tree_visualization(dep_perm))
-            # print(dfsgather_dependency_tree_visualization(dep, user_goal, cl, action_default_dep, cd))
+            print(dfsgather_dep_tree_vis(dep_orig))
+            print(dfsgather_dep_tree_vis(dep))
+            print(dfsgather_dep_tree_vis(dep_perm))
+            # print(dfsgather_dep_tree_vis(dep, user_goal, cl, action_default_dep, cd))
             print(get_dep_task_str(task)) 
         # configuring the task into one long array, with a field to indicate success
         configured_tasks = {key:[] for key in task[True]}
@@ -789,7 +1124,7 @@ def generate_action_task(domain_str:str, user_goal:str, default_dependency_optio
         for key in task[False]: configured_tasks[key].extend(task[False][key])
         task_successes.extend([0 for _ in range(num_permutations(configured_tasks)-len(task_successes))])
         # initialization of post processing variables
-        directed_action_graph, verb_user_goal = None, None
+        inv_func_call_graph, verb_user_goal = None, None
         # loop through all tasks
         for j in range(len(task_successes)):
             if testing_mode_last_task and j < len(task_successes)-1: continue
@@ -917,10 +1252,10 @@ def generate_action_task(domain_str:str, user_goal:str, default_dependency_optio
                 if not autogen_manfix:
                     raise ValueError(f"generated the {user_goal} task {gen_task_fail_counter} times unsuccessfully")
             # post generation processing, finding the inverse function call directed graph, generates once for the dependency
-            if not directed_action_graph:
+            if not inv_func_call_graph:
                 user_goal_node = (user_goal, {key: key for key in action_parameters[user_goal]})
-                directed_action_graph = dfsgather_directedactiongraph(dep_orig, cl, cp, action_default_dep_orig, action_parameters, user_goal_node)
-            if testing_mode: print(get_directed_action_graph_str(directed_action_graph))
+                inv_func_call_graph = dfsgather_invfunccalldirgraph(dep_orig, cl, cp, action_default_dep_orig, action_parameters, user_goal_node)
+            if testing_mode: print(gather_ifg_graph_vis(inv_func_call_graph, True)) # get_inv_func_graph_str displays the raw information
             # user goal verbalization, generated once for each dep because it's not dependent on the actual values of the user known
             if not verb_user_goal:
                 verb_user_goal, verb_user_goal_usage = generate_verb_user_goal(
@@ -928,7 +1263,7 @@ def generate_action_task(domain_str:str, user_goal:str, default_dependency_optio
                     client, gpt_model, temperature, max_completion_tokens)
                 run_usage.append(verb_user_goal_usage)
             if testing_mode: print(verb_user_goal)
-            # user prompt generation for a single round
+            # user prompt generation for a single round, unique to each task
             verb_user_goal_oneround, verb_user_goal_oneround_usage = generate_verb_user_goal_oneround(
                 verb_user_goal, user_known, domain_str,
                 client, gpt_model, temperature, max_completion_tokens)
@@ -944,10 +1279,10 @@ def generate_action_task(domain_str:str, user_goal:str, default_dependency_optio
             task_info = {
                 "dependency":               dep,
                 "dependency_original":      dep_orig,
-                "user_prompt":              verb_user_goal_oneround,
-                "user_instruction":         verb_user_goal,
                 "action_should_succeed":    task_succ,
-                "directed_action_graph":    directed_action_graph,
+                "inv_func_call_graph":      inv_func_call_graph,
+                "verb_user_goal":           verb_user_goal,
+                "verb_user_goal_oneround":  verb_user_goal_oneround,
             }
             list_task_info.append(task_info)
             inter_info = {
@@ -971,14 +1306,28 @@ def generate_action_task(domain_str:str, user_goal:str, default_dependency_optio
     # return the intermediate tasks, tasks, and run_usage
     return list_task_obj, list_task_info, list_inter_info, generated_dependencies, manfix_counter, run_usage
 
+
 """main function to generate the task data, consisting of database system actions, using the least amount of AI as possible"""
 
 def task_generation(args):
     write_output_bool = args.write_output_disable
     print_pipeline = args.print_pipeline_disable
     # initializing variables and model
-    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    client = OpenAI(api_key=args.openai_api_key)
     all_run_usage = []
+    # running tests
+    failures = check_data_sanity(args.domains_dir, args.domain_str) # not functional right now
+    if False and print_pipeline:
+        if len(failures)==0: print("data check success")
+        else:
+            print("data check failure")
+            for failure in failures: print(failure)
+    
+    # tests, test_results, test_run_usage = run_domain_tests(args.domain_str, args.print_test_domain, args.test_domain, args.data_dir, args.assistant_file,
+    #     args.openai_api_key, args.gpt_model, args.dependency_location, args.default_dependency_option, print_pipeline, args.shuffle_assfun_disable)
+    # if print_pipeline: print(f"{sum([int(ele) for ele in test_results])} number of successes out of {len(tests)} tests")
+    # all_run_usage.extend(test_run_usage)
+    
     # reading in the database file with rule-based dependencies, gathering all and evaluated method names
     domain_system = domain_keys[args.domain_str]()
     domain_system_strict = domain_keys[args.domain_str+"_strict"]()
@@ -995,19 +1344,17 @@ def task_generation(args):
         if args.testing_mode_user_goal in eval_ds_method_name_set else set([random.choice(list(eval_ds_method_name_set))])
     eval_ds_method_name_list = sorted(list(eval_ds_method_name_set)) # sort it to keep number of tasks constant from the dep remembering
     # parsing output variables
+    data_dir = args.data_dir # f"{args.domains_dir}/{args.domain_str}" writing data directly into the domain
     tasks_filename = f"{args.domain_str}_tasks.json"
     intermediate_tasks_filename = f"{args.domain_str}_intermediate_tasks.json"
-    # Initialize complete data structures
-    all_tasks = {}
-    all_intermediate_tasks = {}
     # for each method, construct the outcomes, decision tree, then the task with user known parameters, initial database, and user goal
+    tasks, intermediate_tasks = {}, {}
     temperature = args.temperature
     max_completion_tokens = args.max_tokens
     all_generated_dependencies = set()
     skipped_methods = set()
     manfix_counters = {}
-    first_bool = True
-    pbar = tqdm(total=calc_total_num_tasks(args.domain_str, eval_ds_method_name_list, args.default_constraint_option), disable=not print_pipeline)
+    pbar = tqdm(total=calc_total_num_tasks(args.domain_str, eval_ds_method_name_list, args.default_dependency_option, args.gen_fulldeptasks), disable=not print_pipeline)
     for user_goal in eval_ds_method_name_list:
         # generate the task: 1. gather information, 2. use LLM to generate the data, 3. verify the correctness
         list_task_obj, list_task_info, list_inter_info, manfix_counter, run_usage = None, None, None, -1, None
@@ -1015,9 +1362,9 @@ def task_generation(args):
         while not run_usage and gen_task_fail_counter < args.generation_limit:
             try:
                 list_task_obj, list_task_info, list_inter_info, generated_dependences, manfix_counter, run_usage =\
-                    generate_action_task(args.domain_str, user_goal, args.default_constraint_option,
+                    generate_action_task(args.domain_str, user_goal, args.default_dependency_option,
                     client, temperature, max_completion_tokens, args.gpt_model, args.generation_limit,
-                    all_generated_dependencies, args.autogen_manfix,
+                    all_generated_dependencies, args.autogen_manfix, args.gen_fulldeptasks,
                     args.debug_mode, args.testing_mode, args.testing_mode_last_task,
                     args.indent_amount)
             except ValueError as e:
@@ -1028,47 +1375,35 @@ def task_generation(args):
             if args.testing_mode: break
         if not run_usage:
             skipped_methods.add(user_goal)
-            num_skipped_tasks = calc_num_tasks(args.domain_str, user_goal, args.default_constraint_option, all_generated_dependencies)[0]
-            pbar.total = calc_total_num_tasks(args.domain_str, eval_ds_method_name_list, args.default_constraint_option, skipped_methods)
+            num_skipped_tasks = calc_num_tasks(args.domain_str, user_goal, args.default_dependency_option, all_generated_dependencies)[0]
+            pbar.total = calc_total_num_tasks(args.domain_str, eval_ds_method_name_list, args.default_dependency_option, skipped_methods)
             pbar.update(num_skipped_tasks)
             continue
         else: all_generated_dependencies = all_generated_dependencies | generated_dependences
         all_run_usage.extend(run_usage)
         # gather the data
-        tasks = {}
-        intermediate_tasks = {}
+        tasks[user_goal] = []
+        intermediate_tasks[user_goal] = []
         for i in range(len(list_task_obj)):
             task_obj = list_task_obj[i]
-            task = {
-                "initial_database": json.loads(task_obj.initial_database_str),
-                "dependency_parameters": json.loads(task_obj.dependency_parameters_str),
-                "user_known": json.loads(task_obj.user_known_str),
-            }
+            task = {}
+            try: task["initial_database"] = json.loads(task_obj.initial_database_str)
+            except json.decoder.JSONDecodeError as e: task["initial_database"] = task_obj.initial_database_str
+            try: task["dependency_parameters"] = json.loads(task_obj.dependency_parameters_str)
+            except json.decoder.JSONDecodeError as e: task["dependency_parameters"] = task_obj.dependency_parameters_str
+            try: task["user_known"] = json.loads(task_obj.user_known_str)
+            except json.decoder.JSONDecodeError as e: task["user_known"] = task_obj.user_known_str
             task.update(list_task_info[i])
-            tasks[user_goal] = task
-            intermediate_tasks[user_goal] = list_inter_info[i]
+            tasks[user_goal].append(task)
+            intermediate_tasks[user_goal].append(list_inter_info[i])
         if manfix_counter > 0: manfix_counters[user_goal] = manfix_counter
-        # Add the processed data to our complete structures
-        if list_task_obj:
-            all_tasks[user_goal] = tasks[user_goal]
-            all_intermediate_tasks[user_goal] = intermediate_tasks[user_goal]
-            
-            # Optionally write the complete data after each user_goal for safety
-            if write_output_bool:
-                write_data_file(args.data_dir, tasks_filename, 
-                    json.dumps(all_tasks, indent=args.indent_amount), option='w')
-                write_data_file(args.data_dir, intermediate_tasks_filename,
-                    json.dumps(all_intermediate_tasks, indent=args.indent_amount), option='w')
-        
+        # writing the partial tasks data just in case of failure
+        if write_output_bool:
+            write_tasks(tasks, data_dir, tasks_filename, args.indent_amount)
+            write_tasks(intermediate_tasks, data_dir, intermediate_tasks_filename, args.indent_amount)
         # update the progress bar
         pbar.update(int(len(list_task_obj)))
     pbar.close()
-    # Final write of the complete data
-    if write_output_bool:
-        write_data_file(args.data_dir, tasks_filename, 
-            json.dumps(all_tasks, indent=args.indent_amount), option='w')
-        write_data_file(args.data_dir, intermediate_tasks_filename,
-            json.dumps(all_intermediate_tasks, indent=args.indent_amount), option='w')
     # print diagnostic information
     if print_pipeline:
         skipped_methods_report_str = f"methods skipped due to error: {skipped_methods}" if skipped_methods else "no methods skipped"
@@ -1080,6 +1415,7 @@ def task_generation(args):
         if manfix_counters:
             print("list of actions and their manfix counters:")
             print(get_dict_str(manfix_counters))
+            print("ctrl+f \"manfix_id\" to find them in the data")
         else: print("no methods to fix")
     # return the openai usage
     return all_run_usage

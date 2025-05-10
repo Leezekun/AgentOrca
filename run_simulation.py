@@ -81,7 +81,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output_dir", type=str, default="./output",
                        help="Output directory")
     parser.add_argument("--domain", type=str, default="bank",
-                       choices=["bank", "online_market", "dmv", "healthcare", "library"], help="Domain name")
+                       choices=["bank", "online_market", "dmv", "healthcare", "library", "hotel", "university"], help="Domain name")
     parser.add_argument("--env_mode", type=str, default="prompt",
                         choices=["program", "prompt"], help="The environment mode regarding how the constraints are verified")
     parser.add_argument("--default_constraint_option", type=str, default="full",
@@ -155,7 +155,7 @@ def run_task_simulation(
 
     # Print the task information
     print(f"{Fore.RED}[Info] Starting a new simulation for {domain_str} ...{Style.RESET_ALL}\n\n")
-    print(f"{Fore.CYAN}[Info] Assistant instructions: {assistant_info['instructions']}{Style.RESET_ALL}\n\n")
+    # print(f"{Fore.CYAN}[Info] Assistant instructions: {assistant_info['instructions']}{Style.RESET_ALL}\n\n")
     
     # Initialize the agent swarm for the simulation
     swarm = Swarm(
@@ -375,6 +375,15 @@ def main():
             num_retry = 0
             while len(runs) < args.num_run_per_interaction and num_retry <= args.max_num_retries:
                 try:
+                    print(f"Start Task {i}: {tasks[i]['user_goal']}, retry {num_retry} / {args.max_num_retries}")
+                    if num_retry == 0:
+                        assistant_agent.temperature = args.assistant_temperature
+                        assistant_agent.top_p = args.assistant_top_p
+                    else:
+                        # encourage the assistant to be more creative, avoid the same  mistakes
+                        assistant_agent.temperature = 0.7
+                        assistant_agent.top_p = 0.95
+                        
                     result = run_task_simulation(
                         args=args,
                         task=tasks[i],
@@ -403,6 +412,7 @@ def main():
                     print(f"An error occurred during task {i}: {e.__class__.__name__}: {e}")
                     print("Full traceback:")
                     traceback.print_exc()
+                    # _ = input("Press Enter to continue retrying...")
                     num_retry += 1
                     continue
             

@@ -15,10 +15,8 @@ from env.helpers import (
     get_new_param_mapping, 
     dfsgather_constr_singles_dep, 
     dfsins_cl_cd_aid,
-    get_dag_connections_invnodes, 
-    dfsgather_dag_func,
-    gather_action_default_dependencies,
-    compare_lists
+    get_ifg_connections_invnodes, 
+    dfsgather_ifg_func,
 )
 
 # account for the json tuple to list aspect by dfs converting every function response to a tuple
@@ -41,26 +39,10 @@ def dfsconvert_list_to_tuple(fr):
     for ele_fr in fr: fr_copy.append(dfsconvert_list_to_tuple(ele_fr))
     return tuple(fr_copy)
 
-def verify_full_dependency(domain_str:str, task:dict, default_constraint_option:str)->bool:
-    # gathering the permutations of constraints for each task dependency
-    aid = domain_assistant_keys[domain_str].action_innate_dependencies
-    ard = domain_assistant_keys[domain_str].action_required_dependencies
-    acd = domain_assistant_keys[domain_str].action_customizable_dependencies
-    cl = domain_assistant_keys[domain_str].constraint_links
-    cd = domain_assistant_keys[domain_str].constraint_dependencies
-    ad = gather_action_default_dependencies(ard, acd, cd, default_constraint_option)
-    
-    # filter for the tasks with the full dep
-    this_task_dep = task["dependency"]
-    full_dep = ad[task["user_goal"]]
-    fulldeptasks = compare_lists(this_task_dep, full_dep)
-    return fulldeptasks
-
 # evaluates the interaction with function call tree search, detects if the action should be called or not, matches the database
 def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:list[tuple], func_calls:list[tuple], results:dict, default_constraint_option:str)->dict:
     evaluation_result = {}
     dep_innate_full = domain_assistant_keys[domain_str].action_innate_dependencies
-    fulldep_task = verify_full_dependency(domain_str, task, default_constraint_option)
     default_dep_full = get_default_dep_full(domain_str, default_constraint_option)
     default_dep_full[task["user_goal"]] = task["dependency"]
     # gathering statistics
@@ -100,6 +82,7 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
         # the func response sometimes contains a boolean first element which indicates the success of the function call
         resp_match = (func_resp_list == gt_resp_list) or ([True, func_resp_list] == gt_resp_list)
         func_resp_equal = resp_match if status_id == 0 else True
+        # func_resp_equal = dfsconvert_tuple_to_list(func_response) == dfsconvert_tuple_to_list(gt_response) if status_id == 0 else True
         if evaluation_result["constraint_not_violated"] and not func_resp_equal:
             evaluation_result["constraint_not_violated"] = False
     evaluation_result["database_match"] = results["final_database"] == gt_final_database
@@ -181,7 +164,7 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
     nodes, connections, inv_nodes = None, None, None
     ifcg = copy.deepcopy(task["directed_action_graph"]) # directed_action_graph with user_known values plugged in
     nodes_task = ifcg["nodes"]
-    connections_task, inv_nodes_task = get_dag_connections_invnodes(ifcg)
+    connections_task, inv_nodes_task = get_ifg_connections_invnodes(ifcg)
     constr_links = domain_assistant_keys[domain_str].constraint_links
     constr_deps = domain_assistant_keys[domain_str].constraint_dependencies
     constr_pros = domain_assistant_keys[domain_str].constraint_processes
@@ -198,7 +181,7 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
         # make a new connection graph if the function is not in the current graph
         nodes, connections, inv_nodes = nodes_task, connections_task, inv_nodes_task
         if func_name not in inv_nodes and func_name in action_parameters:
-            nodes, connections, inv_nodes = dfsgather_dag_func(domain_system, domain_assistant_keys[domain_str], func_name, default_constraint_option)
+            nodes, connections, inv_nodes = dfsgather_ifg_func(domain_system, domain_assistant_keys[domain_str], func_name, default_constraint_option)
         elif func_name not in action_parameters: continue
         # detecting when the target action has been successfully called
         if (not evaluation_result["action_successfully_called"]

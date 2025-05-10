@@ -3,22 +3,20 @@ cd ../..
 devices="0,1"
 
 model="qwen2.5-14b-instruct"
-domains=("dmv" "bank")
+domains=("dmv" "healthcare" "library" "online_market" "bank" "university")
 tool_lists=("full" "oracle")
 method="react"
 
-for i in {1..5}; do
-    for tool_list in "${tool_lists[@]}"; do
-        for domain in "${domains[@]}"; do
-            CUDA_VISIBLE_DEVICES=$devices python run_simulation.py \
-                    --domain $domain \
-                    --assistant_model $model \
-                    --env_mode prompt \
-                    --tool_list $tool_list \
-                    --tool_call_mode $method \
-                    --num_gpus 2 \
-                    --gpu_memory_utilization 0.95
-        done
+for tool_list in "${tool_lists[@]}"; do
+    for domain in "${domains[@]}"; do
+        CUDA_VISIBLE_DEVICES=$devices python run_simulation.py \
+                --domain $domain \
+                --assistant_model $model \
+                --env_mode prompt \
+                --tool_list $tool_list \
+                --tool_call_mode $method \
+                --num_gpus 2 \
+                --gpu_memory_utilization 0.9
     done
 done
 

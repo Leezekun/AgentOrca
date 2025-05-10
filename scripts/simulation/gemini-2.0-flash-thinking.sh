@@ -1,7 +1,7 @@
 cd ../..
 
 model="gemini-2.0-flash-thinking-exp"
-domains=("dmv" "healthcare" "library" "online_market" "bank")
+domains=("hotel")
 
 # Experiment 1: Full and only Test Env Tool List on Five Domains with FC
 method="react"
@@ -11,5 +11,7 @@ for domain in "${domains[@]}"; do
             --assistant_model $model \
             --env_mode prompt \
             --tool_list full \
-            --tool_call_mode $method
+            --tool_call_mode $method \
+            --assistant_max_tokens 4096 \
+            --print_conv
 done
