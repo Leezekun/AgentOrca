@@ -100,7 +100,7 @@ def parse_args() -> argparse.Namespace:
                        help="Maximum number of interactions per run")
     parser.add_argument("--max_num_actions", type=int, default=10,
                        help="Maximum number of actions, i.e., tool calls, per run")
-    parser.add_argument("--max_num_retries", type=int, default=1,
+    parser.add_argument("--max_num_retries", type=int, default=5,
                        help="Number of retries for each interaction")
     parser.add_argument("--min_constraints", type=int, default=0,
                        help="Minimum number of constraints required to run a task")

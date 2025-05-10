@@ -89,12 +89,16 @@ def convert_assistant_message(message, called_tools):
     """
     assert message["role"] == "assistant"
     content = message["content"]
-    tool_call_id = message["tool_calls"][0]["id"]
-    function_name = message["tool_calls"][0]["function"]["name"]
-    function_args = message["tool_calls"][0]["function"]["arguments"]
-    # record the tool call
-    called_tools[tool_call_id] = {"function_name": function_name, "function_args": function_args}
-    text = TOOL_CALL_TEMPLATE.format(content=content, function_name=function_name, function_args=function_args)
+    if message.get("tool_calls", []):
+        tool_call_id = message["tool_calls"][0]["id"]
+        function_name = message["tool_calls"][0]["function"]["name"]
+        function_args = message["tool_calls"][0]["function"]["arguments"]
+        # record the tool call
+        called_tools[tool_call_id] = {"function_name": function_name, "function_args": function_args}
+        text = TOOL_CALL_TEMPLATE.format(content=content, function_name=function_name, function_args=function_args)
+    else:
+        # use N/A if no tool call
+        text = TOOL_CALL_TEMPLATE.format(content=content, function_name="N/A", function_args="N/A")
     return {"role": "assistant", "content": text}, called_tools
 
 def convert_tool_message(message, called_tools):

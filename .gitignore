@@ -17,7 +17,7 @@ swarm/.env
 
 # ignore small model files
 *3b*.json
-*7b*.json
-*8b*.json
-*14b*.json
-*32b*.json
+# *7b*.json
+# *8b*.json
+# *14b*.json
+# *32b*.json

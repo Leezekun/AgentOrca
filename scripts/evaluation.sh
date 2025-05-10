@@ -59,14 +59,14 @@ cd ..
 # model="o4-mini"
 # model="gpt-4.1"
 # model="gemini-2.0-flash-thinking-exp"
-model="gpt-4o-mini"
+# model="gpt-4o-mini"
 # model="llama3.1-70b-instruct"
-# model="qwen2.5-32b-instruct"
+model="qwen2.5-14b-instruct"
 # model="gemini-2.0-flash"
 # model="o4-mini-high"
-domain="all"
+domain="dmv"
 tool_list="full"
-tool_call_mode="fc"
+tool_call_mode="react"
 
 CUDA_VISIBLE_DEVICES=$devices python run_evaluation.py \
     --domain $domain \

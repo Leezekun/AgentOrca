@@ -740,15 +740,16 @@ if __name__ == "__main__":
     ]
     
     # model_name = "claude-3-7-sonnet-20250219-thinking"
+    model_name = "qwen2.5-14b-instruct"
     # model_name = "gpt-4.1-mini"
-    model_name = "o4-mini"
+    # model_name = "o4-mini"
     model = OpenAIHandler(
         model_name=model_name,
         temperature=0.0,
         top_p=0.01,
         tool_calling=True,
-        num_gpus=4,
-        gpu_memory_utilization=0.5,
+        num_gpus=2,
+        gpu_memory_utilization=0.9,
     )
     
     test_entry = {
@@ -758,7 +759,7 @@ if __name__ == "__main__":
     }
 
     print(model.inference(test_entry, include_debugging_log=True, 
-                          mode="response", tool_call_mode="fc"))
+                          mode="chat", tool_call_mode="react"))
     # print(model.response_completion(test_entry, include_debugging_log=True, tool_call_mode="fc"))
     model.kill_process()
 
