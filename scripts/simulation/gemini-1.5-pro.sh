@@ -1,7 +1,7 @@
 cd ../..
 
 model="gemini-1.5-pro"
-domains=("hotel")
+domains=("hotel" "university")
 tool_lists=("full" "oracle")
 method="fc"
 

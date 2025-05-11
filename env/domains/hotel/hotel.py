@@ -442,16 +442,16 @@ class Hotel:
         self.data["room_assignment"][booking_id] = new_room_id
         self.data["room_checkins"][new_room_id] = self.data["room_checkins"].pop(original_room_id)
         return True, True
-    def place_room_service_order(self, guest_name:str, room_id:str, order_type:str, order_items:list[dict], payment_method:str, amount:float=None)->bool|tuple[bool|bool]:
+    def place_room_service_order(self, guest_name:str, room_id:str, order_type:str, order_items:list, payment_method:str, amount:float=None)->bool|tuple[bool|bool]:
         if not self.domain_dep.process(method_str="place_room_service_order", guest_name=guest_name, room_id=room_id,
                                    order_type=order_type, order_items=order_items,
                                    payment_method=payment_method, amount=amount):
             return False
         total_cost = 0
         order_details = []
-        for order_item in order_items:
-            item = order_item["name"]
-            qty = order_item["quantity"]
+        for entry in order_items:
+            item = entry.get("name")
+            qty = entry.get("quantity", 0)
             price_per_item = self.data["room_service_options"][order_type][item]
             total_cost += price_per_item * qty
             order_details.append({
@@ -514,14 +514,14 @@ class Hotel:
     def internal_get_room_assignment(self)->bool|tuple[bool,dict]:
         if not self.domain_dep.process(method_str="internal_get_room_assignment"): return False
         return True, self.data["room_assignment"]        
-    def internal_compute_room_service_order_fee(self, order_type:str, order_items:list[dict])->bool|tuple[bool|float]:
+    def internal_compute_room_service_order_fee(self, order_type:str, order_items:list)->bool|tuple[bool|float]:
         if not self.domain_dep.process(method_str="internal_compute_room_service_order_fee", 
                                        order_type=order_type, order_items=order_items): 
             return False
         total_cost = 0
-        for order_item in order_items:
-            item = order_item["name"]
-            qty = order_item["quantity"]
+        for entry in order_items:
+            item = entry.get("name")
+            qty = entry.get("quantity", 0)
             price_per_item = self.data["room_service_options"][order_type][item]
             total_cost += price_per_item * qty
         return True, total_cost
@@ -541,13 +541,13 @@ class Hotel:
         if not self.domain_dep.process(method_str="internal_valid_room_service_order_type", order_type=order_type):
             return False
         return True, order_type in self.data["room_service_options"]
-    def internal_valid_room_service_item(self, order_type:str, order_items:dict)->bool|tuple[bool, bool]:
+    def internal_valid_room_service_item(self, order_type:str, order_items:list)->bool|tuple[bool, bool]:
         if not self.domain_dep.process(method_str="internal_valid_room_service_item", 
                                        order_type=order_type, order_items=order_items):
             return False
         valid_items = self.data["room_service_options"][order_type]
-        for order_item in order_items:
-            item = order_item["name"]
+        for entry in order_items:
+            item = entry.get("name")
             if item not in valid_items:
                 return True, False
         return True, True
@@ -808,7 +808,7 @@ class Hotel_State_Tracker:
         return start_time <= current_time.time() <= end_time
     def payment_with_loyalty_points(self, payment_method:str)->bool:
         return payment_method=="loyalty_points"
-    def sufficient_payment_for_room_service(self, guest_name:str, order_type:str, order_items:dict, payment_method:str, amount:float=None)->bool:
+    def sufficient_payment_for_room_service(self, guest_name:str, order_type:str, order_items:list, payment_method:str, amount:float=None)->bool:
         total_cost = self.domain_system.internal_compute_room_service_order_fee(order_type, order_items)[1]
         if payment_method != "loyalty_points":
             return amount is not None and amount >= total_cost

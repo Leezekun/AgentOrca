@@ -1,7 +1,7 @@
 cd ../..
 
 model="gpt-4o-mini"
-domains=("hotel")
+domains=("hotel" "university")
 tool_lists=("full" "oracle")
 method="fc"
 

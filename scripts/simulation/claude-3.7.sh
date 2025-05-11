@@ -3,7 +3,7 @@ devices="0"
 
 model="claude-3-7-sonnet-20250219"
 domains=("hotel")
-tool_lists=("full" "oracle")
+tool_lists=("full")
 method="fc"
 
 for domain in "${domains[@]}"; do

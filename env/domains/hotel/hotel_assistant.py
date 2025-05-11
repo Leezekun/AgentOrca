@@ -463,7 +463,7 @@ action_param_descriptions = {
     "reason":                                "A string representing the reason for a room change request.",
     "room_id":                               "A string representing the ID of a specific room.",
     "order_type":                            "A string representing a category of the room service provided by the hotel.",
-    "order_items":                           "A dictionary of the items ordered by the guest, including item names and ordered quantities.",
+    "order_items":                           "A list of objects representing each room service order entry, where each object contains a \"name\" field for the menu item and a \"quantity\" field for how many of that item to order.",
     "payment_method":                        "A string indicating how the guest will pay for the room service."
 }
 
@@ -641,7 +641,7 @@ actions = [
                         "birthday": {
                             "type": "string",
                             "description": action_param_descriptions["birthday"]
-                        },
+                        }
                     },
                     "additionalProperties": False,
                     "required": ["type", "birthday"]
@@ -840,6 +840,7 @@ actions = [
     {
         "name": "internal_compute_room_service_order_fee",
         "description": get_action_full_description(action_descriptions, action_returns, "internal_compute_room_service_order_fee"),
+        "strict": True,
         "parameters": {
             "type": "object",
             "properties": {
@@ -865,7 +866,7 @@ actions = [
                         "additionalProperties": False,
                         "required": ["name", "quantity"]
                     }
-                }
+                },
             },
             "additionalProperties": False,
             "required": ["order_type", "order_items"]
@@ -964,7 +965,7 @@ actions = [
                         "additionalProperties": False,
                         "required": ["name", "quantity"]
                     }
-                }
+                },
             },
             "additionalProperties": False,
             "required": ["order_type", "order_items"]

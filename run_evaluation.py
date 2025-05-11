@@ -94,8 +94,8 @@ def load_existing_results(output_file):
 # Define sort key function for constraint groups
 def constraint_group_sort_key(item):
     key = item[0]
-    if key == "9+":
-        return 9  # Make "6+" sort after 5
+    if key == "10+":
+        return 10  # Make "10+" sort after 5
     return int(key)  # Convert other keys to integers
     
 def main():
@@ -103,7 +103,7 @@ def main():
     args = parse_args()
     
     # Define domains to process
-    domains_to_process = ["bank", "online_market", "dmv", "healthcare", "library"] \
+    domains_to_process = ["bank", "online_market", "dmv", "healthcare", "library", "hotel", "university"] \
         if args.domain == "all" else [args.domain]
     
     # Initialize combined results for all domains
@@ -235,7 +235,6 @@ def main():
                 evaluations.append(evaluation_result)
                 if args.verbose:
                     print(json.dumps(evaluation_result, indent=4))
-                    _ = input("Press Enter to continue...")
                 
                 # Update error statistics
                 print_results["error_statistics"]["total_evaluations"] += 1
@@ -309,8 +308,8 @@ def main():
 
             # Group by number of constraints
             constraint_count = num_constraints
-            if constraint_count >= 9:  # Group all counts >= 6 into "6+"
-                constraint_count = "9+"
+            if constraint_count >= 10:  # Group all counts >= 6 into "6+"
+                constraint_count = "10+"
             elif constraint_count <= 1:  # Group 0 and 1 together as "1"
                 constraint_count = 1
                 

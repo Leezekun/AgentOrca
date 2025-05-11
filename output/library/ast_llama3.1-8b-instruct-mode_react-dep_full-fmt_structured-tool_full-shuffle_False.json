@@ -501,7 +501,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "add_book",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 3,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -755,7 +778,14 @@
             },
             "user_goal": "add_book"
         },
-        "interactions": []
+        "interactions": [],
+        "evaluations": [],
+        "statistics": {
+            "total_interactions": 0,
+            "total_success": 0,
+            "avg_num_messages": 0,
+            "avg_num_function_calls": 0
+        }
     },
     {
         "domain": "library",
@@ -1377,7 +1407,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "add_book",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 10,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 10.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -1684,16 +1737,7 @@
                         "content": "Since the user \"pepperoni\" does not have admin privileges, I cannot add a new book to the library database. The \"add_book\" function requires the user to have admin privileges.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_g7XUYl5WCZN0pQnUXyNvvGSs",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -1715,16 +1759,7 @@
                         "content": "Since the user \"pepperoni\" does not have admin privileges, I cannot add a new book to the library database. However, I can still provide the information you provided.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_2d9gMHNx0TSz1lFHLrqr7sCz",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -1863,7 +1898,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "add_book",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -2308,7 +2366,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -2710,16 +2791,7 @@
                         "content": "Since the username does not exist, I cannot allow you to borrow the book. I will need to verify your username before proceeding.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Llq8XXtGOX6dHjbyYi8wDdMg",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -2766,16 +2838,7 @@
                         "content": "The login attempt was unsuccessful. I need a valid password to proceed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_4YYue7wVvcTCTCAIXh9tOi5Z",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -2914,7 +2977,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -3514,7 +3600,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 10,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 10.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -3818,16 +3927,7 @@
                         "content": "Since the book \"The Great Gatsby\" is not available for borrowing, I cannot proceed with borrowing the book. I will inform the user that the book is not available.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_bLBqAU1iTjuDhUsdtuQhP6me",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -3967,7 +4067,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -4270,16 +4393,7 @@
                         "content": "Since the book \"Beloved\" is not available for borrowing, I will inform the user that the book is not available for borrowing.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_MV8aLeQFHrfPYGLSDQ9tXmnG",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -4301,16 +4415,7 @@
                         "content": "I have all the necessary information to proceed with the borrowing process. However, since the book \"Beloved\" is not available for borrowing, I will inform the user that the book is not available for borrowing.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_P3fXpJDx8Xb70EtLNbQOCE64",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -4525,7 +4630,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -5096,7 +5224,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -5740,7 +5891,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 9,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -6328,7 +6502,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -6799,16 +6996,7 @@
                         "content": "The return date for the book has been successfully retrieved. There is no need for further actions.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_f0MWlilpqs3221hs8uBA5bvt",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -6948,7 +7136,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -7394,16 +7605,7 @@
                         "content": "The book \"Beloved\" has been successfully borrowed by the user \"mario\". There is no need for further action.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Fr5PILMbL9VIyzBl3qLlTrWt",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -7542,7 +7744,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -8007,7 +8232,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -8381,16 +8629,7 @@
                         "content": "Since the user \"Grimoire\" has 3 books borrowed, which is more than the allowed limit of 3, the borrowing process cannot proceed. I will inform the user that the borrowing process was unsuccessful.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_yJ5WMdgHLpnREZm2BbuFtqWo",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -8412,16 +8651,7 @@
                         "content": "Since the user \"Grimoire\" has 3 books borrowed, which is more than the allowed limit of 3, the borrowing process cannot proceed. I will inform the user that the borrowing process was unsuccessful.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_07t3fUQWJ8wrA0M3MjOI6KZP",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -8443,16 +8673,7 @@
                         "content": "Since the user \"Grimoire\" has 3 books borrowed, which is more than the allowed limit of 3, the borrowing process cannot proceed. I will inform the user that the borrowing process was unsuccessful.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_vEIXK6oUVUNPFhjpECeVWKu9",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -8474,16 +8695,7 @@
                         "content": "Since the user \"Grimoire\" has 3 books borrowed, which is more than the allowed limit of 3, the borrowing process cannot proceed. I will inform the user that the borrowing process was unsuccessful.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_kWsrE5en0CU020IRNmyMUWTO",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -8505,16 +8717,7 @@
                         "content": "Since the user \"Grimoire\" has 3 books borrowed, which is more than the allowed limit of 3, the borrowing process cannot proceed. I will inform the user that the borrowing process was unsuccessful.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_uwrGqeCePkCHkAGrQTG3Aj7j",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -8536,16 +8739,7 @@
                         "content": "Since the user \"Grimoire\" has 3 books borrowed, which is more than the allowed limit of 3, the borrowing process cannot proceed. I will inform the user that the borrowing process was unsuccessful.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_4rT4kCb92cNtt6mYThxg0YlF",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -8670,7 +8864,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 16,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 16.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -9334,7 +9551,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -9879,16 +10119,7 @@
                         "content": "The book has been successfully borrowed, and a return date has been set. There is no need for further action.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_pLhkvuWrbuEyId1eF8LZorjg",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -10029,7 +10260,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -10791,7 +11045,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 9,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -11363,16 +11640,7 @@
                         "content": "The return date for the book \"Pride and Prejudice\" borrowed by the user \"pepperoni\" is October 24th, 2024. There is no need for further action.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_ksgsHzfuUrDP8HGkfXOX337r",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -11513,7 +11781,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -12202,7 +12493,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -12793,7 +13107,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -13292,16 +13629,7 @@
                         "content": "Since the book to be borrowed is the same as the one already borrowed, the borrowing action will fail.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_POsLhAdN22fCPQ2qpCvX1bqM",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -13348,16 +13676,7 @@
                         "content": "The return_book action was called instead of borrow_book, which means the book was actually returned, not borrowed. I should have returned a message indicating that the borrowing action failed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_FeAU3w5hqUEEDcaSX8el5DYB",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -13523,7 +13842,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -13995,16 +14337,7 @@
                         "content": "The book has been successfully borrowed. Now, I can set the return date for the book. However, I realize that I don't have the functionality to set the return date directly. The \"borrow_book\" function already sets the return date when borrowing the book. Therefore, the return date for the book \"Beloved\" is already set.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_m0Jz41Lu330QraV87hQ7jXwC",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -14145,7 +14478,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -14778,7 +15134,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -15344,16 +15723,7 @@
                         "content": "The return date for the borrowed book \"One Hundred Years of Solitude\" has been successfully retrieved. The return date is October 24th, 2024. There is no need for further action.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_OUvQndiVWRYbKJCNRahht3i7",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -15494,7 +15864,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 9,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -15985,16 +16378,7 @@
                         "content": "The book \"Beloved\" has been successfully borrowed. There is no need for further action.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_AtKEGuzdUItyBeVRF8Ul3pn2",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -16133,7 +16517,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -16602,16 +17009,7 @@
                         "content": "The return date for the borrowed book \"Beloved\" is October 24th, 2024. There is no need for further action.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_R1Ylc7OyRiVbgOTHxjTgxToR",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -16754,7 +17152,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -17249,16 +17670,7 @@
                         "content": "Since the user \"pepperoni\" has borrowed 3 books, which is equal to or more than the allowed number of books, the user is not eligible to borrow another book. Therefore, I will not allow the user to borrow the book \"Beloved\".",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_wr5evz4XsGMZWF8VdkzI6jSy",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -17401,7 +17813,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -18085,7 +18520,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -18869,7 +19327,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -19459,16 +19940,7 @@
                         "content": "The book \"Beloved\" has been successfully borrowed by the user \"mario\". There is no need for further actions.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_X5sqNLV69i5HvZU8iyevKAQT",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -19607,7 +20079,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -20318,7 +20813,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -20908,16 +21426,7 @@
                         "content": "The book \"Beloved\" has been successfully borrowed by the user \"pepperoni\". There is no need for further actions.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_l3nGzGCAm3jcDbX6RU8Tiuh1",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -21058,7 +21567,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -21767,7 +22299,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -22382,16 +22937,7 @@
                         "content": "The return date for the borrowed book has been successfully retrieved. There is no need for further actions.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_qe51keyQqiP1xPpeank7EPOm",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -22532,7 +23078,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "borrow_book",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -23056,7 +23625,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "check_return_date",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -23555,7 +24147,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "check_return_date",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -24182,7 +24797,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "check_return_date",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 10,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 10.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -24801,7 +25439,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "check_return_date",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 9,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -25175,7 +25836,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "credit_balance",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -25414,16 +26098,7 @@
                         "content": "The credit_balance function returned False, indicating that the amount could not be added to your account balance. This is likely because the amount is negative. I will now check the documentation to see if the amount can be negative.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_03pPsLtK6IDElfi61YvFxWLZ",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -25562,7 +26237,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "credit_balance",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -25850,16 +26548,7 @@
                         "content": "The username \"iABQwZgTpSPriAUXwyW\" does not exist in the system. We cannot proceed with adding $50 to the account balance because the user does not have an account.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_1F292APmVYya9HFnU2LvW41n",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -25998,7 +26687,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "credit_balance",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -26379,7 +27091,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "credit_balance",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -26751,7 +27486,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_account_balance",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -27154,7 +27912,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_account_balance",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -27416,16 +28197,7 @@
                         "content": "The username exists, but the password is still incorrect. I will now ask for the correct password.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_P4X5Udfg6Cpcf1bCjWH02Llu",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -27564,7 +28336,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_account_balance",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -27753,16 +28548,7 @@
                         "content": "Since the login_user function returned True, it means that your username and password were successfully authenticated. This indicates that you are now logged in to your library account.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_HneMXuyUkEc3SMz5k97ShCys",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -27901,7 +28687,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "login_user",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -28190,16 +28999,7 @@
                         "content": "The user \"mario\" exists in the database, but we already know that the user was logged out in the previous step. Now, we need to check if the user was logged in previously with the correct credentials to perform the logout action.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_sOWn31AKdJlv9ohFRDWChRsv",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -28388,7 +29188,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "logout_user",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -28758,16 +29581,7 @@
                         "content": "The late fee has been successfully deducted from your account balance. Your new balance should be 24.0.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_T1n21IGdOp7Sd2i9VkXe9mHJ",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -28906,7 +29720,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "pay_late_fee",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -29226,16 +30063,7 @@
                         "content": "The late fee has been successfully deducted from your account balance. There is no need for further action.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_pV9hVTKAGGacET4U7cJrzTGC",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -29374,7 +30202,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "pay_late_fee",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -29868,7 +30719,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "remove_book",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -30393,7 +31267,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "remove_book",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -30969,7 +31866,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 1,
+                "num_messages": 13,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -31318,16 +32238,7 @@
                         "content": "Since the date is not available for the room, I cannot proceed with the reservation. However, I can ask the user if they want to reserve the room for a different date.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_wsrkzsIg5nmGpSM1kPOLPvIF",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -31466,7 +32377,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -31815,16 +32749,7 @@
                         "content": "Since the date and time slots are not available, I cannot proceed with the reservation. I should inform the user that the room is not available on the specified date and time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_LyH87IhYAGtHe69yhZpq3CJl",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -32073,7 +32998,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -32508,16 +33456,7 @@
                         "content": "Since none of the conditions for reserving the room are met, I will not proceed with the room reservation.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_dxKvOrmaMlRiPeh6sApegHNW",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -32656,7 +33595,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -33232,7 +34194,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -33823,7 +34808,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -34367,16 +35375,7 @@
                         "content": "The room has been successfully reserved for the specified time slots. There is no further action required.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_ZnOFRVxIqUldNB06c927MytK",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -34515,7 +35514,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 1,
+                "num_messages": 9,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -35216,7 +36238,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 1,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -35877,7 +36922,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -36376,16 +37444,7 @@
                         "content": "The user has exceeded the maximum number of reserved slots (3). They cannot reserve another room.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_kQwH5X4F6iSWnoI2ozo7nhfh",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -36529,7 +37588,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -37073,16 +38155,7 @@
                         "content": "Since the slots are not available, I cannot proceed with the reservation.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Gw45QL5iE7aqPdd4q94e0Kqe",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -37256,7 +38329,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -37775,16 +38871,7 @@
                         "content": "Since the user has already reserved 3 slots, which is the allowed limit, I cannot proceed with the reservation.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_B22p3RlDJwvJdUqJsZIwCiGy",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -37923,7 +39010,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -38566,7 +39676,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reserve_room",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -38973,16 +40106,7 @@
                         "content": "The book \"Beloved\" has been successfully returned by the user \"mario\". I will now update the user's borrowed books list to reflect the returned book.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_I2TzDpPI1yc5BNCtizq930GH",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -39119,7 +40243,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "return_book",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -39476,16 +40623,7 @@
                         "content": "The username \"mario\" exists in the database, but the previous observation was the same as the previous one. I need to check the password again.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Wbz0mAh8JqtNI02sYIFb0x5t",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -39557,16 +40695,7 @@
                         "content": "The username \"mario\" exists in the database, but the login attempt was still unsuccessful. I need to check the password again.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_TnoJnZ8DkVrbtEo7LXKkWQc2",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -39755,7 +40884,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "return_book",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -40362,7 +41514,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "return_book",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 9,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -40951,7 +42126,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "return_book",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -41431,7 +42629,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "show_available_book",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -41642,16 +42863,7 @@
                         "content": "Now that I have the list of available books, I can display them to you.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_PgVKCIYo3zJsWSG7MqGLMAyk",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -41790,7 +43002,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "show_available_book",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -42002,16 +43237,7 @@
                         "content": "The login_user function returned False, indicating that the login attempt was unsuccessful. This means that the provided username and password do not match the credentials stored in the database. I will not proceed with showing the available books until the user logs in successfully.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_iAhEOwld7egLR16x6ShSE2vE",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -42058,16 +43284,7 @@
                         "content": "The login_user function returned False again, indicating that the login attempt was unsuccessful. This means that the provided username and password do not match the credentials stored in the database. I will not proceed with showing the available books until the user logs in successfully.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_K2HwjtDLJMWNC9qVCmhdCjpC",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -42231,7 +43448,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "show_available_book",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -42718,7 +43958,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "show_available_rooms",
+                "action_should_succeed": 1,
+                "num_messages": 13,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -42929,16 +44192,7 @@
                         "content": "The function \"show_available_rooms\" has successfully retrieved the list of rooms with their available slots for the user \"NoDzKJcLrDezjsjCgjA\". Now, I need to check if the user wants to reserve a room. If they do, I can proceed with the reservation process.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_UGrYhTmkCXE0PTyEFnrpz6UB",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -43077,7 +44331,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "show_available_rooms",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -43406,7 +44683,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "show_available_rooms",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "library",
@@ -43774,16 +45074,7 @@
                         "content": "The update was successful, and your new restricted access expiration date is December 9th, 2024. I have also deducted the monthly fee from your balance.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_FAHZfyXWlt7ROteYRC2p4zUV",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -43922,7 +45213,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_membership",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "library",
@@ -44382,6 +45696,29 @@
                     }
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_membership",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     }
 ]

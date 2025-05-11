@@ -113,8 +113,8 @@ def display_task_info(task):
     print(f"{Fore.CYAN}User Goal Verb:{Style.RESET_ALL} {task['user_instruction']}")
     print(f"\n{Fore.YELLOW}User Prompt:{Style.RESET_ALL}")
     print(task['user_prompt'])
-    # print(f"\n{Fore.YELLOW}Assistant Prompt:{Style.RESET_ALL}")
-    # print(task['assistant_prompt'])
+    print(f"\n{Fore.YELLOW}Assistant Prompt:{Style.RESET_ALL}")
+    print(task['assistant_prompt'])
     
     # Display dependency graph
     print(json.dumps(task['dependency'], indent=4))
@@ -179,7 +179,7 @@ def main():
     parser.add_argument("--output_dir", type=str, default="./output",
                        help="Output directory")
     parser.add_argument("--domain", type=str, required=True,
-                       choices=["bank", "online_market", "dmv", "healthcare", "library"], 
+                       choices=["bank", "online_market", "dmv", "healthcare", "library", "hotel", "university"], 
                        help="Domain name")
     parser.add_argument("--user_model", type=str, default=None,
                        help="Model to use for the user agent")
@@ -225,7 +225,7 @@ def main():
         print(json.dumps(scenario['task']['initial_database'], indent=4))
         
         # Display task information
-        # scenario['task']['assistant_prompt'] = scenario['prompt']
+        scenario['task']['assistant_prompt'] = scenario['interactions'][0]['prompt']
         display_task_info(scenario['task'])
         
         # Display each interaction

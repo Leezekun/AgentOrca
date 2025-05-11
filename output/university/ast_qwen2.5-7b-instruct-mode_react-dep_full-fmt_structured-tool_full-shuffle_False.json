@@ -591,7 +591,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -1183,7 +1206,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -1775,7 +1821,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -2367,7 +2436,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -2961,7 +3053,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -3555,7 +3670,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -4149,7 +4287,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -4775,7 +4936,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -5376,7 +5560,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -6077,7 +6284,30 @@
                     "interaction_time": "2023-11-15T10:00:01"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -6653,7 +6883,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -7254,7 +7507,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -7887,7 +8163,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -8570,7 +8869,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -9285,7 +9607,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -9979,7 +10324,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -10624,7 +10992,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -11339,7 +11730,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -11954,7 +12368,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -12712,7 +13149,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -13254,7 +13714,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "drop_course",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -13837,7 +14320,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "drop_course",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -14379,7 +14885,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "drop_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -14921,7 +15450,30 @@
                     "interaction_time": "2023-12-02T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "drop_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -15424,16 +15976,7 @@
                         "content": "Alice has been successfully enrolled in the course CS201. No further actions are required.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_mFFPo1SUzfMzmwcbB9BfsTh3",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -15597,7 +16140,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -16240,7 +16806,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -16743,16 +17332,7 @@
                         "content": "The user has been successfully enrolled in the course CS201. No further actions are needed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_2XFbsw73TtkjGaxhm1Ch0AiH",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -16916,7 +17496,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -17561,7 +18164,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -18206,7 +18832,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -18851,7 +19500,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -19534,7 +20206,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -20181,7 +20876,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -20684,16 +21402,7 @@
                         "content": "Alice has been successfully enrolled in the course CS201. No further actions are required.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_dird1bFNDrZ25c61BfITjzJc",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -20857,7 +21566,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -21375,16 +22107,7 @@
                         "content": "Alice has been successfully enrolled in the course \"CS101\". No further actions are needed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_QeBs70Cp1kOhb4n0hEHnxiFR",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -21506,16 +22229,7 @@
                         "content": "Alice has been successfully enrolled in the course \"MUS15\". No further actions are needed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_NfaesbVs9m9UOJAYZEtt0GI3",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -21537,16 +22251,7 @@
                         "content": "Alice has already been enrolled in the course \"MUS15\". No further actions are needed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_rPBzSI7dGslhXgz9oDQ7YHFc",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -21727,7 +22432,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -22025,16 +22753,7 @@
                         "content": "The course information for CS102 could not be retrieved, which suggests that the course does not exist or there was an error in the system. This is preventing Alice from enrolling in the course. We should inform Alice of this issue.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_mX8MsI737IjGjEmZ3tf56dSC",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -22196,7 +22915,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "login_user",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -22557,7 +23299,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "logout_user",
+                "action_should_succeed": 1,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -23534,7 +24299,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -24181,7 +24969,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -24854,7 +25665,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -25839,7 +26673,30 @@
                     "interaction_time": "2023-12-01T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -26818,7 +27675,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -27803,7 +28683,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -28778,7 +29681,30 @@
                     "interaction_time": "2024-03-02T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -29757,6 +30683,29 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     }
 ]

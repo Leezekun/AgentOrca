@@ -3,8 +3,8 @@ cd ../..
 devices="0,1"
 
 model="qwen2.5-32b-instruct"
-domains=("dmv" "healthcare" "library" "online_market" "bank" "university")
-tool_lists=("full" "oracle")
+domains=("hotel" "university" "dmv" "healthcare" "library" "online_market" "bank")
+tool_lists=("full")
 method="react"
 
 for i in {1..5}; do

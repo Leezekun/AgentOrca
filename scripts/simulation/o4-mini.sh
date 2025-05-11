@@ -1,7 +1,7 @@
 cd ../..
 
 model="o4-mini-high"
-domains=("university" "dmv" "healthcare" "library" "online_market" "bank")
+domains=("hotel" "university")
 tool_lists=("full")
 method="fc"
 

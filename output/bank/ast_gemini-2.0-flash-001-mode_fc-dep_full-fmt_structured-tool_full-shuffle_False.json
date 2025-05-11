@@ -3991,7 +3991,7 @@
                 "num_messages": 7,
                 "num_function_calls": 4,
                 "no_tool_call_error": false,
-                "constraint_not_violated": true,
+                "constraint_not_violated": false,
                 "database_match": true,
                 "action_successfully_called": false,
                 "dirgraph_satisfied": true,
@@ -4654,21 +4654,21 @@
                 "num_messages": 8,
                 "num_function_calls": 3,
                 "no_tool_call_error": true,
-                "constraint_not_violated": true,
+                "constraint_not_violated": false,
                 "database_match": true,
                 "action_successfully_called": false,
                 "dirgraph_satisfied": true,
                 "action_called_correctly": true,
-                "success": true
+                "success": false
             }
         ],
         "statistics": {
             "total_interactions": 1,
-            "total_success": 1,
+            "total_success": 0,
             "avg_num_messages": 8.0,
             "avg_num_function_calls": 3.0,
             "num_constraints": 0,
-            "pass@1": true
+            "pass@1": false
         }
     },
     {
@@ -5068,7 +5068,7 @@
                 "num_messages": 8,
                 "num_function_calls": 3,
                 "no_tool_call_error": true,
-                "constraint_not_violated": true,
+                "constraint_not_violated": false,
                 "database_match": true,
                 "action_successfully_called": false,
                 "dirgraph_satisfied": true,
@@ -5483,21 +5483,21 @@
                 "num_messages": 11,
                 "num_function_calls": 2,
                 "no_tool_call_error": true,
-                "constraint_not_violated": true,
+                "constraint_not_violated": false,
                 "database_match": true,
                 "action_successfully_called": false,
                 "dirgraph_satisfied": true,
                 "action_called_correctly": true,
-                "success": true
+                "success": false
             }
         ],
         "statistics": {
             "total_interactions": 1,
-            "total_success": 1,
+            "total_success": 0,
             "avg_num_messages": 11.0,
             "avg_num_function_calls": 2.0,
             "num_constraints": 0,
-            "pass@1": true
+            "pass@1": false
         }
     },
     {
@@ -6218,21 +6218,21 @@
                 "num_messages": 8,
                 "num_function_calls": 3,
                 "no_tool_call_error": true,
-                "constraint_not_violated": true,
+                "constraint_not_violated": false,
                 "database_match": true,
                 "action_successfully_called": false,
                 "dirgraph_satisfied": true,
                 "action_called_correctly": true,
-                "success": true
+                "success": false
             }
         ],
         "statistics": {
             "total_interactions": 1,
-            "total_success": 1,
+            "total_success": 0,
             "avg_num_messages": 8.0,
             "avg_num_function_calls": 3.0,
             "num_constraints": 0,
-            "pass@1": true
+            "pass@1": false
         }
     },
     {
@@ -6667,7 +6667,7 @@
                 "num_function_calls": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
-                "database_match": false,
+                "database_match": true,
                 "action_successfully_called": false,
                 "dirgraph_satisfied": true,
                 "action_called_correctly": false,
@@ -7939,7 +7939,7 @@
                 "num_function_calls": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
-                "database_match": false,
+                "database_match": true,
                 "action_successfully_called": false,
                 "dirgraph_satisfied": true,
                 "action_called_correctly": false,
@@ -8767,21 +8767,21 @@
                 "num_messages": 6,
                 "num_function_calls": 3,
                 "no_tool_call_error": true,
-                "constraint_not_violated": true,
+                "constraint_not_violated": false,
                 "database_match": true,
                 "action_successfully_called": false,
                 "dirgraph_satisfied": true,
                 "action_called_correctly": true,
-                "success": true
+                "success": false
             }
         ],
         "statistics": {
             "total_interactions": 1,
-            "total_success": 1,
+            "total_success": 0,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
             "num_constraints": 0,
-            "pass@1": true
+            "pass@1": false
         }
     },
     {
@@ -9702,7 +9702,7 @@
                 "num_function_calls": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
-                "database_match": false,
+                "database_match": true,
                 "action_successfully_called": false,
                 "dirgraph_satisfied": true,
                 "action_called_correctly": false,
@@ -15538,21 +15538,21 @@
                 "num_messages": 7,
                 "num_function_calls": 2,
                 "no_tool_call_error": true,
-                "constraint_not_violated": true,
+                "constraint_not_violated": false,
                 "database_match": true,
                 "action_successfully_called": true,
                 "dirgraph_satisfied": true,
                 "action_called_correctly": true,
-                "success": true
+                "success": false
             }
         ],
         "statistics": {
             "total_interactions": 1,
-            "total_success": 1,
+            "total_success": 0,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 2.0,
             "num_constraints": 0,
-            "pass@1": true
+            "pass@1": false
         }
     },
     {
@@ -27303,7 +27303,7 @@
                 "num_messages": 10,
                 "num_function_calls": 3,
                 "no_tool_call_error": false,
-                "constraint_not_violated": true,
+                "constraint_not_violated": false,
                 "database_match": true,
                 "action_successfully_called": false,
                 "dirgraph_satisfied": true,
@@ -27757,7 +27757,7 @@
                 "action_should_succeed": 0,
                 "num_messages": 9,
                 "num_function_calls": 4,
-                "no_tool_call_error": true,
+                "no_tool_call_error": false,
                 "constraint_not_violated": false,
                 "database_match": true,
                 "action_successfully_called": false,

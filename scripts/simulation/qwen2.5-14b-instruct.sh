@@ -3,7 +3,7 @@ cd ../..
 devices="0,1"
 
 model="qwen2.5-14b-instruct"
-domains=("dmv" "healthcare" "library" "online_market" "bank" "university")
+domains=("hotel" "university" "dmv" "healthcare" "library" "online_market" "bank")
 tool_lists=("full" "oracle")
 method="react"
 

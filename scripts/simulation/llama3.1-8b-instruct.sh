@@ -3,7 +3,7 @@ cd ../..
 devices="0,1"
 
 model="llama3.1-8b-instruct"
-domains=("dmv" "healthcare" "library" "online_market" "bank" "university")
+domains=("library" "hotel" "university" "dmv" "healthcare" "online_market" "bank")
 tool_lists=("full" "oracle")
 method="react"
 
