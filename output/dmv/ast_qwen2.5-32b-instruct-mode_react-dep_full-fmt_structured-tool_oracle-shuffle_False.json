@@ -385,7 +385,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "authenticate_admin_password",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -615,16 +638,7 @@
                         "content": "The login attempt for the user \"NEW_USER\" was unsuccessful, which means the user is not authenticated to perform further actions such as verifying the admin password. I will inform the user that the login failed and that they need to provide the correct credentials to proceed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_tYqUiFp4S7ABDu4qb67xEk5d",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -778,7 +792,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "authenticate_admin_password",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -1009,16 +1046,7 @@
                         "content": "The login attempt for the user \"frustrated_coder\" was unsuccessful, which means the user cannot proceed to verify the admin password. I will inform the user that their login attempt failed and that they need to ensure they are using the correct credentials.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_I1pZ9cdZg7aNnvsk0YxtCUji",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -1172,7 +1200,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "authenticate_admin_password",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -1664,7 +1715,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "cancel_test",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -2106,7 +2180,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "cancel_test",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -2441,16 +2538,7 @@
                         "content": "The test status for the user \"HIGH666\" is 'not scheduled', which means there is no scheduled driving test to cancel. I will inform the user that their driving test is not scheduled and cannot be canceled.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_OrIkrT5JMhP3qYMHgAmAfxCT",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -2604,7 +2692,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "cancel_test",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -3187,7 +3298,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "cancel_test",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -3588,16 +3722,7 @@
                         "content": "The attempt to retrieve the test details for the user \"HIGH666\" for the \"Knowledge\" test type returned False, which suggests there might be an issue with the retrieval or the test details might not be available as expected. However, since the direct response does not provide detailed information, I will assume the test details could not be retrieved successfully, and thus, the test status cannot be confirmed as scheduled. Therefore, I cannot proceed with the cancellation.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_UUxYJMPT6AfvJTLAuDHCE0Yl",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -3751,7 +3876,30 @@
                     "interaction_time": "2024-11-21T10:30:01"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "cancel_test",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -4160,7 +4308,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_dl_address",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -4534,7 +4705,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_dl_address",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -4908,7 +5102,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_dl_address",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -5383,7 +5600,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_dl_address",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -5833,7 +6073,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_dl_address",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -6329,7 +6592,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_dl_address",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -6790,7 +7076,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_dl_address",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -7337,7 +7646,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_dl_address",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -7809,7 +8141,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_dl_address",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -8189,16 +8544,7 @@
                         "content": "The current address on the user's driver's license is the same as the new address provided, which means the address cannot be updated as it is already the same. I will inform the user that the address is already up to date and no change is needed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_JCHVNuLRYvyWxQXzz413n3on",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -8352,7 +8698,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_dl_address",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -8772,7 +9141,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_vehicle_address",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -9151,7 +9543,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_vehicle_address",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -9546,7 +9961,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_vehicle_address",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -10032,7 +10470,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_vehicle_address",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -10468,7 +10929,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_vehicle_address",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -10979,7 +11463,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_vehicle_address",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -11449,7 +11956,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_vehicle_address",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -12011,7 +12541,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_vehicle_address",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -12358,16 +12911,7 @@
                         "content": "The login attempt for the user \"frustrated_coder\" was unsuccessful, which means the user cannot proceed with changing the address associated with their vehicle. I will inform the user that their login credentials were incorrect and that they need to try again with the correct information.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_S1YuEeSDMXq1VtxL5r8cRqEe",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -12529,7 +13073,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_vehicle_address",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -13050,7 +13617,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_vehicle_address",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -13523,7 +14113,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_dl_status",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -13946,7 +14559,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_dl_status",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -14290,16 +14926,7 @@
                         "content": "The registration renewal date for the vehicle with the plate number ZXY1234 is on 2023-05-10. I will inform the user of this information.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_KwKb0Bu7TnvcHwNJVnlf3XO9",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -14461,7 +15088,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_reg_status",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -14895,7 +15545,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_reg_status",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -15233,7 +15906,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "login_user",
+                "action_should_succeed": 1,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -15594,7 +16290,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "logout_user",
+                "action_should_succeed": 1,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -15954,7 +16673,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "logout_user",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -16315,7 +17057,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "logout_user",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -16792,7 +17557,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "register_vehicle",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -17103,16 +17891,7 @@
                         "content": "The user 'new_user_123' failed to log in, which means they are not authenticated to perform the vehicle registration. I will inform the user that they need to log in first.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_GtFy0iWit5DvA2Lt5j4SmuHU",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -17266,7 +18045,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "register_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -17685,7 +18487,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "register_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -18145,7 +18970,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "register_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -18690,7 +19538,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "register_vehicle",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -19060,16 +19931,7 @@
                         "content": "The user 'HIGH666' does not have a driver's license, which is a requirement for registering a vehicle. I will inform the user and not proceed with the registration.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_fK01uYYbvEnAwG4nNYqGUIiF",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -19223,7 +20085,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "register_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -19753,7 +20638,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_dl",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -20283,7 +21191,30 @@
                     "interaction_time": "2024-01-01T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_dl",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -20864,7 +21795,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_dl",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -21345,7 +22299,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_dl",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -21789,16 +22766,7 @@
                         "content": "The driver's license has been successfully renewed, and the new expiration date is 2030-07-07. I will inform the user of this information.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_QVOeqgZGPhkENuhGs51fLKn8",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -21957,7 +22925,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_dl",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -22448,7 +23439,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -22782,16 +23796,7 @@
                         "content": "The vehicle details indicate that the insurance status of the vehicle with the plate number \"86XY120\" is 'expired'. Since the insurance status is not 'valid', the vehicle cannot be renewed at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Gdtv7y7tWUNt05nD3O9Pf7y2",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -22945,7 +23950,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -23490,7 +24518,30 @@
                     "interaction_time": "2023-11-30T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -23862,16 +24913,7 @@
                         "content": "The interaction time is 2024-01-20T16:25:31, and the vehicle's registration date is 2023-02-15. The renewal period starts 30 days before the registration date, which would be 2023-01-16, and ends on the registration date itself, 2023-02-15. Since the interaction time is outside this period, the vehicle cannot be renewed at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Px9FnhpuueireVvpp3VzFMe7",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -24025,7 +25067,30 @@
                     "interaction_time": "2024-01-20T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -24567,7 +25632,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -25050,7 +26138,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -25435,16 +26546,7 @@
                         "content": "The vehicle's insurance status is 'expired', which does not meet the requirement of being 'valid' for renewal. Therefore, I cannot proceed with the vehicle registration renewal.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_9j901lFSlzL7oO5a6GJRC4IJ",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -25598,7 +26700,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -26194,7 +27319,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -26690,7 +27838,30 @@
                     "interaction_time": "2023-02-10T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -27286,7 +28457,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -27873,7 +29067,30 @@
                     "interaction_time": "2024-02-10T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -28270,16 +29487,7 @@
                         "content": "The vehicle's insurance status is 'expired', which does not meet the requirement of having a 'valid' insurance status for renewing the vehicle registration. Therefore, I cannot proceed with the renewal process.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_xwFLWUXp1mDO8tQXKK0JLuF5",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -28441,7 +29649,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -28855,16 +30086,7 @@
                         "content": "The interaction time is '2024-11-21T16:25:31', and the vehicle's registration date is '2023-03-20'. The renewal period starts 30 days before the registration date and ends on the registration date itself. Since the interaction time is outside the renewal period, the vehicle cannot be renewed at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Tc2r0WRrElbrfEnGwZUWFBfJ",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -29018,7 +30240,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -29516,16 +30761,7 @@
                         "content": "The vehicle's registration has been successfully renewed, and the new renewal date is 2024-11-30. I will inform the user of the new renewal date.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_1oINmhoMc3JtIpEow7O1ZnJG",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -29687,7 +30923,30 @@
                     "interaction_time": "2023-11-15T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -30225,7 +31484,30 @@
                     "interaction_time": "2023-11-30T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -30665,16 +31947,7 @@
                         "content": "The vehicle details indicate that the insurance status is 'expired', which does not meet the requirement for a valid insurance status to renew the vehicle registration. Therefore, I cannot proceed with the renewal.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_azXyeTxgrqUBZwOoqEXu8XXt",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -30828,7 +32101,30 @@
                     "interaction_time": "2023-02-10T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -31326,16 +32622,7 @@
                         "content": "The vehicle registration has been successfully renewed, and the new renewal date is 2024-11-30. I can inform the user of the new renewal date.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Oc1wwlIoWLC4eEM8quOX3z4a",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -31497,7 +32784,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "renew_vehicle",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -31967,7 +33277,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -32386,7 +33719,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -32674,16 +34030,7 @@
                         "content": "The login attempt was unsuccessful, likely due to the incorrect password provided by the user. I need to inform the user that their login credentials are incorrect and that they cannot proceed with scheduling the test without a successful login.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_wwJjRvUPz6B6O5MwE86tkaMi",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -32837,7 +34184,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -33284,7 +34654,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -33942,7 +35335,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -34675,7 +36091,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -35308,7 +36747,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -35829,16 +37291,7 @@
                         "content": "The specified test slot is not available. I need to inform the user that the slot they requested is not available and cannot proceed with scheduling the test.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_9eZ5LRHdItAiooM0q26hv4Fi",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -36012,7 +37465,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -36695,7 +38171,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -37221,16 +38720,7 @@
                         "content": "The current interaction time is 2024-11-21T16:25:31. The user's birthday is 2009-07-07, which means the user is 15 years and 4 months old as of the interaction time. The user does not meet the minimum age requirement of 16 years old to schedule a driving test.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_y6CudWsoWOs0KvsFxryawNfd",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -37384,7 +38874,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -37989,7 +39502,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -38494,7 +40030,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -39292,7 +40851,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -40090,7 +41672,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -40681,16 +42286,7 @@
                         "content": "Based on the interaction time of 2024-11-21T16:25:31 and the user's birthday of 2010-03-22, the user is 14 years and 8 months old, which does not meet the minimum age requirement of 16 years. Therefore, I cannot proceed with scheduling the driving test.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_qgwmYF95sygGFvZhIRXbAFDG",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -40844,7 +42440,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -41657,7 +43276,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -42243,16 +43885,7 @@
                         "content": "The user has already passed the knowledge test and has made 4 attempts, which is more than the allowed 3 attempts. Therefore, the user does not meet the conditions to schedule the knowledge test again.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_dwPf8e4cWpvZNzWkMVvDJQS6",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -42426,7 +44059,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -43099,7 +44755,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_test",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -43499,7 +45178,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "set_admin_password",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -43872,7 +45574,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "set_admin_password",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -44246,7 +45971,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "set_admin_password",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -44646,7 +46394,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "set_admin_password",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -45034,7 +46805,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "show_available_test_slots",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -45264,16 +47058,7 @@
                         "content": "The login attempt was unsuccessful, which means the user could not be authenticated with the provided credentials. I cannot proceed to show the available test slots without a successful login.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_4ax5htxNGhk6ja8kRORQ05NN",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -45427,7 +47212,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "show_available_test_slots",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -45840,7 +47648,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "show_available_test_slots",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -46419,7 +48250,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "transfer_title",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -46913,7 +48767,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "transfer_title",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -47391,7 +49268,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "transfer_title",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -47935,7 +49835,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "transfer_title",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -48546,7 +50469,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "transfer_title",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -48983,16 +50929,7 @@
                         "content": "The user \"HIGH666\" does not have a driver's license, which is a requirement for transferring the vehicle's title. Therefore, I cannot proceed with the title transfer.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_M60TnR9kUgHiTmBGuxM8mgPX",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -49154,7 +51091,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "transfer_title",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -49751,7 +51711,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "transfer_title",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -50312,7 +52295,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "transfer_title",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -50966,7 +52972,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "transfer_title",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -51436,16 +53465,7 @@
                         "content": "The user HIGH666 does not have a driver's license. Therefore, the title transfer cannot proceed as it is a required condition.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_t4McvWU4tVO7DtarNWp06V9f",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -51607,7 +53627,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "transfer_title",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -52094,16 +54137,7 @@
                         "content": "The target owner \"HIGH666\" does not have a driver's license, which is a requirement for the title transfer. Therefore, the title transfer cannot proceed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_RM5ozWTpi5ejpmEMk8WxcBt0",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -52257,7 +54291,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "transfer_title",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -52732,7 +54789,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_dl_legal_name",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -53182,7 +55262,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_dl_legal_name",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -53774,7 +55877,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_test_status",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -54204,16 +56330,7 @@
                         "content": "There seems to be an inconsistency. The interaction_time (2024-11-21T16:25:31) is before the scheduled_time (2024-12-10T10:30:00) of the drive test. Therefore, the user cannot update the test status at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_UoYjHWdahRM8G42z9sMvkpQ1",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -54367,7 +56484,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_test_status",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -54849,7 +56989,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "validate_vehicle_insurance",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -55290,7 +57453,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "validate_vehicle_insurance",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -55731,7 +57917,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "validate_vehicle_insurance",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -56213,7 +58422,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "validate_vehicle_insurance",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -56786,7 +59018,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "validate_vehicle_insurance",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -57284,7 +59539,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "validate_vehicle_insurance",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -57874,7 +60152,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "validate_vehicle_insurance",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -58429,7 +60730,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "validate_vehicle_insurance",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -59019,7 +61343,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "validate_vehicle_insurance",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "dmv",
@@ -59534,7 +61881,30 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "validate_vehicle_insurance",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "dmv",
@@ -60090,6 +62460,29 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "validate_vehicle_insurance",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     }
 ]

@@ -493,7 +493,7 @@ class DMV_Strict:
         return self.dep_params
     def evaluation_get_domain_system(self)->DMV:
         return self.domain_system
-    def evaluation_get_Dependency_Evaluator(self)->Dependency_Evaluator:
+    def evaluation_get_dependency_evaluator(self)->Dependency_Evaluator:
         return self.domain_dep
     def evaluation_get_state_tracker(self)->DMV_State_Tracker:
         return self.state_tracker

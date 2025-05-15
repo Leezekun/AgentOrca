@@ -370,6 +370,29 @@
                     "interaction_time": "2024-11-21T16:25:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "authenticate_admin_password",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     }
 ]

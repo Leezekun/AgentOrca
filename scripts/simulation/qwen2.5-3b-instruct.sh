@@ -15,9 +15,9 @@ for i in {1..5}; do
                     --assistant_model $model \
                     --env_mode prompt \
                     --tool_list $tool_list \
-                --tool_call_mode $method \
-                --num_gpus 2 \
-                --gpu_memory_utilization 0.95
+                    --tool_call_mode $method \
+                    --num_gpus 8 \
+                    --gpu_memory_utilization 0.9
         done
     done
 done

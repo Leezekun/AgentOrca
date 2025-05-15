@@ -35,6 +35,8 @@ def parse_args() -> argparse.Namespace:
                         choices=["old", "structured"], help="Constraint dependency description format")
     parser.add_argument("--num_run_per_interaction", type=int, default=1,
                        help="Number of interactions per task")
+    parser.add_argument("--max_constraints", type=int, default=7,
+                       help="Maximum number of constraints to evaluate as a group")
     parser.add_argument("--verbose", action="store_true",
                        help="Whether to print verbose output")
     
@@ -92,10 +94,10 @@ def load_existing_results(output_file):
     return []
 
 # Define sort key function for constraint groups
-def constraint_group_sort_key(item):
+def constraint_group_sort_key(item, max_constraints):
     key = item[0]
-    if key == "10+":
-        return 10  # Make "10+" sort after 5
+    if key == f"{max_constraints}+":
+        return max_constraints  # Make "10+" sort after 5
     return int(key)  # Convert other keys to integers
     
 def main():
@@ -308,8 +310,8 @@ def main():
 
             # Group by number of constraints
             constraint_count = num_constraints
-            if constraint_count >= 10:  # Group all counts >= 6 into "6+"
-                constraint_count = "10+"
+            if constraint_count >= args.max_constraints:
+                constraint_count = f"{args.max_constraints}+"
             elif constraint_count <= 1:  # Group 0 and 1 together as "1"
                 constraint_count = 1
                 
@@ -437,7 +439,7 @@ def main():
         # Sort constraint groups using the already defined sort key function
         aggregate_results["aggregate_constraint_groups"] = dict(sorted(
             all_constraint_groups.items(),
-            key=constraint_group_sort_key
+            key=lambda x: constraint_group_sort_key(x, args.max_constraints)
         ))
 
         # Calculate aggregate pass rates
@@ -557,7 +559,7 @@ def main():
         # Sort constraint_group_statistics using the already defined sort key function
         sorted_constraint_groups = dict(sorted(
             print_results["constraint_group_statistics"].items(),
-            key=constraint_group_sort_key
+            key=lambda x: constraint_group_sort_key(x, args.max_constraints)
         ))
         print_results["constraint_group_statistics"] = sorted_constraint_groups
 

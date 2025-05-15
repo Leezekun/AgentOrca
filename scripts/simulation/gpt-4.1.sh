@@ -1,7 +1,7 @@
 cd ../..
 
 model="gpt-4.1"
-domains=("hotel" "university")
+domains=("healthcare" "university")
 tool_lists=("full")
 method="fc"
 
@@ -9,6 +9,7 @@ for domain in "${domains[@]}"; do
     for tool_list in "${tool_lists[@]}"; do
         CUDA_VISIBLE_DEVICES=$devices python run_simulation.py \
                 --domain $domain \
+                --user_model adv \
                 --assistant_model $model \
                 --env_mode prompt \
                 --tool_list $tool_list \

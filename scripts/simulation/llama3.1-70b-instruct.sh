@@ -3,8 +3,7 @@ cd ../..
 devices="0,1,2,3,4,5,6,7"
 
 model="llama3.1-70b-instruct"
-domains=("dmv" "healthcare" "library" "online_market" "bank")
-# tool_lists=("full" "oracle")
+domains=("university" "healthcare" "dmv" "online_market" "bank" "hotel" "library")
 tool_lists=("full")
 method="react"
 
@@ -12,6 +11,7 @@ for tool_list in "${tool_lists[@]}"; do
     for domain in "${domains[@]}"; do
         CUDA_VISIBLE_DEVICES=$devices python run_simulation.py \
                 --domain $domain \
+                --user_model adv \
                 --assistant_model $model \
                 --env_mode prompt \
                 --tool_list $tool_list \

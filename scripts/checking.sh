@@ -4,11 +4,11 @@ cd ..
 # Default values
 # assistant_model="claude-3-7-sonnet-20250219-thinking"
 # assistant_model="gemini-2.0-flash-thinking-exp"
-# assistant_model="o4-mini"
-assistant_model="gpt-4o-mini"
+# assistant_model="o4-mini-high"
+assistant_model="gpt-4.1"
 
 output_dir="./output"
-domain="hotel"
+domain="bank"
 tool_call_mode="fc"
 default_constraint_option="full"
 constraint_descr_format="structured"

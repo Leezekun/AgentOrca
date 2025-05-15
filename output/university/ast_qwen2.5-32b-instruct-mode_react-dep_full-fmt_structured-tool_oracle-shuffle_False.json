@@ -616,7 +616,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -1068,16 +1091,7 @@
                         "content": "Based on the student's information, the user \"alice\" is enrolled in 4 credits, which is less than the required 6 credits to be considered half-time enrolled. Therefore, she does not meet the eligibility criteria for financial aid. I will inform the user of this and that her application cannot be submitted.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_xPrbtfULu1fMsfjXFcc1odgd",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -1239,7 +1253,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -1691,16 +1728,7 @@
                         "content": "Based on the student information, Alice is enrolled in 6 credits, has a GPA of 3.8, is in good academic standing, has an annual income of 45000, and is in-state residency. However, she has already received financial aid for 12 quarters, which is the maximum allowed. Therefore, she does not meet the eligibility criteria for financial aid.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_PyhdRm4jA5TQc0f2CujFUC6a",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -1862,7 +1890,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -2314,16 +2365,7 @@
                         "content": "Based on the student's information, Alice is on academic probation, which disqualifies her from applying for financial aid. I will inform her of this and that her application cannot be submitted.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_3Cfm7DwP09Qsj5gZu9zA6bDT",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -2485,7 +2527,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -2938,16 +3003,7 @@
                         "content": "Based on the student information retrieved, Alice is enrolled in 8 credits, which is more than the required 6 credits for half-time enrollment. She has received financial aid for 3 quarters, which is less than the maximum allowed 12 quarters. Her academic status is \"Good,\" meaning she is not on academic probation. However, her GPA is 2.8, which is below the required minimum of 3.0 for financial aid eligibility. Therefore, Alice does not meet the GPA requirement and cannot apply for financial aid at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_i6rE213JaazacngDHHsrBfby",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -3110,7 +3166,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -3563,16 +3642,7 @@
                         "content": "Based on the student's information, Alice is enrolled in 8 credits, which is more than the required 6 credits. She has received financial aid for 3 quarters, which is less than the maximum allowed 12 quarters. Her academic status is \"Good,\" meaning she is not on academic probation. Her GPA is 3.8, which is above the minimum required 2.0. However, her annual income is 60000, which is above the 50000 limit for financial aid eligibility. Therefore, Alice does not meet all the conditions for financial aid eligibility due to her income.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_08Ym1ixOzSXmiXtgOrsstTYx",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -3735,7 +3805,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -4188,16 +4281,7 @@
                         "content": "Based on the student information, Alice is enrolled in 8 credits, has a GPA of 3.8, is not on academic probation, has received financial aid for 3 quarters, has an annual income of 30000, and is an out-of-state resident. Since she is an out-of-state resident, she does not meet the residency requirement for financial aid. Therefore, I will inform her that she is not eligible to apply for financial aid due to her residency status.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_lNilNhz1b1U60Pa0wjKow0yz",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -4360,7 +4444,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "apply_financial_aid",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -5086,7 +5193,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -5622,16 +5752,7 @@
                         "content": "The minimum GPA required for the Music major is 3.0, but the student's current GPA is 2.9, which does not meet the requirement. Therefore, the major change cannot be processed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_d7GDAeY9WrcOK2RewUZZ6Q5B",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -5793,7 +5914,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -6304,16 +6448,7 @@
                         "content": "The current interaction time is November 15, 2023, which is after the major change deadline of October 15, 2023. Therefore, the user cannot change their major at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_StFNTcvcipmFR45aQC8GdJO5",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -6475,7 +6610,30 @@
                     "interaction_time": "2023-11-15T10:00:01"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -6936,16 +7094,7 @@
                         "content": "The student \"alice\" has completed 45 credits and has a GPA of 3.8. However, she has made 4 major changes, which exceeds the limit of 3 changes. Therefore, I cannot proceed with the major change request.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_PwPJX32FoNuGsubCSoWsgr3U",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -7107,7 +7256,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -7643,16 +7815,7 @@
                         "content": "The current interaction time is 2023-11-15T10:00:00, which is on the major change deadline. The student has completed 45 credits, which is less than the required 46 credits for a major change. Therefore, the student does not meet the credit requirement for changing majors.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_PVkdFsDXbX6VaeOFGaSv1V5T",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -7814,7 +7977,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -8547,7 +8733,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "change_major",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -9355,7 +9564,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -9953,16 +10185,7 @@
                         "content": "The Physics minor has a minimum GPA requirement of 2.8, which the student \"alice\" meets with a GPA of 3.8. However, the Physics minor is listed as incompatible with the Computer Science major, which is the student's current major. Therefore, the Physics minor cannot be declared for this student.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_wEX1RIC8BrWK1rMedNesMEQk",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -10174,7 +10397,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -10687,16 +10933,7 @@
                         "content": "The student \"alice\" has already declared two minors, Physics and Digital Arts. According to the constraints, a student must have declared fewer than 2 minors in total to declare another minor. Since \"alice\" has already declared two minors, she cannot declare another one.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_7MwgdQd9BZfk2WVjapLUuioU",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -10898,7 +11135,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -11668,7 +11928,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -12216,16 +12499,7 @@
                         "content": "The Physics minor requires a minimum GPA of 2.8, and the student's current GPA is 2.7, which does not meet the requirement. Therefore, the student cannot declare the Physics minor at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_FVmPeUhqftpitIE3Ch2JamoV",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -12437,7 +12711,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -12985,16 +13282,7 @@
                         "content": "The Digital Arts minor requires a minimum GPA of 3.0, which the student's current GPA of 3.8 meets. The minor has a prerequisite course, ART100, which the student has not yet completed. Therefore, the student does not meet the prerequisite condition for declaring the minor.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_dBjrrzoCYySnqYL7vz17IeCz",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -13156,7 +13444,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -13713,16 +14024,7 @@
                         "content": "The current interaction time is after the minor declaration deadline, which is set for 2023-11-10 according to the academic calendar. Therefore, the minor declaration cannot be processed at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_G3MDgWuW9mGezIP2CTeHMmmX",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -13918,7 +14220,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "declare_minor",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -14560,7 +14885,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "drop_course",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -14971,16 +15319,7 @@
                         "content": "The response from the internal_get_course_info function is empty, which suggests there might be an issue with fetching the course information or the course code provided might not be valid. However, based on the student's information, we know they are enrolled in CS101 and have a total of 4 current credits. Assuming CS101 is a 4-credit course, dropping it would leave the student with 0 current credits, which does not meet the requirement of retaining at least 12 credits. Therefore, I will inform the user that they cannot drop the course due to the credit requirement.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_lASDSH1HsiIT2UbaCSSVyYoM",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -15124,7 +15463,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "drop_course",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -15603,16 +15965,7 @@
                         "content": "The course CS101 is worth 4 credits. The student currently has 13 credits. After dropping CS101, the student will retain 9 credits, which is less than the required 10 credits. Therefore, the student cannot drop the course CS101 as it would violate the condition of retaining at least 10 credits.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_K3niI3lnq6TfoEsgUl5p8zMI",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -15774,7 +16127,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "drop_course",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -16228,16 +16604,7 @@
                         "content": "The withdrawal deadline is 2023-12-01, and the current interaction time is 2023-12-02T10:00:00, which is after the withdrawal deadline. Therefore, the user cannot drop the course CS101 as it is past the deadline.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_cCgt2BIYxJU38uueqbrCQj3g",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -16399,7 +16766,30 @@
                     "interaction_time": "2023-12-02T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "drop_course",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -17044,7 +17434,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -17787,7 +18200,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -18432,7 +18868,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -19077,7 +19536,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -19722,7 +20204,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -20367,7 +20872,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -20889,16 +21417,7 @@
                         "content": "Based on the student's information, Alice has completed 45 credits and has already taken CS101, which is a prerequisite for CS201. However, she does not meet the requirement of having at least 90 completed credits to enroll in an upper-division course. I will inform her of this and conclude the conversation.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_wB22QoQUXzqFDSGBUoTls3uL",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -21080,7 +21599,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -21727,7 +22269,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -22372,7 +22937,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -23048,7 +23636,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "enroll_course",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -23411,7 +24022,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "login_user",
+                "action_should_succeed": 1,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -23772,7 +24406,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "logout_user",
+                "action_should_succeed": 1,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -24824,7 +25481,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -25546,7 +26226,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -26294,7 +26997,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -27354,7 +28080,30 @@
                     "interaction_time": "2023-12-01T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "university",
@@ -28015,16 +28764,7 @@
                         "content": "The user \"alice\" has completed 180 credits and has a tuition balance of 0, which are positive signs. However, the GPA is 1.9, which is below the required 2.0 for graduation. Additionally, the user is in good academic standing, which is also a requirement. Since the GPA is below the required threshold, the user cannot proceed with the graduation application.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_PiUPt2FXLujJXsmZqsHfUWpR",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -28364,7 +29104,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -29053,16 +29816,7 @@
                         "content": "The academic calendar shows that the graduation deadline is on March 1, 2024, which is after the current interaction time, so that condition is met. However, Alice still has a tuition balance and has not completed all required courses for her major, which disqualifies her from requesting graduation.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_wOGo8MjTXWhptiAZzvQstGq9",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -29405,7 +30159,30 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -30430,7 +31207,30 @@
                     "interaction_time": "2024-03-02T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "university",
@@ -31091,16 +31891,7 @@
                         "content": "The student \"alice\" has completed 180 credits, has a GPA of 3.8, and has a tuition balance of 0, which meets the credit, GPA, and tuition requirements. However, the student is currently on academic probation, which disqualifies them from requesting graduation. I need to inform the user of this issue.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_k4QIO8HivuMfZWxZk7l28qzC",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -31440,6 +32231,29 @@
                     "interaction_time": "2023-11-15T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_graduation",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     }
 ]

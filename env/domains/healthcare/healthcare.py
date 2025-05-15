@@ -511,7 +511,7 @@ class Healthcare_Strict:
         return self.domain_system
     def evaluation_get_database_descriptions(self)->dict:
         return self.domain_system.evaluation_get_database_descriptions()
-    def evaluation_get_Dependency_Evaluator(self)->Dependency_Evaluator:
+    def evaluation_get_dependency_evaluator(self)->Dependency_Evaluator:
         return self.domain_dep
     def evaluation_get_state_tracker(self)->Healthcare_State_Tracker:
         return self.state_tracker

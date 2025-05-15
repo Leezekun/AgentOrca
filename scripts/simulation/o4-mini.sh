@@ -1,7 +1,7 @@
 cd ../..
 
 model="o4-mini-high"
-domains=("hotel" "university")
+domains=("university" "healthcare")
 tool_lists=("full")
 method="fc"
 
@@ -11,6 +11,7 @@ for i in {1..5}; do
         for tool_list in "${tool_lists[@]}"; do
             CUDA_VISIBLE_DEVICES=$devices python run_simulation.py \
                 --domain $domain \
+                --user_model adv \
                 --assistant_model $model \
                 --env_mode prompt \
                 --tool_list $tool_list \

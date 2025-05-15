@@ -52,7 +52,7 @@ from env.helpers import InvalidConstraintOption,\
 
 from env.helpers import\
     check_dep_seen_or_encapsulated, dfsremove_if_unnecessary, dfscollapse_dep, dfsprune_dep_pro,\
-    get_new_param_mapping, dfsgather_constr_singles_dep, dfsgather_param_names_dep,\
+    get_new_param_mapping, dfsgather_constr_singles_dep_set, dfsgather_constr_singles_dep_list, dfsgather_param_names_dep,\
     dfsplace_param_names, dfsins_constr_deps, gather_action_default_dependencies, dfsins_innate_deps,\
     get_cl_param_mapping, dfsins_constr_links, dfsins_cl_cd_aid
 
@@ -283,7 +283,7 @@ def remove_call_constr_false(action_dependencies:list[tuple])->list[tuple]:
         if not dep_orig:
             counter_act_deps += 1
             continue
-        call_constrs = dfsgather_constr_singles_dep(dep_orig)
+        call_constrs = dfsgather_constr_singles_dep_set(dep_orig)
         call_constrs = set(call_constr for call_constr in call_constrs if call_constr[1].startswith("call_"))
         dep_has_task_bool:bool = False
         for succ_or_fail in task:
@@ -440,6 +440,42 @@ def verify_database_format(initial_database:dict, example_database:dict)->tuple[
 def configure_func_parameters(input_params:dict, func_param_names:set)->dict:
     return {param_name:input_params[param_name] for param_name in func_param_names if param_name in input_params}
 
+# returns a set of constraints with result -1 based on the dictionary of constraint results and chain/gate relations
+def gather_undetermined_constr_set_recur(dep:tuple, constr_results:dict)->tuple[set,int]:
+    constr_set, dep_result = set(), -1
+    if not dep: return constr_set
+    match dep[0]:
+        case "single":
+            constr_tuple = (dep[0], re.sub("not ", "", dep[1]), dict_to_tuple(dep[2]))
+            if constr_tuple in constr_results: dep_result = constr_results[constr_tuple]
+        case "and" | "or":
+            and_bool:bool = dep[0] == "and"
+            for ele in dep[1]:
+                constr_set_part, dep_result_part = gather_undetermined_constr_set_recur(ele, constr_results)
+                constr_set |= constr_set_part
+                # records the "and" True and "or" False once, opposite results multiple times
+                if dep_result_part > -1 and (and_bool != dep_result_part or dep_result == -1): dep_result = dep_result_part
+        case "chain" | "gate":
+            and_bool:bool = dep[0] == "chain"
+            i:int = 0
+            # loop through the list
+            while i < len(dep[1]):
+                constr_set_part, dep_result_part = gather_undetermined_constr_set_recur(dep[1][i], constr_results)
+                constr_set |= constr_set_part
+                if dep_result_part > -1:
+                    if and_bool != dep_result_part: break
+                    dep_result = dep_result_part
+                i += 1
+            # check if the list is fully traversed
+            if i == len(dep[1]): return constr_set, dep_result
+            dep_result = not and_bool
+            for j in range(i+1, len(dep[1])): constr_set |= dfsgather_constr_singles_dep_set(dep[1][j])
+        case _: raise InvalidConstraintOption(f"invalid dependency option selected: {dep[0]}")
+    return constr_set, dep_result
+def gather_undetermined_constr_set(dep:tuple, constr_results:dict)->set:
+    constr_set, _ = gather_undetermined_constr_set_recur(dep, constr_results)
+    return constr_set
+
 # verifies the success of the AI generation with respect to the dependency, actions required determined by constraint links
 class VerifierDiscrepancy(Exception): pass
 def verify_gen_succ(task_obj:Task, dep:tuple, dep_perm:tuple, domain_str:str, user_goal:str,
@@ -453,7 +489,7 @@ def verify_gen_succ(task_obj:Task, dep:tuple, dep_perm:tuple, domain_str:str, us
     dep_params = json.loads(task_obj.dependency_parameters_str)
     domain_system_strict = domain_keys[domain_str+"_strict"](data, act_innate_deps, all_dep, dep_params)
     domain_system = domain_system_strict.evaluation_get_domain_system()
-    Dependency_Evaluator = domain_system_strict.evaluation_get_Dependency_Evaluator()
+    dependency_evaluator = domain_system_strict.evaluation_get_dependency_evaluator()
     state_tracker = domain_system_strict.evaluation_get_state_tracker()
     user_known = json.loads(task_obj.user_known_str)
     # initialize the constraint verifier to check if the generated scenario follows the constraints
@@ -467,7 +503,7 @@ def verify_gen_succ(task_obj:Task, dep:tuple, dep_perm:tuple, domain_str:str, us
     constr_values_fully_followed = True
     user_goal_succ_verified = not bool(actions_required)
     dss_pass = True
-    Dependency_Evaluator_before_ug = Dependency_Evaluator
+    dependency_evaluator_before_ug = dependency_evaluator
     for action, action_params in actions_required:
         action_params = get_new_param_mapping(user_known, action_params)
         signature = inspect.signature(getattr(domain_system, action))
@@ -479,7 +515,7 @@ def verify_gen_succ(task_obj:Task, dep:tuple, dep_perm:tuple, domain_str:str, us
         if missing_param_names: ds_perm_res = False
         elif func_dep_pass: ds_perm_res = getattr(domain_system_perm, action)(**get_new_param_mapping(user_known, {key: key for key in action_parameters[action]}))
         func_dep_pass = func_dep_pass and (ds_perm_res if isinstance(ds_perm_res, bool) else ds_perm_res[0])
-        if action == user_goal: Dependency_Evaluator_before_ug = copy.deepcopy(Dependency_Evaluator) # copying constraints before user_goal action
+        if action == user_goal: dependency_evaluator_before_ug = copy.deepcopy(dependency_evaluator) # copying constraints before user_goal action
         # call the domain to change the state tracker and verify
         if missing_param_names: dss_pass = False
         elif dss_pass and constr_values_fully_followed: dss_pass = getattr(domain_system_strict, action)(**action_params)
@@ -492,14 +528,18 @@ def verify_gen_succ(task_obj:Task, dep:tuple, dep_perm:tuple, domain_str:str, us
         constr_values_fully_followed = constr_values_fully_followed and func_dep_follow_constr_values
         if action == user_goal and func_dep_pass == task_succ: user_goal_succ_verified = True 
     # calculate the actual results, useful for diagnostics, after actions taken
-    verification_results = {}
-    for key in task_single:
+    single_constrs_ordered = dfsgather_constr_singles_dep_list(dep_perm)
+    actual_results = {}
+    for key in single_constrs_ordered:
         target_result = task_single[key]
+        if key in actual_results: continue
         dep_perm_single = dfsins_cl_cd_aid(orig_dep(key), cl, act_innate_deps, act_def_deps, cd, action_parameters)
-        actual_result = int(Dependency_Evaluator_before_ug._process(dep_perm_single, **user_known))\
-            if task_single[key] >= 0 else task_single[key]
-        verification_results[key] = (target_result, actual_result)
-    # return the verification result and diagnostics
+        actual_result = int(Dependency_Evaluator_before_ug._process(dep_perm_single, **user_known)) if task_single[key] >= 0 else target_result
+        actual_results[key] = actual_result
+        undetermined_constr_set:set = gather_undetermined_constr_set(dep_perm, actual_results)
+        for ele in undetermined_constr_set: actual_results[ele] = -1
+    # return the verification result and diagnostics, verification results has (target_result, actual_result) tuples as values
+    verification_results = {key: (task_single[key], actual_results[key]) for key in single_constrs_ordered}
     return constr_values_fully_followed and user_goal_succ_verified, verification_results
 
 

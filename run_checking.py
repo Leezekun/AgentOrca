@@ -3,6 +3,8 @@ import pprint
 from colorama import init, Fore, Back, Style
 import os
 import argparse
+from env.helpers import bfsconvert_ifg_to_tree
+from env.generation import dfsgather_dep_tree_vis
 
 # Initialize colorama
 init()
@@ -15,9 +17,15 @@ def load_json_file(filepath):
     with open(filepath, 'r') as f:
         return json.load(f)
 
-def display_dependency_graph(dirgraph):
-    print(f"\n{Back.RED}{Fore.WHITE}=== DEPENDENCY GRAPH ==={Style.RESET_ALL}")
-    print(json.dumps(dirgraph, indent=4))
+def display_dependency_graph(dirgraph, option=2):
+    print(f"\n{Back.RED}{Fore.WHITE}=== Directed Action Graph ==={Style.RESET_ALL}")
+    # print(json.dumps(dirgraph, indent=4))
+    
+    # The first option to display the dependency graph is to convert it to a tree and display it
+    if option == 1:
+        tree = bfsconvert_ifg_to_tree(dirgraph)
+        print(dfsgather_dep_tree_vis(tree))
+        return 
 
     def format_node(node):
         """Format a node for display with appropriate colors"""
@@ -102,23 +110,26 @@ def display_evaluation(evaluation):
 
 def display_task_info(task):
     print(f"\n{Back.BLUE}{Fore.WHITE}=== TASK INFORMATION ==={Style.RESET_ALL}")
-    print(f"{Fore.CYAN}User Goal:{Style.RESET_ALL} {task['user_goal']}")
+    print(f"{Fore.CYAN}User Goal (target action):{Style.RESET_ALL} {task['user_goal']}")
     
     # Display user known information
-    print(f"\n{Fore.CYAN}User Known Information:{Style.RESET_ALL}")
+    print(f"\n{Fore.CYAN}User Provided Information:{Style.RESET_ALL}")
     for key, value in task['user_known'].items():
         print(f"  {Fore.YELLOW}{key}:{Style.RESET_ALL} {value}")
     
     print(f"\n{Fore.CYAN}Should Succeed:{Style.RESET_ALL} {Fore.GREEN if bool(task['action_should_succeed']) else Fore.RED}{bool(task['action_should_succeed'])}{Style.RESET_ALL}")
-    print(f"{Fore.CYAN}User Goal Verb:{Style.RESET_ALL} {task['user_instruction']}")
+    print(f"{Fore.CYAN}User Instruction:{Style.RESET_ALL} {task['user_instruction']}")
     print(f"\n{Fore.YELLOW}User Prompt:{Style.RESET_ALL}")
     print(task['user_prompt'])
     print(f"\n{Fore.YELLOW}Assistant Prompt:{Style.RESET_ALL}")
     print(task['assistant_prompt'])
     
     # Display dependency graph
-    print(json.dumps(task['dependency'], indent=4))
+    # print(json.dumps(task['dependency'], indent=4))
     display_dependency_graph(task['directed_action_graph'])
+
+
+
 
 def display_interaction(interaction):
     print(f"\n{Back.GREEN}{Fore.WHITE}=== INTERACTION TURNS ==={Style.RESET_ALL}")

@@ -257,6 +257,39 @@ def dfsgather_constr_singles_dep(dep:tuple)->set:
         case _: raise InvalidConstraintOption(f"invalid dependency option selected: {dep[0]}")
     return params_set
 
+def dfsgather_constr_singles_dep_set(dep:tuple)->set:
+    constr_set = set()
+    if not dep: return constr_set
+    match dep[0]:
+        case "single":
+            constr_set = {(dep[0], re.sub("not ", "", dep[1]), dict_to_tuple(dep[2]))}
+        case "and" | "or" | "chain" | "gate":
+            for ele in dep[1]: constr_set = constr_set | dfsgather_constr_singles_dep_set(ele)
+        case _: raise InvalidConstraintOption(f"invalid dependency option selected: {dep[0]}")
+    return constr_set
+
+# returns a list of single constraints, preserving the order, removing the "not"
+def dfsgather_constr_singles_dep_list_recur(dep:tuple)->list:
+    constr_list, constr_set = [], set()
+    if not dep: return constr_list, constr_set
+    match dep[0]:
+        case "single":
+            constr_tuple = (dep[0], re.sub("not ", "", dep[1]), dict_to_tuple(dep[2]))
+            constr_list = [constr_tuple]
+            constr_set = {constr_tuple}
+        case "and" | "or" | "chain" | "gate":
+            for ele in dep[1]:
+                constr_list_part, constr_set_part = dfsgather_constr_singles_dep_list_recur(ele)
+                constr_set_part_new = constr_set_part - constr_set
+                constr_list = constr_list + [elem for elem in constr_list_part if elem in constr_set_part_new]
+                constr_set |= constr_set_part_new
+        case _: raise InvalidConstraintOption(f"invalid dependency option selected: {dep[0]}")
+    return constr_list, constr_set
+
+def dfsgather_constr_singles_dep_list(dep:tuple)->list:
+    constr_list, _ = dfsgather_constr_singles_dep_list_recur(dep)
+    return constr_list
+
 # dfs gather the parameter values in a dependency
 def dfsgather_param_names_dep(dep:tuple)->set:
     params_set = set()
@@ -893,8 +926,9 @@ def bfsconvert_tree_to_ifg(dep:tuple, action_user_goal:tuple=None)->dict:
             case "single":
                 nodes.append((dep_part[1], dep_part[2]))
                 if node_prev >= 0: connections.append((node_prev, len(nodes)-1))
-            case "and" | "or":
-                nodes.append(dep_part[0])
+            case "and" | "or" | "gate":
+                if dep_part[0] == "gate": nodes.append("or")
+                else: nodes.append(dep_part[0])
                 if node_prev >= 0: connections.append((node_prev, len(nodes)-1))
                 for dep_part_part in dep_part[1]: q.append((len(nodes)-1, dep_part_part))
             case "chain":

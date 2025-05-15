@@ -429,7 +429,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "add_authorized_provider",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -846,7 +869,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "add_authorized_provider",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -1229,7 +1275,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "add_authorized_provider",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -1610,7 +1679,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "add_authorized_provider",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -2070,7 +2162,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "add_authorized_provider",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -2467,7 +2582,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "add_authorized_provider",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -3039,7 +3177,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "appeal_claim",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -3466,16 +3627,7 @@
                         "content": "The claim details have been retrieved. The claim date is '2024-12-01', and the interaction time is '2025-01-15T12:56:39'. The appeal period is 30 days from the claim date, which means the appeal must be submitted by '2025-01-01'. Since the interaction time is after this date, the appeal is outside the allowable period. I will inform the user that the appeal cannot be submitted.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_KPFeiAajGYbqrX7m1tk8vUcI",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -3597,7 +3749,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "appeal_claim",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -4106,7 +4281,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "appeal_claim",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -4500,16 +4698,7 @@
                         "content": "The claim with ID \"CLM-003\" is currently in a 'pending' status, not 'denied'. Therefore, the user cannot appeal this claim as it does not meet the required condition of being denied.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_ep4BkbxWwxN7ANwmt6d24cLN",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -4641,7 +4830,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "appeal_claim",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -5239,7 +5451,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "appeal_claim",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -5837,7 +6072,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "appeal_claim",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -6285,16 +6543,7 @@
                         "content": "The claim with ID CLM-002 is currently in a 'pending' status, not 'denied'. Therefore, it cannot be appealed at this moment.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_FqozfALGrmY9Yqe66OyjppW8",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -6416,7 +6665,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "appeal_claim",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -6880,7 +7152,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "deactivate_policy",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -7244,16 +7539,7 @@
                         "content": "The user \"Henry Smith\" has a claim with a status of 'pending'. This condition prevents the policy from being deactivated.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_2fdliI2Y5fVAHhXUS9FFm8vy",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -7375,7 +7661,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "deactivate_policy",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -7599,16 +7908,7 @@
                         "content": "The claim details have been successfully retrieved. I can now provide the user with the information they requested.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_dpMfGAe9Mx0HAi0P2Vd8wYNC",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -7730,7 +8030,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_claim_details",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -8054,7 +8377,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_claim_details",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -8403,7 +8749,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_claim_details",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -8625,16 +8994,7 @@
                         "content": "The claim history has been successfully retrieved for the user Henry Smith. There are two claims listed: one approved for a general checkup and another pending for a specialist consultation.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_pnYAZLI7N5o88H6TppAE3MWa",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -8756,7 +9116,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_claim_history",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -8952,16 +9335,7 @@
                         "content": "The login attempt was unsuccessful, which means the user either provided incorrect credentials or there was an issue with the identification method. I will inform the user that the login failed and that they need to provide the correct credentials to proceed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_wQ7o87Zn27BEEaFztmlRR4BM",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -9083,7 +9457,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_claim_history",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -9380,7 +9777,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_claim_history",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -9602,16 +10022,7 @@
                         "content": "The policy details have been successfully retrieved. I can now provide the user with the information about their coverage, authorized providers, and enrollment date.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Ly1EeSy7MBqeYjIyiY4PMYWd",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -9733,7 +10144,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_policy_details",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -9904,16 +10338,7 @@
                         "content": "To retrieve the policy details, the user must be logged in first. The user has provided a username but no identification method, so I need to prompt the user for their password or driver's license information to proceed with the login.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_SyZ2zEXx2h2VemuCBtSgE3FA",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -9935,16 +10360,7 @@
                         "content": "The user has not provided a method of identification, which is required to log in and subsequently retrieve the policy details. I need to prompt the user for their password or driver's license information to proceed with the login.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_8kqgdocWvGhppzFxx3EQFJtw",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -10066,7 +10482,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_policy_details",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 0,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 0.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -10415,7 +10854,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_policy_details",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -10587,16 +11049,7 @@
                         "content": "The 'get_provider_details' function has returned the details for the provider with the unique identifier \"mayo_clinic_rochester\". The information includes the name, location, service type, and availability. I will now provide this information to the user.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_hrdw3knrsbswVq4ojBcfMXfg",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -10618,16 +11071,7 @@
                         "content": "The observation provided does not match the expected output format. However, based on the initial call to 'get_provider_details', I have the correct information to provide to the user. I will provide the details in the requested dictionary format.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_ZjxgOpFMFDp6NA9hdzk8T7zI",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -10749,7 +11193,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "get_provider_details",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -10898,16 +11365,7 @@
                         "content": "The user wants to log in to their healthcare account. They have provided a username and an identification number but have not specified whether it is a password or a driver's license. I need to clarify this before proceeding with the login process.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_00BJggoDuK500DQBp5gtmSur",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -10929,16 +11387,7 @@
                         "content": "The user has provided a username and an identification number but has not specified whether the identification is a password or a driver's license. I need to ask for clarification before proceeding with the login process.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_F0AjyL8oOa12sSRv0dGFbb0F",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -11060,7 +11509,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "login_user",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 0,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 0.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -11393,7 +11865,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "logout_user",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -11701,7 +12196,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "logout_user",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -12123,7 +12641,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reactivate_policy",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -12421,16 +12962,7 @@
                         "content": "The user has an inactive policy, which meets the requirement for reactivation. However, the coverage amount provided by the user is negative (-1000), which is not valid. I will inform the user that the coverage amount must be a positive number and cannot proceed with the reactivation.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_CbLBKdou3zaiShoTHdH8LcB3",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -12554,7 +13086,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reactivate_policy",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -12925,7 +13480,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reactivate_policy",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -13223,16 +13801,7 @@
                         "content": "The policy details have been retrieved, but the status of the policy (active or inactive) is not explicitly mentioned in the details. Since the action to reactivate the policy requires the policy to be marked as 'Inactive', and this information is not provided, I cannot proceed with reactivating the policy. I will inform the user that I cannot proceed without the policy being marked as 'Inactive'.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_tfjSpWcomitsme5kX0tTC2CQ",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -13356,7 +13925,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reactivate_policy",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -13792,7 +14384,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reactivate_policy",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -14228,7 +14843,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "reactivate_policy",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -14729,7 +15367,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -15193,7 +15854,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -15495,16 +16179,7 @@
                         "content": "The login attempt was unsuccessful, which means the user could not be authenticated with the provided credentials. I will inform the user that the login failed and that they need to provide correct identification to proceed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Q4zFM4G47SyoQSess1xnaY8n",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -15628,7 +16303,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -16094,7 +16792,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -16478,16 +17199,7 @@
                         "content": "The login attempt was unsuccessful, likely due to missing driver's license state information. I need to inform the user that the login failed and cannot proceed with scheduling the appointment without a successful login.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_622F3EhHMv0eFskxo6i1odn2",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -16609,7 +17321,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -16995,16 +17730,7 @@
                         "content": "The login attempt was unsuccessful, which means the user's credentials are incorrect or the user is not registered. I need to inform the user that the login failed and cannot proceed with scheduling an appointment.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_4fS1iKR3evEaOLyRkwiRbhUU",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -17128,7 +17854,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -17562,16 +18311,7 @@
                         "content": "The provider details indicate that the service type is 'Dental', and the provider is not authorized for the user \"Henry Smith\" based on the authorized providers list from the policy details. Since the provider is not authorized and the service type does not match the user's policy type (which is not explicitly mentioned but implied by the authorized providers), the appointment cannot be scheduled.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_c3htDW8dN7OTHXkNOA38XSiR",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -17693,7 +18433,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -18254,7 +19017,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -18749,7 +19535,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -19269,7 +20078,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -19879,7 +20711,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -20487,7 +21342,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -20961,16 +21839,7 @@
                         "content": "The provider details indicate that the provider is currently unavailable. Therefore, I cannot proceed with scheduling an appointment as one of the required conditions is not met.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_vsZRnH5O4iW9Lc6uqOF4H4O1",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -21093,7 +21962,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -21547,16 +22439,7 @@
                         "content": "The user's policy details have been retrieved. However, the policy does not list the provider \"mayo_clinic_rochester\" as an authorized provider. Therefore, I cannot proceed with scheduling the appointment.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Z9JuKgJPY2K9s3poM1PjIsT0",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -21684,7 +22567,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -22107,16 +23013,7 @@
                         "content": "The login attempt was unsuccessful, likely due to missing driver's license state information. I need to inform the user that the login was unsuccessful and cannot proceed with scheduling the appointment without a successful login.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_QWKTLs0LUZqi0xO3G1T6rVh1",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -22263,7 +23160,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -22869,7 +23789,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -23361,16 +24304,7 @@
                         "content": "The current interaction time is \"2025-01-15T12:56:39\", and the appointment date requested is \"2025-02-20\", which is in the future. However, the provider is marked as 'Unavailable'. I will inform the user that the appointment cannot be scheduled due to the provider's unavailability.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_kID9JvKMlDnhzvmmFMhwpxme",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -23494,7 +24428,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -23984,16 +24941,7 @@
                         "content": "The interaction time is \"2025-01-15T12:56:39\", and the appointment date requested by the user is \"2025-01-10\". Since the appointment date is before the interaction time, the appointment cannot be scheduled. I will inform the user of this issue.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_PotV629QtFA2YIZxb368ItCG",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -24115,7 +25063,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -24607,16 +25578,7 @@
                         "content": "The interaction time is set for January 15, 2025, and the appointment date requested is January 10, 2025, which is before the interaction time. Therefore, the appointment cannot be scheduled as it does not meet the condition of being after the interaction time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_58OsbBGtlSITZLJ3HzYUXFU5",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -24740,7 +25702,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -25207,16 +26192,7 @@
                         "content": "The provider details show that the service type offered by 'Kaiser Permanente Oakland' is 'Pharmacy', which does not match the user's policy type. Additionally, the provider is marked as 'Unavailable'. Therefore, the user cannot schedule an appointment with this provider. I will inform the user of this situation.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_Mq3GgglE5GxtFY5BcclLn3tK",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -25340,7 +26316,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -26004,7 +27003,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -26684,7 +27706,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -27292,7 +28337,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -27796,16 +28864,7 @@
                         "content": "The provider's service type matches the user's policy type, which is 'Dental'. However, the provider is marked as 'Unavailable', which means we cannot schedule an appointment with this provider. I will inform the user about the provider's unavailability.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_X3eVkA3DkhoQChS7SZPob9DA",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -27927,7 +28986,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -28556,7 +29638,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -29085,16 +30190,7 @@
                         "content": "The interaction time is '2025-01-15T12:56:39', and the appointment date provided is '2025-01-10'. Since the appointment date is before the interaction time, the appointment cannot be scheduled. I will inform the user of this issue.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_FHWUvzb9hnjSmlsaLdy1yyVk",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -29216,7 +30312,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -29820,7 +30939,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "schedule_appointment",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -30374,7 +31516,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -30775,16 +31940,7 @@
                         "content": "The total amount of pending and approved claims is $1700 ($500 approved + $1200 pending). The coverage amount is $10,000, so the new claim of $8301 would exceed the remaining coverage amount. Therefore, I cannot submit the claim as it would exceed the coverage limit.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_w5lNMQsrpH4TgXNJimUFqf59",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -30906,7 +32062,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -31329,7 +32508,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -31616,16 +32818,7 @@
                         "content": "The user has successfully logged in. The next step is to check if the user has an active policy and if the claim amount is within the allowed limit. Since the amount provided is 6000, which exceeds the maximum claimable amount of 5000, the claim cannot be submitted.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_t9tWzFwDI9py5Tefk1g4vshG",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -31749,7 +32942,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -32189,16 +33405,7 @@
                         "content": "The claim has been successfully submitted. I will inform the user of the successful submission.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_CCOroV9Sbk730a2LPUeFaio7",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -32328,7 +33535,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -32876,7 +34106,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -33251,16 +34504,7 @@
                         "content": "The user has successfully logged in. The next step is to submit the claim. However, the claim amount provided by the user is 5000, which exceeds the maximum claimable amount of 2000. Therefore, I cannot proceed with the claim submission.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_ytYWAWKEVGPWt5FOj6T8DFkp",
-                                "function": {
-                                    "arguments": "{\"error\": \"The claim amount exceeds the maximum claimable amount of 2000.\"}",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -33392,7 +34636,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -34048,7 +35315,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -34742,7 +36032,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -35393,7 +36706,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -36087,7 +37423,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -36613,16 +37972,7 @@
                         "content": "The provider 'Kaiser Permanente' has a service type of 'Pharmacy', which does not match the user's policy type 'Health'. Additionally, the provider is marked as 'Unavaliable'. Since the provider is not authorized and the service type does not match the policy type, I cannot proceed with the claim submission.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_ebB8ICd9xXhwMn2Jl0K4nyBM",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -36754,7 +38104,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -37314,7 +38687,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -37902,7 +39298,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -38329,16 +39748,7 @@
                         "content": "The user's policy is active and the provider is authorized. However, the claim amount of 6000 exceeds the maximum claimable amount of 5000. I will inform the user that the claim cannot be processed due to the amount exceeding the limit.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_lBkxBBWjxSvveJp8ntMtdK5f",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -38462,7 +39872,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -38890,16 +40323,7 @@
                         "content": "The user has an active policy with a type of 'Dental'. However, the provider ID 'johns_hopkins_baltimore' is not listed in the authorized providers for this policy. Additionally, the claim amount of 6000 is within the coverage limit of 10000, but the provider must be authorized or match the policy type to proceed. Since the provider is not authorized, I cannot submit the claim.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_0B9E91DweLIeZMoKBRqdbINM",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -39024,7 +40448,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -39477,16 +40924,7 @@
                         "content": "The provider details indicate that the provider \"Kaiser Permanente\" in Oakland has a service type of 'Pharmacy', which could potentially match the policy type for prescription medication. However, the provider is marked as 'Unavaliable', and more importantly, the provider is not listed in the authorized providers for the user's policy. Therefore, the claim cannot be submitted as the provider is not authorized for the user's policy.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_kj0UEUwvNJAm0yg906A6Hw1f",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -39611,7 +41049,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -40244,7 +41705,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -40905,7 +42389,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -41570,7 +43077,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -42142,16 +43672,7 @@
                         "content": "The user has one approved claim with an amount of 1400. The total amount of pending and approved claims is 1400, which is less than the coverage amount of 1500. The new claim amount is 800, which would exceed the coverage amount if added to the existing approved claim. Therefore, the new claim cannot be submitted.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_oHpN0rHkcMPfVlEQs9tfca7n",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -42290,7 +43811,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -42807,16 +44351,7 @@
                         "content": "The user's policy is active, and the provider 'johns_hopkins_baltimore' is authorized for the user. However, the amount of the claim is 2000, which exceeds the maximum claimable amount of 1500. Therefore, I cannot proceed with the claim submission.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_AFjQlvcAwQ999RjNAoXFor1i",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -42950,7 +44485,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -43490,16 +45048,7 @@
                         "content": "The provider 'Kaiser Permanente' has a service type of 'Pharmacy', which matches the user's policy type. However, the amount requested for the claim is 4000, which exceeds the maximum claimable amount of 3000. Therefore, I cannot proceed with the claim submission.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_2pk1UQM5TGHUGHhXmBVa6jLn",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -43631,7 +45180,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -44281,7 +45853,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "submit_claim",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -44785,7 +46380,30 @@
                     "interaction_time": "2024-12-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -45289,7 +46907,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -45730,7 +47371,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -46042,16 +47706,7 @@
                         "content": "The user's current policy is active and of type 'Health'. The next step is to update the policy with the new coverage amount, ensuring it does not exceed 20% of the annual income. The user's annual income is $60,000, so the maximum allowable coverage amount is $12,000. The requested coverage amount is $13,000, which exceeds the limit. Therefore, I will inform the user that the requested coverage amount exceeds the allowed limit and cannot be processed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_G3lesG223yDRbVVSh9TChKXm",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -46173,7 +47828,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -46612,7 +48290,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -46874,16 +48575,7 @@
                         "content": "The user wants to update their healthcare policy. Before proceeding with the update, I need to verify if the user is logged in and if they have an active policy. However, the desired policy type 'Life' is not one of the valid insurance policy types (Health, Dental, Pharmacy, Vision). Therefore, I will inform the user that the policy type is invalid and cannot proceed with the update.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_VrYt6tTFeBr3XQ9RI4HEMQck",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -47007,7 +48699,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 0,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 0.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -47527,7 +49242,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -48047,7 +49785,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -48439,16 +50200,7 @@
                         "content": "The current interaction time is '2025-01-15T12:56:39', which falls within the allowable enrollment period of 60 days after the enrollment date of '2024-12-01'. The next step is to check if the requested coverage amount does not exceed 20 percent of the annual income. The user's annual income is 50000, so 20 percent of that is 10000. The requested coverage amount is 12000, which exceeds the limit. Therefore, I will inform the user that the requested coverage amount exceeds the allowable limit and cannot be processed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_7RN8FiiixMeVxR83MF2FvgRu",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -48573,7 +50325,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -49131,7 +50906,30 @@
                     "interaction_time": "2023-12-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -49506,16 +51304,7 @@
                         "content": "The login attempt was unsuccessful, which means Henry Smith could not be authenticated with the provided driver's license information. I need to inform him that the login failed and that he cannot proceed with updating his policy without a successful login.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_uCTq8z0LvnYFVxUpAr2f9xPc",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -49640,7 +51429,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -50098,16 +51910,7 @@
                         "content": "The user has a pending claim with the status 'pending'. According to the constraints, the user must not have any claims with a status of 'pending' to proceed with updating the policy. Therefore, I cannot proceed with the policy update at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_oNJ24e17ivQC0KnCA2hI9H8Z",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -50240,7 +52043,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -50758,7 +52584,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -51148,16 +52997,7 @@
                         "content": "The current interaction time is '2025-01-15T12:56:39', which is beyond the allowable enrollment period of 365 days from the user's policy enrollment date of '2023-01-01'. Therefore, the user cannot update their policy at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_PQgf7pCFYyuoTqcDC5b7vGBD",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -51282,7 +53122,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -51620,16 +53483,7 @@
                         "content": "The login attempt was unsuccessful, which means the user is not authenticated. Therefore, I cannot proceed with updating the policy. I will inform the user that their login attempt failed and that they need to provide valid credentials to proceed.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_bEMBB50SpT3CvI3oM0vwHw37",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -51752,7 +53606,30 @@
                     "interaction_time": "2023-11-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -52253,7 +54130,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -52675,7 +54575,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -53181,7 +55104,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -53611,7 +55557,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -54041,7 +56010,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -54342,16 +56334,7 @@
                         "content": "The user has successfully logged in. However, the user provided an invalid policy type ('Invalid'), which is not one of the valid insurance policy types: Health, Dental, Pharmacy, or Vision. I need to inform the user about this issue and cannot proceed with the policy update at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_1yWuyxgLc83h00wQmvKSWigq",
-                                "function": {
-                                    "arguments": "{\"message\": \"The policy type you provided ('Invalid') is not valid. Please choose from the following valid policy types: Health, Dental, Pharmacy, or Vision.\"}",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -54473,7 +56456,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -54972,7 +56978,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -55476,7 +57505,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -55778,16 +57830,7 @@
                         "content": "The user wants to update their healthcare policy. Before proceeding with the update, I need to log the user in and verify that all conditions for updating the policy are met. However, the provided policy type is 'Invalid', which is not one of the valid types. I will inform the user of this issue and not proceed with the update.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_licHMdGgdJfOPYpTEryPVEuS",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -55902,7 +57945,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 0,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 0.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -56482,7 +58548,30 @@
                     "interaction_time": "2023-11-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -56913,16 +59002,7 @@
                         "content": "The current interaction time is '2025-01-15T12:56:39', which is well beyond the 180-day allowable enrollment period from the user's policy enrollment date of '2023-05-10'. Therefore, the user cannot update their policy at this time due to the interaction time falling outside the allowable enrollment period.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_ggLlrJhj00lBbgavniEOGyof",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -57037,7 +59117,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -57478,16 +59581,7 @@
                         "content": "The interaction time is '2023-10-15T12:56:39', and the enrollment date is '2023-05-10'. The interaction time falls within the 180-day allowable enrollment period from the enrollment date. The next step is to check if the requested coverage amount does not exceed 10 percent of the annual income and if there are no pending claims. Since the annual income is 1,000,000, 10 percent of this is 100,000. The requested coverage amount is 120,000, which exceeds the limit. Therefore, I will inform the user that the requested coverage amount exceeds the allowable limit.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_o6geQ2SMLndeXQ3BOGjiGSdU",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -57612,7 +59706,30 @@
                     "interaction_time": "2023-10-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -58086,16 +60203,7 @@
                         "content": "There is a pending claim with the status 'pending', which means the user cannot proceed with updating the policy at this time. I will inform the user of this condition and decline the action.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_3klYA5cFSGHME4FbrzeKrfuQ",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -58228,7 +60336,30 @@
                     "interaction_time": "2023-12-15T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -58762,7 +60893,30 @@
                     "interaction_time": "2024-12-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -59271,7 +61425,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -59677,16 +61854,7 @@
                         "content": "The user's policy is active and of type 'Health'. The enrollment date is '2024-12-01', so the allowable enrollment period extends for 60 days after this date, which is until '2025-01-30'. The interaction time '2025-01-15T12:56:39' falls within this period. The requested coverage amount is 15000, which is 30% of the annual income of 50000, exceeding the 20% limit. Therefore, the policy update cannot be processed due to the coverage amount exceeding the allowed limit.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_JgbnwVTSZ6PZXqNSl9Ge3eXe",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -59811,7 +61979,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -60270,7 +62461,30 @@
                     "interaction_time": "2024-12-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 2,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 2.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -60649,16 +62863,7 @@
                         "content": "The login attempt was unsuccessful, likely due to missing driver's license state information. I need to inform the user that the login failed and that they need to provide the state of their driver's license for identification.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_mIAsBhpJiDRtqDWlDIbaDwXM",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -60773,7 +62978,30 @@
                     "interaction_time": "2023-07-01T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -61212,16 +63440,7 @@
                         "content": "The current interaction time is '2025-01-15T12:56:39'. The user's policy enrollment date is '2023-05-10'. The allowable enrollment period for updating the policy is 90 days after the enrollment date. Since the interaction time is well beyond the 90-day window, the user cannot update their policy at this time.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_ZO1Jvl7y5kFirZfgj4MeIxSh",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -61346,7 +63565,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -61818,16 +64060,7 @@
                         "content": "There is a pending claim with the status 'pending', which means the user cannot proceed with updating the policy at this time. I will inform the user of this condition and decline the action.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_EbhJD4joQgtSWlKiNnJLT0Rb",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -61960,7 +64193,30 @@
                     "interaction_time": "2023-12-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -62324,16 +64580,7 @@
                         "content": "The user wants to update their healthcare policy. Before proceeding with the update, I need to verify if the user is logged in and if the provided policy type is valid. The policy type 'Invalid' is not one of the valid types, so I will inform the user and not proceed with the update.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_speK3pVo6kX1zXR1FG6x3K8W",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -62458,7 +64705,30 @@
                     "interaction_time": "2023-11-30T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 0,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 0.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -62944,7 +65214,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -63312,16 +65605,7 @@
                         "content": "The user's policy is active and of type 'Health'. The annual income is $1,000,000, and the requested coverage amount is $250,000, which is 25% of the annual income. This exceeds the 20% limit, so I cannot proceed with the update. I will inform the user of this issue.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_AWDuAAOoZesxbNgiB9QwzxXd",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -63436,7 +65720,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -63956,7 +66263,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -64274,16 +66604,7 @@
                         "content": "The user wants to update their healthcare policy. Before proceeding with the update, I need to verify if the user is logged in and if the provided policy type is valid. The policy type 'Invalid' is not one of the valid types, so I will inform the user and not proceed with the update.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_CfXUeYiaultRgjRhnM3UwLZ5",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -64398,7 +66719,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 3,
+                "num_function_calls": 0,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 3.0,
+            "avg_num_function_calls": 0.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -64992,7 +67336,30 @@
                     "interaction_time": "2023-11-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -65530,7 +67897,30 @@
                     "interaction_time": "2025-01-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -65975,16 +68365,7 @@
                         "content": "The current interaction time is '2023-07-01T12:56:39', which is within the allowable enrollment period of 60 days from the enrollment date '2023-05-10'. The next step is to check if the requested coverage amount does not exceed 20 percent of the annual income. The user's annual income is $1,000,000, so 20 percent of this is $200,000. The requested coverage amount is $250,000, which exceeds the limit. Therefore, I cannot proceed with the policy update.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_uHAqNwr0JHr8YIVkaVPOLt0Q",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -66099,7 +68480,30 @@
                     "interaction_time": "2023-07-01T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "healthcare",
@@ -66698,7 +69102,30 @@
                     "interaction_time": "2023-12-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "healthcare",
@@ -67096,16 +69523,7 @@
                         "content": "The user has successfully logged in. Now, I need to check if the user's policy is active and if the policy type is valid before updating the policy. The policy type provided by the user is 'Invalid', which is not a valid type. Therefore, I cannot proceed with the update.",
                         "thinking": null,
                         "thinking_signature": null,
-                        "tool_calls": [
-                            {
-                                "id": "call_QJChpwdAsSExFmLJteK6Lc5v",
-                                "function": {
-                                    "arguments": "N/A",
-                                    "name": "N/A"
-                                },
-                                "type": "function"
-                            }
-                        ],
+                        "tool_calls": [],
                         "function_call": null,
                         "refusal": null,
                         "audio": null,
@@ -67223,6 +69641,29 @@
                     "interaction_time": "2024-11-15T12:56:39"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "update_policy",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     }
 ]

@@ -775,7 +775,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -1548,7 +1571,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -2151,7 +2197,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": false,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -2796,7 +2865,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -3606,7 +3698,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -4286,7 +4401,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -5050,7 +5188,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 6,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -5754,7 +5915,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -6566,7 +6750,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 15,
+                "num_function_calls": 4,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 15.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -7438,7 +7645,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -8270,7 +8500,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -9122,7 +9375,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -9916,7 +10192,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 10,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -10727,7 +11026,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -11520,7 +11842,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -12372,7 +12717,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 11,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -13274,7 +13642,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -14185,7 +14576,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -15115,7 +15529,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -16041,7 +16478,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -16965,7 +17425,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -17865,7 +18348,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -18736,7 +19242,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -19487,7 +20016,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -20352,7 +20904,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -21213,7 +21788,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -22089,7 +22687,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -22916,7 +23537,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 6,
+                "no_tool_call_error": false,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -23703,7 +24347,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 9,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -24557,7 +25224,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -25414,7 +26104,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -26319,7 +27032,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -27139,7 +27875,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 10,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -27968,7 +28727,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -28884,7 +29666,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -29770,7 +30575,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -30678,7 +31506,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -31532,7 +32383,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -32378,7 +33252,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -33283,7 +34180,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -34166,7 +35086,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -35071,7 +36014,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "book_room",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -35619,7 +36585,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "cancel_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -36151,7 +37140,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "cancel_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -36761,7 +37773,30 @@
                     "interaction_time": "2024-12-01T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "cancel_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -37371,7 +38406,30 @@
                     "interaction_time": "2024-12-01T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "cancel_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -38005,7 +39063,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "find_booking_info",
+                "action_should_succeed": 1,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -38677,7 +39758,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -39365,7 +40469,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 2,
+                "no_tool_call_error": false,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -40012,7 +41139,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -40587,7 +41737,30 @@
                     "interaction_time": "2024-12-06T14:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -41342,7 +42515,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -42121,7 +43317,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -42864,7 +44083,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -43649,7 +44891,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 9,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -44484,7 +45749,30 @@
                     "interaction_time": "2024-12-01T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -45293,7 +46581,30 @@
                     "interaction_time": "2024-12-03T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -45963,7 +47274,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -46678,7 +48012,30 @@
                     "interaction_time": "2024-12-06T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -47430,7 +48787,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -48302,7 +49682,30 @@
                     "interaction_time": "2024-12-06T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -49196,7 +50599,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -50015,7 +51441,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -50926,7 +52375,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -51832,7 +53304,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -52758,7 +54253,30 @@
                     "interaction_time": "2024-11-30T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -53605,7 +55123,30 @@
                     "interaction_time": "2024-12-01T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -54454,7 +55995,30 @@
                     "interaction_time": "2024-11-30T13:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 9,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -55273,7 +56837,30 @@
                     "interaction_time": "2024-12-08T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -56165,7 +57752,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 9,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -57052,7 +58662,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -57952,7 +59585,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -58880,7 +60536,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -59760,7 +61439,30 @@
                     "interaction_time": "2024-12-09T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -60676,7 +62378,30 @@
                     "interaction_time": "2024-12-07T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -61420,7 +63145,30 @@
                     "interaction_time": "2024-12-05T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -62093,7 +63841,30 @@
                     "interaction_time": "2024-12-04T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -62744,7 +64515,30 @@
                     "interaction_time": "2024-12-07T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -63591,7 +65385,30 @@
                     "interaction_time": "2024-12-08T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -64333,7 +66150,30 @@
                     "interaction_time": "2024-12-10T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -65176,7 +67016,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -66051,7 +67914,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 10,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -66889,7 +68775,30 @@
                     "interaction_time": "2024-12-02T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -67792,7 +69701,30 @@
                     "interaction_time": "2024-12-06T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -68667,7 +70599,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -69477,7 +71432,30 @@
                     "interaction_time": "2024-12-02T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -70382,7 +72360,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -71213,7 +73214,30 @@
                     "interaction_time": "2024-12-07T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 11,
+                "num_function_calls": 9,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -71950,7 +73974,30 @@
                     "interaction_time": "2024-12-04T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -72842,7 +74889,30 @@
                     "interaction_time": "2024-12-01T08:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 10,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -73689,7 +75759,30 @@
                     "interaction_time": "2024-12-07T11:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -74592,7 +76685,30 @@
                     "interaction_time": "2024-12-01T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -75498,7 +77614,30 @@
                     "interaction_time": "2024-12-01T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -76298,7 +78437,30 @@
                     "interaction_time": "2024-12-07T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -77120,7 +79282,30 @@
                     "interaction_time": "2024-12-04T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -78046,7 +80231,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -78917,7 +81125,30 @@
                     "interaction_time": "2024-12-01T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -79835,7 +82066,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -80678,7 +82932,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -81559,7 +83836,30 @@
                     "interaction_time": "2024-12-02T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 10,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -82558,7 +84858,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -83495,7 +85818,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -84527,7 +86873,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -85481,7 +87850,30 @@
                     "interaction_time": "2024-12-09T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -86481,7 +88873,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -87406,7 +89821,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -88287,7 +90725,30 @@
                     "interaction_time": "2024-12-08T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -89215,7 +91676,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -90123,7 +92607,30 @@
                     "interaction_time": "2024-12-05T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -91134,7 +93641,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -91975,7 +94505,30 @@
                     "interaction_time": "2024-12-07T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -92861,7 +95414,30 @@
                     "interaction_time": "2024-12-01T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -93795,7 +96371,30 @@
                     "interaction_time": "2024-12-01T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 9,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -94655,7 +97254,30 @@
                     "interaction_time": "2024-12-08T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -95587,7 +98209,30 @@
                     "interaction_time": "2024-12-03T08:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -96537,7 +99182,30 @@
                     "interaction_time": "2024-12-01T15:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -97393,7 +100061,30 @@
                     "interaction_time": "2024-12-09T12:30:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 9,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -98351,7 +101042,30 @@
                     "interaction_time": "2024-12-03T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -99310,7 +102024,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -100217,7 +102954,30 @@
                     "interaction_time": "2024-12-07T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -101124,7 +103884,30 @@
                     "interaction_time": "2024-12-07T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -101900,7 +104683,30 @@
                     "interaction_time": "2024-12-05T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -102746,7 +105552,30 @@
                     "interaction_time": "2024-12-01T14:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -103566,7 +106395,30 @@
                     "interaction_time": "2024-12-05T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -104330,7 +107182,30 @@
                     "interaction_time": "2024-12-07T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -105131,7 +108006,30 @@
                     "interaction_time": "2024-12-09T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -105999,7 +108897,30 @@
                     "interaction_time": "2024-12-02T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 9,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -106792,7 +109713,30 @@
                     "interaction_time": "2024-12-02T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -107534,7 +110478,30 @@
                     "interaction_time": "2024-12-08T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -108401,7 +111368,30 @@
                     "interaction_time": "2024-12-02T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -109235,7 +112225,30 @@
                     "interaction_time": "2024-12-05T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -110071,7 +113084,30 @@
                     "interaction_time": "2024-12-05T09:30:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -110936,7 +113972,30 @@
                     "interaction_time": "2024-12-05T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -111934,7 +114993,30 @@
                     "interaction_time": "2024-12-02T10:30:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -112852,7 +115934,30 @@
                     "interaction_time": "2024-12-01T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -113814,7 +116919,30 @@
                     "interaction_time": "2024-12-01T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -114770,7 +117898,30 @@
                     "interaction_time": "2024-12-08T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -115832,7 +118983,30 @@
                     "interaction_time": "2024-12-01T13:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 9,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -116789,7 +119963,30 @@
                     "interaction_time": "2024-12-01T11:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 9,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -117694,7 +120891,30 @@
                     "interaction_time": "2024-12-02T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -118539,7 +121759,30 @@
                     "interaction_time": "2024-12-04T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -119395,7 +122638,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -120358,7 +123624,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -121359,7 +124648,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 9,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 9.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -122291,7 +125603,30 @@
                     "interaction_time": "2024-12-05T09:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -123291,7 +126626,30 @@
                     "interaction_time": "2024-12-02T10:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "modify_reservation",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -124049,7 +127407,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -124797,7 +128178,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 1,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -125614,7 +129018,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 10,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 10.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -126322,7 +129749,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -127070,7 +130520,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -127838,7 +131311,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 7,
+                "num_function_calls": 4,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 7.0,
+            "avg_num_function_calls": 4.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -128664,7 +132160,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -129362,7 +132881,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -130283,7 +133825,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 1,
+                "num_messages": 11,
+                "num_function_calls": 9,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -131194,7 +134759,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 9,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -132115,7 +135703,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 9,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -132996,7 +136607,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 1,
+                "num_messages": 11,
+                "num_function_calls": 9,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -133851,7 +137485,30 @@
                     "interaction_time": "2024-12-02T23:30:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -134781,7 +138438,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 1,
+                "num_messages": 11,
+                "num_function_calls": 9,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -135681,7 +139361,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 9,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -136611,7 +140314,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 11,
+                "num_function_calls": 9,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 11.0,
+            "avg_num_function_calls": 9.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -137498,7 +141224,30 @@
                     "interaction_time": "2024-12-02T23:30:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "place_room_service_order",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -138127,7 +141876,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkin",
+                "action_should_succeed": 1,
+                "num_messages": 6,
+                "num_function_calls": 3,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": false,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 6.0,
+            "avg_num_function_calls": 3.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -138843,7 +142615,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkin",
+                "action_should_succeed": 0,
+                "num_messages": 19,
+                "num_function_calls": 0,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 19.0,
+            "avg_num_function_calls": 0.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -139581,7 +143376,30 @@
                     "interaction_time": "2024-12-03T15:10:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkin",
+                "action_should_succeed": 1,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -140308,7 +144126,30 @@
                     "interaction_time": "2024-12-03T14:30:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkin",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -141060,7 +144901,30 @@
                     "interaction_time": "2024-12-03T15:10:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkin",
+                "action_should_succeed": 1,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -141786,7 +145650,30 @@
                     "interaction_time": "2024-12-03T15:10:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkin",
+                "action_should_succeed": 0,
+                "num_messages": 19,
+                "num_function_calls": 0,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 19.0,
+            "avg_num_function_calls": 0.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -142527,7 +146414,30 @@
                     "interaction_time": "2024-12-03T14:20:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkin",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -143197,7 +147107,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkout",
+                "action_should_succeed": 1,
+                "num_messages": 14,
+                "num_function_calls": 6,
+                "no_tool_call_error": false,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -143886,7 +147819,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkout",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 6,
+                "no_tool_call_error": false,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -144580,7 +148536,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkout",
+                "action_should_succeed": 1,
+                "num_messages": 14,
+                "num_function_calls": 6,
+                "no_tool_call_error": false,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -145267,7 +149246,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkout",
+                "action_should_succeed": 0,
+                "num_messages": 18,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 18.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -145962,7 +149964,30 @@
                     "interaction_time": "2024-12-04T09:30:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkout",
+                "action_should_succeed": 1,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": false,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -146687,7 +150712,30 @@
                     "interaction_time": "2024-12-04T11:30:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkout",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -147407,7 +151455,30 @@
                     "interaction_time": "2024-12-04T09:45:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkout",
+                "action_should_succeed": 1,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": false,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -148120,7 +152191,30 @@
                     "interaction_time": "2024-12-04T09:30:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkout",
+                "action_should_succeed": 0,
+                "num_messages": 17,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 17.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -148859,7 +152953,30 @@
                     "interaction_time": "2024-12-04T11:05:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "process_guest_checkout",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -149375,7 +153492,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "register_loyalty_member",
+                "action_should_succeed": 1,
+                "num_messages": 5,
+                "num_function_calls": 2,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 5.0,
+            "avg_num_function_calls": 2.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -150038,7 +154178,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "register_loyalty_member",
+                "action_should_succeed": 0,
+                "num_messages": 14,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 14.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -150793,7 +154956,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 1,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -151532,7 +155718,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -152287,7 +156496,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -153028,7 +157260,30 @@
                     "interaction_time": "2024-12-04T12:00:00"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -153766,7 +158021,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -154506,7 +158784,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -155312,7 +159613,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 1,
+                "num_messages": 12,
+                "num_function_calls": 8,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 8.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -156102,7 +160426,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -156887,7 +161234,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 1,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -157672,7 +162042,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 0,
+                "num_messages": 12,
+                "num_function_calls": 7,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 12.0,
+            "avg_num_function_calls": 7.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -158431,7 +162824,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 1,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -159251,7 +163667,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 0,
+                "num_messages": 13,
+                "num_function_calls": 6,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 13.0,
+            "avg_num_function_calls": 6.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     },
     {
         "domain": "hotel",
@@ -160010,7 +164449,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "request_room_change",
+                "action_should_succeed": 0,
+                "num_messages": 8,
+                "num_function_calls": 5,
+                "no_tool_call_error": true,
+                "constraint_not_violated": false,
+                "database_match": false,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 8.0,
+            "avg_num_function_calls": 5.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -160479,7 +164941,30 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "show_available_rooms",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": false,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": false,
+                "success": false
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 0,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": false
+        }
     },
     {
         "domain": "hotel",
@@ -160948,6 +165433,29 @@
                     "interaction_time": "2024-12-02T20:04:31"
                 }
             }
-        ]
+        ],
+        "evaluations": [
+            {
+                "user_goal": "show_room_change_options",
+                "action_should_succeed": 1,
+                "num_messages": 4,
+                "num_function_calls": 1,
+                "no_tool_call_error": true,
+                "constraint_not_violated": true,
+                "database_match": true,
+                "action_successfully_called": true,
+                "dirgraph_satisfied": true,
+                "action_called_correctly": true,
+                "success": true
+            }
+        ],
+        "statistics": {
+            "total_interactions": 1,
+            "total_success": 1,
+            "avg_num_messages": 4.0,
+            "avg_num_function_calls": 1.0,
+            "num_constraints": 0,
+            "pass@1": true
+        }
     }
 ]

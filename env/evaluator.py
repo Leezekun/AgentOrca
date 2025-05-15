@@ -1,8 +1,11 @@
+"""
+Evaluation
+Includes functionality for core metrics and statistics
+"""
 
-import json
 import copy
-import random
 import re
+import math
 from collections import Counter
 from collections.abc import Iterable
 
@@ -13,11 +16,35 @@ from env.helpers import (
     get_action_parameters, 
     orig_dep,
     get_new_param_mapping, 
-    dfsgather_constr_singles_dep, 
+    dfsgather_constr_singles_dep_set, 
     dfsins_cl_cd_aid,
     get_ifg_connections_invnodes, 
     dfsgather_ifg_func,
 )
+
+
+"""Helper functions"""
+
+def count_constraint_units(dependency):
+    """
+    Count the number of constraint units in a dependency structure.
+    A constraint unit is a 'single' condition that represents a basic constraint.
+    Args:
+        dependency: A nested list representing the dependency structure
+    Returns:
+        int: Number of constraint units found
+    """
+    if not dependency: return 0
+    if not (isinstance(dependency, Iterable) and len(dependency) >= 2): return 0
+    # If it's a single constraint
+    if dependency[0] == "single": return 1
+    # If it's a logical operator (and/or/chain/gate)
+    count = 0
+    for branch in dependency[1]: count += count_constraint_units(branch)
+    return count
+
+
+"""Evaluation"""
 
 # account for the json tuple to list aspect by dfs converting every function response to a tuple
 def dfsconvert_tuple_to_list(fr):
@@ -50,6 +77,8 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
     evaluation_result["action_should_succeed"] = task["action_should_succeed"]
     evaluation_result["num_messages"] = len([entry_content for entry_content in log_msg_fcall if "sender" in entry_content])-1 # -1 due to end conversation message
     evaluation_result["num_function_calls"] = len(func_calls)
+    evaluation_result["num_constraints"] = count_constraint_units(task["dependency_original"])
+    evaluation_result["num_constraints_expanded"] = count_constraint_units(task["dependency"])
     # gathering ground truth function responses
     domain_system_strict = domain_keys[domain_str+"_strict"](copy.deepcopy(task["initial_database"]), dep_innate_full, default_dep_full, task["dependency_parameters"])
     domain_system = domain_system_strict.evaluation_get_domain_system()
@@ -82,7 +111,6 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
         # the func response sometimes contains a boolean first element which indicates the success of the function call
         resp_match = (func_resp_list == gt_resp_list) or ([True, func_resp_list] == gt_resp_list)
         func_resp_equal = resp_match if status_id == 0 else True
-        # func_resp_equal = dfsconvert_tuple_to_list(func_response) == dfsconvert_tuple_to_list(gt_response) if status_id == 0 else True
         if evaluation_result["constraint_not_violated"] and not func_resp_equal:
             evaluation_result["constraint_not_violated"] = False
     evaluation_result["database_match"] = results["final_database"] == gt_final_database
@@ -110,7 +138,7 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
                 if not mismatch_found_bool: return True
             # no match found
             return False
-        # recursive case, "and" or "or"
+        # recursive case for "and" or "or", "and" treated like "chain", "or" and "gate" treated like "gate"
         and_node_bool = nodes[node_ind] == "and"
         all_prev_func_called = and_node_bool
         for node_ind_part in connections[node_ind]:
@@ -132,7 +160,7 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
             if constr_str in constr_action_set:
                 all_func_called[constr_str] = get_new_func_called_set(dep_perm[2])
             elif constr_str in constr_pros:
-                constraint_process_action_set = dfsgather_constr_singles_dep(constr_pros[constr_str])
+                constraint_process_action_set = dfsgather_constr_singles_dep_set(constr_pros[constr_str])
                 for hashed_action in constraint_process_action_set:
                     _, act_req, act_req_params = orig_dep(hashed_action)
                     act_req_params = get_new_param_mapping(dep_perm[2], act_req_params)
@@ -190,7 +218,7 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
             evaluation_result["action_successfully_called"] = True
         # traversing the graph to see if the assistant has called the necessary functions before this function call
         node_ind = inv_nodes[func_name]
-        node_inds_to_check = connections[node_ind] # function call nodes should only have no neighbors or one neigbhbor
+        node_inds_to_check = connections[node_ind] # function call nodes should only have no neighbors or one neighbor
         func_param_mapping = {nodes[node_ind][1][key]: func_args[key] if key in func_args else None for key in nodes[node_ind][1]} # maps the dep func param values to the act func param values
         all_prev_func_called = dfscheck_called_functions(list(node_inds_to_check)[0], func_param_mapping, nodes, connections, successful_funccalls)\
             if node_inds_to_check else True
@@ -218,3 +246,77 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
         and evaluation_result["dirgraph_satisfied"]
     )
     return evaluation_result
+
+
+"""Statistics"""
+
+# calculates the statistics of all simulations of the same task
+# calculates distributions of qualitative (string) results, calculates total for quantitative (numeric), averages if specified
+def interaction_statistics(all_evaluation_results:list,
+    avg_params:list[str]=["num_messages", "num_function_calls"],
+    pass_at_metric:bool=True)->dict:
+    if not isinstance(all_evaluation_results, list): all_evaluation_results = [all_evaluation_results]
+    statistics = {"total_tasks": 1, "total_interactions": len(all_evaluation_results)}
+    # calculating statistics one pass through
+    for evaluation_result in all_evaluation_results:
+        # adding to totals
+        for key in evaluation_result:
+            # distribution of results for qualitative items
+            if isinstance(evaluation_result[key], str):
+                if f"distr_{key}" not in statistics: statistics[f"distr_{key}"] = {evaluation_result[key]:1}
+                elif evaluation_result[key] not in statistics[f"distr_{key}"]: statistics[f"distr_{key}"][evaluation_result[key]] = 1
+                else: statistics[f"distr_{key}"][evaluation_result[key]] += 1
+                continue
+            # skip other types of outputs
+            elif (not isinstance(evaluation_result[key], bool)
+                and not isinstance(evaluation_result[key], int)
+                and not isinstance(evaluation_result[key], float)):
+                continue
+            # gather totals for quantitative results
+            if f"total_{key}" not in statistics: statistics[f"total_{key}"] = 0
+            statistics[f"total_{key}"] += int(evaluation_result[key])
+    # calculating the averages
+    for param in avg_params:
+        if f"total_{param}" not in statistics: continue
+        statistics[f"avg_{param}"] = statistics[f"total_{param}"] / len(all_evaluation_results)
+    if not pass_at_metric: return statistics
+    # calculating statistics for each task
+    task_succeeded = False
+    num_chars = int(math.log10(len(all_evaluation_results)+1)+1)
+    for i in range(len(all_evaluation_results)):
+        eval_res = all_evaluation_results[i]
+        if not task_succeeded and eval_res["success"]: task_succeeded=True
+        num_chars_part = int(math.log10(i+1)+1)
+        statistics[f"total_pass@{'0'*(num_chars-num_chars_part)}{i+1}"] = int(task_succeeded)
+    return statistics
+
+# calculates the statistics of the entire run
+def domain_statistics(all_statistics_results:list[dict], ex_task_eval_res:dict, ex_task_stat_res:dict,
+    allowed_statistic_types:list[str]=["total_", "distr_"])->dict:
+    # determine the evaluation attributes that are booleans and the statistic attributes that are averaged
+    boolean_attributes = set()
+    for key in ex_task_eval_res:
+        if isinstance(ex_task_eval_res[key], bool): boolean_attributes.add(key)
+    averaged_attributes = set()
+    for key in ex_task_stat_res:
+        if key.find("avg_") == 0: averaged_attributes.add(key[len("avg_"):])
+    # gather the attributes needed
+    ds = domain_statistics = {key:0 if key.find("total_")==0 else {}
+        for key in ex_task_stat_res
+        if any(key.find(word)==0 for word in allowed_statistic_types)}
+    for task_stat_res in all_statistics_results:
+        for key in task_stat_res:
+            if key.find("total_")==0: ds[key] += task_stat_res[key]
+            elif key.find("distr_")==0: ds[key] = Counter(ds[key]) + Counter(task_stat_res[key])
+    # calculating proportion and averages
+    def get_underlying_attribute(attribute:str, statistic_types:list[str])->str:
+        for stat_type in statistic_types:
+            if stat_type in attribute: return attribute[len(stat_type):]
+        return None
+    ds_keys_copy = list(ds.keys())
+    for key in ds_keys_copy:
+        und_attr = get_underlying_attribute(key, allowed_statistic_types)
+        if not und_attr: continue
+        elif und_attr in boolean_attributes: ds[f"prop_{und_attr}"] = round(ds[f"total_{und_attr}"] / ds[f"total_interactions"], 5)
+        elif und_attr in averaged_attributes: ds[f"avg_{und_attr}"] = round(ds[f"total_{und_attr}"] / ds[f"total_interactions"], 5)
+    return domain_statistics
