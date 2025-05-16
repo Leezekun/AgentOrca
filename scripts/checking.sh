@@ -8,7 +8,7 @@ cd ..
 assistant_model="gpt-4.1"
 
 output_dir="./output"
-domain="bank"
+domain="university"
 tool_call_mode="fc"
 default_constraint_option="full"
 constraint_descr_format="structured"

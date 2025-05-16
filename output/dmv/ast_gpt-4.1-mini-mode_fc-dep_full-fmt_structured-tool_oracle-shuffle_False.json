@@ -377,6 +377,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 4,
                 "num_function_calls": 1,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": true,

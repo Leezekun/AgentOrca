@@ -4,6 +4,7 @@ File to hold helper functions for task_generation that could be used elsewhere
 
 import re
 import copy
+import json
 import itertools
 import inspect
 from collections import deque
@@ -994,3 +995,36 @@ def dfsgather_ifg_func(domain_system, domain_assistant:dict, action:str, default
     nodes = inv_func_call_graph["nodes"]
     connections, inv_nodes = get_ifg_connections_invnodes(inv_func_call_graph)
     return nodes, connections, inv_nodes
+
+"""useful functions for printing information"""
+
+# formats the title to have a constant length
+def get_title_str(title:str, title_length:int=64)->str:
+    if len(title) > title_length-2-2: return f"- {title} -"
+    side_length = (title_length - len(title) - 2) // 2
+    return ('-' * side_length) + f" {title} " + ('-' * (title_length - (len(title)+2) - side_length))
+
+# prints the dictionary in a pretty format, excludes keys on the very top level
+def get_dict_str(d:dict, excluded_keys:set=set())->str:
+    if not d: return
+    keys = sorted([(key, str(key)) for key in d], key=lambda x: x[1])
+    max_key_len = max([len(str(key)) for key in d])
+    dict_str = ""
+    for key, _ in keys:
+        if key in excluded_keys: continue
+        dict_str += '{0:{align}{max_key_len}} {b}\n'.format(str(key), b=str(d[key]), align="<", max_key_len=max_key_len)
+    return dict_str[:-1]
+
+# prints the dictionary in a pretty json format, excludes keys on the very top level
+def get_dict_json_str(d:dict, excluded_keys:set=set(), indent_amount:int=2)->str:
+    if not d: return
+    keys = sorted([(key, str(key)) for key in d], key=lambda x: x[1])
+    max_key_len = max([len(str(key)) for key in d])
+    indent_str = '\n' + ' ' * (max_key_len+1)
+    dict_str = ""
+    for key, _ in keys:
+        if key in excluded_keys: continue
+        value_str = json.dumps(d[key], indent=indent_amount)
+        value_str = re.sub('\n', indent_str, value_str)
+        dict_str += '{0:{align}{max_key_len}} {b}\n'.format(str(key), b=value_str, align="<", max_key_len=max_key_len)
+    return dict_str[:-1]

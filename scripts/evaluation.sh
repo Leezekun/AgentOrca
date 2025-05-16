@@ -52,15 +52,15 @@ cd ..
 
 # model="gemini-1.5-pro"
 # model="llama3.1-70b-instruct"
-# model="gpt-4.1"
+# model="o4-mini-high"
 # model="qwen2.5-72b-instruct"
 # model="gemini-2.0-flash-thinking-exp"
-model="claude-3-7-sonnet-20250219"
+# model="claude-3-7-sonnet-20250219"
 # model="claude-3-5-sonnet-20241022"
-# model="gpt-4.1"
+# model="deepseek-r1"
 # model="gemini-2.0-flash-thinking-exp"
 # model="gemini-1.5-pro"
-# model="o4-mini-high"
+model="o4-mini-high"
 # model="gpt-4o-mini"
 # model="gemini-2.0-flash-001"
 # model="gemini-2.0-flash-thinking-exp"
@@ -68,13 +68,14 @@ model="claude-3-7-sonnet-20250219"
 # model="gpt-4o"
 # model="deepseek-r1"
 # model="llama3.1-70b-instruct"
-# model="qwen2.5-72b-instruct"
+# model="qwen2.5-32b-instruct"
 # model="claude-3-7-sonnet-20250219"
+# model="gpt-4.1"
 domain="all"
 tool_list="full"
 tool_call_mode="fc"
 
-python run_evaluation.py \
+python run_evaluation1.py \
     --domain $domain \
     --assistant_model $model \
     --tool_list $tool_list \

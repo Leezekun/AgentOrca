@@ -160,6 +160,12 @@ def main():
                     "database_mismatches": 0,          # Changed from database_match
                     "dirgraph_violations": 0,          # Changed from dirgraph_satisfied
                     "incorrect_action_calls": 0        # Changed from action_called_correctly
+                },
+                "outcome_categories": {
+                    "outcome_correct_procedure_wrong": 0,  # Only dirgraph_violations error
+                    "outcome_wrong_procedure_wrong": 0,    # Both dirgraph_violations AND (database_mismatches OR incorrect_action_calls)
+                    "outcome_wrong_procedure_correct": 0,  # No dirgraph_violations BUT (database_mismatches OR incorrect_action_calls)
+                    "outcome_correct_procedure_correct": 0 # All three metrics are correct
                 }
             },
             "constraint_relation_group_statistics": {},  # Group by constraint relation counts
@@ -259,6 +265,27 @@ def main():
 
                     if not evaluation_result["action_called_correctly"]:
                         print_results["error_statistics"]["error_causes"]["incorrect_action_calls"] += 1
+                
+                # Update outcome categories based on specific error combinations
+                database_correct = evaluation_result["database_match"]
+                procedure_correct = evaluation_result["dirgraph_satisfied"]
+                action_correct = evaluation_result["action_called_correctly"]
+                
+                # Check if there are outcome errors (database_match or action_called_correctly)
+                outcome_error = not database_correct or not action_correct
+                
+                if procedure_correct and not outcome_error:
+                    # All three metrics are correct
+                    print_results["error_statistics"]["outcome_categories"]["outcome_correct_procedure_correct"] += 1
+                elif not procedure_correct and not outcome_error:
+                    # Only dirgraph_violations error
+                    print_results["error_statistics"]["outcome_categories"]["outcome_correct_procedure_wrong"] += 1
+                elif procedure_correct and outcome_error:
+                    # No dirgraph_violations BUT (database_mismatches OR incorrect_action_calls)
+                    print_results["error_statistics"]["outcome_categories"]["outcome_wrong_procedure_correct"] += 1
+                elif not procedure_correct and outcome_error:
+                    # Both dirgraph_violations AND (database_mismatches OR incorrect_action_calls)
+                    print_results["error_statistics"]["outcome_categories"]["outcome_wrong_procedure_wrong"] += 1
             
             # Increment counters after checking all interactions for this task
             total_cases += 1
@@ -396,6 +423,12 @@ def main():
                     "database_mismatches": sum(r["error_statistics"]["error_causes"]["database_mismatches"] for r in combined_results.values()),
                     "dirgraph_violations": sum(r["error_statistics"]["error_causes"]["dirgraph_violations"] for r in combined_results.values()),
                     "incorrect_action_calls": sum(r["error_statistics"]["error_causes"]["incorrect_action_calls"] for r in combined_results.values())
+                },
+                "outcome_categories": {
+                    "outcome_correct_procedure_wrong": sum(r["error_statistics"]["outcome_categories"]["outcome_correct_procedure_wrong"] for r in combined_results.values()),
+                    "outcome_wrong_procedure_wrong": sum(r["error_statistics"]["outcome_categories"]["outcome_wrong_procedure_wrong"] for r in combined_results.values()),
+                    "outcome_wrong_procedure_correct": sum(r["error_statistics"]["outcome_categories"]["outcome_wrong_procedure_correct"] for r in combined_results.values()),
+                    "outcome_correct_procedure_correct": sum(r["error_statistics"]["outcome_categories"]["outcome_correct_procedure_correct"] for r in combined_results.values())
                 }
             }
         }
@@ -455,6 +488,12 @@ def main():
             for error, count in aggregate_results["error_statistics"]["error_causes"].items():
                 error_percentages[f"{error}_percentage"] = (count / total_evaluations) * 100
             aggregate_results["error_statistics"]["percentages"] = error_percentages
+
+            # Add outcome category percentages for aggregated results
+            outcome_percentages = {}
+            for outcome, count in aggregate_results["error_statistics"]["outcome_categories"].items():
+                outcome_percentages[f"{outcome}_percentage"] = (count / total_evaluations) * 100
+            aggregate_results["error_statistics"]["outcome_percentages"] = outcome_percentages
         
         # Aggregate constraint relation group statistics across all domains
         all_relation_groups = {}
@@ -570,6 +609,12 @@ def main():
             for error, count in print_results["error_statistics"]["error_causes"].items():
                 error_percentages[f"{error}_percentage"] = (count / total_evaluations) * 100
             print_results["error_statistics"]["percentages"] = error_percentages
+
+            # Add outcome category percentages
+            outcome_percentages = {}
+            for outcome, count in print_results["error_statistics"]["outcome_categories"].items():
+                outcome_percentages[f"{outcome}_percentage"] = (count / total_evaluations) * 100
+            print_results["error_statistics"]["outcome_percentages"] = outcome_percentages
 
         # Calculate averages for constraint relation groups
         for stats in print_results["constraint_relation_group_statistics"].values():

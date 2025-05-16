@@ -384,6 +384,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -394,12 +396,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "authenticate_admin_password": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -864,6 +882,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -874,12 +894,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "authenticate_admin_password": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -1345,6 +1381,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -1355,12 +1393,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "authenticate_admin_password": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -1846,6 +1900,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 2,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -1856,12 +1912,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "cancel_test": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -2406,6 +2478,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -2416,12 +2490,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "cancel_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -2888,6 +2978,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 2,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -2898,12 +2990,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "cancel_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -3436,6 +3544,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 3,
+                "num_constraints_expanded": 7,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -3446,12 +3556,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "cancel_test": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 7,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 7.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -4003,6 +4129,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 3,
+                "num_constraints_expanded": 7,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -4013,12 +4141,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "cancel_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 7,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 7.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -4408,6 +4552,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 4,
                 "num_function_calls": 1,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -4418,12 +4564,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_dl_address": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 4,
+            "total_num_function_calls": 1,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 4.0,
             "avg_num_function_calls": 1.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -4909,6 +5071,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 13,
                 "num_function_calls": 6,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": true,
@@ -4919,12 +5083,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_dl_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 13,
+            "total_num_function_calls": 6,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 13.0,
             "avg_num_function_calls": 6.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -5304,6 +5484,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 4,
                 "num_function_calls": 1,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": true,
@@ -5314,12 +5496,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_dl_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 4,
+            "total_num_function_calls": 1,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 4.0,
             "avg_num_function_calls": 1.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -5769,6 +5967,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -5779,12 +5979,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_dl_address": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -6312,6 +6528,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -6322,12 +6540,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_dl_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -6876,6 +7110,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -6886,12 +7122,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_dl_address": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -7430,6 +7682,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -7440,12 +7694,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_dl_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -7961,6 +8231,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -7971,12 +8243,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_dl_address": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -8551,6 +8839,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -8561,12 +8851,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_dl_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -9072,6 +9378,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": true,
@@ -9082,12 +9390,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_dl_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -9585,6 +9909,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -9595,12 +9921,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_vehicle_address": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -9985,6 +10327,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 4,
                 "num_function_calls": 1,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": true,
@@ -9995,12 +10339,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_vehicle_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 4,
+            "total_num_function_calls": 1,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 4.0,
             "avg_num_function_calls": 1.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -10401,6 +10761,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 4,
                 "num_function_calls": 1,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": true,
@@ -10411,12 +10773,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_vehicle_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 4,
+            "total_num_function_calls": 1,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 4.0,
             "avg_num_function_calls": 1.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -10877,6 +11255,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -10887,12 +11267,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_vehicle_address": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -11431,6 +11827,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -11441,12 +11839,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_vehicle_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -12010,6 +12424,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -12020,12 +12436,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_vehicle_address": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -12573,6 +13005,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -12583,12 +13017,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_vehicle_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -13138,6 +13588,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -13148,12 +13600,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_vehicle_address": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -13743,6 +14211,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -13753,12 +14223,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_vehicle_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -14273,6 +14759,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -14283,12 +14771,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "change_vehicle_address": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -14736,6 +15240,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -14746,12 +15252,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "get_dl_status": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -15277,6 +15799,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -15287,12 +15811,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "get_dl_status": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -15751,6 +16291,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -15761,12 +16303,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "get_reg_status": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -16303,6 +16861,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -16313,12 +16873,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "get_reg_status": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -16662,6 +17238,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 4,
                 "num_function_calls": 1,
+                "num_constraints": 0,
+                "num_constraints_expanded": 0,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -16672,12 +17250,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "login_user": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 4,
+            "total_num_function_calls": 1,
+            "total_num_constraints": 0,
+            "total_num_constraints_expanded": 0,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 4.0,
             "avg_num_function_calls": 1.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 0.0,
+            "avg_num_constraints_expanded": 0.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -17063,6 +17657,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -17073,12 +17669,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "logout_user": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -17444,6 +18056,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 4,
                 "num_function_calls": 1,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": true,
@@ -17454,12 +18068,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "logout_user": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 4,
+            "total_num_function_calls": 1,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 4.0,
             "avg_num_function_calls": 1.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -17826,6 +18456,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 4,
                 "num_function_calls": 1,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": true,
@@ -17836,12 +18468,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "logout_user": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 4,
+            "total_num_function_calls": 1,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 4.0,
             "avg_num_function_calls": 1.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -18312,6 +18960,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -18322,12 +18972,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "register_vehicle": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -18848,6 +19514,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -18858,12 +19526,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "register_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -19385,6 +20069,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -19395,12 +20081,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "register_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -19860,6 +20562,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -19870,12 +20574,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "register_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -20408,6 +21128,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 3,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -20418,12 +21140,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "register_vehicle": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -20946,6 +21684,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 3,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": false,
@@ -20956,12 +21696,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "register_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 0,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -21519,6 +22275,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -21529,12 +22287,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_dl": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -22092,6 +22866,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -22102,12 +22878,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_dl": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -22613,6 +23405,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -22623,12 +23417,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_dl": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -23212,6 +24022,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -23222,12 +24034,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_dl": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -23771,6 +24599,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": false,
@@ -23781,12 +24611,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_dl": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 0,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -24330,6 +25176,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -24340,12 +25188,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -24889,6 +25753,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -24899,12 +25765,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -25477,6 +26359,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -25487,12 +26371,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -26049,6 +26949,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -26059,12 +26961,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -26594,6 +27512,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -26604,12 +27524,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -27195,6 +28131,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -27205,12 +28143,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -27769,6 +28723,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 10,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -27779,12 +28735,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 10,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 10.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -28324,6 +29296,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -28334,12 +29308,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -28938,6 +29928,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -28948,12 +29940,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -29493,6 +30501,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": false,
@@ -29503,12 +30513,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 0,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -30123,6 +31149,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -30133,12 +31161,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 5,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 5.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -30753,6 +31797,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -30763,12 +31809,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 5,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 5.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -31367,6 +32429,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -31377,12 +32441,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 5,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 5.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -32002,6 +33082,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 8,
                 "num_function_calls": 5,
+                "num_constraints": 4,
+                "num_constraints_expanded": 6,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -32012,12 +33094,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 8,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 4,
+            "total_num_constraints_expanded": 6,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 8.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 4.0,
+            "avg_num_constraints_expanded": 6.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -32658,6 +33756,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 4,
+                "num_constraints_expanded": 6,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -32668,12 +33768,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 4,
+            "total_num_constraints_expanded": 6,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 4.0,
+            "avg_num_constraints_expanded": 6.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -33287,6 +34403,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 10,
                 "num_function_calls": 5,
+                "num_constraints": 4,
+                "num_constraints_expanded": 6,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -33297,12 +34415,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 10,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 4,
+            "total_num_constraints_expanded": 6,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 10.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 4.0,
+            "avg_num_constraints_expanded": 6.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -33922,6 +35056,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 8,
                 "num_function_calls": 5,
+                "num_constraints": 4,
+                "num_constraints_expanded": 6,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": false,
@@ -33932,12 +35068,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "renew_vehicle": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 8,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 4,
+            "total_num_constraints_expanded": 6,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 0,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 8.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 4.0,
+            "avg_num_constraints_expanded": 6.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -34420,6 +35572,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -34430,12 +35584,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -34957,6 +36127,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -34967,12 +36139,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -35495,6 +36683,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -35505,12 +36695,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -35957,6 +37163,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": false,
@@ -35967,12 +37175,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 0,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -36605,6 +37829,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 7,
+                "num_constraints_expanded": 10,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -36615,12 +37841,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 7,
+            "total_num_constraints_expanded": 10,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 7.0,
+            "avg_num_constraints_expanded": 10.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -37329,6 +38571,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 9,
                 "num_function_calls": 6,
+                "num_constraints": 7,
+                "num_constraints_expanded": 10,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -37339,12 +38583,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 9,
+            "total_num_function_calls": 6,
+            "total_num_constraints": 7,
+            "total_num_constraints_expanded": 10,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 9.0,
             "avg_num_function_calls": 6.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 7.0,
+            "avg_num_constraints_expanded": 10.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -37977,6 +39237,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 7,
+                "num_constraints_expanded": 10,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": false,
@@ -37987,12 +39249,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 7,
+            "total_num_constraints_expanded": 10,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 0,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 7.0,
+            "avg_num_constraints_expanded": 10.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -38761,6 +40039,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 13,
                 "num_function_calls": 6,
+                "num_constraints": 7,
+                "num_constraints_expanded": 10,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": false,
@@ -38771,12 +40051,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 13,
+            "total_num_function_calls": 6,
+            "total_num_constraints": 7,
+            "total_num_constraints_expanded": 10,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 0,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 13.0,
             "avg_num_function_calls": 6.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 7.0,
+            "avg_num_constraints_expanded": 10.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -39466,6 +40762,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 8,
                 "num_function_calls": 5,
+                "num_constraints": 7,
+                "num_constraints_expanded": 10,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": false,
@@ -39476,12 +40774,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 8,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 7,
+            "total_num_constraints_expanded": 10,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 0,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 8.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 7.0,
+            "avg_num_constraints_expanded": 10.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -40133,6 +41447,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 7,
+                "num_constraints_expanded": 10,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -40143,12 +41459,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 7,
+            "total_num_constraints_expanded": 10,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 7.0,
+            "avg_num_constraints_expanded": 10.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -40770,6 +42102,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 10,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -40780,12 +42114,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 10,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 5,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 10.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 5.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -41309,6 +42659,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 3,
+                "num_constraints_expanded": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -41319,12 +42671,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 5,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 5.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -42092,6 +43460,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 10,
                 "num_function_calls": 7,
+                "num_constraints": 8,
+                "num_constraints_expanded": 13,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -42102,12 +43472,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 10,
+            "total_num_function_calls": 7,
+            "total_num_constraints": 8,
+            "total_num_constraints_expanded": 13,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 10.0,
             "avg_num_function_calls": 7.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 8.0,
+            "avg_num_constraints_expanded": 13.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -42837,6 +44223,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 8,
                 "num_function_calls": 5,
+                "num_constraints": 8,
+                "num_constraints_expanded": 13,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -42847,12 +44235,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 8,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 8,
+            "total_num_constraints_expanded": 13,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 8.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 8.0,
+            "avg_num_constraints_expanded": 13.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -43601,6 +45005,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 9,
                 "num_function_calls": 6,
+                "num_constraints": 8,
+                "num_constraints_expanded": 13,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": false,
@@ -43611,12 +45017,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 9,
+            "total_num_function_calls": 6,
+            "total_num_constraints": 8,
+            "total_num_constraints_expanded": 13,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 0,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 9.0,
             "avg_num_function_calls": 6.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 8.0,
+            "avg_num_constraints_expanded": 13.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -44386,6 +45808,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 8,
                 "num_function_calls": 5,
+                "num_constraints": 8,
+                "num_constraints_expanded": 13,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": false,
@@ -44396,12 +45820,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 8,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 8,
+            "total_num_constraints_expanded": 13,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 0,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 8.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 8.0,
+            "avg_num_constraints_expanded": 13.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -45133,6 +46573,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 8,
+                "num_constraints_expanded": 13,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -45143,12 +46585,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 8,
+            "total_num_constraints_expanded": 13,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 8.0,
+            "avg_num_constraints_expanded": 13.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -45821,6 +47279,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 8,
+                "num_constraints_expanded": 13,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -45831,12 +47291,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "schedule_test": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 8,
+            "total_num_constraints_expanded": 13,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 8.0,
+            "avg_num_constraints_expanded": 13.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -46284,6 +47760,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 9,
                 "num_function_calls": 4,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -46294,12 +47772,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "set_admin_password": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 9,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 9.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -46775,6 +48269,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -46785,12 +48281,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "set_admin_password": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -47267,6 +48779,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -47277,12 +48791,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "set_admin_password": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -47783,6 +49313,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 13,
                 "num_function_calls": 7,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -47793,12 +49325,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "set_admin_password": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 13,
+            "total_num_function_calls": 7,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 13.0,
             "avg_num_function_calls": 7.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -48205,6 +49753,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -48215,12 +49765,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "show_available_test_slots": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -48685,6 +50251,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -48695,12 +50263,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "show_available_test_slots": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -49216,6 +50800,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 1,
+                "num_constraints_expanded": 1,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -49226,12 +50812,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "show_available_test_slots": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 1,
+            "total_num_constraints_expanded": 1,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 1.0,
+            "avg_num_constraints_expanded": 1.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -49798,6 +51400,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 3,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -49808,12 +51412,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "transfer_title": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -50385,6 +52005,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -50395,12 +52017,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "transfer_title": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -50908,6 +52546,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 3,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": false,
                 "database_match": false,
@@ -50918,12 +52558,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "transfer_title": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 0,
+            "total_database_match": 0,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -51486,6 +53142,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 3,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -51496,12 +53154,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "transfer_title": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -52037,6 +53711,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 4,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -52047,12 +53723,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "transfer_title": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 4,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 4.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -52617,6 +54309,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 4,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -52627,12 +54321,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "transfer_title": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 4,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 4.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -53211,6 +54921,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 8,
                 "num_function_calls": 5,
+                "num_constraints": 4,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -53221,12 +54933,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "transfer_title": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 8,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 4,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 8.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 4.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -53775,6 +55503,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 4,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -53785,12 +55515,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "transfer_title": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 4,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 4.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -54420,6 +56166,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 9,
                 "num_function_calls": 6,
+                "num_constraints": 5,
+                "num_constraints_expanded": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -54430,12 +56178,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "transfer_title": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 9,
+            "total_num_function_calls": 6,
+            "total_num_constraints": 5,
+            "total_num_constraints_expanded": 5,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 9.0,
             "avg_num_function_calls": 6.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 5.0,
+            "avg_num_constraints_expanded": 5.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -55033,6 +56797,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 5,
+                "num_constraints_expanded": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -55043,12 +56809,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "transfer_title": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 5,
+            "total_num_constraints_expanded": 5,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 5.0,
+            "avg_num_constraints_expanded": 5.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -55649,6 +57431,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 8,
                 "num_function_calls": 5,
+                "num_constraints": 5,
+                "num_constraints_expanded": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -55659,12 +57443,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "transfer_title": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 8,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 5,
+            "total_num_constraints_expanded": 5,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 8.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 5.0,
+            "avg_num_constraints_expanded": 5.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -56133,6 +57933,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 6,
                 "num_function_calls": 3,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -56143,12 +57945,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "update_dl_legal_name": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 6,
+            "total_num_function_calls": 3,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 6.0,
             "avg_num_function_calls": 3.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -56676,6 +58494,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 2,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -56686,12 +58506,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "update_dl_legal_name": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 2,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 2.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -57271,6 +59107,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 3,
+                "num_constraints_expanded": 7,
                 "no_tool_call_error": false,
                 "constraint_not_violated": true,
                 "database_match": false,
@@ -57281,12 +59119,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "update_test_status": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 7,
+            "total_no_tool_call_error": 0,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 0,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 7.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -57828,6 +59682,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 3,
+                "num_constraints_expanded": 7,
                 "no_tool_call_error": false,
                 "constraint_not_violated": true,
                 "database_match": false,
@@ -57838,12 +59694,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "update_test_status": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 7,
+            "total_no_tool_call_error": 0,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 0,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 7.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -58403,6 +60275,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -58413,12 +60287,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "validate_vehicle_insurance": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -58962,6 +60852,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -58972,12 +60864,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "validate_vehicle_insurance": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -59521,6 +61429,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -59531,12 +61441,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "validate_vehicle_insurance": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -60096,6 +62022,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 2,
+                "num_constraints_expanded": 3,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -60106,12 +62034,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "validate_vehicle_insurance": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 2,
+            "total_num_constraints_expanded": 3,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 2.0,
+            "avg_num_constraints_expanded": 3.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -60634,6 +62578,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 5,
                 "num_function_calls": 2,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -60644,12 +62590,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "validate_vehicle_insurance": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 5,
+            "total_num_function_calls": 2,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 5.0,
             "avg_num_function_calls": 2.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -61250,6 +63212,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -61260,12 +63224,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "validate_vehicle_insurance": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -61883,6 +63863,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -61893,12 +63875,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "validate_vehicle_insurance": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 0,
             "total_success": 0,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -62506,6 +64504,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 3,
+                "num_constraints_expanded": 4,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -62516,12 +64516,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "validate_vehicle_insurance": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 3,
+            "total_num_constraints_expanded": 4,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 3.0,
+            "avg_num_constraints_expanded": 4.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -63099,6 +65115,8 @@
                 "action_should_succeed": 1,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 4,
+                "num_constraints_expanded": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -63109,12 +65127,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "validate_vehicle_insurance": 1
+            },
+            "total_action_should_succeed": 1,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 4,
+            "total_num_constraints_expanded": 5,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 1,
+            "total_dirgraph_satisfied": 0,
+            "total_action_called_correctly": 1,
             "total_success": 0,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": false
+            "avg_num_constraints": 4.0,
+            "avg_num_constraints_expanded": 5.0,
+            "total_pass@1": 0
         }
     },
     {
@@ -63732,6 +65766,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 14,
                 "num_function_calls": 5,
+                "num_constraints": 4,
+                "num_constraints_expanded": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -63742,12 +65778,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "validate_vehicle_insurance": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 14,
+            "total_num_function_calls": 5,
+            "total_num_constraints": 4,
+            "total_num_constraints_expanded": 5,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 14.0,
             "avg_num_function_calls": 5.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 4.0,
+            "avg_num_constraints_expanded": 5.0,
+            "total_pass@1": 1
         }
     },
     {
@@ -64341,6 +66393,8 @@
                 "action_should_succeed": 0,
                 "num_messages": 7,
                 "num_function_calls": 4,
+                "num_constraints": 4,
+                "num_constraints_expanded": 5,
                 "no_tool_call_error": true,
                 "constraint_not_violated": true,
                 "database_match": true,
@@ -64351,12 +66405,28 @@
             }
         ],
         "statistics": {
+            "total_tasks": 1,
             "total_interactions": 1,
+            "distr_user_goal": {
+                "validate_vehicle_insurance": 1
+            },
+            "total_action_should_succeed": 0,
+            "total_num_messages": 7,
+            "total_num_function_calls": 4,
+            "total_num_constraints": 4,
+            "total_num_constraints_expanded": 5,
+            "total_no_tool_call_error": 1,
+            "total_constraint_not_violated": 1,
+            "total_database_match": 1,
+            "total_action_successfully_called": 0,
+            "total_dirgraph_satisfied": 1,
+            "total_action_called_correctly": 1,
             "total_success": 1,
             "avg_num_messages": 7.0,
             "avg_num_function_calls": 4.0,
-            "num_constraints": 0,
-            "pass@1": true
+            "avg_num_constraints": 4.0,
+            "avg_num_constraints_expanded": 5.0,
+            "total_pass@1": 1
         }
     }
 ]

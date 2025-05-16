@@ -43,6 +43,42 @@ def count_constraint_units(dependency):
     for branch in dependency[1]: count += count_constraint_units(branch)
     return count
 
+def dfscalc_graph_statistics(nodes:list, conns:dict, node_ind:int)->tuple:
+    """
+    Keeps track of:
+    \nnumber of paths
+    \ntotal sum length of all paths
+    \nshortest path length
+    \nlongest path length
+    """
+    if not nodes or (nodes and conns and not conns[node_ind]): return 1, 0, 0, 0
+    num_paths, total_sum_path_length, shortest_path_length, longest_path_length = 0, 0, -1, -1
+    for node_ind_next in conns[node_ind]:
+        np_next, tspl_next, spl_next, lpl_next = dfscalc_graph_statistics(nodes, conns, node_ind_next)
+        num_paths += np_next
+        total_sum_path_length += np_next + tspl_next # one extension of every path + total path length
+        if shortest_path_length < 0 or spl_next < shortest_path_length: shortest_path_length = spl_next
+        if longest_path_length < 0 or longest_path_length < lpl_next: longest_path_length = lpl_next
+    return num_paths, total_sum_path_length, shortest_path_length+1, longest_path_length+1
+    
+def calc_action_units(process:dict)->tuple:
+    """
+    Calculate the graph metrics.
+    Args:
+        process: A set of actions that make an directed action graph
+    Returns:
+        tuple: number of paths, average path length, shortest path length, longest path length
+    """
+    # gathering information
+    nodes = process["nodes"]
+    conns, _ = get_ifg_connections_invnodes(process)
+    # dfs, keep a running number of paths and total sum length of all those paths
+    num_paths, total_sum_path_length, spl, lpl = dfscalc_graph_statistics(nodes, conns, 0)
+    return num_paths, total_sum_path_length/num_paths if num_paths > 0 else 0, spl, lpl
+
+# parameters that need to be averaged when combining evaluations into statistics
+AVG_PARAMS = ["num_messages", "num_function_calls", "num_constraints", "num_constraints_expanded",
+    "num_paths", "avg_path_length", "shortest_path_length", "longest_path_length"]
 
 """Evaluation"""
 
@@ -250,11 +286,18 @@ def evaluator_function_directed_graph(domain_str:str, task:dict, log_msg_fcall:l
 
 """Statistics"""
 
-# calculates the statistics of all simulations of the same task
-# calculates distributions of qualitative (string) results, calculates total for quantitative (numeric), averages if specified
 def interaction_statistics(all_evaluation_results:list,
     avg_params:list[str]=["num_messages", "num_function_calls"],
-    pass_at_metric:bool=True)->dict:
+    pass_at_amount:int=-1)->dict:
+    """
+    Calculates distributions of qualitative (string) results, calculates total for quantitative (numeric), averages if specified
+    Args:
+        all_evaluation_results (list):  a list of evaluations to run statistics over
+        avg_params (list[str]):         parameters that need averages calculated
+        pass_at_amount (int):           maximum pass@ amount, 0 turns off this feature, -1 calculates maximum pass@
+    Returns:
+        dict: a dictionary for the statistics of the inputted list of evaluations
+    """
     if not isinstance(all_evaluation_results, list): all_evaluation_results = [all_evaluation_results]
     statistics = {"total_tasks": 1, "total_interactions": len(all_evaluation_results)}
     # calculating statistics one pass through
@@ -279,11 +322,11 @@ def interaction_statistics(all_evaluation_results:list,
     for param in avg_params:
         if f"total_{param}" not in statistics: continue
         statistics[f"avg_{param}"] = statistics[f"total_{param}"] / len(all_evaluation_results)
-    if not pass_at_metric: return statistics
     # calculating statistics for each task
+    pass_at_k = len(all_evaluation_results) if pass_at_amount < 0 else min(len(all_evaluation_results), pass_at_amount)
     task_succeeded = False
     num_chars = int(math.log10(len(all_evaluation_results)+1)+1)
-    for i in range(len(all_evaluation_results)):
+    for i in range(pass_at_k):
         eval_res = all_evaluation_results[i]
         if not task_succeeded and eval_res["success"]: task_succeeded=True
         num_chars_part = int(math.log10(i+1)+1)
@@ -317,6 +360,21 @@ def domain_statistics(all_statistics_results:list[dict], ex_task_eval_res:dict, 
     for key in ds_keys_copy:
         und_attr = get_underlying_attribute(key, allowed_statistic_types)
         if not und_attr: continue
-        elif und_attr in boolean_attributes: ds[f"prop_{und_attr}"] = round(ds[f"total_{und_attr}"] / ds[f"total_interactions"], 5)
+        elif und_attr in boolean_attributes: ds[f"percentage_{und_attr}"] = round(ds[f"total_{und_attr}"] / ds[f"total_interactions"], 5)
         elif und_attr in averaged_attributes: ds[f"avg_{und_attr}"] = round(ds[f"total_{und_attr}"] / ds[f"total_interactions"], 5)
     return domain_statistics
+
+def combine_numerical_dicts(d1:dict, d2:dict)->dict:
+    """Combines two dictionaries with identical (nested) keys with totals as values"""
+    d = copy.deepcopy(d1)
+    for key in d:
+        if isinstance(d[key], int): d[key] += d2[key]
+        else: d[key] = combine_numerical_dicts(d[key], d2[key])
+    return d
+
+def combine_list_numerical_dicts(d_list:list[dict])->dict:
+    """Combines a list of dictionaries with identical (nested) keys with totals as values"""
+    if not d_list: return {}
+    d = copy.deepcopy(d_list[0])
+    for i in range(1, len(d_list)): d = combine_numerical_dicts(d, d_list[i])
+    return d
